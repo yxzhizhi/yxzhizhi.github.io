@@ -1,97 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>eclipse/che</title>
-    <url>/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/</url>
-    <content><![CDATA[<h3 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载镜像</span><br><span class="line">docker pull portainer&#x2F;portainer</span><br><span class="line">基于镜像运行容器</span><br><span class="line"></span><br><span class="line">docker run -d -p 9000:9000 --restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock --name prtainer  portainer&#x2F;portainer</span><br><span class="line"></span><br><span class="line">up: admin&#x2F;yx375656</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-
-<h3 id="eclipse-che"><a href="#eclipse-che" class="headerlink" title="eclipse/che"></a>eclipse/che</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">启动服务</span><br><span class="line">-v &#x2F;var&#x2F;…是选择docker文件</span><br><span class="line">-v &#x2F;opt&#x2F;…是选择容器存放位置</span><br><span class="line">-e CHE_HOST 设置主机的IP地址</span><br><span class="line"></span><br><span class="line">单用户：</span><br><span class="line">docker run -ti --rm --name che6 -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080 -e CHE_HOST&#x3D;192.168.10.225 eclipse&#x2F;che:6.19.0 start</span><br><span class="line"></span><br><span class="line">多用户：</span><br><span class="line">docker run -ti -e CHE_MULTIUSER&#x3D;true -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080 -e CHE_HOST&#x3D;192.168.6.203 eclipse&#x2F;che:6.19.0 start</span><br><span class="line">实际创建:</span><br><span class="line">docker run -ti -e CHE_MULTIUSER&#x3D;true -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080  eclipse&#x2F;che:6.19.0 start</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;docker-tags eclipse&#x2F;che</span><br><span class="line">sudo docker pull eclipse&#x2F;che:6.19.0</span><br></pre></td></tr></table></figure>
-<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo docker run -it --rm -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data eclipse&#x2F;che:6.19.0 start</span><br><span class="line">启动完毕后，访问 “http:&#x2F;&#x2F;:8080&#x2F;” 来验证安装。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">创建 workspace 和 project</span><br><span class="line">访问 “Workspaces -&gt; Add Workspace”；</span><br><span class="line">在 “New Workspace” 页面选择 “java Default Java Stack with JDK 8, Maven and Tomcat.” 然后 “CREATE &amp; OPEN”；</span><br><span class="line">在 “Workspace” 页面，选择 “Create Project…”；</span><br><span class="line">在 “Create New Project” 窗口，选择 Java -&gt; Maven 项目，然后输入一个Name，比如: “test”，并进入下一步；</span><br><span class="line">勾选 “From Archetype:” 并选择 “org.apache.maven.archetypes:maven-archetype-quickstart:RELEASE”，同时输入 “Artifact ID” 和 “Group ID”，然后 “Create” 来创建工程；</span><br><span class="line">运行工程</span><br><span class="line">选中并打开工程，然后在 “Manage commands” 依次创建三个 Maven 命令，并运行。</span><br><span class="line"></span><br><span class="line">build</span><br><span class="line">mvn clean install -f $&#123;current.project.path&#125;</span><br><span class="line">1</span><br><span class="line">test</span><br><span class="line">mvn clean test -f $&#123;current.project.path&#125;</span><br><span class="line">1</span><br><span class="line">run</span><br><span class="line">mvn exec:java -Dexec.mainClass&#x3D;&quot;test.App&quot; -f $&#123;current.project.path&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="eclipse-che-命令-ubuntu"><a href="#eclipse-che-命令-ubuntu" class="headerlink" title="eclipse/che 命令 -ubuntu"></a>eclipse/che 命令 -ubuntu</h3><h5 id="1-apt-get-update"><a href="#1-apt-get-update" class="headerlink" title="1. apt-get update"></a>1. apt-get update</h5><h5 id="2-安装docker-国内源安装"><a href="#2-安装docker-国内源安装" class="headerlink" title="2. 安装docker,国内源安装"></a>2. <a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/ubuntu.html" target="_blank" rel="noopener">安装docker,国内源安装</a></h5><h5 id="3-配置镜像仓库"><a href="#3-配置镜像仓库" class="headerlink" title="3.配置镜像仓库"></a>3.<a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html#ubuntu-1604、debian-8-jessie、centos-7" target="_blank" rel="noopener">配置镜像仓库</a></h5><h5 id="4-解决内存溢出的问题"><a href="#4-解决内存溢出的问题" class="headerlink" title="4.解决内存溢出的问题"></a>4.解决内存溢出的问题</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Adjust memory and swap accounting</span><br><span class="line">When users run Docker, they may see these messages when working <span class="keyword">with</span> an image:</span><br><span class="line"></span><br><span class="line">WARNING: Your kernel does not support cgroup swap limit. WARNING: Your</span><br><span class="line">kernel does not support swap limit capabilities. Limitation discarded.</span><br><span class="line">To prevent these messages, enable memory and swap accounting on your system. To enable these on system using GNU GRUB (GNU GRand Unified Bootloader), <span class="keyword">do</span> the following.</span><br><span class="line"></span><br><span class="line">Log into Ubuntu <span class="keyword">as</span> a user <span class="keyword">with</span> sudo privileges.</span><br><span class="line"></span><br><span class="line">Edit the /etc/<span class="keyword">default</span>/grub file.</span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span> the GRUB_CMDLINE_LINUX value <span class="keyword">as</span> follows:</span><br><span class="line"></span><br><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"cgroup_enable=memory swapaccount=1"</span></span><br><span class="line">Save and close the file.</span><br><span class="line"></span><br><span class="line">Update GRUB.</span><br><span class="line"></span><br><span class="line">$ sudo update-grub</span><br><span class="line">Reboot your system.</span><br></pre></td></tr></table></figure>
-
-<h5 id="5关闭防火墙"><a href="#5关闭防火墙" class="headerlink" title="5关闭防火墙"></a>5关闭防火墙</h5><p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/wclwcw/p/6140263.html" target="_blank" rel="noopener">网络相关配置</a></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ufw disable</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker pull eclipse/che:<span class="number">5.17</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动(第一次启动需要下载其他镜像)</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> start</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改che的样式文件，去掉左边导航栏</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker cp /che/index.html che<span class="number">-8120</span>:<span class="regexp">/home/u</span>ser/eclipse-che<span class="number">-5.17</span><span class="number">.0</span>/tomcat/webapps/dashboard</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>停止</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> stop</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>重启</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> restart</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>che API</li>
-</ul>
-<p>启动che的时候的终端返回信息最后一行是che的api地址</p>
-<ul>
-<li>创建che工作空间</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">curl -X POST -H <span class="string">'Content-Type: application/json'</span> -d <span class="string">'&#123;"name":"myworkspace","projects":[],"commands":[&#123;"name":"build","type":"mvn","attributes":&#123;"goal":"Build","previewUrl":""&#125;,"commandLine":"mvn clean install"],"environments":&#123;"myworkspace":&#123;"recipe":&#123;"location":"eclipse/ubuntu_jdk8","type":"dockerimage"&#125;,"machines":&#123;"dev-machine":&#123;"attributes":&#123;"memoryLimitBytes":"2147483648"&#125;,"agents":["org.eclipse.che.exec","org.eclipse.che.terminal","org.eclipse.che.ws-agent","org.eclipse.che.ssh"],"servers":&#123;&#125;&#125;&#125;&#125;&#125;,"defaultEnv":"myworkspace","links":[]&#125;'</span> http:<span class="comment">//localhost:8080/api/workspace</span></span><br><span class="line"><span class="comment">//其中-d为创建工作空间所需json参数，具体请看下一小节</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改che的运行时环境</li>
-</ul>
-<p>访问che的webide，点击左侧stacks，在右侧的列表中选择自己需要的运行时环境点进进入详情界面</p>
-<p>下拉找到row configuration，复制其中json数据里的workspaceconfig部分代码（注意只取 “workspaceConfig”:后面的{}已经其中的信息），作为访问创建che工作空间api的参数</p>
-<ul>
-<li>在项目中使用che api需要执行以下命令</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git clone http:<span class="comment">//github.com/eclipse/che</span></span><br><span class="line">cd cde</span><br><span class="line">git checkout <span class="number">5.17</span>.x</span><br><span class="line">cd core</span><br><span class="line">mvn install</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>chedir 初始化工作空间和项目</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cd /ChedirDocker/project</span><br><span class="line">mkdir che8081project</span><br><span class="line">cd che8081project</span><br><span class="line"><span class="comment">//创建Chedir文件</span></span><br><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8081</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir init</span><br><span class="line"><span class="comment">//进行相应修改</span></span><br><span class="line">vim Chedir</span><br><span class="line"><span class="comment">//启动容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir up</span><br><span class="line"><span class="comment">//销毁容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir down</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>linux</category>
-        <category>che</category>
-        <category>eclipse</category>
-      </categories>
-      <tags>
-        <tag>che</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用帮助文档</title>
-    <url>/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p>hexo</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//hexo.io/zh-cn/docs/</span></span><br></pre></td></tr></table></figure>
-<p>Hexo-Next-主题优化</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://www.jianshu.com/p/428244cd2caa</span><br></pre></td></tr></table></figure>
-
-<p>Hexo+NexT（零）：最全Hexo+Next搭建博客教程</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://blog.csdn.net/loze/article/details/94206726</span><br></pre></td></tr></table></figure>
-
-<p>Hexo | NexT打造一个炫酷博客</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://blog.csdn.net/u012294515/article/details/83094693?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
     <title>linux下的find文件查找命令与grep文件内容查找命令</title>
     <url>/2020/04/05/find_grep/</url>
     <content><![CDATA[<h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
@@ -233,6 +142,108 @@
       </tags>
   </entry>
   <entry>
+    <title>eclipse/che</title>
+    <url>/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/</url>
+    <content><![CDATA[<h3 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">下载镜像</span><br><span class="line">docker pull portainer&#x2F;portainer</span><br><span class="line">基于镜像运行容器</span><br><span class="line"></span><br><span class="line">docker run -d -p 9000:9000 --restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock --name prtainer  portainer&#x2F;portainer</span><br><span class="line"></span><br><span class="line">up: admin&#x2F;yx375656</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<h3 id="eclipse-che"><a href="#eclipse-che" class="headerlink" title="eclipse/che"></a>eclipse/che</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">启动服务</span><br><span class="line">-v &#x2F;var&#x2F;…是选择docker文件</span><br><span class="line">-v &#x2F;opt&#x2F;…是选择容器存放位置</span><br><span class="line">-e CHE_HOST 设置主机的IP地址</span><br><span class="line"></span><br><span class="line">单用户：</span><br><span class="line">docker run -ti --rm --name che6 -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080 -e CHE_HOST&#x3D;192.168.10.225 eclipse&#x2F;che:6.19.0 start</span><br><span class="line"></span><br><span class="line">多用户：</span><br><span class="line">docker run -ti -e CHE_MULTIUSER&#x3D;true -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080 -e CHE_HOST&#x3D;192.168.6.203 eclipse&#x2F;che:6.19.0 start</span><br><span class="line">实际创建:</span><br><span class="line">docker run -ti -e CHE_MULTIUSER&#x3D;true -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data  -e CHE_PORT&#x3D;8080  eclipse&#x2F;che:6.19.0 start</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">~&#x2F;docker-tags eclipse&#x2F;che</span><br><span class="line">sudo docker pull eclipse&#x2F;che:6.19.0</span><br></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo docker run -it --rm -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock -v &#x2F;home&#x2F;zhanghuo&#x2F;LinuxHome&#x2F;docker&#x2F;eclipseche:&#x2F;data eclipse&#x2F;che:6.19.0 start</span><br><span class="line">启动完毕后，访问 “http:&#x2F;&#x2F;:8080&#x2F;” 来验证安装。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">创建 workspace 和 project</span><br><span class="line">访问 “Workspaces -&gt; Add Workspace”；</span><br><span class="line">在 “New Workspace” 页面选择 “java Default Java Stack with JDK 8, Maven and Tomcat.” 然后 “CREATE &amp; OPEN”；</span><br><span class="line">在 “Workspace” 页面，选择 “Create Project…”；</span><br><span class="line">在 “Create New Project” 窗口，选择 Java -&gt; Maven 项目，然后输入一个Name，比如: “test”，并进入下一步；</span><br><span class="line">勾选 “From Archetype:” 并选择 “org.apache.maven.archetypes:maven-archetype-quickstart:RELEASE”，同时输入 “Artifact ID” 和 “Group ID”，然后 “Create” 来创建工程；</span><br><span class="line">运行工程</span><br><span class="line">选中并打开工程，然后在 “Manage commands” 依次创建三个 Maven 命令，并运行。</span><br><span class="line"></span><br><span class="line">build</span><br><span class="line">mvn clean install -f $&#123;current.project.path&#125;</span><br><span class="line">1</span><br><span class="line">test</span><br><span class="line">mvn clean test -f $&#123;current.project.path&#125;</span><br><span class="line">1</span><br><span class="line">run</span><br><span class="line">mvn exec:java -Dexec.mainClass&#x3D;&quot;test.App&quot; -f $&#123;current.project.path&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="eclipse-che-命令-ubuntu"><a href="#eclipse-che-命令-ubuntu" class="headerlink" title="eclipse/che 命令 -ubuntu"></a>eclipse/che 命令 -ubuntu</h3><h5 id="1-apt-get-update"><a href="#1-apt-get-update" class="headerlink" title="1. apt-get update"></a>1. apt-get update</h5><h5 id="2-安装docker-国内源安装"><a href="#2-安装docker-国内源安装" class="headerlink" title="2. 安装docker,国内源安装"></a>2. <a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/ubuntu.html" target="_blank" rel="noopener">安装docker,国内源安装</a></h5><h5 id="3-配置镜像仓库"><a href="#3-配置镜像仓库" class="headerlink" title="3.配置镜像仓库"></a>3.<a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html#ubuntu-1604、debian-8-jessie、centos-7" target="_blank" rel="noopener">配置镜像仓库</a></h5><h5 id="4-解决内存溢出的问题"><a href="#4-解决内存溢出的问题" class="headerlink" title="4.解决内存溢出的问题"></a>4.解决内存溢出的问题</h5><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Adjust memory and swap accounting</span><br><span class="line">When users run Docker, they may see these messages when working <span class="keyword">with</span> an image:</span><br><span class="line"></span><br><span class="line">WARNING: Your kernel does not support cgroup swap limit. WARNING: Your</span><br><span class="line">kernel does not support swap limit capabilities. Limitation discarded.</span><br><span class="line">To prevent these messages, enable memory and swap accounting on your system. To enable these on system using GNU GRUB (GNU GRand Unified Bootloader), <span class="keyword">do</span> the following.</span><br><span class="line"></span><br><span class="line">Log into Ubuntu <span class="keyword">as</span> a user <span class="keyword">with</span> sudo privileges.</span><br><span class="line"></span><br><span class="line">Edit the /etc/<span class="keyword">default</span>/grub file.</span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span> the GRUB_CMDLINE_LINUX value <span class="keyword">as</span> follows:</span><br><span class="line"></span><br><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"cgroup_enable=memory swapaccount=1"</span></span><br><span class="line">Save and close the file.</span><br><span class="line"></span><br><span class="line">Update GRUB.</span><br><span class="line"></span><br><span class="line">$ sudo update-grub</span><br><span class="line">Reboot your system.</span><br></pre></td></tr></table></figure>
+
+<h5 id="5关闭防火墙"><a href="#5关闭防火墙" class="headerlink" title="5关闭防火墙"></a>5关闭防火墙</h5><p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/wclwcw/p/6140263.html" target="_blank" rel="noopener">网络相关配置</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ufw disable</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker pull eclipse/che:<span class="number">5.17</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动(第一次启动需要下载其他镜像)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> start</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改che的样式文件，去掉左边导航栏</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker cp /che/index.html che<span class="number">-8120</span>:<span class="regexp">/home/u</span>ser/eclipse-che<span class="number">-5.17</span><span class="number">.0</span>/tomcat/webapps/dashboard</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>停止</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> stop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> restart</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>che API</li>
+</ul>
+<p>启动che的时候的终端返回信息最后一行是che的api地址</p>
+<ul>
+<li>创建che工作空间</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">curl -X POST -H <span class="string">'Content-Type: application/json'</span> -d <span class="string">'&#123;"name":"myworkspace","projects":[],"commands":[&#123;"name":"build","type":"mvn","attributes":&#123;"goal":"Build","previewUrl":""&#125;,"commandLine":"mvn clean install"],"environments":&#123;"myworkspace":&#123;"recipe":&#123;"location":"eclipse/ubuntu_jdk8","type":"dockerimage"&#125;,"machines":&#123;"dev-machine":&#123;"attributes":&#123;"memoryLimitBytes":"2147483648"&#125;,"agents":["org.eclipse.che.exec","org.eclipse.che.terminal","org.eclipse.che.ws-agent","org.eclipse.che.ssh"],"servers":&#123;&#125;&#125;&#125;&#125;&#125;,"defaultEnv":"myworkspace","links":[]&#125;'</span> http:<span class="comment">//localhost:8080/api/workspace</span></span><br><span class="line"><span class="comment">//其中-d为创建工作空间所需json参数，具体请看下一小节</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改che的运行时环境</li>
+</ul>
+<p>访问che的webide，点击左侧stacks，在右侧的列表中选择自己需要的运行时环境点进进入详情界面</p>
+<p>下拉找到row configuration，复制其中json数据里的workspaceconfig部分代码（注意只取 “workspaceConfig”:后面的{}已经其中的信息），作为访问创建che工作空间api的参数</p>
+<ul>
+<li>在项目中使用che api需要执行以下命令</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">git clone http:<span class="comment">//github.com/eclipse/che</span></span><br><span class="line">cd cde</span><br><span class="line">git checkout <span class="number">5.17</span>.x</span><br><span class="line">cd core</span><br><span class="line">mvn install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>chedir 初始化工作空间和项目</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">cd /ChedirDocker/project</span><br><span class="line">mkdir che8081project</span><br><span class="line">cd che8081project</span><br><span class="line"><span class="comment">//创建Chedir文件</span></span><br><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8081</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir init</span><br><span class="line"><span class="comment">//进行相应修改</span></span><br><span class="line">vim Chedir</span><br><span class="line"><span class="comment">//启动容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir up</span><br><span class="line"><span class="comment">//销毁容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir down</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>linux</category>
+        <category>che</category>
+        <category>eclipse</category>
+      </categories>
+      <tags>
+        <tag>che</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo</title>
+    <url>/2020/01/01/hexo/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">###  hexo install</span></span><br><span class="line">npm install hexo /yarn add hexo</span><br><span class="line">//npx hexo &lt;<span class="built_in">command</span>&gt; to hexo </span><br><span class="line"><span class="built_in">echo</span> <span class="string">'PATH="$PATH:./node_modules/.bin"'</span> &gt;&gt; ~/.profile </span><br><span class="line"></span><br><span class="line">hexo init ./yxzhizhi     <span class="comment"># 初始化</span></span><br><span class="line">yarn install    <span class="comment"># 安装组件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br><span class="line">yarn add hexo-deployer-git</span><br><span class="line"></span><br><span class="line">然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">完成后运行 hexo d 将网站上传部署到 GitHub Pages。</span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">"xx"</span></span><br><span class="line">git config --global user.name <span class="string">"xx"</span></span><br><span class="line"></span><br><span class="line">hexo new <span class="string">"name"</span>       <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">"name"</span>  <span class="comment"># 新建页面</span></span><br><span class="line">hexo g                <span class="comment"># 生成页面</span></span><br><span class="line">hexo d                <span class="comment"># 部署</span></span><br><span class="line">hexo g -d             <span class="comment"># 生成页面并部署</span></span><br><span class="line">hexo s                <span class="comment"># 本地预览</span></span><br><span class="line">hexo clean            <span class="comment"># 清除缓存和已生成的静态文件</span></span><br><span class="line">hexo <span class="built_in">help</span>             <span class="comment"># 帮助</span></span><br><span class="line">https://yxzhizhi.github.io/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>linux</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>sql and freemaker format</title>
     <url>/2020/04/05/sql%20and%20freemaker%20format/</url>
     <content><![CDATA[<h2 id="sql-and-freemaker-format"><a href="#sql-and-freemaker-format" class="headerlink" title="sql and freemaker format"></a>sql and freemaker format</h2><ol>
@@ -359,29 +370,18 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo</title>
-    <url>/2020/01/01/hexo/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+    <title>使用帮助文档</title>
+    <url>/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p>hexo</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">https:<span class="comment">//hexo.io/zh-cn/docs/</span></span><br></pre></td></tr></table></figure>
+<p>Hexo-Next-主题优化</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://www.jianshu.com/p/428244cd2caa</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>Hexo+NexT（零）：最全Hexo+Next搭建博客教程</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://blog.csdn.net/loze/article/details/94206726</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">###  hexo install</span></span><br><span class="line">npm install hexo /yarn add hexo</span><br><span class="line">//npx hexo &lt;<span class="built_in">command</span>&gt; to hexo </span><br><span class="line"><span class="built_in">echo</span> <span class="string">'PATH="$PATH:./node_modules/.bin"'</span> &gt;&gt; ~/.profile </span><br><span class="line"></span><br><span class="line">hexo init ./yxzhizhi     <span class="comment"># 初始化</span></span><br><span class="line">yarn install    <span class="comment"># 安装组件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br><span class="line">yarn add hexo-deployer-git</span><br><span class="line"></span><br><span class="line">然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">完成后运行 hexo d 将网站上传部署到 GitHub Pages。</span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">"xx"</span></span><br><span class="line">git config --global user.name <span class="string">"xx"</span></span><br><span class="line"></span><br><span class="line">hexo new <span class="string">"name"</span>       <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">"name"</span>  <span class="comment"># 新建页面</span></span><br><span class="line">hexo g                <span class="comment"># 生成页面</span></span><br><span class="line">hexo d                <span class="comment"># 部署</span></span><br><span class="line">hexo g -d             <span class="comment"># 生成页面并部署</span></span><br><span class="line">hexo s                <span class="comment"># 本地预览</span></span><br><span class="line">hexo clean            <span class="comment"># 清除缓存和已生成的静态文件</span></span><br><span class="line">hexo <span class="built_in">help</span>             <span class="comment"># 帮助</span></span><br><span class="line">https://yxzhizhi.github.io/</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>linux</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
+<p>Hexo | NexT打造一个炫酷博客</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">https://blog.csdn.net/u012294515/article/details/83094693?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
 </search>
