@@ -1,157 +1,122 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
     
-        <title>linux下的find文件查找命令与grep文件内容查找命令 | 必须从过去的错误学习教训而非依赖过去的成功</title>
+      <link rel="icon" href="/favicon.png" />
     
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-<meta name="format-detection" content="telephone=no">
-<meta name="author" content="zhanghuo" />
-<meta name="designer" content="minfive" />
-<meta name="keywords" content="linux,java,python,node,web"/>
-<meta name="description" content="生命不是要超越别人，而是要超越自己" />
+    <title>
+        
+          linux下的find文件查找命令与grep文件内容查找命令 - yxzhizhiの博客
+        
+    </title>
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="format-detection" content="telephone=yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="robots" content="all" />
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-<link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/05/find_grep/index.html">
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
 
-<link rel="icon" type="image/png" href="undefined" sizes="32x32">
-
-
+    
+<script src="/js/book.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- Prefetch -->
-
-
-
-
-
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="/scss/base/index.css">
-
-
-<!-- RSS -->
-<link rel="alternate" href="/atom.xml" title="yxzhizhiの博客">
-
-<!-- 统计 -->
-<!-- 百度统计 -->
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
     
     
-    
-<link rel="stylesheet" href="/scss/views/page/post.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
 </head>
-<body ontouchstart>
-    
-        <!-- loading 页面 -->
-<div id="page-loading" class="page page-loading" style="background-image: url('undefined')"></div>
-    
 
-    <div id="page" class="page js-hidden">
-        
-    <!-- 页头 -->
-<header class="page__small-header page__header--small">
-    <nav class="page__navbar">
-        <div class="page__container navbar-container">
-            <a class="page__logo" href="/" title="yxzhizhiの博客" alt="yxzhizhiの博客">
-                <img src="undefined" alt="yxzhizhiの博客">
-            </a>
+<body>
 
-            <nav class="page__nav">
-                <ul class="nav__list clearfix">
-                    
-                </ul>
-            </nav>
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>YXZHIZHIの博客</span>
+  </a>
+</div>
+    <div class="book-menu">
+  
+</div>
 
-            <button class="page__menu-btn" type="button">
-                <i class="iconfont icon-menu"></i>
-            </button>
-        </div>
-    </nav>
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
 </header>
 
-
-        
-    <main class="page__container page__main">
-    <div class="page__content">
-        <article class="page__post">
-    <div class="post__cover">
-        <img src="undefined" alt="linux下的find文件查找命令与grep文件内容查找命令">
-    </div>
-
-    <header class="post__info">
-        <h1 class="post__title">linux下的find文件查找命令与grep文件内容查找命令</h1>
-
-        <div class="post__mark">
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-write"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/">undefined</a>
-                        </li>
-                    
-                </ul>
-            </div>
-            
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-time"></i>
-                <ul class="mark__list clearfix">
-                    <li class="mark__item"><span>2020-04-05</span></li>
-                </ul>
-            </div>
-
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-tab"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/tags/linux/">Linux</a>
-                        </li>
-                    
-                        <li class="mark__item">
-                            <a href="/tags/grep/">Grep</a>
-                        </li>
-                    
-                        <li class="mark__item">
-                            <a href="/tags/find/">Find</a>
-                        </li>
-                    
-                </ul>
-            </div>
-
-            
         </div>
-    </header>
-
-    <div class="post__content">
-        <h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
+        <div class="book-content">
+          <div class="book-post">
+  <h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="一-find命令"><a href="#一-find命令" class="headerlink" title="一.find命令"></a><strong>一.find命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**基本格式：**find path expression</span><br></pre></td></tr></table></figure>
 
@@ -167,256 +132,84 @@
 
 <h3 id="2-实例"><a href="#2-实例" class="headerlink" title="2.实例　"></a><strong>2.实例</strong>　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">(1)grep &#39;test&#39; d*　　#显示所有以d开头的文件中包含 test的行</span><br><span class="line">(2)grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行</span><br><span class="line">(3)grep ‘[a-z]\&#123;5\&#125;’ aa 　　#显示所有包含每行字符串至少有5个连续小写字符的字符串的行</span><br><span class="line">(4)grep magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(不含子目录)**包含magic的行</span><br><span class="line">(5)grep -r magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(包含子目录)**包含magic的行</span><br><span class="line">(6)grep -w pattern files  #只匹配整个单词，而不是字符串的一部分(如匹配’magic’，而不是’magical’)，</span><br><span class="line">(7)grep -r &quot;查询内容&quot;  文件目录 #文件名+内容</span><br><span class="line">(8)grep &#39;2020-02-27 17:5[6,9]&#39; xinyar-erp-auto.log ##根据时间查找日志</span><br><span class="line">(9)grep -E &#39;2020-02-27 14:5[5-9]|2020-02-28 15:0[0-5]&#39; xinyar-erp-auto.log #查询指定时间段内的日志</span><br><span class="line">(10)grep -C 10 &#39;aaaa&#39; nohup.out #查找关键字</span><br><span class="line">(11)grep -r -l &quot;查询内容&quot;  文件目录 #只显示包含内容的文件名</span><br><span class="line">(12)find 文件目录  -type f |xargs grep &quot;查询内容&quot;;  文件名+内容</span><br><span class="line"></span><br><span class="line">(13)grep -l &quot;innercontent&quot; --include&#x3D;&quot;*filepattern*&quot; .&#x2F;* | xargs cp -t destdir # grep文件名，内容，然后复制到文件夹中</span><br><span class="line">搜索源代码中的内容时, 为避免搜索到不相关的文件, 如.o文件中的内容, 可能希望grep能只处理特定格式的文件.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.c&#39; --include&#x3D;&#39;*.h&#39; re .</span><br><span class="line">可以指定多次, 如果真是上面的这种情况,  其实可以用</span><br><span class="line">grep -rn --include&#x3D;&#39;*.[ch]&#39; re .</span><br><span class="line">但是, 如果源文件中含有C++源代码, 上面的方法就不凑效了, 因为[]中只能放一个字符.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.&#123;cpp,h&#125;&#39; 也是不行的.</span><br><span class="line">此时需要不加引号的展开(由bash执行grep之前就已经完成, 可以通过set -x观察)</span><br><span class="line">grep -rn --include&#x3D;*.&#123;cpp,h&#125; re .</span><br><span class="line">bash中对&#123;A,B&#125;这种形式的展开, 会忽略是否在当前目录下存在相应的文件。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">grep -r &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">grep -r -l &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">find &#x2F;data&#x2F;nginx&#x2F;conf.d  -type f |xargs grep &quot;version.app.xinyartech.com&quot;;</span><br></pre></td></tr></table></figure>
 
-
-        
-        <div class="post-announce">
-            Thank you for reading, this article belongs to
-            <a href="http://yxzhizhi.gicp.com">yxzhizhiの博客</a>
-            copyright, if reproduced, please indicate the source：yxzhizhiの博客（<a href="http://yxzhizhi.gicp.com/2020/04/05/find_grep/">http://yxzhizhi.gicp.com/2020/04/05/find_grep/</a>）
-        </div>
-        
-
-        <div class="post__prevs">
-            <div class="post__prev">
-                
-                <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/" title="126mail"><i class="iconfont icon-prev"></i>126mail</a>
-                
-            </div>
-            <div class="post__prev post__prev--right">
-                
-                <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" title="使用帮助文档">使用帮助文档<i class="iconfont icon-next"></i></a>
-                
-            </div>
-        </div>
-    </div>
-</article>
-
-        
-        
-    </div>
-
-    <aside class="page__sidebar">
-    <!--  -->
-
-    <form id="page-search-from" class="page__search-from" action="/search/">
-        <label class="search-form__item">
-            <input class="input" type="text" name="search" placeholder="Search...">
-            <i class="iconfont icon-search"></i>
-        </label>
-    </form>
-
-    
-        <div class="sidebar__block">
-            <h3 class="block__title">Introduction</h3>
-            <p class="block__text">生命不是要超越别人，而是要超越自己</p>
-        </div>
-    
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Categories</h3>
-        <ul class="block-list"><li class="block-list-item"><a class="block-list-link" href="/categories/sql/">sql</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/sql/format/">format</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/mail/">mail</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/mail/back/">back</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/">linux</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/hexo/">hexo</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/grep/">grep</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/docker/">docker</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/docker/mysql/">mysql</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/che/">che</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/che/eclipse/">eclipse</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul>
-    </div>
-    
-    <div class="sidebar__block">
-        <h3 class="block__title">Latest Post</h3>
-        
-        <ul class="block-list latest-post-list">
-            
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" title="使用帮助文档">
-                            <div class="item__cover">
-                                <img src="undefined" alt="使用帮助文档" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">使用帮助文档</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/find_grep/" title="linux下的find文件查找命令与grep文件内容查找命令">
-                            <div class="item__cover">
-                                <img src="undefined" alt="linux下的find文件查找命令与grep文件内容查找命令" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">linux下的find文件查找命令与grep文件内容查找命令</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/" title="126mail">
-                            <div class="item__cover">
-                                <img src="undefined" alt="126mail" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">126mail</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/docker/" title="docker">
-                            <div class="item__cover">
-                                <img src="undefined" alt="docker" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">docker</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-        </ul>
-    
-    </div>
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Tags</h3>
-        
-        <ul class="block-list tag-list clearfix">
-            
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/back/">back</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/che/">che</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/docker/">docker</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/find/">find</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/format/">format</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/grep/">grep</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/hexo/">hexo</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/linux/">linux</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/mysql/">mysql</a>
-                    </li>  
-                
-        </ul>
-    
-    </div>
-
-    <!-- <div class="sidebar__block">
-        <h3 class="block__title">Friend Links</h3>
-        <ul class="block-list">
-            
-        </ul>
-    </div> -->
-</aside>
-</main>
-
-
-        
-            <!-- 页脚 -->
-<footer class="page__footer">
-    <section class="footer__top">
-        <div class="page__container footer__container">
-            
-            <div class="footer-top__item footer-top__item--2">
-                <h3 class="item__title">About</h3>
-                <div class="item__content">
-                    <p class="item__text"></p>
-                    <ul class="footer__contact-info">
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-address"></i>
-                            <span></span>
-                        </li>
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-email2"></i>
-                            <span></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            
-            
-            
-            
-            
-        </div>
-    </section>
-    <section class="footer__bottom">
-        <div class="page__container footer__container">
-            <p class="footer__copyright">©
-                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Skapp</a> 2017 powered by
-                <a href="http://hexo.io/" target="_blank">Hexo</a>, made by 
-                <a href="https://github.com/Mrminfive" target="_blank">minfive</a>.
-            </p>
-            <ul class="footer__social-network clearfix">
-                
-            </ul>
-        </div>
-    </section>
-</footer>
-        
-
-        
-            <!-- 返回顶部 -->
-<div id="back-top" class="back-top back-top--hidden js-hidden">
-    <i class="iconfont icon-top"></i>
 </div>
-        
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="z"
+          style="background-color: #3b4351;">
+        </figure>
+      
     </div>
 
-    <!-- build:js /js/common.js -->
-        <script type="text/javascript" src="js/common/utils.js"></script>
-        <script type="text/javascript" src="js/common/pack.js"></script>
-        <script type="text/javascript" src="js/common/animation.js"></script>
-        <script type="text/javascript" src="js/layout/loading.js"></script>
-        <script type="text/javascript" src="js/layout/header.js"></script>
-        <script type="text/javascript" src="js/layout/back-top.js"></script>
-        <script type="text/javascript" src="js/layout/post.js"></script>
-    <!-- endbuild -->
+    <!-- Author title -->
+    <div class="author-title">
+      <div>zhanghuo</div>
+      <div>2020-04-05</div>
+    </div>
+  </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      <a class="category-link" href="/categories/linux/">linux</a> <a class="category-link" href="/categories/linux/grep/">grep</a>
+
+      <a class="tag-link" href="/tags/find/" rel="tag">#find</a> <a class="tag-link" href="/tags/grep/" rel="tag">#grep</a> <a class="tag-link" href="/tags/linux/" rel="tag">#linux</a>
+    </div>
     
-    
-<script src="/js/page/post.js"></script>
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
 
 
+<script src="/js/book-toc.js"></script>
 
-    
-    
-
-
-
-    <!-- 不蒜子统计 -->
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-     
-
-
-
-
-
-
-
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
 
 </body>
 </html>
+
+
+<script src="/js/book.js"></script>

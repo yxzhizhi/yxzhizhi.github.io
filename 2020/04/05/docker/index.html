@@ -1,149 +1,122 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
     
-        <title>docker | 必须从过去的错误学习教训而非依赖过去的成功</title>
+      <link rel="icon" href="/favicon.png" />
     
 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
-<meta name="format-detection" content="telephone=no">
-<meta name="author" content="zhanghuo" />
-<meta name="designer" content="minfive" />
-<meta name="keywords" content="linux,java,python,node,web"/>
-<meta name="description" content="生命不是要超越别人，而是要超越自己" />
+    <title>
+        
+          docker - yxzhizhiの博客
+        
+    </title>
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-<meta name="format-detection" content="telephone=yes" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="robots" content="all" />
+    <!-- Spectre.css framework -->
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-<link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/05/docker/index.html">
+    <!-- theme css & js -->
+    
+<link rel="stylesheet" href="/css/book.css">
 
-<link rel="icon" type="image/png" href="undefined" sizes="32x32">
-
-
+    
+<script src="/js/book.js"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-<!-- Prefetch -->
-
-
-
-
-
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="/scss/base/index.css">
-
-
-<!-- RSS -->
-<link rel="alternate" href="/atom.xml" title="yxzhizhiの博客">
-
-<!-- 统计 -->
-<!-- 百度统计 -->
-
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-
+    <!-- tocbot -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    
+    <!-- katex -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 
     
     
-    
-<link rel="stylesheet" href="/scss/views/page/post.css">
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/zooming/2.1.1/zooming.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const zooming = new Zooming()
+    zooming.listen('.book-content img')
+})
+</script>
 
 <meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
 </head>
-<body ontouchstart>
-    
-        <!-- loading 页面 -->
-<div id="page-loading" class="page page-loading" style="background-image: url('undefined')"></div>
-    
 
-    <div id="page" class="page js-hidden">
-        
-    <!-- 页头 -->
-<header class="page__small-header page__header--small">
-    <nav class="page__navbar">
-        <div class="page__container navbar-container">
-            <a class="page__logo" href="/" title="yxzhizhiの博客" alt="yxzhizhiの博客">
-                <img src="undefined" alt="yxzhizhiの博客">
-            </a>
+<body>
 
-            <nav class="page__nav">
-                <ul class="nav__list clearfix">
-                    
-                </ul>
-            </nav>
+<div class="book-container">
+  <div class="book-sidebar">
+    <div class="book-brand">
+  <a href="/">
+    <img src="/favicon.png">
+    <span>YXZHIZHIの博客</span>
+  </a>
+</div>
+    <div class="book-menu">
+  
+</div>
 
-            <button class="page__menu-btn" type="button">
-                <i class="iconfont icon-menu"></i>
-            </button>
-        </div>
-    </nav>
+
+<script src="/js/book-menu.js"></script>
+
+  </div>
+
+  <div class="sidebar-toggle" onclick="sidebar_toggle()" onmouseover="add_inner()" onmouseleave="remove_inner()">
+  <div class="sidebar-toggle-inner"></div>
+</div>
+
+<script>
+function add_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.add('show')  
+}
+
+function remove_inner() {
+  let inner = document.querySelector('.sidebar-toggle-inner')
+  inner.classList.remove('show')
+}
+
+function sidebar_toggle() {
+    let sidebar_toggle = document.querySelector('.sidebar-toggle')
+    let sidebar = document.querySelector('.book-sidebar')
+    let content = document.querySelector('.off-canvas-content')
+    if (sidebar_toggle.classList.contains('extend')) { // show
+        sidebar_toggle.classList.remove('extend')
+        sidebar.classList.remove('hide')
+        content.classList.remove('extend')
+    }
+    else { // hide
+        sidebar_toggle.classList.add('extend')
+        sidebar.classList.add('hide')
+        content.classList.add('extend')
+    }
+}
+</script>
+
+  <div class="off-canvas-content">
+    <div class="columns">
+      <div class="column col-10 col-lg-12">
+        <div class="book-navbar">
+          <!-- For Responsive Layout -->
+
+<header class="navbar">
+  <section class="navbar-section">
+    <a onclick="open_sidebar()">
+      <i class="icon icon-menu"></i>
+    </a>
+  </section>
 </header>
 
-
-        
-    <main class="page__container page__main">
-    <div class="page__content">
-        <article class="page__post">
-    <div class="post__cover">
-        <img src="undefined" alt="docker">
-    </div>
-
-    <header class="post__info">
-        <h1 class="post__title">docker</h1>
-
-        <div class="post__mark">
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-write"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/">undefined</a>
-                        </li>
-                    
-                </ul>
-            </div>
-            
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-time"></i>
-                <ul class="mark__list clearfix">
-                    <li class="mark__item"><span>2020-04-05</span></li>
-                </ul>
-            </div>
-
-            <div class="mark__block">
-                <i class="mark__icon iconfont icon-tab"></i>
-                <ul class="mark__list clearfix">
-                    
-                        <li class="mark__item">
-                            <a href="/tags/docker/">Docker</a>
-                        </li>
-                    
-                </ul>
-            </div>
-
-            
         </div>
-    </header>
-
-    <div class="post__content">
-        <h2 id="常用docker命令"><a href="#常用docker命令" class="headerlink" title="常用docker命令"></a>常用docker命令</h2><a id="more"></a>
+        <div class="book-content">
+          <div class="book-post">
+  <h2 id="常用docker命令"><a href="#常用docker命令" class="headerlink" title="常用docker命令"></a>常用docker命令</h2><a id="more"></a>
 <h4 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">列表|docker images	|查看本地docker仓库的所有镜像</span><br><span class="line">docker images 列出本地所有镜像</span><br><span class="line">检索 docker search keywork eg: docker search tomcat 去docker hub搜索镜像的详细信息</span><br><span class="line">docker search(-s) nginx 搜索相关镜像　加上-s 参数 选出至少start数范围的镜像</span><br><span class="line">docker pull（-a） 镜像名:版本号　拉取镜像,-a pull all</span><br><span class="line">拉取 docker pull keywork:tag eg: docker pull tomcat:latest|	tag是可选的，不指定默认拉取latest最新版本</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line">docker push 192.168.0.100:5000&#x2F;ubuntu 　　  推送镜像库到私有源</span><br><span class="line">删除|docker rmi imageId eg: docker rmi 6408fdc94212	|删除本地docker仓库镜像</span><br><span class="line">docker rmi（-f） 镜像名：版本号&#x2F;镜像ID 　　删除镜像 （加上 -f 参数 强制删除）</span><br><span class="line">docker rmi $(docker images -q)　　删除所有镜像</span><br><span class="line">docker rmi $(docker images | grep &quot;none&quot; | awk &#39;&#123;print $3&#125;&#39;) 删除所有名字中带“none” 关键字的镜像</span><br><span class="line"></span><br><span class="line">docker save docker.io&#96;&#96;&#x2F;tomcat&#96;&#96;:7.0.77-jre7 &gt;&#96;&#96;&#x2F;root&#x2F;mytomcat7&#96;&#96;.&#96;&#96;tar&#96;&#96;.gz 导出镜像&#96;</span><br><span class="line">docker load &lt; &#96;&#96;&#x2F;root&#x2F;mytomcat7&#96;&#96;.&#96;&#96;tar&#96;&#96;.gz　　导入镜像&#96;</span><br></pre></td></tr></table></figure>
 <h3 id="容器管理"><a href="#容器管理" class="headerlink" title="容器管理"></a>容器管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">docker ps 查看当前正在运行的容器</span><br><span class="line">docker inspect name&#x2F;image[name&#x2F;image...] 查看详细</span><br><span class="line">docker ps -a 查看所有容器的状态</span><br><span class="line">docker start&#x2F;stop(-t) id&#x2F;name[name...] 启动&#x2F;停止某个（多个）容器 -t 指定时间</span><br><span class="line">docker kill (-s) name[name...] 强制中断 -s指定SIGINT信号类型，默认“kill”</span><br><span class="line">docker restart (-t) name[name...] 重启 -t 指定时间</span><br><span class="line">docker pause name　暂停　　docker unpause name 继续</span><br><span class="line">docker rm(-$) name[name...] 移除 </span><br><span class="line">    -f　　--force&#x3D;false　　强制移除运行中容器</span><br><span class="line">    -l　　--link&#x3D;false　　 移除指定链接，保留底层容器</span><br><span class="line">    -v　 --volumes&#x3D;false  移除容器关联卷</span><br><span class="line">docker commit(-$)name 镜像名:版本号 　　提交指定容器为镜像</span><br><span class="line">    -a, --author&#x3D;&quot;&quot; 　　　　作者</span><br><span class="line">    -m, --message&#x3D;&quot;&quot; 　　 简要说明</span><br><span class="line">    -p, --pause&#x3D;true 　　　暂停容器再提交</span><br><span class="line">docker logs(-$) name　　输出指定容器日志信息</span><br><span class="line">    -f　　跟踪日志输出</span><br><span class="line">    -t　　显示时间戳 类似 tail -f</span><br><span class="line">    --tail 在日志的末尾输出指定行数日志（默认所有日志）</span><br><span class="line">docker attach id 进入某个容器(使用exit退出后容器也跟着停止运行)</span><br><span class="line">docker exec -ti id 启动一个伪终端以交互式的方式进入某个容器（使用exit退出后容器不停止运行）</span><br><span class="line">docker run(-$) IMAGE [COMMAND] [ARG...] 　 运行一个容器</span><br><span class="line">    -d　　　　　　　　  指定容器运行于前台还是后台，默认为false   </span><br><span class="line">    -i　　　　　　　　  打开STDIN，用于控制台交互，默认为false </span><br><span class="line">    -t　　　　　　　　  分配tty设备，该可以支持终端登录，默认为false  </span><br><span class="line">    -u, --user&#x3D;&quot;&quot;       指定容器的用户  </span><br><span class="line">    -a, --attach&#x3D;[]      登录容器（必须是以docker run -d启动的容器） </span><br><span class="line">    -w　　　　　　　　  指定容器的工作目录 </span><br><span class="line">    -c   　　　　　　　设置容器CPU权重，在CPU共享场景使用  </span><br><span class="line">    -e, --env&#x3D;[]        指定环境变量，容器中可以使用该环境变量  </span><br><span class="line">    -m　　　　　　　　  指定容器的内存上限  </span><br><span class="line">    -P, --publish-all&#x3D;false 指定容器暴露的端口  </span><br><span class="line">    -p, --publish&#x3D;[]      指定容器暴露的端口  </span><br><span class="line">    -h　　　　　　　　　指定容器的主机名  </span><br><span class="line">    -v, --volume&#x3D;[]      给容器挂载存储卷，挂载到容器的某个目录 </span><br><span class="line">    --volumes-from&#x3D;[]    给容器挂载其他容器上的卷，挂载到容器的某个目录 </span><br><span class="line">    --cap-add&#x3D;[]　　　　 添加权限</span><br><span class="line">    --cap-drop&#x3D;[]   　 删除权限</span><br><span class="line">    --cidfile&#x3D;&quot;&quot;　　　　　 运行容器后，在指定文件中写入容器PID值，监控系统用法  </span><br><span class="line">    --cpuset&#x3D;&quot;&quot;　 　　　 设置容器可使用哪些CPU，此参数可以用来容器独占CPU  </span><br><span class="line">    --device&#x3D;[]   　　　  添加主机设备给容器，相当于设备直通  </span><br><span class="line">    --dns&#x3D;[]            指定容器的dns服务器  </span><br><span class="line">    --dns-search&#x3D;[]      指定容器的dns搜索域名，写入到容器&#x2F;etc&#x2F;resolv.conf文件  </span><br><span class="line">    --entrypoint&#x3D;&quot;&quot;       覆盖image的入口点  </span><br><span class="line">    --env-file&#x3D;[]          指定环境变量文件，文件格式为每行一个环境变量  </span><br><span class="line">    --expose&#x3D;[]         指定容器暴露的端口，即修改镜像的暴露端口  </span><br><span class="line">    --link&#x3D;[]            指定容器间的关联，使用其他容器的IP、env等信息  </span><br><span class="line">    --lxc-conf&#x3D;[]         指定容器的配置文件，只有在指定--exec-driver&#x3D;lxc时使用  </span><br><span class="line">    --name&#x3D;&quot;&quot;          指定容器名字，links特性需要使用名字  </span><br><span class="line">    --net&#x3D;&quot;bridge&quot;       容器网络设置: </span><br><span class="line">        bridge 使用docker daemon指定的网桥    </span><br><span class="line">        host  &#x2F;&#x2F;容器使用主机的网络  </span><br><span class="line">        container:NAME_or_ID &gt;&#x2F;&#x2F;使用其他容器的网路共享IP和PORT等网络资源  </span><br><span class="line">        none 容器使用自己的网络（类似--net&#x3D;bridge）</span><br><span class="line">    --privileged&#x3D;false     指定容器是否为特权容器，特权容器拥有所有的权限</span><br><span class="line">    --restart&#x3D;&quot;no&quot;        指定容器停止后的重启策略: </span><br><span class="line">        no：　　　　容器退出时不重启  </span><br><span class="line">        on-failure：  容器故障退出（返回值非零）时重启  </span><br><span class="line">        always：　　 容器退出时总是重启  </span><br><span class="line">    --rm&#x3D;false      指定容器停止后自动删除容器(不支持以docker run -d启动的容器)  </span><br><span class="line">    --sig-proxy&#x3D;true 设置由代理接受并处理信号，SIGCHLD，SIGSTOP和SIGKILL不代</span><br><span class="line">例：</span><br><span class="line">docker run -i -t centos6.8 进入到默认的线程”&#x2F;bin&#x2F;bash”，直接进入控制台操作</span><br><span class="line">docker run -i -t -d centos6.8 进入到默认的线程”&#x2F;bin&#x2F;bash”，后台运行</span><br><span class="line">docker run -d --restart&#x3D;always centos6.8 ping www.docker.com 带命令启动</span><br><span class="line">docker run -d --name&#x3D;server-dbcentos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe -d 容器的名称为server-db，同时激活了数据库mysql的后台线程</span><br><span class="line">docker run -d --name&#x3D;server-db -p 3306:3306 -v &#x2F;server&#x2F;mysql-data:&#x2F;</span><br><span class="line">mysql-datacentos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe –d</span><br><span class="line">docker run -d --name&#x3D;server-db -p 3306:3306 centos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe –d 服务器宿主机与容器端口映射并暴露</span><br><span class="line">docker run -d --name&#x3D;server-http --link&#x3D;server-db  -p 8080:80centos6.8-httpd &#x2F;usr&#x2F;bin&#x2F;httpd --DFOREGROUND 映射服务器宿主机的8080端口，关联service-db </span><br><span class="line">docker run -it --rm centos6.8　　容器进程结束后，立马自动删除</span><br></pre></td></tr></table></figure>
 
@@ -235,256 +208,84 @@
 
 <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h2><p>本教程介绍了一些用于使用Docker删除图像，容器和卷的常用命令。每个都可以使用许多其他组合和标志。</p>
 
-
-        
-        <div class="post-announce">
-            Thank you for reading, this article belongs to
-            <a href="http://yxzhizhi.gicp.com">yxzhizhiの博客</a>
-            copyright, if reproduced, please indicate the source：yxzhizhiの博客（<a href="http://yxzhizhi.gicp.com/2020/04/05/docker/">http://yxzhizhi.gicp.com/2020/04/05/docker/</a>）
-        </div>
-        
-
-        <div class="post__prevs">
-            <div class="post__prev">
-                
-                <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" title="eclipse/che"><i class="iconfont icon-prev"></i>eclipse/che</a>
-                
-            </div>
-            <div class="post__prev post__prev--right">
-                
-                <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/" title="126mail">126mail<i class="iconfont icon-next"></i></a>
-                
-            </div>
-        </div>
-    </div>
-</article>
-
-        
-        
-    </div>
-
-    <aside class="page__sidebar">
-    <!--  -->
-
-    <form id="page-search-from" class="page__search-from" action="/search/">
-        <label class="search-form__item">
-            <input class="input" type="text" name="search" placeholder="Search...">
-            <i class="iconfont icon-search"></i>
-        </label>
-    </form>
-
-    
-        <div class="sidebar__block">
-            <h3 class="block__title">Introduction</h3>
-            <p class="block__text">生命不是要超越别人，而是要超越自己</p>
-        </div>
-    
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Categories</h3>
-        <ul class="block-list"><li class="block-list-item"><a class="block-list-link" href="/categories/sql/">sql</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/sql/format/">format</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/mail/">mail</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/mail/back/">back</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/">linux</a><span class="block-list-count">6</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/hexo/">hexo</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/grep/">grep</a><span class="block-list-count">1</span></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/docker/">docker</a><span class="block-list-count">2</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/docker/mysql/">mysql</a><span class="block-list-count">1</span></li></ul></li><li class="block-list-item"><a class="block-list-link" href="/categories/linux/che/">che</a><span class="block-list-count">1</span><ul class="block-list-child"><li class="block-list-item"><a class="block-list-link" href="/categories/linux/che/eclipse/">eclipse</a><span class="block-list-count">1</span></li></ul></li></ul></li></ul>
-    </div>
-    
-    <div class="sidebar__block">
-        <h3 class="block__title">Latest Post</h3>
-        
-        <ul class="block-list latest-post-list">
-            
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" title="使用帮助文档">
-                            <div class="item__cover">
-                                <img src="undefined" alt="使用帮助文档" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">使用帮助文档</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/find_grep/" title="linux下的find文件查找命令与grep文件内容查找命令">
-                            <div class="item__cover">
-                                <img src="undefined" alt="linux下的find文件查找命令与grep文件内容查找命令" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">linux下的find文件查找命令与grep文件内容查找命令</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/" title="126mail">
-                            <div class="item__cover">
-                                <img src="undefined" alt="126mail" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">126mail</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-                    <li class="latest-post-item">
-                        <a href="/2020/04/05/docker/" title="docker">
-                            <div class="item__cover">
-                                <img src="undefined" alt="docker" />
-                            </div>
-                            <div class="item__info">
-                                <h3 class="item__title">docker</h3>
-                                <span class="item__text">2020-04-05</span>
-                            </div>
-                        </a>
-                    </li>
-                
-        </ul>
-    
-    </div>
-
-    <div class="sidebar__block">
-        <h3 class="block__title">Tags</h3>
-        
-        <ul class="block-list tag-list clearfix">
-            
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/back/">back</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/che/">che</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/docker/">docker</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/find/">find</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/format/">format</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/grep/">grep</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/hexo/">hexo</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/linux/">linux</a>
-                    </li>  
-                
-                    <li class="tag-item">
-                        <a class="tag-link" href="/tags/mysql/">mysql</a>
-                    </li>  
-                
-        </ul>
-    
-    </div>
-
-    <!-- <div class="sidebar__block">
-        <h3 class="block__title">Friend Links</h3>
-        <ul class="block-list">
-            
-        </ul>
-    </div> -->
-</aside>
-</main>
-
-
-        
-            <!-- 页脚 -->
-<footer class="page__footer">
-    <section class="footer__top">
-        <div class="page__container footer__container">
-            
-            <div class="footer-top__item footer-top__item--2">
-                <h3 class="item__title">About</h3>
-                <div class="item__content">
-                    <p class="item__text"></p>
-                    <ul class="footer__contact-info">
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-address"></i>
-                            <span></span>
-                        </li>
-                        <li class="contact-info__item">
-                            <i class="iconfont icon-email2"></i>
-                            <span></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            
-            
-            
-            
-            
-        </div>
-    </section>
-    <section class="footer__bottom">
-        <div class="page__container footer__container">
-            <p class="footer__copyright">©
-                <a href="https://github.com/Mrminfive/hexo-theme-skapp" target="_blank">Skapp</a> 2017 powered by
-                <a href="http://hexo.io/" target="_blank">Hexo</a>, made by 
-                <a href="https://github.com/Mrminfive" target="_blank">minfive</a>.
-            </p>
-            <ul class="footer__social-network clearfix">
-                
-            </ul>
-        </div>
-    </section>
-</footer>
-        
-
-        
-            <!-- 返回顶部 -->
-<div id="back-top" class="back-top back-top--hidden js-hidden">
-    <i class="iconfont icon-top"></i>
 </div>
-        
+
+
+  <div class="book-comments">
+    
+
+
+
+
+  </div>
+
+
+
+<script src="/js/book-post.js"></script>
+
+        </div>
+      </div>
+      <div class="column col-2 hide-lg">
+        <div class="book-post-info">
+  
+    <div class="book-post-meta">
+
+  <div class="author">
+
+    <!-- Author image -->
+    <div class="author-img">
+      
+        <figure
+          class="avatar avatar-lg"
+          data-initial="z"
+          style="background-color: #3b4351;">
+        </figure>
+      
     </div>
 
-    <!-- build:js /js/common.js -->
-        <script type="text/javascript" src="js/common/utils.js"></script>
-        <script type="text/javascript" src="js/common/pack.js"></script>
-        <script type="text/javascript" src="js/common/animation.js"></script>
-        <script type="text/javascript" src="js/layout/loading.js"></script>
-        <script type="text/javascript" src="js/layout/header.js"></script>
-        <script type="text/javascript" src="js/layout/back-top.js"></script>
-        <script type="text/javascript" src="js/layout/post.js"></script>
-    <!-- endbuild -->
+    <!-- Author title -->
+    <div class="author-title">
+      <div>zhanghuo</div>
+      <div>2020-04-05</div>
+    </div>
+  </div>
 
+  
+    <div class="divider"></div>
+
+    <div class="link">
+      <a class="category-link" href="/categories/linux/">linux</a> <a class="category-link" href="/categories/linux/docker/">docker</a>
+
+      <a class="tag-link" href="/tags/docker/" rel="tag">#docker</a>
+    </div>
     
-    
-<script src="/js/page/post.js"></script>
+  
+
+  <div class="divider"></div>
+</div>
+  
+
+  <div class="book-tocbot">
+</div>
+<div class="book-tocbot-menu">
+  <a class="book-toc-expand" onclick="expand_toc()">Expand all</a>
+  <a onclick="go_top()">Back to top</a>
+  <a onclick="go_bottom()">Go to bottom</a>
+</div>
 
 
+<script src="/js/book-toc.js"></script>
 
-    
-    
-
-
-
-    <!-- 不蒜子统计 -->
-
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-
-
-     
-
-
-
-
-
-
-
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <a class="off-canvas-overlay" onclick="hide_canvas()"></a>
+</div>
 
 </body>
 </html>
+
+
+<script src="/js/book.js"></script>
