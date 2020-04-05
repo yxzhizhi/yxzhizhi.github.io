@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>sql and freemaker format | yxzhizhiの博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="sql and freemaker format 格式化换行1&lt;[\&#x2F;|#].*?&gt;  \n$0\n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql and freemaker format">
+<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/05/sql%20and%20freemaker%20format/index.html">
+<meta property="og:site_name" content="yxzhizhiの博客">
+<meta property="og:description" content="sql and freemaker format 格式化换行1&lt;[\&#x2F;|#].*?&gt;  \n$0\n">
+<meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-05T11:02:42.724Z">
+<meta property="article:author" content="zhanghuo">
+<meta property="article:tag" content="format">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yxzhizhiの博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">必须从过去的错误学习教训而非依赖过去的成功</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yxzhizhi.gicp.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-sql and freemaker format" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/05/sql%20and%20freemaker%20format/" class="article-date">
+  <time datetime="2020-04-04T16:00:00.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/sql/">sql</a>►<a class="article-category-link" href="/categories/sql/format/">format</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      sql and freemaker format
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="sql-and-freemaker-format"><a href="#sql-and-freemaker-format" class="headerlink" title="sql and freemaker format"></a>sql and freemaker format</h2><ol>
+<li>格式化换行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;[\&#x2F;|#].*?&gt;  \n$0\n</span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure></li>
+<li>sql内容<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql=" $0\n\n</span><br><span class="line">" tables= \n\n$0</span><br><span class="line"></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)|(sql=")|(" tables)</span></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)</span></span><br><span class="line"></span><br><span class="line">\n$0\n    </span><br><span class="line">/// \r$0\r</span><br></pre></td></tr></table></figure></li>
+<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yxzhizhi.gicp.com/2020/04/05/sql%20and%20freemaker%20format/" data-id="ck8mxsswr0001nrpc930xc94h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/format/" rel="tag">format</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          eclipse/che
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux和Docker常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/">che</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/eclipse/">eclipse</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/mysql/">mysql</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/grep/">grep</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/hexo/">hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mail/">mail</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mail/back/">back</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/format/">format</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/back/" rel="tag">back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/che/" rel="tag">che</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/find/" rel="tag">find</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/format/" rel="tag">format</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grep/" rel="tag">grep</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/back/" style="font-size: 10px;">back</a> <a href="/tags/che/" style="font-size: 10px;">che</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">使用帮助文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/find_grep/">linux下的find文件查找命令与grep文件内容查找命令</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/">126mail</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">eclipse/che</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 zhanghuo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

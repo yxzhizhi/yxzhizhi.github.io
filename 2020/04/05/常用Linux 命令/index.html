@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Linux和Docker常用命令 | yxzhizhiの博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Linux常用命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux和Docker常用命令">
+<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="yxzhizhiの博客">
+<meta property="og:description" content="Linux常用命令">
+<meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-05T13:33:32.627Z">
+<meta property="article:author" content="zhanghuo">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yxzhizhiの博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">必须从过去的错误学习教训而非依赖过去的成功</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yxzhizhi.gicp.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-常用Linux 命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time datetime="2020-04-04T16:00:00.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux和Docker常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件</span><br><span class="line">类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息-----简化为 ll）</span><br><span class="line"></span><br><span class="line">mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录</span><br><span class="line">touch 　　创建文件 例：touch test&#x2F;readme.txt 在 test 目录下创建 readme.txt 文件</span><br><span class="line">cd 　　切换目录 cd &#x2F;. 到根目录 cd .. 上一级目录 cd &#x2F;hahaha&#x2F;hahaha 到指定目录</span><br><span class="line">pwd 　　显示当前目录</span><br><span class="line">mv 　　移动&#x2F;重命名（加上 -i 参数询问是否覆盖） 　 mv hello rock&#x2F; 移动到 rock 目录下</span><br><span class="line">mv hello rock 重命名为 rock</span><br><span class="line">cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用）</span><br><span class="line">cp -ir test&#x2F; workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）</span><br><span class="line">rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）</span><br><span class="line">rm -ir test&#x2F; 递归删除 test 目录及其子目录并询问</span><br><span class="line">wget url 　　下载文件到当前目录</span><br><span class="line">sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit 或 logout 退出</span><br><span class="line">su 账户名 　　切换到某某用户模式，没有时间限制</span><br></pre></td></tr></table></figure>
+<h3 id="ZIP-工具："><a href="#ZIP-工具：" class="headerlink" title="ZIP 工具："></a>ZIP 工具：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">压缩文件　　 zip target.zip filename</span><br><span class="line">压缩文件夹　　 zip -r target.zip dir 　　 -r 参数表示递归压缩子目录</span><br><span class="line">解压　　 unzip target.zip</span><br></pre></td></tr></table></figure>
+<h3 id="tar-工具："><a href="#tar-工具：" class="headerlink" title="tar 工具："></a>tar 工具：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br><span class="line">这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需在压缩或解压档案时可选的。</span><br><span class="line">-z：有 gzip 属性的</span><br><span class="line">-j：有 bz2 属性的</span><br><span class="line">-Z：有 compress 属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出</span><br><span class="line">下面的参数-f 是必须的</span><br><span class="line">-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名</span><br><span class="line">例：tar -xvf file.tar &#x2F;&#x2F;解压 tar 包</span><br><span class="line">tar -xzvf jdk-8u131-linux-x64.tar.gz -C &#x2F;usr&#x2F;local&#x2F;java &#x2F;&#x2F;解压 jdk 到指定文件夹</span><br><span class="line">tar -cZf jpg.tar.Z \*.jpg &#x2F;&#x2F;将目录里所有 jpg 文件打包成 jpg.tar 后，并且将其用</span><br><span class="line">compress 压缩，生成一个 umcompress 压缩过的包，命名为 jpg.tar.Z</span><br></pre></td></tr></table></figure>
+<h3 id="vim-编辑器：-vim-test-cpp"><a href="#vim-编辑器：-vim-test-cpp" class="headerlink" title="vim 编辑器：　　 vim test.cpp"></a>vim 编辑器：　　 vim test.cpp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim 有两种模式，一种是**普通模式**，另一种是**插入模式**。执行上述命令以后进入普通模式。</span><br><span class="line">按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入</span><br><span class="line">的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入</span><br><span class="line">w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要</span><br><span class="line">在 q 之前，先保存再退出）。</span><br><span class="line">**查找**：在普通模式下输入“&#x2F;查找内容”，回车，即可定位到第一个匹配项。接着按下字母</span><br><span class="line">键“n”可以查找下一个。</span><br><span class="line">**撤销**：普通模式下输入“:u”并回车，实现撤销。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yxzhizhi.gicp.com/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" data-id="ck8mzhcrl0000o4pc1v53etaw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/05/sql%20and%20freemaker%20format/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sql and freemaker format
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">eclipse/che</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/">che</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/eclipse/">eclipse</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/mysql/">mysql</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/grep/">grep</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/hexo/">hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mail/">mail</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mail/back/">back</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/format/">format</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/back/" rel="tag">back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/che/" rel="tag">che</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/find/" rel="tag">find</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/format/" rel="tag">format</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grep/" rel="tag">grep</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/back/" style="font-size: 10px;">back</a> <a href="/tags/che/" style="font-size: 10px;">che</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">使用帮助文档</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/find_grep/">linux下的find文件查找命令与grep文件内容查找命令</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/">126mail</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">eclipse/che</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 zhanghuo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
