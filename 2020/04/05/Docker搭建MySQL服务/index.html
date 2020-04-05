@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="format," />
+  <meta name="keywords" content="mysql," />
 
 
 
@@ -79,17 +79,22 @@
 
 
 
-<meta name="description" content="sql and freemaker format 格式化换行1&lt;[\&#x2F;|#].*?&gt;  \n$0\n">
+<meta name="description" content="Docker搭建MySQL服务Docker开源镜像前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。 要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢） Docker开源镜像传送门  大概步骤1. 下载MySQL镜像2. 创建运行容器  好像很简单是吧">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql and freemaker format">
-<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/05/sql%20and%20freemaker%20format/index.html">
+<meta property="og:title" content="eclipse&#x2F;che">
+<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/index.html">
 <meta property="og:site_name" content="yxzhizhi&#39;s workspace">
-<meta property="og:description" content="sql and freemaker format 格式化换行1&lt;[\&#x2F;|#].*?&gt;  \n$0\n">
+<meta property="og:description" content="Docker搭建MySQL服务Docker开源镜像前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。 要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢） Docker开源镜像传送门  大概步骤1. 下载MySQL镜像2. 创建运行容器  好像很简单是吧">
+<meta property="og:image" content="http://img.blog.csdn.net/20160317140105707">
+<meta property="og:image" content="http://img.blog.csdn.net/20160317142223778">
+<meta property="og:image" content="http://img.blog.csdn.net/20160317142325183">
+<meta property="og:image" content="http://img.blog.csdn.net/20160317143333986">
 <meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-05T11:02:42.724Z">
+<meta property="article:modified_time" content="2020-04-05T11:24:30.766Z">
 <meta property="article:author" content="zhanghuo">
-<meta property="article:tag" content="format">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160317140105707">
 
 
 
@@ -119,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/05/sql and freemaker format/"/>
+  <link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/05/Docker搭建MySQL服务/"/>
 
 
 
 
 
-  <title>sql and freemaker format | yxzhizhi's workspace</title>
+  <title>eclipse/che | yxzhizhi's workspace</title>
   
 
 
@@ -252,7 +257,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/sql%20and%20freemaker%20format/">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhanghuo">
@@ -269,7 +274,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">sql and freemaker format</h1>
+          <h1 class="post-title" itemprop="name headline">eclipse/che</h1>
         
 
         <div class="post-meta">
@@ -304,8 +309,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sql/" itemprop="url" rel="index">
-                    <span itemprop="name">sql</span>
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
                   </a>
                 </span>
 
@@ -315,8 +320,19 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/sql/format/" itemprop="url" rel="index">
-                    <span itemprop="name">format</span>
+                  <a href="/categories/linux/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/docker/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
                   </a>
                 </span>
 
@@ -352,14 +368,84 @@
       
 
       
-        <h2 id="sql-and-freemaker-format"><a href="#sql-and-freemaker-format" class="headerlink" title="sql and freemaker format"></a>sql and freemaker format</h2><ol>
-<li>格式化换行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;[\&#x2F;|#].*?&gt;  \n$0\n</span><br></pre></td></tr></table></figure>
-<a id="more"></a></li>
-<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure></li>
-<li>sql内容<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql=" $0\n\n</span><br><span class="line">" tables= \n\n$0</span><br><span class="line"></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)|(sql=")|(" tables)</span></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)</span></span><br><span class="line"></span><br><span class="line">\n$0\n    </span><br><span class="line">/// \r$0\r</span><br></pre></td></tr></table></figure></li>
-<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure>
+        <h1 id="Docker搭建MySQL服务"><a href="#Docker搭建MySQL服务" class="headerlink" title="Docker搭建MySQL服务"></a><a href="https://www.cnblogs.com/pwc1996/p/5425234.html" target="_blank" rel="noopener">Docker搭建MySQL服务</a></h1><h1 id="Docker开源镜像"><a href="#Docker开源镜像" class="headerlink" title="Docker开源镜像"></a>Docker开源镜像</h1><p>前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。</p>
+<p>要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）</p>
+<p><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker开源镜像传送门</a></p>
+<hr>
+<h1 id="大概步骤"><a href="#大概步骤" class="headerlink" title="大概步骤"></a>大概步骤</h1><p><strong>1. 下载MySQL镜像</strong><br><strong>2. 创建运行容器</strong></p>
+<blockquote>
+<p>好像很简单是吧？</p>
+</blockquote>
+<hr>
+<h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><h2 id="第零步，查看Docker-MySQL文档"><a href="#第零步，查看Docker-MySQL文档" class="headerlink" title="第零步，查看Docker MySQL文档"></a>第零步，查看Docker MySQL文档</h2><p>MySQL文档地址：<br><a href="https://hub.docker.com/_/mysql/" target="_blank" rel="noopener">https://hub.docker.com/_/mysql/</a></p>
+<hr>
+<h2 id="第一步，拉取MySQL镜像"><a href="#第一步，拉取MySQL镜像" class="headerlink" title="第一步，拉取MySQL镜像"></a>第一步，拉取MySQL镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull mysql</span><br></pre></td></tr></table></figure>
+
+<p>之后docker会自动拉取（下载）MySQL镜像。</p>
+<p>等待同样是漫长的。。。</p>
+<blockquote>
+<p>注意，若提示拉取失败就重复几次，总有一次会成功的。。。没办法，墙内的人民很辛苦</p>
+</blockquote>
+<p>拉取成功后我们查看一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker images</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317140105707" alt="01"></p>
+<hr>
+<h2 id="第二步，创建并启动一个MySQL容器"><a href="#第二步，创建并启动一个MySQL容器" class="headerlink" title="第二步，创建并启动一个MySQL容器"></a>第二步，创建并启动一个MySQL容器</h2><p>输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 3306:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142223778" alt="02"></p>
+<ul>
+<li>–name：给新创建的容器命名，此处命名为<code>pwc-mysql</code></li>
+<li>-e：配置信息，此处配置<code>mysql</code>的<code>root用户</code>的登陆密码</li>
+<li>-p：端口映射，此处映射<code>主机3306端口</code>到<code>容器pwc-mysql的3306端口</code></li>
+<li>-d：成功启动容器后输出容器的完整ID，例如上图 <code>73f8811f669ee...</code></li>
+<li>最后一个<code>mysql</code>指的是<code>mysql镜像名字</code></li>
+</ul>
+<p><strong>到这里我们查看容器运行状态：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142325183" alt="03"></p>
+<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
+<hr>
+<h2 id="第三步，测试连接MySQL"><a href="#第三步，测试连接MySQL" class="headerlink" title="第三步，测试连接MySQL"></a>第三步，测试连接MySQL</h2><p>这里我使用navicat远程连接，连接MySQL前需要防火墙开放端口或者关闭防火墙。</p>
+<p>开放端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo firewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br></pre></td></tr></table></figure>
+
+<p>关闭防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>接着使用navicat连接<br><img src="http://img.blog.csdn.net/20160317143333986" alt="04"></p>
+<p>连接成功，也可以进行相关数据库操作，因此MySQL服务搭建成功！</p>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>1.可以启动多个MySQL服务，因为我们启动的是容器，容器可以有多个，只要容器名字映射段端口不一样就可以了，例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name dbdb -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 6666:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.查看所有容器（启动状态或者关闭状态）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.启动和关闭容器</strong></p>
+<p>启动命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker start pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker start 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p>关闭命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker stop pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker stop 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.修改MySQL配置文件有两种方法：</strong></p>
+<ul>
+<li><p>一是进入容器，修改容器里的MySQL的配置文件，然后重新启动容器，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it pwc-mysql &#x2F;usr&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+<p>然后可以进入容器的命令行模式，接着修改 <code>/etc/mysql/my.cnf</code> 文件即可</p>
 </li>
-</ol>
+<li><p>二是挂载主机的mysql配置文件，官方文档如下：</p>
+<p>The MySQL startup configuration is specified in the file <code>/etc/mysql/my.cnf</code>, and that file in turn includes any files found in the <code>/etc/mysql/conf.d</code> directory that end with .cnf. Settings in files in this directory will augment and/or override settings in <code>/etc/mysql/my.cnf</code>. If you want to use a customized MySQL configuration, you can create your alternative configuration file in a directory on the host machine and then mount that directory location as <code>/etc/mysql/conf.d</code> inside the mysql container.</p>
+<p>If <code>/my/custom/config-file.cnf</code> is the path and name of your custom configuration file, you can start your mysql container like this (note that only the directory path of the custom config file is used in this command):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name some-mysql -v &#x2F;my&#x2F;custom:&#x2F;etc&#x2F;mysql&#x2F;conf.d -e MYSQL_ROOT_PASSWORD&#x3D;my-secret-pw -d mysql:tag</span><br></pre></td></tr></table></figure>
+
+<p>This will start a new container some-mysql where the MySQL instance uses the combined startup settings from <code>/etc/mysql/my.cnf</code> and <code>/etc/mysql/conf.d/config-file.cnf</code>, with settings from the latter taking precedence.</p>
+</li>
+</ul>
 
       
     </div>
@@ -414,7 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/format/" rel="tag"># format</a>
+            <a href="/tags/mysql/" rel="tag"># mysql</a>
           
         </div>
       
@@ -427,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" rel="next" title="Linux和Docker常用命令">
-                <i class="fa fa-chevron-left"></i> Linux和Docker常用命令
+              <a href="/2020/01/01/hexo/" rel="next" title="hexo">
+                <i class="fa fa-chevron-left"></i> hexo
               </a>
             
           </div>
@@ -437,8 +523,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" rel="prev" title="eclipse/che">
-                eclipse/che <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" rel="prev" title="Linux和Docker常用命令">
+                Linux和Docker常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sql-and-freemaker-format"><span class="nav-number">1.</span> <span class="nav-text">sql and freemaker format</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker搭建MySQL服务"><span class="nav-number">1.</span> <span class="nav-text">Docker搭建MySQL服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker开源镜像"><span class="nav-number">2.</span> <span class="nav-text">Docker开源镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大概步骤"><span class="nav-number">3.</span> <span class="nav-text">大概步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">4.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第零步，查看Docker-MySQL文档"><span class="nav-number">4.1.</span> <span class="nav-text">第零步，查看Docker MySQL文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步，拉取MySQL镜像"><span class="nav-number">4.2.</span> <span class="nav-text">第一步，拉取MySQL镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步，创建并启动一个MySQL容器"><span class="nav-number">4.3.</span> <span class="nav-text">第二步，创建并启动一个MySQL容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步，测试连接MySQL"><span class="nav-number">4.4.</span> <span class="nav-text">第三步，测试连接MySQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>
