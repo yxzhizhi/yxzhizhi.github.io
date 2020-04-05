@@ -66,8 +66,8 @@
   
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/1970/01/01/hello-world/" class="article-date">
-  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+    <a href="/2020/04/05/hello-world/" class="article-date">
+  <time datetime="2020-04-05T09:08:23.000Z" itemprop="datePublished">2020-04-05</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/1970/01/01/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/04/05/hello-world/">hexo</a>
     </h1>
   
 
@@ -99,11 +99,688 @@
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo /yarn add hexo</span><br><span class="line">//npx hexo &lt;<span class="built_in">command</span>&gt; to hexo </span><br><span class="line"><span class="built_in">echo</span> <span class="string">'PATH="$PATH:./node_modules/.bin"'</span> &gt;&gt; ~/.profile </span><br><span class="line"></span><br><span class="line">hexo init ./yxzhizhi     <span class="comment"># 初始化</span></span><br><span class="line">yarn install    <span class="comment"># 安装组件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br><span class="line">yarn add hexo-deployer-git</span><br><span class="line"></span><br><span class="line">然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">完成后运行 hexo d 将网站上传部署到 GitHub Pages。</span><br></pre></td></tr></table></figure>
+<p>git config –global user.email “xx”<br>git config –global user.name “xx”</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/1970/01/01/hello-world/" data-id="ck8mste1m0000qvpc3ikradbl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2020/04/05/hello-world/" data-id="ck8mste1m0000qvpc3ikradbl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-安装使用Eclipse Che" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" class="article-date">
+  <time datetime="2020-04-05T09:08:23.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">eclipse/che</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>启动服务<br>-v /var/…是选择docker文件<br>-v /opt/…是选择容器存放位置<br>-e CHE_HOST 设置主机的IP地址</p>
+<p>下载镜像<br>docker pull portainer/portainer</p>
+<p>基于镜像运行容器<br>docker run -d -p 9000:9000 –restart=always -v /var/run/docker.sock:/var/run/docker.sock –name prtainer  portainer/portainer</p>
+<p>admin/yx375656</p>
+<p>————————————————<br>版权声明：本文为CSDN博主「Jabony」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/knockheart/java/article/details/90020939" target="_blank" rel="noopener">https://blog.csdn.net/knockheart/java/article/details/90020939</a></p>
+<p>单用户：<br>docker run -ti –rm –name che6 -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.10.225 eclipse/che:6.19.0 start</p>
+<p>多用户：<br>docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.6.203 eclipse/che:6.19.0 start</p>
+<p>docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080  eclipse/che:6.19.0 start</p>
+<p>获取镜像</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~&#x2F;docker-tags eclipse&#x2F;che</span><br><span class="line">sudo docker pull eclipse&#x2F;che:6.19.0</span><br></pre></td></tr></table></figure>
+
+<p>启动服务<br>sudo docker run -it –rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data eclipse/che:6.19.0 start<br>启动完毕后，访问 “http://:8080/” 来验证安装。</p>
+<p>创建 workspace 和 project<br>访问 “Workspaces -&gt; Add Workspace”；<br>在 “New Workspace” 页面选择 “java Default Java Stack with JDK 8, Maven and Tomcat.” 然后 “CREATE &amp; OPEN”；<br>在 “Workspace” 页面，选择 “Create Project…”；<br>在 “Create New Project” 窗口，选择 Java -&gt; Maven 项目，然后输入一个Name，比如: “test”，并进入下一步；<br>勾选 “From Archetype:” 并选择 “org.apache.maven.archetypes:maven-archetype-quickstart:RELEASE”，同时输入 “Artifact ID” 和 “Group ID”，然后 “Create” 来创建工程；<br>运行工程<br>选中并打开工程，然后在 “Manage commands” 依次创建三个 Maven 命令，并运行。</p>
+<p>build<br>mvn clean install -f ${current.project.path}<br>1<br>test<br>mvn clean test -f ${current.project.path}<br>1<br>run<br>mvn exec:java -Dexec.mainClass=”test.App” -f ${current.project.path}<br>————————————————<br>版权声明：本文为CSDN博主「kongxx」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/kongxx/java/article/details/86517442" target="_blank" rel="noopener">https://blog.csdn.net/kongxx/java/article/details/86517442</a></p>
+<h1 id="eclipse-che-命令-ubuntu"><a href="#eclipse-che-命令-ubuntu" class="headerlink" title="eclipse/che 命令 -ubuntu"></a>eclipse/che 命令 -ubuntu</h1><p>2018-09-12阅读 4320</p>
+<h5 id="1-apt-get-update"><a href="#1-apt-get-update" class="headerlink" title="1. apt-get update"></a>1. apt-get update</h5><h5 id="2-安装docker-国内源安装"><a href="#2-安装docker-国内源安装" class="headerlink" title="2. 安装docker,国内源安装"></a>2. <a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/ubuntu.html" target="_blank" rel="noopener">安装docker,国内源安装</a></h5><h5 id="3-配置镜像仓库"><a href="#3-配置镜像仓库" class="headerlink" title="3.配置镜像仓库"></a>3.<a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html#ubuntu-1604、debian-8-jessie、centos-7" target="_blank" rel="noopener">配置镜像仓库</a></h5><h5 id="4-解决内存溢出的问题"><a href="#4-解决内存溢出的问题" class="headerlink" title="4.解决内存溢出的问题"></a>4.解决内存溢出的问题</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Adjust memory and swap accounting</span><br><span class="line">When users run Docker, they may see these messages when working <span class="keyword">with</span> an image:</span><br><span class="line"></span><br><span class="line">WARNING: Your kernel does not support cgroup swap limit. WARNING: Your</span><br><span class="line">kernel does not support swap limit capabilities. Limitation discarded.</span><br><span class="line">To prevent these messages, enable memory and swap accounting on your system. To enable these on system using GNU GRUB (GNU GRand Unified Bootloader), <span class="keyword">do</span> the following.</span><br><span class="line"></span><br><span class="line">Log into Ubuntu <span class="keyword">as</span> a user <span class="keyword">with</span> sudo privileges.</span><br><span class="line"></span><br><span class="line">Edit the /etc/<span class="keyword">default</span>/grub file.</span><br><span class="line"></span><br><span class="line"><span class="built_in">Set</span> the GRUB_CMDLINE_LINUX value <span class="keyword">as</span> follows:</span><br><span class="line"></span><br><span class="line">GRUB_CMDLINE_LINUX=<span class="string">"cgroup_enable=memory swapaccount=1"</span></span><br><span class="line">Save and close the file.</span><br><span class="line"></span><br><span class="line">Update GRUB.</span><br><span class="line"></span><br><span class="line">$ sudo update-grub</span><br><span class="line">Reboot your system.</span><br></pre></td></tr></table></figure>
+
+<h5 id="5关闭防火墙"><a href="#5关闭防火墙" class="headerlink" title="5关闭防火墙"></a>5关闭防火墙</h5><p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/wclwcw/p/6140263.html" target="_blank" rel="noopener">网络相关配置</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ufw disable</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull eclipse/che:<span class="number">5.17</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动(第一次启动需要下载其他镜像)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> start</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改che的样式文件，去掉左边导航栏</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker cp /che/index.html che<span class="number">-8120</span>:<span class="regexp">/home/u</span>ser/eclipse-che<span class="number">-5.17</span><span class="number">.0</span>/tomcat/webapps/dashboard</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>停止</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> stop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8120</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8120</span>/tmp:<span class="regexp">/data eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> restart</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>che API</li>
+</ul>
+<p>启动che的时候的终端返回信息最后一行是che的api地址</p>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-3090887/126lzhqz42.png?imageView2/2/w/1620" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-3090887/jf5wenfx26.png?imageView2/2/w/1620" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>创建che工作空间</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -H <span class="string">'Content-Type: application/json'</span> -d <span class="string">'&#123;"name":"myworkspace","projects":[],"commands":[&#123;"name":"build","type":"mvn","attributes":&#123;"goal":"Build","previewUrl":""&#125;,"commandLine":"mvn clean install"],"environments":&#123;"myworkspace":&#123;"recipe":&#123;"location":"eclipse/ubuntu_jdk8","type":"dockerimage"&#125;,"machines":&#123;"dev-machine":&#123;"attributes":&#123;"memoryLimitBytes":"2147483648"&#125;,"agents":["org.eclipse.che.exec","org.eclipse.che.terminal","org.eclipse.che.ws-agent","org.eclipse.che.ssh"],"servers":&#123;&#125;&#125;&#125;&#125;&#125;,"defaultEnv":"myworkspace","links":[]&#125;'</span> http:<span class="comment">//localhost:8080/api/workspace</span></span><br><span class="line"><span class="comment">//其中-d为创建工作空间所需json参数，具体请看下一小节</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改che的运行时环境</li>
+</ul>
+<p>访问che的webide，点击左侧stacks，在右侧的列表中选择自己需要的运行时环境点进进入详情界面</p>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-3090887/8ijmsoxiky.png?imageView2/2/w/1620" alt="img"></p>
+<p>image.png</p>
+<p>下拉找到row configuration，复制其中json数据里的workspaceconfig部分代码（注意只取 “workspaceConfig”:后面的{}已经其中的信息），作为访问创建che工作空间api的参数</p>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-3090887/kctkyfsmjt.png?imageView2/2/w/1620" alt="img"></p>
+<p>image.png</p>
+<p><img src="https://ask.qcloudimg.com/http-save/yehe-3090887/yvu104xomz.png?imageView2/2/w/1620" alt="img"></p>
+<p>image.png</p>
+<ul>
+<li>在项目中使用che api需要执行以下命令</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone http:<span class="comment">//github.com/eclipse/che</span></span><br><span class="line">cd cde</span><br><span class="line">git checkout <span class="number">5.17</span>.x</span><br><span class="line">cd core</span><br><span class="line">mvn install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>chedir 初始化工作空间和项目</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">cd /ChedirDocker/project</span><br><span class="line">mkdir che8081project</span><br><span class="line">cd che8081project</span><br><span class="line"><span class="comment">//创建Chedir文件</span></span><br><span class="line">docker run -it --rm -e CHE_PORT=<span class="number">8081</span> -v /<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir init</span><br><span class="line"><span class="comment">//进行相应修改</span></span><br><span class="line">vim Chedir</span><br><span class="line"><span class="comment">//启动容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir up</span><br><span class="line"><span class="comment">//销毁容器</span></span><br><span class="line">/<span class="keyword">var</span>/run/docker.sock:<span class="regexp">/var/</span>run/docker.sock -v /c/<span class="number">8081</span>/tmp:<span class="regexp">/data  -v  /</span>ChedirDocker/project/che8081project:<span class="regexp">/chedir eclipse/</span>che:<span class="number">5.17</span><span class="number">.0</span> dir down</span><br></pre></td></tr></table></figure>
+
+<p>本文参与<a href="https://cloud.tencent.com/developer/support-plan" target="_blank" rel="noopener">腾讯云自媒体分享计划</a>，欢迎正在阅读的你也加入，一起分享。</p>
+<h1 id="Docker搭建MySQL服务"><a href="#Docker搭建MySQL服务" class="headerlink" title="Docker搭建MySQL服务"></a><a href="https://www.cnblogs.com/pwc1996/p/5425234.html" target="_blank" rel="noopener">Docker搭建MySQL服务</a></h1><h1 id="Docker开源镜像"><a href="#Docker开源镜像" class="headerlink" title="Docker开源镜像"></a>Docker开源镜像</h1><p>前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。</p>
+<p>要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）</p>
+<p><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker开源镜像传送门</a></p>
+<hr>
+<h1 id="大概步骤"><a href="#大概步骤" class="headerlink" title="大概步骤"></a>大概步骤</h1><p><strong>1. 下载MySQL镜像</strong><br><strong>2. 创建运行容器</strong></p>
+<blockquote>
+<p>好像很简单是吧？</p>
+</blockquote>
+<hr>
+<h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><h2 id="第零步，查看Docker-MySQL文档"><a href="#第零步，查看Docker-MySQL文档" class="headerlink" title="第零步，查看Docker MySQL文档"></a>第零步，查看Docker MySQL文档</h2><p>MySQL文档地址：<br><a href="https://hub.docker.com/_/mysql/" target="_blank" rel="noopener">https://hub.docker.com/_/mysql/</a></p>
+<hr>
+<h2 id="第一步，拉取MySQL镜像"><a href="#第一步，拉取MySQL镜像" class="headerlink" title="第一步，拉取MySQL镜像"></a>第一步，拉取MySQL镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull mysql</span><br></pre></td></tr></table></figure>
+
+<p>之后docker会自动拉取（下载）MySQL镜像。</p>
+<p>等待同样是漫长的。。。</p>
+<blockquote>
+<p>注意，若提示拉取失败就重复几次，总有一次会成功的。。。没办法，墙内的人民很辛苦</p>
+</blockquote>
+<p>拉取成功后我们查看一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker images</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317140105707" alt="01"></p>
+<hr>
+<h2 id="第二步，创建并启动一个MySQL容器"><a href="#第二步，创建并启动一个MySQL容器" class="headerlink" title="第二步，创建并启动一个MySQL容器"></a>第二步，创建并启动一个MySQL容器</h2><p>输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 3306:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142223778" alt="02"></p>
+<ul>
+<li>–name：给新创建的容器命名，此处命名为<code>pwc-mysql</code></li>
+<li>-e：配置信息，此处配置<code>mysql</code>的<code>root用户</code>的登陆密码</li>
+<li>-p：端口映射，此处映射<code>主机3306端口</code>到<code>容器pwc-mysql的3306端口</code></li>
+<li>-d：成功启动容器后输出容器的完整ID，例如上图 <code>73f8811f669ee...</code></li>
+<li>最后一个<code>mysql</code>指的是<code>mysql镜像名字</code></li>
+</ul>
+<p><strong>到这里我们查看容器运行状态：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142325183" alt="03"></p>
+<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
+<hr>
+<h2 id="第三步，测试连接MySQL"><a href="#第三步，测试连接MySQL" class="headerlink" title="第三步，测试连接MySQL"></a>第三步，测试连接MySQL</h2><p>这里我使用navicat远程连接，连接MySQL前需要防火墙开放端口或者关闭防火墙。</p>
+<p>开放端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo firewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br></pre></td></tr></table></figure>
+
+<p>关闭防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>接着使用navicat连接<br><img src="http://img.blog.csdn.net/20160317143333986" alt="04"></p>
+<p>连接成功，也可以进行相关数据库操作，因此MySQL服务搭建成功！</p>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>1.可以启动多个MySQL服务，因为我们启动的是容器，容器可以有多个，只要容器名字映射段端口不一样就可以了，例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name dbdb -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 6666:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.查看所有容器（启动状态或者关闭状态）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.启动和关闭容器</strong></p>
+<p>启动命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker start pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker start 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p>关闭命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker stop pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker stop 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.修改MySQL配置文件有两种方法：</strong></p>
+<ul>
+<li><p>一是进入容器，修改容器里的MySQL的配置文件，然后重新启动容器，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it pwc-mysql &#x2F;usr&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+<p>然后可以进入容器的命令行模式，接着修改 <code>/etc/mysql/my.cnf</code> 文件即可</p>
+</li>
+<li><p>二是挂载主机的mysql配置文件，官方文档如下：</p>
+<p>The MySQL startup configuration is specified in the file <code>/etc/mysql/my.cnf</code>, and that file in turn includes any files found in the <code>/etc/mysql/conf.d</code> directory that end with .cnf. Settings in files in this directory will augment and/or override settings in <code>/etc/mysql/my.cnf</code>. If you want to use a customized MySQL configuration, you can create your alternative configuration file in a directory on the host machine and then mount that directory location as <code>/etc/mysql/conf.d</code> inside the mysql container.</p>
+<p>If <code>/my/custom/config-file.cnf</code> is the path and name of your custom configuration file, you can start your mysql container like this (note that only the directory path of the custom config file is used in this command):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name some-mysql -v &#x2F;my&#x2F;custom:&#x2F;etc&#x2F;mysql&#x2F;conf.d -e MYSQL_ROOT_PASSWORD&#x3D;my-secret-pw -d mysql:tag</span><br></pre></td></tr></table></figure>
+
+<p>This will start a new container some-mysql where the MySQL instance uses the combined startup settings from <code>/etc/mysql/my.cnf</code> and <code>/etc/mysql/conf.d/config-file.cnf</code>, with settings from the latter taking precedence.</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" data-id="ck8mswfyb0004uxpcd7h3633p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-My-New-Post" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/05/My-New-Post/" class="article-date">
+  <time datetime="2020-04-05T09:08:23.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/05/My-New-Post/">My New Post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/04/05/My-New-Post/" data-id="ck8mtu36300006ipcgai6186i" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-find_grep" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/1970/01/01/find_grep/" class="article-date">
+  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/1970/01/01/find_grep/">linux下的find文件查找命令与grep文件内容查找命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
+
+<h2 id="一-find命令"><a href="#一-find命令" class="headerlink" title="一.find命令"></a><strong>一.find命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**基本格式：**find path expression</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-按照文件名查找"><a href="#1-按照文件名查找" class="headerlink" title="1.按照文件名查找"></a><strong>1.按照文件名查找</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -name httpd.conf　　#在根目录下查找文件httpd.conf，表示在整个硬盘查找</span><br><span class="line">(2)find &#x2F;etc -name httpd.conf　　#在&#x2F;etc目录下文件httpd.conf</span><br><span class="line">(3)find &#x2F;etc -name &#39;*srm*&#39;　　#使用通配符*(0或者任意多个)。表示在&#x2F;etc目录下查找文件名中含有字符串‘srm’的文件</span><br><span class="line">(4)find . -name &#39;srm*&#39; 　　#表示当前目录下查找文件名开头是字符串‘srm’的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-按照文件特征查找"><a href="#2-按照文件特征查找" class="headerlink" title="2.按照文件特征查找 　　　"></a><strong>2.按照文件特征查找</strong> 　　　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -amin -10 　　# 查找在系统中最后10分钟访问的文件(access time)</span><br><span class="line">(2)find &#x2F; -atime -2　　 # 查找在系统中最后48小时访问的文件</span><br><span class="line">(3)find &#x2F; -empty 　　# 查找在系统中为空的文件或者文件夹</span><br><span class="line">(4)find &#x2F; -group cat 　　# 查找在系统中属于 group为cat的文件</span><br><span class="line">(5)find &#x2F; -mmin -5 　　# 查找在系统中最后5分钟里修改过的文件(modify time)</span><br><span class="line">(6)find &#x2F; -mtime -1 　　#查找在系统中最后24小时里修改过的文件</span><br><span class="line">(7)find &#x2F; -user fred 　　#查找在系统中属于fred这个用户的文件</span><br><span class="line">(8)find &#x2F; -size +10000c　　#查找出大于10000000字节的文件(c:字节，w:双字，k:KB，M:MB，G:GB)</span><br><span class="line">(9)find &#x2F; -size -1000k 　　#查找出小于1000KB的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用混合查找方式查找文件"><a href="#3-使用混合查找方式查找文件" class="headerlink" title="3.使用混合查找方式查找文件"></a><strong>3.使用混合查找方式查找文件</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**参数有： ！，-and(-a)，-or(-o)。**</span><br><span class="line">(1)find &#x2F;tmp -size +10000c -and -mtime +2 　　#在&#x2F;tmp目录下查找大于10000字节并在最后2分钟内修改的文件</span><br><span class="line">(2)find &#x2F; -user fred -or -user george 　　#在&#x2F;目录下查找用户是fred或者george的文件文件</span><br><span class="line">(3)find &#x2F;tmp ! -user panda　　#在&#x2F;tmp目录中查找所有不属于panda用户的文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、grep命令"><a href="#二、grep命令" class="headerlink" title="二、grep命令"></a><strong>二、grep命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***\*基本格式：\**find  expression**</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-主要参数"><a href="#1-主要参数" class="headerlink" title="1.主要参数"></a><strong>1.主要参数</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[options]主要参数：**</span><br><span class="line">－c：只输出匹配行的计数。</span><br><span class="line">－i：不区分大小写</span><br><span class="line">－h：查询多文件时不显示文件名。</span><br><span class="line">－l：查询多文件时只输出包含匹配字符的文件名。</span><br><span class="line">－n：显示匹配行及行号。</span><br><span class="line">－s：不显示不存在或无匹配文本的错误信息。</span><br><span class="line">－v：显示不包含匹配文本的所有行。</span><br><span class="line"></span><br><span class="line">**pattern正则表达式主要参数：**</span><br><span class="line">\： 忽略正则表达式中特殊字符的原有含义。</span><br><span class="line">^：匹配正则表达式的开始行。</span><br><span class="line">$: 匹配正则表达式的结束行。</span><br><span class="line">\&lt;：从匹配正则表达 式的行开始。</span><br><span class="line">\&gt;：到匹配正则表达式的行结束。</span><br><span class="line">[ ]：单个字符，如[A]即A符合要求 。</span><br><span class="line">[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</span><br><span class="line">.：所有的单个字符。</span><br><span class="line">* ：有字符，长度可以为0。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-实例"><a href="#2-实例" class="headerlink" title="2.实例　"></a><strong>2.实例</strong>　</h3><ol>
+<li><pre><code>(1)grep &apos;test&apos; d*　　#显示所有以d开头的文件中包含 test的行
+(2)grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行
+(3)grep ‘[a-z]\{5\}’ aa 　　#显示所有包含每行字符串至少有5个连续小写字符的字符串的行
+(4)grep magic /usr/src　　#显示/usr/src目录下的**文件(不含子目录)**包含magic的行
+(5)grep -r magic /usr/src　　#显示/usr/src目录下的**文件(包含子目录)**包含magic的行
+(6)grep -w pattern files  #只匹配整个单词，而不是字符串的一部分(如匹配’magic’，而不是’magical’)，
+(7)grep -r &quot;查询内容&quot;  文件目录 #文件名+内容
+(8)grep &apos;2020-02-27 17:5[6,9]&apos; xinyar-erp-auto.log ##根据时间查找日志
+(9)grep -E &apos;2020-02-27 14:5[5-9]|2020-02-28 15:0[0-5]&apos; xinyar-erp-auto.log #查询指定时间段内的日志
+(10)grep -C 10 &apos;aaaa&apos; nohup.out #查找关键字
+(11)grep -r -l &quot;查询内容&quot;  文件目录 #只显示包含内容的文件名
+(12)find 文件目录  -type f |xargs grep &quot;查询内容&quot;;  文件名+内容
+
+(13)grep -l &quot;innercontent&quot; --include=&quot;*filepattern*&quot; ./* | xargs cp -t destdir # grep文件名，内容，然后复制到文件夹中
+搜索源代码中的内容时, 为避免搜索到不相关的文件, 如.o文件中的内容, 可能希望grep能只处理特定格式的文件.
+grep -rn --include=&apos;*.c&apos; --include=&apos;*.h&apos; re .
+可以指定多次, 如果真是上面的这种情况,  其实可以用
+grep -rn --include=&apos;*.[ch]&apos; re .
+但是, 如果源文件中含有C++源代码, 上面的方法就不凑效了, 因为[]中只能放一个字符.
+grep -rn --include=&apos;*.{cpp,h}&apos; 也是不行的.
+此时需要不加引号的展开(由bash执行grep之前就已经完成, 可以通过set -x观察)
+grep -rn --include=*.{cpp,h} re .
+bash中对{A,B}这种形式的展开, 会忽略是否在当前目录下存在相应的文件。
+
+示例：
+grep -r &quot;version.app.xinyartech.com&quot;  /data/nginx/conf.d
+grep -r -l &quot;version.app.xinyartech.com&quot;  /data/nginx/conf.d
+find /data/nginx/conf.d  -type f |xargs grep &quot;version.app.xinyartech.com&quot;;
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/1970/01/01/find_grep/" data-id="ck8mswfxz0000uxpc1rhv80i6" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-one" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/1970/01/01/one/" class="article-date">
+  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/1970/01/01/one/">sql and freemaker format</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="sql-and-freemaker-format"><a href="#sql-and-freemaker-format" class="headerlink" title="sql and freemaker format"></a>sql and freemaker format</h2><ol>
+<li>格式化换行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;[\&#x2F;|#].*?&gt;  \n$0\n</span><br></pre></td></tr></table></figure></li>
+<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure></li>
+<li>sql内容<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sql=" $0\n\n</span><br><span class="line">" tables= \n\n$0</span><br><span class="line"></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)|(sql=")|(" tables)</span></span><br><span class="line">(&amp;lt;[\/|<span class="comment">#].*?&amp;gt;)</span></span><br><span class="line"></span><br><span class="line">\n$0\n    </span><br><span class="line">/// \r$0\r</span><br></pre></td></tr></table></figure></li>
+<li>删除空行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\s*)\n 空</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/1970/01/01/one/" data-id="ck8mswfy20001uxpc8jadddqw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-126邮箱" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/1970/01/01/126%E9%82%AE%E7%AE%B1/" class="article-date">
+  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/1970/01/01/126%E9%82%AE%E7%AE%B1/">126mail</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>成功开启IMAP/SMTP服务，在第三方客户端登录时，登录密码输入以下授权密码</p>
+<p>DDOVIWIXCWQIEUFX</p>
+<p>授权密码只显示一次</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/1970/01/01/126%E9%82%AE%E7%AE%B1/" data-id="ck8mswfy40002uxpc41zu96l8" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/1970/01/01/docker/" class="article-date">
+  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/1970/01/01/docker/">docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>操作    命令    说明<br>检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息<br>拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本<br>列表    docker images    查看本地docker仓库的所有镜像<br>删除    docker rmi imageId eg: docker rmi 6408fdc94212    删除本地docker仓库镜像<br>————————————————</p>
+<h2 id="Linux和Docker常用命令"><a href="#Linux和Docker常用命令" class="headerlink" title="Linux和Docker常用命令"></a><a href="https://www.cnblogs.com/mq0036/p/8520605.html" target="_blank" rel="noopener">Linux和Docker常用命令</a></h2><h2 id="一、常用Linux-命令"><a href="#一、常用Linux-命令" class="headerlink" title="一、常用Linux 命令"></a>一、常用Linux 命令</h2><p>　　ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件</p>
+<p>　　　　　类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息—–简化为 ll）</p>
+<p>　　mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录　　**<br>**</p>
+<p>　　touch 　　创建文件  例：touch test/readme.txt 在 test 目录下创建 readme.txt文件</p>
+<p>　　cd 　　切换目录 cd /. 到根目录  cd .. 上一级目录  cd /hahaha/hahaha 到指定目录</p>
+<p>　　pwd 　　显示当前目录</p>
+<p>　　mv 　　移动/重命名（加上 -i 参数询问是否覆盖） 　mv hello rock/ 移动到rock目录下  </p>
+<p>　　　　　　 mv hello rock 重命名为rock</p>
+<p>　　cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用） </p>
+<p>　　　　   cp -ir test/ workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）</p>
+<p>　　rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）　　</p>
+<p>　　　　　 rm -ir test/  递归删除test目录及其子目录并询问</p>
+<p>　　wget url　　下载文件到当前目录</p>
+<p>　　sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit或logout 退出</p>
+<p>　　su 账户名 　　切换到某某用户模式，没有时间限制</p>
+<p>　　ZIP 工具：</p>
+<p>　　　　压缩文件　　zip target.zip filename</p>
+<p>　　　　压缩文件夹　　zip -r target.zip dir　　 -r 参数表示递归压缩子目录</p>
+<p>　　　　解压　　unzip target.zip</p>
+<p>　　tar 工具：</p>
+<p>　　　　-c: 建立压缩档案</p>
+<p>　　　　-x：解压<br>　　　　-t：查看内容<br>　　　　-r：向压缩归档文件末尾追加文件<br>　　　　-u：更新原压缩包中的文件</p>
+<p>　　　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用</p>
+<p>　　　　其中一个。下面的参数是根据需要在压缩或解压档案时可选的。<br>　　　　-z：有gzip属性的<br>　　　　-j：有bz2属性的<br>　　　　-Z：有compress属性的<br>　　　　-v：显示所有过程<br>　　　　-O：将文件解开到标准输出</p>
+<p>　　　　下面的参数-f是必须的</p>
+<p>　　　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名</p>
+<p>　　　　例：tar -xvf file.tar //解压 tar包</p>
+<p>　　　　　　tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/local/java //解压jdk到指定文件夹　　</p>
+<p>　　　　　　tar -cZf jpg.tar.Z *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用</p>
+<p>　　　　　　　　compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</p>
+<p>　　vim 编辑器：　　vim test.cpp</p>
+<p>　　　　vim 有两种模式，一种是<strong>普通模式</strong>，另一种是<strong>插入模式</strong>。执行上述命令以后进入普通模式。</p>
+<p>　　　　按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入</p>
+<p>　　　　的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入</p>
+<p>　　　　w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要</p>
+<p>　　　　在 q之前，先保存再退出）。</p>
+<p>　　　　<strong>查找</strong>：在普通模式下输入“/查找内容”，回车，即可定位到第一个匹配项。接着按下字母</p>
+<p>　　　　　　　键“n”可以查找下一个。</p>
+<p>　　　　<strong>撤销</strong>：普通模式下输入“:u”并回车，实现撤销。</p>
+<h2 id="二、常用docker-命令"><a href="#二、常用docker-命令" class="headerlink" title="二、常用docker 命令"></a>二、常用docker 命令</h2><h4 id="1-镜像"><a href="#1-镜像" class="headerlink" title="　　1.镜像"></a>　　1.镜像</h4><p>　　　　docker images 列出本地所有镜像</p>
+<p>　　　　<code>docker search(-s) nginx 搜索相关镜像　加上-s 参数 选出至少start数范围的镜像</code></p>
+<p>　　　　docker pull（-a） 镜像名:版本号　拉取镜像,-a pull all</p>
+<p>　　　　docker push 192.168.0.100:5000/ubuntu 　　  推送镜像库到私有源</p>
+<p>　　　　<code>docker rmi（-f） 镜像名：版本号/镜像ID 　　删除镜像 （加上 -f 参数 强制删除）</code></p>
+<p>　　　　docker rmi $(docker images -q)　　删除所有镜像</p>
+<p>　　　　<code>docker rmi $(docker images | grep &quot;none&quot; | awk &#39;{print $3}&#39;) 删除所有名字中带</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　“none” 关键字的镜像</span><br></pre></td></tr></table></figure>
+
+<p>　　　　<code>docker save docker.io``/tomcat``:7.0.77-jre7 &gt;``/root/mytomcat7``.``tar``.gz 导出镜像</code></p>
+<p>　　　　<code>docker load &lt; ``/root/mytomcat7``.``tar``.gz　　导入镜像</code></p>
+<h4 id="2-容器"><a href="#2-容器" class="headerlink" title="　　2.容器"></a>　　2.容器</h4><p>　　　　docker ps 查看当前正在运行的容器</p>
+<p>　　　　docker inspect name/image[name/image…] 查看详细</p>
+<p>　　　　docker ps -a 查看所有容器的状态</p>
+<p>　　　　docker start/stop(-t) id/name[name…] 启动/停止某个（多个）容器 -t 指定时间</p>
+<p>　　　　docker kill (-s) name[name…] 强制中断 -s指定SIGINT信号类型，默认“kill”</p>
+<p>　　　　docker restart (-t) name[name…] 重启 -t 指定时间</p>
+<p>　　　　docker pause name　暂停　　docker unpause name 继续</p>
+<p>　　　　docker rm(-$) name[name…] 移除 </p>
+<p>　　　　　　-f　　–force=false　　强制移除运行中容器</p>
+<p>　　　　　　-l　　–link=false　　  移除指定链接，保留底层容器</p>
+<p>　　　　　　-v　 –volumes=false  移除容器关联卷</p>
+<p>　　　　docker commit(-$)name 镜像名:版本号 　　提交指定容器为镜像</p>
+<p>　　　　　　-a, –author=”” 　　　　作者</p>
+<p>　　　　　　-m, –message=”” 　　 简要说明</p>
+<p>　　　　　　-p, –pause=true 　　　暂停容器再提交</p>
+<p>　　　　docker logs(-$) name　　输出指定容器日志信息</p>
+<p>　　　　　　-f　　跟踪日志输出</p>
+<p>　　　　　　-t　　显示时间戳 类似 tail -f</p>
+<p>　　　　　　–tail 在日志的末尾输出指定行数日志（默认所有日志）</p>
+<p>　　　　docker attach id 进入某个容器(使用exit退出后容器也跟着停止运行)</p>
+<p>　　　　docker exec -ti id 启动一个伪终端以交互式的方式进入某个容器</p>
+<p>　　　　　　　　　　　 （使用exit退出后容器不停止运行）</p>
+<p>　　　　docker run(-$) IMAGE [COMMAND] [ARG…] 　 运行一个容器</p>
+<p>　　　　　　-d　　　　　　　　  指定容器运行于前台还是后台，默认为false   </p>
+<p> 　　　　　-i　　　　　　　　  打开STDIN，用于控制台交互，默认为false </p>
+<p>　　　　　　-t　　　　　　　　  分配tty设备，该可以支持终端登录，默认为false  </p>
+<p>　　　　　　-u, –user=””       指定容器的用户  </p>
+<p>　　　　　　-a, –attach=[]      登录容器（必须是以docker run -d启动的容器） </p>
+<p>　　　　　　-w　　　　　　　　  指定容器的工作目录 </p>
+<p>　　　　　　-c   　　　　　　　设置容器CPU权重，在CPU共享场景使用  </p>
+<p>　　　　　　-e, –env=[]        指定环境变量，容器中可以使用该环境变量  </p>
+<p>　　　　　　-m　　　　　　　　  指定容器的内存上限  </p>
+<p>　　　　　　-P, –publish-all=false 指定容器暴露的端口  </p>
+<p>　　　　　　-p, –publish=[]      指定容器暴露的端口  </p>
+<p>　　　　　　-h　　　　　　　　　指定容器的主机名  </p>
+<p>　　　　　　-v, –volume=[]      给容器挂载存储卷，挂载到容器的某个目录 </p>
+<p>　　　　　　–volumes-from=[]    给容器挂载其他容器上的卷，挂载到容器的某个目录 </p>
+<p>　　　　　　–cap-add=[]　　　　 添加权限</p>
+<p>　　　　　　–cap-drop=[]   　 删除权限</p>
+<p>　　　　　　–cidfile=””　　　　　 运行容器后，在指定文件中写入容器PID值，监控系统用法  </p>
+<p>　　　　　　–cpuset=””　 　　　 设置容器可使用哪些CPU，此参数可以用来容器独占CPU  </p>
+<p>　　　　　　–device=[]   　　　  添加主机设备给容器，相当于设备直通  </p>
+<p>　　　　　　–dns=[]            指定容器的dns服务器  </p>
+<p>　　　　　　–dns-search=[]      指定容器的dns搜索域名，写入到容器/etc/resolv.conf文件  </p>
+<p>　　　　　　–entrypoint=””       覆盖image的入口点  </p>
+<p>　　　　　　–env-file=[]          指定环境变量文件，文件格式为每行一个环境变量  </p>
+<p>　　　　　　–expose=[]         指定容器暴露的端口，即修改镜像的暴露端口  </p>
+<p>　　　　　　–link=[]            指定容器间的关联，使用其他容器的IP、env等信息  </p>
+<p>　　　　　　–lxc-conf=[]         指定容器的配置文件，只有在指定–exec-driver=lxc时使用  </p>
+<p>　　　　　　–name=””          指定容器名字，links特性需要使用名字  </p>
+<p>　　　　　　–net=”bridge”       容器网络设置: </p>
+<p>​                　　　　　　　　bridge 使用docker daemon指定的网桥    </p>
+<p>​               　　　　　　　　  host  //容器使用主机的网络  </p>
+<p>​              　　　　　　　　   container:NAME_or_ID &gt;</p>
+<p>　　　　　　　　　　　　　　　　　　　　//使用其他容器的网路共享IP和PORT等网络资源  </p>
+<p>​                　　　　　　　　none 容器使用自己的网络（类似–net=bridge）</p>
+<p>　　　　　　–privileged=false     指定容器是否为特权容器，特权容器拥有所有的权限</p>
+<p>　　　　　　–restart=”no”        指定容器停止后的重启策略: </p>
+<p>​                　　　　　　　　 no：　　　　容器退出时不重启  </p>
+<p>​                　　　　　　　　 on-failure：  容器故障退出（返回值非零）时重启  </p>
+<p>​                　　　　　　　　 always：　　 容器退出时总是重启  </p>
+<p>　　　　　　–rm=false      指定容器停止后自动删除容器(不支持以docker run -d启动的容器)  </p>
+<p>　　　　　　–sig-proxy=true 设置由代理接受并处理信号，SIGCHLD，SIGSTOP和SIGKILL不代</p>
+<p>　　　　例：</p>
+<p>　　　　　　docker run -i -t centos6.8 进入到默认的线程”/bin/bash”，直接进入控制台操作</p>
+<p>　　　　　　docker run -i -t -d centos6.8 进入到默认的线程”/bin/bash”，后台运行</p>
+<p>　　　　　　docker run -d –restart=always centos6.8 ping <a href="http://www.docker.com" target="_blank" rel="noopener">www.docker.com</a> 带命令启动</p>
+<p>　　　　　　docker run -d –name=server-dbcentos6.8-mysql /usr/bin/mysql_safe -d</p>
+<p>　　　　　　　　　　　　　　容器的名称为server-db，同时激活了数据库mysql的后台线程</p>
+<p>　　　　　　docker run -d –name=server-db -p 3306:3306 -v /server/mysql-data:/</p>
+<p>　　　　　　　　　　　　　　mysql-datacentos6.8-mysql /usr/bin/mysql_safe –d</p>
+<p>　　　　　　　　　　　　　　将宿主机的数据库目录/server/mysql-data挂载到server-db上</p>
+<p>　　　　　　docker run -d –name=server-db -p 3306:3306 centos6.8-mysql </p>
+<p>　　　　　　　　　　　　　　/usr/bin/mysql_safe –d 服务器宿主机与容器端口映射并暴露</p>
+<p>　　　　　　docker run -d –name=server-http –link=server-db  -p 8080:80centos6.8-httpd</p>
+<p>　　　　　　　　　　　　　　/usr/bin/httpd –DFOREGROUND</p>
+<p>　　　　　　　　　　　　　　映射服务器宿主机的8080端口，关联service-db </p>
+<p>　　　　　　docker run -it –rm centos6.8　　容器进程结束后，立马自动删除</p>
+<h4 id="3-docker-option"><a href="#3-docker-option" class="headerlink" title="　　3.docker option"></a>　　3.docker option</h4><p>　　　　–api-enable-cors=false      在远程API中启用CORS 头<br>　　　　-b, –bridge=””          　　桥接网络 使用“none” 禁用容器网络<br>　　　　–bip=””             　　　网桥模式<br>　　　　-d, –daemon=false         守护者模式<br>　　　　-D, –debug=false          debug 模式<br>　　　　–dns=[]             　　  强制 docker 使用指定 dns 服务器<br>　　　　–dns-search=[]         　 强制 docker 使用指定 dns 搜索域<br>　　　　-e, –exec-driver=”native”     强制 docker 运行时使用指定执行驱动器<br>　　　　–fixed-cidr=””          　　 固定IP的IPv4子网(例: 10.20.0.0/16)必须镶套在桥子网</p>
+<p>　　　　　　　　　　　　　　　　　　中(由-b or –bip定义)<br>　　　　-G, –group=”docker”        当在守护模式中运行时，组指向-H指定的unix套接字。</p>
+<p>　　　　　　　　　　　　　　　　　　使用””禁用组设置。<br>　　　　-g, –graph=”/var/lib/docker”   容器运行的根目录路径<br>　　　　-H, –host=[]            　 套接字绑定到守护模式。使用一个或多个tcp://主机:端</p>
+<p>　　　　　　　　　　　　　　　　　　口，unix:///路径/到/套接字，fd://*或fd://socketfd.<br>　　　　–icc=true            　　  inter-container跨容器通信<br>　　　　–insecure-registry=[]        使用指定的注册表启用不安全通信(没有HTTPS的证书验</p>
+<p>　　　　　　　　　　　　　　　　　　证和启用HTTP回退)(例如，localhost:5000或10.20.0 /16)<br>　　　　–ip=”0.0.0.0”          　　 绑定容器端口时使用的IP地址<br>　　　　–ip-forward=true           使用net.ipv4.ip_forward转发<br>　　　　–ip-masq=true        操作    命令    说明<br>检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息<br>拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本<br>列表    docker images    查看本地docker仓库的所有镜像<br>删除    docker rmi imageId eg: docker rmi 6408fdc94212    删除本地docker仓库镜像<br>————————————————     使IP伪装成桥的IP范围<br>　　　　–iptables=true          　　启用Docker添加iptables规则<br>　　　　–mtu=0              　　  设置容器网络mtu<br>　　　　-p, –pidfile=”/var/run/docker.pid”   指定守护进程pid文件位置<br>　　　　–registry-mirror=[]       　　指定一个首选的镜像仓库（加速地址）<br>　　　　-s, –storage-driver=””        强制 docker 运行时使用指定存储驱动<br>　　　　–selinux-enabled=false       开启 selinux 支持<br>　　　　–storage-opt=[]         　　设置存储驱动选项<br>　　　　–tls=false            　　　 开启 tls<br>　　　　–tlscacert=”/root/.docker/ca.pem”　　只信任提供CA签名的证书<br>　　　　–tlscert=”/root/.docker/cert.pem”    tls 证书文件位置<br>　　　　–tlskey=”/root/.docker/key.pem” 　　 tls key 文件位置<br>　　　　–tlsverify=false         　　　　　 使用 tls 并确认远程控制主机<br>　　　　-v, –version=false       　　　　　输出 docker 版本信息</p>
+<h1 id="Docker-容器镜像删除"><a href="#Docker-容器镜像删除" class="headerlink" title="Docker 容器镜像删除"></a><a href="https://www.cnblogs.com/q4486233/p/6482711.html" target="_blank" rel="noopener">Docker 容器镜像删除</a></h1><p>1.停止所有的container，这样才能够删除其中的images：</p>
+<p>docker stop $(docker ps -a -q)</p>
+<p>如果想要删除所有container的话再加一个指令：</p>
+<p>docker rm $(docker ps -a -q)</p>
+<p>2.查看当前有些什么images</p>
+<p>docker images</p>
+<p>3.删除images，通过image的id来指定删除谁</p>
+<p>docker rmi <image id></p>
+<p>想要删除untagged images，也就是那些id为<None>的image的话可以用</p>
+<p>docker rmi $(docker images | grep “^<none>“ | awk “{print $3}”)</p>
+<p>要删除全部image的话</p>
+<p>docker rmi $(docker images -q)</p>
+<p><strong>1、导出某个容器</strong><br>导出某个容器，非常简单，使用docker export命令，语法：docker export $container_id &gt; 容器快照名</p>
+<p><strong>2、导入某个容器</strong>–docker import命令<br>有了容器快照之后，我们可以在想要的时候随时导入。导入快照使用docker import命令。</p>
+<p>例如我们可以使用cat centos.tar | docker import - my/centos:v888 导入容器快照作为镜像</p>
+<p>处理本地的容器快照导入为镜像，我们还可以通过指定一个URL或者目录来导入。<br>例如在某个网络上有个快照image_test.tgz：docker import <a href="http://xxxx.com/image_test.tgz" target="_blank" rel="noopener">http://xxxx.com/image_test.tgz</a> test/image_test</p>
+<p><strong>镜像保存/载入</strong>：docker load/docker save；将一个镜像导出为文件，再使用docker load命令将文件导入为一个镜像，会保存该镜像的的所有历史记录。比docker export命令导出的文件大，很好理解，因为会保存镜像的所有历史记录。</p>
+<p><strong>容器导入/导出</strong>：docker import/docker export；将一个容器导出为文件，再使用docker import命令将容器导入成为一个新的镜像，但是相比docker save命令，容器文件会丢失所有元数据和历史记录，仅保存容器当时的状态，相当于虚拟机快照。</p>
+<p><strong>3、删除容器</strong><br>可以使用”docker rm 容器id”来删除一个终止状态的容器；若要删除一个运行中的容器，需要加-f参数。</p>
+<h2 id="清除所有未使用或悬空的图像，容器，卷和网络"><a href="#清除所有未使用或悬空的图像，容器，卷和网络" class="headerlink" title="清除所有未使用或悬空的图像，容器，卷和网络"></a><strong>清除所有未使用或悬空的图像，容器，卷和网络</strong></h2><p>Docker提供了一个命令，可以清理悬空的任何资源（图像，容器，卷和网络）（与容器无关）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune</span><br></pre></td></tr></table></figure>
+
+<p>要另外删除任何已停止的容器和所有未使用的图像（不只是悬空图像），请将该<code>-a</code>标志添加到命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除Docker镜像"><a href="#删除Docker镜像" class="headerlink" title="删除Docker镜像"></a><strong>删除Docker镜像</strong></h2><h3 id="删除一个或多个特定图像"><a href="#删除一个或多个特定图像" class="headerlink" title="删除一个或多个特定图像"></a><strong>删除一个或多个特定图像</strong></h3><p>使用带有<code>-a</code>标志的命令<code>docker images</code>可以找到要删除的图像的ID。这将显示每个图像，包括中间图像层。当您找到要删除的图像时，可以将其ID或标记传递给<code>docker rmi</code>：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi Image Image</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空图像"><a href="#删除悬空图像" class="headerlink" title="删除悬空图像"></a><strong>删除悬空图像</strong></h3><p>Docker图像由多个图层组成。悬空图像是与任何标记图像无关的图层。它们不再用于目的并占用磁盘空间。它们可以通过添加具有值<code>dangling=true</code>的<code>-f</code>过滤器标志到<code>docker images</code>的命令来定位。如果您确定要删除它们，可以使用以下<code>docker images purge</code>命令：</p>
+<p><strong>注意：</strong>如果您在不标记图像的情况下构建图像，则图像将显示在悬空图像列表中，因为它与标记图像无关。您可以通过在构建时提供标记来避免这种情况，并且可以使用docker tag命令追溯标记图像。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images purge</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案删除图像"><a href="#根据图案删除图像" class="headerlink" title="根据图案删除图像"></a><strong>根据图案删除图像</strong></h3><p>你可以使用组合模式<code>docker images</code>和<code>grep</code>找到相匹配的图像。一旦您满意，您可以通过使用<code>awk</code>来删除它们<code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a |  grep <span class="string">"pattern"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有图像"><a href="#删除所有图像" class="headerlink" title="删除所有图像"></a><strong>删除所有图像</strong></h3><p>通过添加<code>-a</code>到<code>docker images</code>命令，可以列出系统上的所有Docker映像。一旦确定要全部删除它们，就可以添加<code>-q</code>标志以将图像ID传递给<code>docker rmi</code>：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -a -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a><strong>删除容器</strong></h2><h3 id="删除一个或多个特定容器"><a href="#删除一个或多个特定容器" class="headerlink" title="删除一个或多个特定容器"></a><strong>删除一个或多个特定容器</strong></h3><p>使用带有该<code>-a</code>标志的<code>docker ps</code>命令可以找到要删除的容器的名称或ID：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm ID_or_Name ID_or_Name</span><br></pre></td></tr></table></figure>
+
+<h3 id="退出时取出容器"><a href="#退出时取出容器" class="headerlink" title="退出时取出容器"></a><strong>退出时取出容器</strong></h3><p>如果您知道何时创建容器，一旦完成就不想保留它，您可以运行<code>docker run --rm</code>以在退出时自动删除它。</p>
+<p><strong>运行和删除：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm image_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有已退出的容器"><a href="#删除所有已退出的容器" class="headerlink" title="删除所有已退出的容器"></a><strong>删除所有已退出的容器</strong></h3><p>您可以使用以下<code>docker ps -a</code>状态定位容器并对其进行过滤：创建，重新启动，运行，暂停或退出。要查看已退出容器的列表，请使用<code>-f</code>标志根据状态进行过滤。当您确认要删除这些容器时，使用<code>-q</code>将ID传递给<code>docker rm</code>命令。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用多个过滤器移除容器"><a href="#使用多个过滤器移除容器" class="headerlink" title="使用多个过滤器移除容器"></a><strong>使用多个过滤器移除容器</strong></h3><p>可以通过使用附加值重复过滤器标志来组合Docker过滤器。这导致满足任一条件的容器列表。例如，如果要删除标记为<strong>Created的</strong>所有容器（运行具有无效命令的容器时可能导致的状态）或<strong>Exited</strong>，则可以使用两个过滤器：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited -f status=created</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -f status=created -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案移除容器"><a href="#根据图案移除容器" class="headerlink" title="根据图案移除容器"></a><strong>根据图案移除容器</strong></h3><p>您可以使用<code>docker ps</code>和grep的组合找到与模式匹配的所有容器。当您对要删除的列表感到满意时，可以使用<code>awk</code>和<code>xargs</code>提供ID给 <code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a |  grep <span class="string">"pattern”</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+
+<h3 id="停止并移除所有容器"><a href="#停止并移除所有容器" class="headerlink" title="停止并移除所有容器"></a><strong>停止并移除所有容器</strong></h3><p>您可以查看系统上的容器<code>docker ps</code>。添加<code>-a</code>标志将显示所有容器。当您确定要删除它们时，可以添加<code>-q</code>标志以向 <code>docker stop</code>和<code>docker rm</code>命令提供ID：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除卷"><a href="#删除卷" class="headerlink" title="删除卷"></a><strong>删除卷</strong></h2><h3 id="删除一个或多个特定卷-Docker-1-9及更高版本"><a href="#删除一个或多个特定卷-Docker-1-9及更高版本" class="headerlink" title="删除一个或多个特定卷 - Docker 1.9及更高版本"></a><strong>删除一个或多个特定卷 - Docker 1.9及更高版本</strong></h3><p>使用此<code>docker volume ls</code>命令可找到要删除的卷名称。然后，您可以使用以下<code>docker volume rm</code>命令删除一个或多个卷：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume rm volume_name volume_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空卷-Docker-1-9及更高版本"><a href="#删除悬空卷-Docker-1-9及更高版本" class="headerlink" title="删除悬空卷 - Docker 1.9及更高版本"></a><strong>删除悬空卷 - Docker 1.9及更高版本</strong></h3><p>由于卷的位置与容器无关，因此在移除容器时，不会同时自动删除卷。当卷存在且不再连接到任何容器时，它称为悬空卷。要找到它们以确认您要删除它们，可以使用带过滤器的命令<code>docker volume ls</code>将结果限制为悬空卷。当您对列表感到满意时，可以用<code>docker volume prune</code>将它们全部删除：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume prune</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除容器及其容量"><a href="#删除容器及其容量" class="headerlink" title="删除容器及其容量"></a><strong>删除容器及其容量</strong></h3><p>如果您创建了一个未命名的卷，则可以将其与具有该<code>-v</code>标志的容器同时删除。请注意，这仅适用于<em>未命名的</em>卷。成功删除容器后，将显示其ID。请注意，没有引用卷的删除。如果未命名，则会以静默方式从系统中删除。如果它被命名，它会默默地保持存在。</p>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v container_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h2><p>本教程介绍了一些用于使用Docker删除图像，容器和卷的常用命令。每个都可以使用许多其他组合和标志。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/1970/01/01/docker/" data-id="ck8mswfy80003uxpcbxugh8rv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -131,7 +808,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
     </div>
   </div>
 
@@ -144,7 +821,23 @@
       <ul>
         
           <li>
-            <a href="/1970/01/01/hello-world/">Hello World</a>
+            <a href="/2020/04/05/hello-world/">hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">eclipse/che</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/My-New-Post/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/find_grep/">linux下的find文件查找命令与grep文件内容查找命令</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/one/">sql and freemaker format</a>
           </li>
         
       </ul>

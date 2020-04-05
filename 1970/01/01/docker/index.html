@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>docker | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="操作    命令    说明检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本列表    docker images">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker">
+<meta property="og:url" content="http://yoursite.com/1970/01/01/docker/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="操作    命令    说明检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本列表    docker images">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="1970-01-01T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-04-05T08:47:05.613Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/1970/01/01/docker/" class="article-date">
+  <time datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>操作    命令    说明<br>检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息<br>拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本<br>列表    docker images    查看本地docker仓库的所有镜像<br>删除    docker rmi imageId eg: docker rmi 6408fdc94212    删除本地docker仓库镜像<br>————————————————</p>
+<h2 id="Linux和Docker常用命令"><a href="#Linux和Docker常用命令" class="headerlink" title="Linux和Docker常用命令"></a><a href="https://www.cnblogs.com/mq0036/p/8520605.html" target="_blank" rel="noopener">Linux和Docker常用命令</a></h2><h2 id="一、常用Linux-命令"><a href="#一、常用Linux-命令" class="headerlink" title="一、常用Linux 命令"></a>一、常用Linux 命令</h2><p>　　ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件</p>
+<p>　　　　　类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息—–简化为 ll）</p>
+<p>　　mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录　　**<br>**</p>
+<p>　　touch 　　创建文件  例：touch test/readme.txt 在 test 目录下创建 readme.txt文件</p>
+<p>　　cd 　　切换目录 cd /. 到根目录  cd .. 上一级目录  cd /hahaha/hahaha 到指定目录</p>
+<p>　　pwd 　　显示当前目录</p>
+<p>　　mv 　　移动/重命名（加上 -i 参数询问是否覆盖） 　mv hello rock/ 移动到rock目录下  </p>
+<p>　　　　　　 mv hello rock 重命名为rock</p>
+<p>　　cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用） </p>
+<p>　　　　   cp -ir test/ workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）</p>
+<p>　　rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）　　</p>
+<p>　　　　　 rm -ir test/  递归删除test目录及其子目录并询问</p>
+<p>　　wget url　　下载文件到当前目录</p>
+<p>　　sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit或logout 退出</p>
+<p>　　su 账户名 　　切换到某某用户模式，没有时间限制</p>
+<p>　　ZIP 工具：</p>
+<p>　　　　压缩文件　　zip target.zip filename</p>
+<p>　　　　压缩文件夹　　zip -r target.zip dir　　 -r 参数表示递归压缩子目录</p>
+<p>　　　　解压　　unzip target.zip</p>
+<p>　　tar 工具：</p>
+<p>　　　　-c: 建立压缩档案</p>
+<p>　　　　-x：解压<br>　　　　-t：查看内容<br>　　　　-r：向压缩归档文件末尾追加文件<br>　　　　-u：更新原压缩包中的文件</p>
+<p>　　　　这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用</p>
+<p>　　　　其中一个。下面的参数是根据需要在压缩或解压档案时可选的。<br>　　　　-z：有gzip属性的<br>　　　　-j：有bz2属性的<br>　　　　-Z：有compress属性的<br>　　　　-v：显示所有过程<br>　　　　-O：将文件解开到标准输出</p>
+<p>　　　　下面的参数-f是必须的</p>
+<p>　　　　-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名</p>
+<p>　　　　例：tar -xvf file.tar //解压 tar包</p>
+<p>　　　　　　tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/local/java //解压jdk到指定文件夹　　</p>
+<p>　　　　　　tar -cZf jpg.tar.Z *.jpg //将目录里所有jpg文件打包成jpg.tar后，并且将其用</p>
+<p>　　　　　　　　compress压缩，生成一个umcompress压缩过的包，命名为jpg.tar.Z</p>
+<p>　　vim 编辑器：　　vim test.cpp</p>
+<p>　　　　vim 有两种模式，一种是<strong>普通模式</strong>，另一种是<strong>插入模式</strong>。执行上述命令以后进入普通模式。</p>
+<p>　　　　按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入</p>
+<p>　　　　的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入</p>
+<p>　　　　w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要</p>
+<p>　　　　在 q之前，先保存再退出）。</p>
+<p>　　　　<strong>查找</strong>：在普通模式下输入“/查找内容”，回车，即可定位到第一个匹配项。接着按下字母</p>
+<p>　　　　　　　键“n”可以查找下一个。</p>
+<p>　　　　<strong>撤销</strong>：普通模式下输入“:u”并回车，实现撤销。</p>
+<h2 id="二、常用docker-命令"><a href="#二、常用docker-命令" class="headerlink" title="二、常用docker 命令"></a>二、常用docker 命令</h2><h4 id="1-镜像"><a href="#1-镜像" class="headerlink" title="　　1.镜像"></a>　　1.镜像</h4><p>　　　　docker images 列出本地所有镜像</p>
+<p>　　　　<code>docker search(-s) nginx 搜索相关镜像　加上-s 参数 选出至少start数范围的镜像</code></p>
+<p>　　　　docker pull（-a） 镜像名:版本号　拉取镜像,-a pull all</p>
+<p>　　　　docker push 192.168.0.100:5000/ubuntu 　　  推送镜像库到私有源</p>
+<p>　　　　<code>docker rmi（-f） 镜像名：版本号/镜像ID 　　删除镜像 （加上 -f 参数 强制删除）</code></p>
+<p>　　　　docker rmi $(docker images -q)　　删除所有镜像</p>
+<p>　　　　<code>docker rmi $(docker images | grep &quot;none&quot; | awk &#39;{print $3}&#39;) 删除所有名字中带</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">　　　　　　　　“none” 关键字的镜像</span><br></pre></td></tr></table></figure>
+
+<p>　　　　<code>docker save docker.io``/tomcat``:7.0.77-jre7 &gt;``/root/mytomcat7``.``tar``.gz 导出镜像</code></p>
+<p>　　　　<code>docker load &lt; ``/root/mytomcat7``.``tar``.gz　　导入镜像</code></p>
+<h4 id="2-容器"><a href="#2-容器" class="headerlink" title="　　2.容器"></a>　　2.容器</h4><p>　　　　docker ps 查看当前正在运行的容器</p>
+<p>　　　　docker inspect name/image[name/image…] 查看详细</p>
+<p>　　　　docker ps -a 查看所有容器的状态</p>
+<p>　　　　docker start/stop(-t) id/name[name…] 启动/停止某个（多个）容器 -t 指定时间</p>
+<p>　　　　docker kill (-s) name[name…] 强制中断 -s指定SIGINT信号类型，默认“kill”</p>
+<p>　　　　docker restart (-t) name[name…] 重启 -t 指定时间</p>
+<p>　　　　docker pause name　暂停　　docker unpause name 继续</p>
+<p>　　　　docker rm(-$) name[name…] 移除 </p>
+<p>　　　　　　-f　　–force=false　　强制移除运行中容器</p>
+<p>　　　　　　-l　　–link=false　　  移除指定链接，保留底层容器</p>
+<p>　　　　　　-v　 –volumes=false  移除容器关联卷</p>
+<p>　　　　docker commit(-$)name 镜像名:版本号 　　提交指定容器为镜像</p>
+<p>　　　　　　-a, –author=”” 　　　　作者</p>
+<p>　　　　　　-m, –message=”” 　　 简要说明</p>
+<p>　　　　　　-p, –pause=true 　　　暂停容器再提交</p>
+<p>　　　　docker logs(-$) name　　输出指定容器日志信息</p>
+<p>　　　　　　-f　　跟踪日志输出</p>
+<p>　　　　　　-t　　显示时间戳 类似 tail -f</p>
+<p>　　　　　　–tail 在日志的末尾输出指定行数日志（默认所有日志）</p>
+<p>　　　　docker attach id 进入某个容器(使用exit退出后容器也跟着停止运行)</p>
+<p>　　　　docker exec -ti id 启动一个伪终端以交互式的方式进入某个容器</p>
+<p>　　　　　　　　　　　 （使用exit退出后容器不停止运行）</p>
+<p>　　　　docker run(-$) IMAGE [COMMAND] [ARG…] 　 运行一个容器</p>
+<p>　　　　　　-d　　　　　　　　  指定容器运行于前台还是后台，默认为false   </p>
+<p> 　　　　　-i　　　　　　　　  打开STDIN，用于控制台交互，默认为false </p>
+<p>　　　　　　-t　　　　　　　　  分配tty设备，该可以支持终端登录，默认为false  </p>
+<p>　　　　　　-u, –user=””       指定容器的用户  </p>
+<p>　　　　　　-a, –attach=[]      登录容器（必须是以docker run -d启动的容器） </p>
+<p>　　　　　　-w　　　　　　　　  指定容器的工作目录 </p>
+<p>　　　　　　-c   　　　　　　　设置容器CPU权重，在CPU共享场景使用  </p>
+<p>　　　　　　-e, –env=[]        指定环境变量，容器中可以使用该环境变量  </p>
+<p>　　　　　　-m　　　　　　　　  指定容器的内存上限  </p>
+<p>　　　　　　-P, –publish-all=false 指定容器暴露的端口  </p>
+<p>　　　　　　-p, –publish=[]      指定容器暴露的端口  </p>
+<p>　　　　　　-h　　　　　　　　　指定容器的主机名  </p>
+<p>　　　　　　-v, –volume=[]      给容器挂载存储卷，挂载到容器的某个目录 </p>
+<p>　　　　　　–volumes-from=[]    给容器挂载其他容器上的卷，挂载到容器的某个目录 </p>
+<p>　　　　　　–cap-add=[]　　　　 添加权限</p>
+<p>　　　　　　–cap-drop=[]   　 删除权限</p>
+<p>　　　　　　–cidfile=””　　　　　 运行容器后，在指定文件中写入容器PID值，监控系统用法  </p>
+<p>　　　　　　–cpuset=””　 　　　 设置容器可使用哪些CPU，此参数可以用来容器独占CPU  </p>
+<p>　　　　　　–device=[]   　　　  添加主机设备给容器，相当于设备直通  </p>
+<p>　　　　　　–dns=[]            指定容器的dns服务器  </p>
+<p>　　　　　　–dns-search=[]      指定容器的dns搜索域名，写入到容器/etc/resolv.conf文件  </p>
+<p>　　　　　　–entrypoint=””       覆盖image的入口点  </p>
+<p>　　　　　　–env-file=[]          指定环境变量文件，文件格式为每行一个环境变量  </p>
+<p>　　　　　　–expose=[]         指定容器暴露的端口，即修改镜像的暴露端口  </p>
+<p>　　　　　　–link=[]            指定容器间的关联，使用其他容器的IP、env等信息  </p>
+<p>　　　　　　–lxc-conf=[]         指定容器的配置文件，只有在指定–exec-driver=lxc时使用  </p>
+<p>　　　　　　–name=””          指定容器名字，links特性需要使用名字  </p>
+<p>　　　　　　–net=”bridge”       容器网络设置: </p>
+<p>​                　　　　　　　　bridge 使用docker daemon指定的网桥    </p>
+<p>​               　　　　　　　　  host  //容器使用主机的网络  </p>
+<p>​              　　　　　　　　   container:NAME_or_ID &gt;</p>
+<p>　　　　　　　　　　　　　　　　　　　　//使用其他容器的网路共享IP和PORT等网络资源  </p>
+<p>​                　　　　　　　　none 容器使用自己的网络（类似–net=bridge）</p>
+<p>　　　　　　–privileged=false     指定容器是否为特权容器，特权容器拥有所有的权限</p>
+<p>　　　　　　–restart=”no”        指定容器停止后的重启策略: </p>
+<p>​                　　　　　　　　 no：　　　　容器退出时不重启  </p>
+<p>​                　　　　　　　　 on-failure：  容器故障退出（返回值非零）时重启  </p>
+<p>​                　　　　　　　　 always：　　 容器退出时总是重启  </p>
+<p>　　　　　　–rm=false      指定容器停止后自动删除容器(不支持以docker run -d启动的容器)  </p>
+<p>　　　　　　–sig-proxy=true 设置由代理接受并处理信号，SIGCHLD，SIGSTOP和SIGKILL不代</p>
+<p>　　　　例：</p>
+<p>　　　　　　docker run -i -t centos6.8 进入到默认的线程”/bin/bash”，直接进入控制台操作</p>
+<p>　　　　　　docker run -i -t -d centos6.8 进入到默认的线程”/bin/bash”，后台运行</p>
+<p>　　　　　　docker run -d –restart=always centos6.8 ping <a href="http://www.docker.com" target="_blank" rel="noopener">www.docker.com</a> 带命令启动</p>
+<p>　　　　　　docker run -d –name=server-dbcentos6.8-mysql /usr/bin/mysql_safe -d</p>
+<p>　　　　　　　　　　　　　　容器的名称为server-db，同时激活了数据库mysql的后台线程</p>
+<p>　　　　　　docker run -d –name=server-db -p 3306:3306 -v /server/mysql-data:/</p>
+<p>　　　　　　　　　　　　　　mysql-datacentos6.8-mysql /usr/bin/mysql_safe –d</p>
+<p>　　　　　　　　　　　　　　将宿主机的数据库目录/server/mysql-data挂载到server-db上</p>
+<p>　　　　　　docker run -d –name=server-db -p 3306:3306 centos6.8-mysql </p>
+<p>　　　　　　　　　　　　　　/usr/bin/mysql_safe –d 服务器宿主机与容器端口映射并暴露</p>
+<p>　　　　　　docker run -d –name=server-http –link=server-db  -p 8080:80centos6.8-httpd</p>
+<p>　　　　　　　　　　　　　　/usr/bin/httpd –DFOREGROUND</p>
+<p>　　　　　　　　　　　　　　映射服务器宿主机的8080端口，关联service-db </p>
+<p>　　　　　　docker run -it –rm centos6.8　　容器进程结束后，立马自动删除</p>
+<h4 id="3-docker-option"><a href="#3-docker-option" class="headerlink" title="　　3.docker option"></a>　　3.docker option</h4><p>　　　　–api-enable-cors=false      在远程API中启用CORS 头<br>　　　　-b, –bridge=””          　　桥接网络 使用“none” 禁用容器网络<br>　　　　–bip=””             　　　网桥模式<br>　　　　-d, –daemon=false         守护者模式<br>　　　　-D, –debug=false          debug 模式<br>　　　　–dns=[]             　　  强制 docker 使用指定 dns 服务器<br>　　　　–dns-search=[]         　 强制 docker 使用指定 dns 搜索域<br>　　　　-e, –exec-driver=”native”     强制 docker 运行时使用指定执行驱动器<br>　　　　–fixed-cidr=””          　　 固定IP的IPv4子网(例: 10.20.0.0/16)必须镶套在桥子网</p>
+<p>　　　　　　　　　　　　　　　　　　中(由-b or –bip定义)<br>　　　　-G, –group=”docker”        当在守护模式中运行时，组指向-H指定的unix套接字。</p>
+<p>　　　　　　　　　　　　　　　　　　使用””禁用组设置。<br>　　　　-g, –graph=”/var/lib/docker”   容器运行的根目录路径<br>　　　　-H, –host=[]            　 套接字绑定到守护模式。使用一个或多个tcp://主机:端</p>
+<p>　　　　　　　　　　　　　　　　　　口，unix:///路径/到/套接字，fd://*或fd://socketfd.<br>　　　　–icc=true            　　  inter-container跨容器通信<br>　　　　–insecure-registry=[]        使用指定的注册表启用不安全通信(没有HTTPS的证书验</p>
+<p>　　　　　　　　　　　　　　　　　　证和启用HTTP回退)(例如，localhost:5000或10.20.0 /16)<br>　　　　–ip=”0.0.0.0”          　　 绑定容器端口时使用的IP地址<br>　　　　–ip-forward=true           使用net.ipv4.ip_forward转发<br>　　　　–ip-masq=true        操作    命令    说明<br>检索    docker search keywork eg: docker search tomcat    去docker hub搜索镜像的详细信息<br>拉取    docker pull keywork:tag eg: docker pull tomcat:latest    tag是可选的，不指定默认拉取latest最新版本<br>列表    docker images    查看本地docker仓库的所有镜像<br>删除    docker rmi imageId eg: docker rmi 6408fdc94212    删除本地docker仓库镜像<br>————————————————     使IP伪装成桥的IP范围<br>　　　　–iptables=true          　　启用Docker添加iptables规则<br>　　　　–mtu=0              　　  设置容器网络mtu<br>　　　　-p, –pidfile=”/var/run/docker.pid”   指定守护进程pid文件位置<br>　　　　–registry-mirror=[]       　　指定一个首选的镜像仓库（加速地址）<br>　　　　-s, –storage-driver=””        强制 docker 运行时使用指定存储驱动<br>　　　　–selinux-enabled=false       开启 selinux 支持<br>　　　　–storage-opt=[]         　　设置存储驱动选项<br>　　　　–tls=false            　　　 开启 tls<br>　　　　–tlscacert=”/root/.docker/ca.pem”　　只信任提供CA签名的证书<br>　　　　–tlscert=”/root/.docker/cert.pem”    tls 证书文件位置<br>　　　　–tlskey=”/root/.docker/key.pem” 　　 tls key 文件位置<br>　　　　–tlsverify=false         　　　　　 使用 tls 并确认远程控制主机<br>　　　　-v, –version=false       　　　　　输出 docker 版本信息</p>
+<h1 id="Docker-容器镜像删除"><a href="#Docker-容器镜像删除" class="headerlink" title="Docker 容器镜像删除"></a><a href="https://www.cnblogs.com/q4486233/p/6482711.html" target="_blank" rel="noopener">Docker 容器镜像删除</a></h1><p>1.停止所有的container，这样才能够删除其中的images：</p>
+<p>docker stop $(docker ps -a -q)</p>
+<p>如果想要删除所有container的话再加一个指令：</p>
+<p>docker rm $(docker ps -a -q)</p>
+<p>2.查看当前有些什么images</p>
+<p>docker images</p>
+<p>3.删除images，通过image的id来指定删除谁</p>
+<p>docker rmi <image id></p>
+<p>想要删除untagged images，也就是那些id为<None>的image的话可以用</p>
+<p>docker rmi $(docker images | grep “^<none>“ | awk “{print $3}”)</p>
+<p>要删除全部image的话</p>
+<p>docker rmi $(docker images -q)</p>
+<p><strong>1、导出某个容器</strong><br>导出某个容器，非常简单，使用docker export命令，语法：docker export $container_id &gt; 容器快照名</p>
+<p><strong>2、导入某个容器</strong>–docker import命令<br>有了容器快照之后，我们可以在想要的时候随时导入。导入快照使用docker import命令。</p>
+<p>例如我们可以使用cat centos.tar | docker import - my/centos:v888 导入容器快照作为镜像</p>
+<p>处理本地的容器快照导入为镜像，我们还可以通过指定一个URL或者目录来导入。<br>例如在某个网络上有个快照image_test.tgz：docker import <a href="http://xxxx.com/image_test.tgz" target="_blank" rel="noopener">http://xxxx.com/image_test.tgz</a> test/image_test</p>
+<p><strong>镜像保存/载入</strong>：docker load/docker save；将一个镜像导出为文件，再使用docker load命令将文件导入为一个镜像，会保存该镜像的的所有历史记录。比docker export命令导出的文件大，很好理解，因为会保存镜像的所有历史记录。</p>
+<p><strong>容器导入/导出</strong>：docker import/docker export；将一个容器导出为文件，再使用docker import命令将容器导入成为一个新的镜像，但是相比docker save命令，容器文件会丢失所有元数据和历史记录，仅保存容器当时的状态，相当于虚拟机快照。</p>
+<p><strong>3、删除容器</strong><br>可以使用”docker rm 容器id”来删除一个终止状态的容器；若要删除一个运行中的容器，需要加-f参数。</p>
+<h2 id="清除所有未使用或悬空的图像，容器，卷和网络"><a href="#清除所有未使用或悬空的图像，容器，卷和网络" class="headerlink" title="清除所有未使用或悬空的图像，容器，卷和网络"></a><strong>清除所有未使用或悬空的图像，容器，卷和网络</strong></h2><p>Docker提供了一个命令，可以清理悬空的任何资源（图像，容器，卷和网络）（与容器无关）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune</span><br></pre></td></tr></table></figure>
+
+<p>要另外删除任何已停止的容器和所有未使用的图像（不只是悬空图像），请将该<code>-a</code>标志添加到命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除Docker镜像"><a href="#删除Docker镜像" class="headerlink" title="删除Docker镜像"></a><strong>删除Docker镜像</strong></h2><h3 id="删除一个或多个特定图像"><a href="#删除一个或多个特定图像" class="headerlink" title="删除一个或多个特定图像"></a><strong>删除一个或多个特定图像</strong></h3><p>使用带有<code>-a</code>标志的命令<code>docker images</code>可以找到要删除的图像的ID。这将显示每个图像，包括中间图像层。当您找到要删除的图像时，可以将其ID或标记传递给<code>docker rmi</code>：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi Image Image</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空图像"><a href="#删除悬空图像" class="headerlink" title="删除悬空图像"></a><strong>删除悬空图像</strong></h3><p>Docker图像由多个图层组成。悬空图像是与任何标记图像无关的图层。它们不再用于目的并占用磁盘空间。它们可以通过添加具有值<code>dangling=true</code>的<code>-f</code>过滤器标志到<code>docker images</code>的命令来定位。如果您确定要删除它们，可以使用以下<code>docker images purge</code>命令：</p>
+<p><strong>注意：</strong>如果您在不标记图像的情况下构建图像，则图像将显示在悬空图像列表中，因为它与标记图像无关。您可以通过在构建时提供标记来避免这种情况，并且可以使用docker tag命令追溯标记图像。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images purge</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案删除图像"><a href="#根据图案删除图像" class="headerlink" title="根据图案删除图像"></a><strong>根据图案删除图像</strong></h3><p>你可以使用组合模式<code>docker images</code>和<code>grep</code>找到相匹配的图像。一旦您满意，您可以通过使用<code>awk</code>来删除它们<code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a |  grep <span class="string">"pattern"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有图像"><a href="#删除所有图像" class="headerlink" title="删除所有图像"></a><strong>删除所有图像</strong></h3><p>通过添加<code>-a</code>到<code>docker images</code>命令，可以列出系统上的所有Docker映像。一旦确定要全部删除它们，就可以添加<code>-q</code>标志以将图像ID传递给<code>docker rmi</code>：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -a -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a><strong>删除容器</strong></h2><h3 id="删除一个或多个特定容器"><a href="#删除一个或多个特定容器" class="headerlink" title="删除一个或多个特定容器"></a><strong>删除一个或多个特定容器</strong></h3><p>使用带有该<code>-a</code>标志的<code>docker ps</code>命令可以找到要删除的容器的名称或ID：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm ID_or_Name ID_or_Name</span><br></pre></td></tr></table></figure>
+
+<h3 id="退出时取出容器"><a href="#退出时取出容器" class="headerlink" title="退出时取出容器"></a><strong>退出时取出容器</strong></h3><p>如果您知道何时创建容器，一旦完成就不想保留它，您可以运行<code>docker run --rm</code>以在退出时自动删除它。</p>
+<p><strong>运行和删除：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm image_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有已退出的容器"><a href="#删除所有已退出的容器" class="headerlink" title="删除所有已退出的容器"></a><strong>删除所有已退出的容器</strong></h3><p>您可以使用以下<code>docker ps -a</code>状态定位容器并对其进行过滤：创建，重新启动，运行，暂停或退出。要查看已退出容器的列表，请使用<code>-f</code>标志根据状态进行过滤。当您确认要删除这些容器时，使用<code>-q</code>将ID传递给<code>docker rm</code>命令。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用多个过滤器移除容器"><a href="#使用多个过滤器移除容器" class="headerlink" title="使用多个过滤器移除容器"></a><strong>使用多个过滤器移除容器</strong></h3><p>可以通过使用附加值重复过滤器标志来组合Docker过滤器。这导致满足任一条件的容器列表。例如，如果要删除标记为<strong>Created的</strong>所有容器（运行具有无效命令的容器时可能导致的状态）或<strong>Exited</strong>，则可以使用两个过滤器：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited -f status=created</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -f status=created -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案移除容器"><a href="#根据图案移除容器" class="headerlink" title="根据图案移除容器"></a><strong>根据图案移除容器</strong></h3><p>您可以使用<code>docker ps</code>和grep的组合找到与模式匹配的所有容器。当您对要删除的列表感到满意时，可以使用<code>awk</code>和<code>xargs</code>提供ID给 <code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a |  grep <span class="string">"pattern”</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+
+<h3 id="停止并移除所有容器"><a href="#停止并移除所有容器" class="headerlink" title="停止并移除所有容器"></a><strong>停止并移除所有容器</strong></h3><p>您可以查看系统上的容器<code>docker ps</code>。添加<code>-a</code>标志将显示所有容器。当您确定要删除它们时，可以添加<code>-q</code>标志以向 <code>docker stop</code>和<code>docker rm</code>命令提供ID：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除卷"><a href="#删除卷" class="headerlink" title="删除卷"></a><strong>删除卷</strong></h2><h3 id="删除一个或多个特定卷-Docker-1-9及更高版本"><a href="#删除一个或多个特定卷-Docker-1-9及更高版本" class="headerlink" title="删除一个或多个特定卷 - Docker 1.9及更高版本"></a><strong>删除一个或多个特定卷 - Docker 1.9及更高版本</strong></h3><p>使用此<code>docker volume ls</code>命令可找到要删除的卷名称。然后，您可以使用以下<code>docker volume rm</code>命令删除一个或多个卷：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume rm volume_name volume_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空卷-Docker-1-9及更高版本"><a href="#删除悬空卷-Docker-1-9及更高版本" class="headerlink" title="删除悬空卷 - Docker 1.9及更高版本"></a><strong>删除悬空卷 - Docker 1.9及更高版本</strong></h3><p>由于卷的位置与容器无关，因此在移除容器时，不会同时自动删除卷。当卷存在且不再连接到任何容器时，它称为悬空卷。要找到它们以确认您要删除它们，可以使用带过滤器的命令<code>docker volume ls</code>将结果限制为悬空卷。当您对列表感到满意时，可以用<code>docker volume prune</code>将它们全部删除：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume prune</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除容器及其容量"><a href="#删除容器及其容量" class="headerlink" title="删除容器及其容量"></a><strong>删除容器及其容量</strong></h3><p>如果您创建了一个未命名的卷，则可以将其与具有该<code>-v</code>标志的容器同时删除。请注意，这仅适用于<em>未命名的</em>卷。成功删除容器后，将显示其ID。请注意，没有引用卷的删除。如果未命名，则会以静默方式从系统中删除。如果它被命名，它会默默地保持存在。</p>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v container_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h2><p>本教程介绍了一些用于使用Docker删除图像，容器和卷的常用命令。每个都可以使用许多其他组合和标志。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/1970/01/01/docker/" data-id="ck8mswfy80003uxpcbxugh8rv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/1970/01/01/126%E9%82%AE%E7%AE%B1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          126mail
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/05/hello-world/">hexo</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">eclipse/che</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/My-New-Post/">My New Post</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/find_grep/">linux下的find文件查找命令与grep文件内容查找命令</a>
+          </li>
+        
+          <li>
+            <a href="/1970/01/01/one/">sql and freemaker format</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
