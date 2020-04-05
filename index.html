@@ -1,0 +1,2539 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="yxzhizhi's workspace" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="生命不是要超越别人，而是要超越自己。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="yxzhizhi&#39;s workspace">
+<meta property="og:url" content="http://yxzhizhi.gicp.com/index.html">
+<meta property="og:site_name" content="yxzhizhi&#39;s workspace">
+<meta property="og:description" content="生命不是要超越别人，而是要超越自己。">
+<meta property="article:author" content="zhanghuo">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="java">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="node">
+<meta property="article:tag" content="web">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yxzhizhi.gicp.com/"/>
+
+
+
+
+
+  <title>yxzhizhi's workspace</title>
+  
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="/js/src/dytitle.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">yxzhizhi's workspace</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">必须从过去的错误学习教训而非依赖过去的成功。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+            分类
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/" itemprop="url">eclipse/che</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/che/" itemprop="url" rel="index">
+                    <span itemprop="name">che</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/che/eclipse/" itemprop="url" rel="index">
+                    <span itemprop="name">eclipse</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">下载镜像</span><br><span class="line">docker pull portainer&#x2F;portainer</span><br><span class="line">基于镜像运行容器</span><br><span class="line"></span><br><span class="line">docker run -d -p 9000:9000 --restart&#x3D;always -v &#x2F;var&#x2F;run&#x2F;docker.sock:&#x2F;var&#x2F;run&#x2F;docker.sock --name prtainer  portainer&#x2F;portainer</span><br><span class="line"></span><br><span class="line">up: admin&#x2F;yx375656</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" itemprop="url">使用帮助文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T20:14:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>hexo</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//hexo.io/zh-cn/docs/</span></span><br></pre></td></tr></table></figure>
+<p>Hexo-Next-主题优化</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.jianshu.com/p/428244cd2caa</span><br></pre></td></tr></table></figure>
+
+<p>Hexo+NexT（零）：最全Hexo+Next搭建博客教程</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/loze/article/details/94206726</span><br></pre></td></tr></table></figure>
+
+<p>Hexo | NexT打造一个炫酷博客</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://blog.csdn.net/u012294515/article/details/83094693?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/find_grep/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/find_grep/" itemprop="url">linux下的find文件查找命令与grep文件内容查找命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/grep/" itemprop="url" rel="index">
+                    <span itemprop="name">grep</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
+
+<h2 id="一-find命令"><a href="#一-find命令" class="headerlink" title="一.find命令"></a><strong>一.find命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**基本格式：**find path expression</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-按照文件名查找"><a href="#1-按照文件名查找" class="headerlink" title="1.按照文件名查找"></a><strong>1.按照文件名查找</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -name httpd.conf　　#在根目录下查找文件httpd.conf，表示在整个硬盘查找</span><br><span class="line">(2)find &#x2F;etc -name httpd.conf　　#在&#x2F;etc目录下文件httpd.conf</span><br><span class="line">(3)find &#x2F;etc -name &#39;*srm*&#39;　　#使用通配符*(0或者任意多个)。表示在&#x2F;etc目录下查找文件名中含有字符串‘srm’的文件</span><br><span class="line">(4)find . -name &#39;srm*&#39; 　　#表示当前目录下查找文件名开头是字符串‘srm’的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-按照文件特征查找"><a href="#2-按照文件特征查找" class="headerlink" title="2.按照文件特征查找 　　　"></a><strong>2.按照文件特征查找</strong> 　　　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -amin -10 　　# 查找在系统中最后10分钟访问的文件(access time)</span><br><span class="line">(2)find &#x2F; -atime -2　　 # 查找在系统中最后48小时访问的文件</span><br><span class="line">(3)find &#x2F; -empty 　　# 查找在系统中为空的文件或者文件夹</span><br><span class="line">(4)find &#x2F; -group cat 　　# 查找在系统中属于 group为cat的文件</span><br><span class="line">(5)find &#x2F; -mmin -5 　　# 查找在系统中最后5分钟里修改过的文件(modify time)</span><br><span class="line">(6)find &#x2F; -mtime -1 　　#查找在系统中最后24小时里修改过的文件</span><br><span class="line">(7)find &#x2F; -user fred 　　#查找在系统中属于fred这个用户的文件</span><br><span class="line">(8)find &#x2F; -size +10000c　　#查找出大于10000000字节的文件(c:字节，w:双字，k:KB，M:MB，G:GB)</span><br><span class="line">(9)find &#x2F; -size -1000k 　　#查找出小于1000KB的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用混合查找方式查找文件"><a href="#3-使用混合查找方式查找文件" class="headerlink" title="3.使用混合查找方式查找文件"></a><strong>3.使用混合查找方式查找文件</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**参数有： ！，-and(-a)，-or(-o)。**</span><br><span class="line">(1)find &#x2F;tmp -size +10000c -and -mtime +2 　　#在&#x2F;tmp目录下查找大于10000字节并在最后2分钟内修改的文件</span><br><span class="line">(2)find &#x2F; -user fred -or -user george 　　#在&#x2F;目录下查找用户是fred或者george的文件文件</span><br><span class="line">(3)find &#x2F;tmp ! -user panda　　#在&#x2F;tmp目录中查找所有不属于panda用户的文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、grep命令"><a href="#二、grep命令" class="headerlink" title="二、grep命令"></a><strong>二、grep命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***\*基本格式：\**find  expression**</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-主要参数"><a href="#1-主要参数" class="headerlink" title="1.主要参数"></a><strong>1.主要参数</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[options]主要参数：**</span><br><span class="line">－c：只输出匹配行的计数。</span><br><span class="line">－i：不区分大小写</span><br><span class="line">－h：查询多文件时不显示文件名。</span><br><span class="line">－l：查询多文件时只输出包含匹配字符的文件名。</span><br><span class="line">－n：显示匹配行及行号。</span><br><span class="line">－s：不显示不存在或无匹配文本的错误信息。</span><br><span class="line">－v：显示不包含匹配文本的所有行。</span><br><span class="line"></span><br><span class="line">**pattern正则表达式主要参数：**</span><br><span class="line">\： 忽略正则表达式中特殊字符的原有含义。</span><br><span class="line">^：匹配正则表达式的开始行。</span><br><span class="line">$: 匹配正则表达式的结束行。</span><br><span class="line">\&lt;：从匹配正则表达 式的行开始。</span><br><span class="line">\&gt;：到匹配正则表达式的行结束。</span><br><span class="line">[ ]：单个字符，如[A]即A符合要求 。</span><br><span class="line">[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</span><br><span class="line">.：所有的单个字符。</span><br><span class="line">* ：有字符，长度可以为0。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-实例"><a href="#2-实例" class="headerlink" title="2.实例　"></a><strong>2.实例</strong>　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">(1)grep &#39;test&#39; d*　　#显示所有以d开头的文件中包含 test的行</span><br><span class="line">(2)grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行</span><br><span class="line">(3)grep ‘[a-z]\&#123;5\&#125;’ aa 　　#显示所有包含每行字符串至少有5个连续小写字符的字符串的行</span><br><span class="line">(4)grep magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(不含子目录)**包含magic的行</span><br><span class="line">(5)grep -r magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(包含子目录)**包含magic的行</span><br><span class="line">(6)grep -w pattern files  #只匹配整个单词，而不是字符串的一部分(如匹配’magic’，而不是’magical’)，</span><br><span class="line">(7)grep -r &quot;查询内容&quot;  文件目录 #文件名+内容</span><br><span class="line">(8)grep &#39;2020-02-27 17:5[6,9]&#39; xinyar-erp-auto.log ##根据时间查找日志</span><br><span class="line">(9)grep -E &#39;2020-02-27 14:5[5-9]|2020-02-28 15:0[0-5]&#39; xinyar-erp-auto.log #查询指定时间段内的日志</span><br><span class="line">(10)grep -C 10 &#39;aaaa&#39; nohup.out #查找关键字</span><br><span class="line">(11)grep -r -l &quot;查询内容&quot;  文件目录 #只显示包含内容的文件名</span><br><span class="line">(12)find 文件目录  -type f |xargs grep &quot;查询内容&quot;;  文件名+内容</span><br><span class="line"></span><br><span class="line">(13)grep -l &quot;innercontent&quot; --include&#x3D;&quot;*filepattern*&quot; .&#x2F;* | xargs cp -t destdir # grep文件名，内容，然后复制到文件夹中</span><br><span class="line">搜索源代码中的内容时, 为避免搜索到不相关的文件, 如.o文件中的内容, 可能希望grep能只处理特定格式的文件.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.c&#39; --include&#x3D;&#39;*.h&#39; re .</span><br><span class="line">可以指定多次, 如果真是上面的这种情况,  其实可以用</span><br><span class="line">grep -rn --include&#x3D;&#39;*.[ch]&#39; re .</span><br><span class="line">但是, 如果源文件中含有C++源代码, 上面的方法就不凑效了, 因为[]中只能放一个字符.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.&#123;cpp,h&#125;&#39; 也是不行的.</span><br><span class="line">此时需要不加引号的展开(由bash执行grep之前就已经完成, 可以通过set -x观察)</span><br><span class="line">grep -rn --include&#x3D;*.&#123;cpp,h&#125; re .</span><br><span class="line">bash中对&#123;A,B&#125;这种形式的展开, 会忽略是否在当前目录下存在相应的文件。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">grep -r &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">grep -r -l &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">find &#x2F;data&#x2F;nginx&#x2F;conf.d  -type f |xargs grep &quot;version.app.xinyartech.com&quot;;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/126%E9%82%AE%E7%AE%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/126%E9%82%AE%E7%AE%B1/" itemprop="url">126mail</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mail/" itemprop="url" rel="index">
+                    <span itemprop="name">mail</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mail/back/" itemprop="url" rel="index">
+                    <span itemprop="name">back</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">成功开启IMAP&#x2F;SMTP服务，在第三方客户端登录时，登录密码输入以下授权密码</span><br><span class="line">DDOVIWIXCWQIEUFX</span><br><span class="line">授权密码只显示一次</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/docker/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/docker/" itemprop="url">docker</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="常用docker命令"><a href="#常用docker命令" class="headerlink" title="常用docker命令"></a>常用docker命令</h2><h4 id="镜像管理"><a href="#镜像管理" class="headerlink" title="镜像管理"></a>镜像管理</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">列表|docker images	|查看本地docker仓库的所有镜像</span><br><span class="line">docker images 列出本地所有镜像</span><br><span class="line">检索 docker search keywork eg: docker search tomcat 去docker hub搜索镜像的详细信息</span><br><span class="line">docker search(-s) nginx 搜索相关镜像　加上-s 参数 选出至少start数范围的镜像</span><br><span class="line">docker pull（-a） 镜像名:版本号　拉取镜像,-a pull all</span><br><span class="line">拉取 docker pull keywork:tag eg: docker pull tomcat:latest|	tag是可选的，不指定默认拉取latest最新版本</span><br><span class="line"></span><br><span class="line">docker push 192.168.0.100:5000&#x2F;ubuntu 　　  推送镜像库到私有源</span><br><span class="line">删除|docker rmi imageId eg: docker rmi 6408fdc94212	|删除本地docker仓库镜像</span><br><span class="line">docker rmi（-f） 镜像名：版本号&#x2F;镜像ID 　　删除镜像 （加上 -f 参数 强制删除）</span><br><span class="line">docker rmi $(docker images -q)　　删除所有镜像</span><br><span class="line">docker rmi $(docker images | grep &quot;none&quot; | awk &#39;&#123;print $3&#125;&#39;) 删除所有名字中带“none” 关键字的镜像</span><br><span class="line"></span><br><span class="line">docker save docker.io&#96;&#96;&#x2F;tomcat&#96;&#96;:7.0.77-jre7 &gt;&#96;&#96;&#x2F;root&#x2F;mytomcat7&#96;&#96;.&#96;&#96;tar&#96;&#96;.gz 导出镜像&#96;</span><br><span class="line">docker load &lt; &#96;&#96;&#x2F;root&#x2F;mytomcat7&#96;&#96;.&#96;&#96;tar&#96;&#96;.gz　　导入镜像&#96;</span><br></pre></td></tr></table></figure>
+<h3 id="容器管理"><a href="#容器管理" class="headerlink" title="容器管理"></a>容器管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">docker ps 查看当前正在运行的容器</span><br><span class="line">docker inspect name&#x2F;image[name&#x2F;image...] 查看详细</span><br><span class="line">docker ps -a 查看所有容器的状态</span><br><span class="line">docker start&#x2F;stop(-t) id&#x2F;name[name...] 启动&#x2F;停止某个（多个）容器 -t 指定时间</span><br><span class="line">docker kill (-s) name[name...] 强制中断 -s指定SIGINT信号类型，默认“kill”</span><br><span class="line">docker restart (-t) name[name...] 重启 -t 指定时间</span><br><span class="line">docker pause name　暂停　　docker unpause name 继续</span><br><span class="line">docker rm(-$) name[name...] 移除 </span><br><span class="line">    -f　　--force&#x3D;false　　强制移除运行中容器</span><br><span class="line">    -l　　--link&#x3D;false　　 移除指定链接，保留底层容器</span><br><span class="line">    -v　 --volumes&#x3D;false  移除容器关联卷</span><br><span class="line">docker commit(-$)name 镜像名:版本号 　　提交指定容器为镜像</span><br><span class="line">    -a, --author&#x3D;&quot;&quot; 　　　　作者</span><br><span class="line">    -m, --message&#x3D;&quot;&quot; 　　 简要说明</span><br><span class="line">    -p, --pause&#x3D;true 　　　暂停容器再提交</span><br><span class="line">docker logs(-$) name　　输出指定容器日志信息</span><br><span class="line">    -f　　跟踪日志输出</span><br><span class="line">    -t　　显示时间戳 类似 tail -f</span><br><span class="line">    --tail 在日志的末尾输出指定行数日志（默认所有日志）</span><br><span class="line">docker attach id 进入某个容器(使用exit退出后容器也跟着停止运行)</span><br><span class="line">docker exec -ti id 启动一个伪终端以交互式的方式进入某个容器（使用exit退出后容器不停止运行）</span><br><span class="line">docker run(-$) IMAGE [COMMAND] [ARG...] 　 运行一个容器</span><br><span class="line">    -d　　　　　　　　  指定容器运行于前台还是后台，默认为false   </span><br><span class="line">    -i　　　　　　　　  打开STDIN，用于控制台交互，默认为false </span><br><span class="line">    -t　　　　　　　　  分配tty设备，该可以支持终端登录，默认为false  </span><br><span class="line">    -u, --user&#x3D;&quot;&quot;       指定容器的用户  </span><br><span class="line">    -a, --attach&#x3D;[]      登录容器（必须是以docker run -d启动的容器） </span><br><span class="line">    -w　　　　　　　　  指定容器的工作目录 </span><br><span class="line">    -c   　　　　　　　设置容器CPU权重，在CPU共享场景使用  </span><br><span class="line">    -e, --env&#x3D;[]        指定环境变量，容器中可以使用该环境变量  </span><br><span class="line">    -m　　　　　　　　  指定容器的内存上限  </span><br><span class="line">    -P, --publish-all&#x3D;false 指定容器暴露的端口  </span><br><span class="line">    -p, --publish&#x3D;[]      指定容器暴露的端口  </span><br><span class="line">    -h　　　　　　　　　指定容器的主机名  </span><br><span class="line">    -v, --volume&#x3D;[]      给容器挂载存储卷，挂载到容器的某个目录 </span><br><span class="line">    --volumes-from&#x3D;[]    给容器挂载其他容器上的卷，挂载到容器的某个目录 </span><br><span class="line">    --cap-add&#x3D;[]　　　　 添加权限</span><br><span class="line">    --cap-drop&#x3D;[]   　 删除权限</span><br><span class="line">    --cidfile&#x3D;&quot;&quot;　　　　　 运行容器后，在指定文件中写入容器PID值，监控系统用法  </span><br><span class="line">    --cpuset&#x3D;&quot;&quot;　 　　　 设置容器可使用哪些CPU，此参数可以用来容器独占CPU  </span><br><span class="line">    --device&#x3D;[]   　　　  添加主机设备给容器，相当于设备直通  </span><br><span class="line">    --dns&#x3D;[]            指定容器的dns服务器  </span><br><span class="line">    --dns-search&#x3D;[]      指定容器的dns搜索域名，写入到容器&#x2F;etc&#x2F;resolv.conf文件  </span><br><span class="line">    --entrypoint&#x3D;&quot;&quot;       覆盖image的入口点  </span><br><span class="line">    --env-file&#x3D;[]          指定环境变量文件，文件格式为每行一个环境变量  </span><br><span class="line">    --expose&#x3D;[]         指定容器暴露的端口，即修改镜像的暴露端口  </span><br><span class="line">    --link&#x3D;[]            指定容器间的关联，使用其他容器的IP、env等信息  </span><br><span class="line">    --lxc-conf&#x3D;[]         指定容器的配置文件，只有在指定--exec-driver&#x3D;lxc时使用  </span><br><span class="line">    --name&#x3D;&quot;&quot;          指定容器名字，links特性需要使用名字  </span><br><span class="line">    --net&#x3D;&quot;bridge&quot;       容器网络设置: </span><br><span class="line">        bridge 使用docker daemon指定的网桥    </span><br><span class="line">        host  &#x2F;&#x2F;容器使用主机的网络  </span><br><span class="line">        container:NAME_or_ID &gt;&#x2F;&#x2F;使用其他容器的网路共享IP和PORT等网络资源  </span><br><span class="line">        none 容器使用自己的网络（类似--net&#x3D;bridge）</span><br><span class="line">    --privileged&#x3D;false     指定容器是否为特权容器，特权容器拥有所有的权限</span><br><span class="line">    --restart&#x3D;&quot;no&quot;        指定容器停止后的重启策略: </span><br><span class="line">        no：　　　　容器退出时不重启  </span><br><span class="line">        on-failure：  容器故障退出（返回值非零）时重启  </span><br><span class="line">        always：　　 容器退出时总是重启  </span><br><span class="line">    --rm&#x3D;false      指定容器停止后自动删除容器(不支持以docker run -d启动的容器)  </span><br><span class="line">    --sig-proxy&#x3D;true 设置由代理接受并处理信号，SIGCHLD，SIGSTOP和SIGKILL不代</span><br><span class="line">例：</span><br><span class="line">docker run -i -t centos6.8 进入到默认的线程”&#x2F;bin&#x2F;bash”，直接进入控制台操作</span><br><span class="line">docker run -i -t -d centos6.8 进入到默认的线程”&#x2F;bin&#x2F;bash”，后台运行</span><br><span class="line">docker run -d --restart&#x3D;always centos6.8 ping www.docker.com 带命令启动</span><br><span class="line">docker run -d --name&#x3D;server-dbcentos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe -d 容器的名称为server-db，同时激活了数据库mysql的后台线程</span><br><span class="line">docker run -d --name&#x3D;server-db -p 3306:3306 -v &#x2F;server&#x2F;mysql-data:&#x2F;</span><br><span class="line">mysql-datacentos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe –d</span><br><span class="line">docker run -d --name&#x3D;server-db -p 3306:3306 centos6.8-mysql &#x2F;usr&#x2F;bin&#x2F;mysql_safe –d 服务器宿主机与容器端口映射并暴露</span><br><span class="line">docker run -d --name&#x3D;server-http --link&#x3D;server-db  -p 8080:80centos6.8-httpd &#x2F;usr&#x2F;bin&#x2F;httpd --DFOREGROUND 映射服务器宿主机的8080端口，关联service-db </span><br><span class="line">docker run -it --rm centos6.8　　容器进程结束后，立马自动删除</span><br></pre></td></tr></table></figure>
+
+<h4 id="docker-option"><a href="#docker-option" class="headerlink" title="docker option"></a>docker option</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">--api-enable-cors&#x3D;false      在远程API中启用CORS 头</span><br><span class="line">-b, --bridge&#x3D;&quot;&quot;          　　桥接网络 使用“none” 禁用容器网络</span><br><span class="line">--bip&#x3D;&quot;&quot;             　　　网桥模式                     </span><br><span class="line">-d, --daemon&#x3D;false         守护者模式</span><br><span class="line">-D, --debug&#x3D;false          debug 模式</span><br><span class="line">--dns&#x3D;[]             　　  强制 docker 使用指定 dns 服务器</span><br><span class="line">--dns-search&#x3D;[]         　 强制 docker 使用指定 dns 搜索域</span><br><span class="line">-e, --exec-driver&#x3D;&quot;native&quot;     强制 docker 运行时使用指定执行驱动器</span><br><span class="line">--fixed-cidr&#x3D;&quot;&quot;          　　 固定IP的IPv4子网(例: 10.20.0.0&#x2F;16)必须镶套在桥子网中(由-b or --bip定义)                     </span><br><span class="line">-G, --group&#x3D;&quot;docker&quot;        当在守护模式中运行时，组指向-H指定的unix套接字。使用&quot;&quot;禁用组设置。</span><br><span class="line">-g, --graph&#x3D;&quot;&#x2F;var&#x2F;lib&#x2F;docker&quot;   容器运行的根目录路径</span><br><span class="line">-H, --host&#x3D;[]            　 套接字绑定到守护模式。使用一个或多个tcp:&#x2F;&#x2F;主机:端口，unix:&#x2F;&#x2F;&#x2F;路径&#x2F;到&#x2F;套接字，fd:&#x2F;&#x2F;*或fd:&#x2F;&#x2F;socketfd.</span><br><span class="line">--icc&#x3D;true            　　  inter-container跨容器通信</span><br><span class="line">--insecure-registry&#x3D;[]        使用指定的注册表启用不安全通信(没有HTTPS的证书验　证和启用HTTP回退)(例如，localhost:5000或10.20.0 &#x2F;16)</span><br><span class="line">--ip&#x3D;&quot;0.0.0.0&quot;          　　 绑定容器端口时使用的IP地址</span><br><span class="line">--ip-forward&#x3D;true           使用net.ipv4.ip_forward转发</span><br><span class="line">--ip-masq&#x3D;true        使IP伪装成桥的IP范围</span><br><span class="line">--iptables&#x3D;true          　　启用Docker添加iptables规则</span><br><span class="line">--mtu&#x3D;0              　　  设置容器网络mtu               </span><br><span class="line">-p, --pidfile&#x3D;&quot;&#x2F;var&#x2F;run&#x2F;docker.pid&quot;   指定守护进程pid文件位置</span><br><span class="line">--registry-mirror&#x3D;[]       　　指定一个首选的镜像仓库（加速地址）         </span><br><span class="line">-s, --storage-driver&#x3D;&quot;&quot;        强制 docker 运行时使用指定存储驱动</span><br><span class="line">--selinux-enabled&#x3D;false       开启 selinux 支持</span><br><span class="line">--storage-opt&#x3D;[]         　　设置存储驱动选项</span><br><span class="line">--tls&#x3D;false            　　　 开启 tls</span><br><span class="line">--tlscacert&#x3D;&quot;&#x2F;root&#x2F;.docker&#x2F;ca.pem&quot;　　只信任提供CA签名的证书</span><br><span class="line">--tlscert&#x3D;&quot;&#x2F;root&#x2F;.docker&#x2F;cert.pem&quot;    tls 证书文件位置</span><br><span class="line">--tlskey&#x3D;&quot;&#x2F;root&#x2F;.docker&#x2F;key.pem&quot; 　　 tls key 文件位置</span><br><span class="line">--tlsverify&#x3D;false         　　　　　 使用 tls 并确认远程控制主机-v, </span><br><span class="line">--version&#x3D;false   输出 docker 版本信息</span><br></pre></td></tr></table></figure>
+
+<h1 id="Docker-容器镜像删除"><a href="#Docker-容器镜像删除" class="headerlink" title="Docker 容器镜像删除"></a><a href="https://www.cnblogs.com/q4486233/p/6482711.html" target="_blank" rel="noopener">Docker 容器镜像删除</a></h1><p>1.停止所有的container，这样才能够删除其中的images：<br>docker stop $(docker ps -a -q)<br>如果想要删除所有container的话再加一个指令：<br>docker rm $(docker ps -a -q)<br>2.查看当前有些什么images<br>docker images<br>3.删除images，通过image的id来指定删除谁<br>docker rmi <image id><br>想要删除untagged images，也就是那些id为<None>的image的话可以用<br>docker rmi $(docker images | grep “^<none>“ | awk “{print $3}”)<br>要删除全部image的话<br>docker rmi $(docker images -q)<br><strong>1、导出某个容器</strong><br>导出某个容器，非常简单，使用docker export命令，语法：docker export $container_id &gt; 容器快照名<br><strong>2、导入某个容器</strong>–docker import命令<br>有了容器快照之后，我们可以在想要的时候随时导入。导入快照使用docker import命令。<br>例如我们可以使用cat centos.tar | docker import - my/centos:v888 导入容器快照作为镜像<br>处理本地的容器快照导入为镜像，我们还可以通过指定一个URL或者目录来导入。<br>例如在某个网络上有个快照image_test.tgz：docker import <a href="http://xxxx.com/image_test.tgz" target="_blank" rel="noopener">http://xxxx.com/image_test.tgz</a> test/image_test<br><strong>镜像保存/载入</strong>：docker load/docker save；将一个镜像导出为文件，再使用docker load命令将文件导入为一个镜像，会保存该镜像的的所有历史记录。比docker export命令导出的文件大，很好理解，因为会保存镜像的所有历史记录。<br><strong>容器导入/导出</strong>：docker import/docker export；将一个容器导出为文件，再使用docker import命令将容器导入成为一个新的镜像，但是相比docker save命令，容器文件会丢失所有元数据和历史记录，仅保存容器当时的状态，相当于虚拟机快照。<br><strong>3、删除容器</strong><br>可以使用”docker rm 容器id”来删除一个终止状态的容器；若要删除一个运行中的容器，需要加-f参数。</p>
+<h2 id="清除所有未使用或悬空的图像，容器，卷和网络"><a href="#清除所有未使用或悬空的图像，容器，卷和网络" class="headerlink" title="清除所有未使用或悬空的图像，容器，卷和网络"></a><strong>清除所有未使用或悬空的图像，容器，卷和网络</strong></h2><p>Docker提供了一个命令，可以清理悬空的任何资源（图像，容器，卷和网络）（与容器无关）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune</span><br></pre></td></tr></table></figure>
+<p>要另外删除任何已停止的容器和所有未使用的图像（不只是悬空图像），请将该<code>-a</code>标志添加到命令：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker system prune -a</span><br></pre></td></tr></table></figure>
+<h2 id="删除Docker镜像"><a href="#删除Docker镜像" class="headerlink" title="删除Docker镜像"></a><strong>删除Docker镜像</strong></h2><h3 id="删除一个或多个特定图像"><a href="#删除一个或多个特定图像" class="headerlink" title="删除一个或多个特定图像"></a><strong>删除一个或多个特定图像</strong></h3><p>使用带有<code>-a</code>标志的命令<code>docker images</code>可以找到要删除的图像的ID。这将显示每个图像，包括中间图像层。当您找到要删除的图像时，可以将其ID或标记传递给<code>docker rmi</code>：<br><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi Image Image</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空图像"><a href="#删除悬空图像" class="headerlink" title="删除悬空图像"></a><strong>删除悬空图像</strong></h3><p>Docker图像由多个图层组成。悬空图像是与任何标记图像无关的图层。它们不再用于目的并占用磁盘空间。它们可以通过添加具有值<code>dangling=true</code>的<code>-f</code>过滤器标志到<code>docker images</code>的命令来定位。如果您确定要删除它们，可以使用以下<code>docker images purge</code>命令：</p>
+<p><strong>注意：</strong>如果您在不标记图像的情况下构建图像，则图像将显示在悬空图像列表中，因为它与标记图像无关。您可以通过在构建时提供标记来避免这种情况，并且可以使用docker tag命令追溯标记图像。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images purge</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案删除图像"><a href="#根据图案删除图像" class="headerlink" title="根据图案删除图像"></a><strong>根据图案删除图像</strong></h3><p>你可以使用组合模式<code>docker images</code>和<code>grep</code>找到相匹配的图像。一旦您满意，您可以通过使用<code>awk</code>来删除它们<code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a |  grep <span class="string">"pattern"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有图像"><a href="#删除所有图像" class="headerlink" title="删除所有图像"></a><strong>删除所有图像</strong></h3><p>通过添加<code>-a</code>到<code>docker images</code>命令，可以列出系统上的所有Docker映像。一旦确定要全部删除它们，就可以添加<code>-q</code>标志以将图像ID传递给<code>docker rmi</code>：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi $(docker images -a -q)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a><strong>删除容器</strong></h2><h3 id="删除一个或多个特定容器"><a href="#删除一个或多个特定容器" class="headerlink" title="删除一个或多个特定容器"></a><strong>删除一个或多个特定容器</strong></h3><p>使用带有该<code>-a</code>标志的<code>docker ps</code>命令可以找到要删除的容器的名称或ID：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm ID_or_Name ID_or_Name</span><br></pre></td></tr></table></figure>
+
+<h3 id="退出时取出容器"><a href="#退出时取出容器" class="headerlink" title="退出时取出容器"></a><strong>退出时取出容器</strong></h3><p>如果您知道何时创建容器，一旦完成就不想保留它，您可以运行<code>docker run --rm</code>以在退出时自动删除它。</p>
+<p><strong>运行和删除：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --rm image_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除所有已退出的容器"><a href="#删除所有已退出的容器" class="headerlink" title="删除所有已退出的容器"></a><strong>删除所有已退出的容器</strong></h3><p>您可以使用以下<code>docker ps -a</code>状态定位容器并对其进行过滤：创建，重新启动，运行，暂停或退出。要查看已退出容器的列表，请使用<code>-f</code>标志根据状态进行过滤。当您确认要删除这些容器时，使用<code>-q</code>将ID传递给<code>docker rm</code>命令。</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用多个过滤器移除容器"><a href="#使用多个过滤器移除容器" class="headerlink" title="使用多个过滤器移除容器"></a><strong>使用多个过滤器移除容器</strong></h3><p>可以通过使用附加值重复过滤器标志来组合Docker过滤器。这导致满足任一条件的容器列表。例如，如果要删除标记为<strong>Created的</strong>所有容器（运行具有无效命令的容器时可能导致的状态）或<strong>Exited</strong>，则可以使用两个过滤器：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a -f status=exited -f status=created</span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm $(docker ps -a -f status=exited -f status=created -q)</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据图案移除容器"><a href="#根据图案移除容器" class="headerlink" title="根据图案移除容器"></a><strong>根据图案移除容器</strong></h3><p>您可以使用<code>docker ps</code>和grep的组合找到与模式匹配的所有容器。当您对要删除的列表感到满意时，可以使用<code>awk</code>和<code>xargs</code>提供ID给 <code>docker rmi</code>。请注意，这些实用程序不是由Docker提供的，并不一定适用于所有系统：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a |  grep <span class="string">"pattern”</span></span><br></pre></td></tr></table></figure>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a | grep <span class="string">"pattern"</span> | awk <span class="string">'&#123;print $3&#125;'</span> | xargs docker rmi</span><br></pre></td></tr></table></figure>
+<h3 id="停止并移除所有容器"><a href="#停止并移除所有容器" class="headerlink" title="停止并移除所有容器"></a><strong>停止并移除所有容器</strong></h3><p>您可以查看系统上的容器<code>docker ps</code>。添加<code>-a</code>标志将显示所有容器。当您确定要删除它们时，可以添加<code>-q</code>标志以向 <code>docker stop</code>和<code>docker rm</code>命令提供ID：<br><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop $(docker ps -a -q)</span><br><span class="line">docker rm $(docker ps -a -q)</span><br></pre></td></tr></table></figure>
+<h2 id="删除卷"><a href="#删除卷" class="headerlink" title="删除卷"></a><strong>删除卷</strong></h2><h3 id="删除一个或多个特定卷-Docker-1-9及更高版本"><a href="#删除一个或多个特定卷-Docker-1-9及更高版本" class="headerlink" title="删除一个或多个特定卷 - Docker 1.9及更高版本"></a><strong>删除一个或多个特定卷 - Docker 1.9及更高版本</strong></h3><p>使用此<code>docker volume ls</code>命令可找到要删除的卷名称。然后，您可以使用以下<code>docker volume rm</code>命令删除一个或多个卷：<br><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls</span><br></pre></td></tr></table></figure>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume rm volume_name volume_name</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除悬空卷-Docker-1-9及更高版本"><a href="#删除悬空卷-Docker-1-9及更高版本" class="headerlink" title="删除悬空卷 - Docker 1.9及更高版本"></a><strong>删除悬空卷 - Docker 1.9及更高版本</strong></h3><p>由于卷的位置与容器无关，因此在移除容器时，不会同时自动删除卷。当卷存在且不再连接到任何容器时，它称为悬空卷。要找到它们以确认您要删除它们，可以使用带过滤器的命令<code>docker volume ls</code>将结果限制为悬空卷。当您对列表感到满意时，可以用<code>docker volume prune</code>将它们全部删除：</p>
+<p><strong>列表：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume ls -f dangling=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker volume prune</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除容器及其容量"><a href="#删除容器及其容量" class="headerlink" title="删除容器及其容量"></a><strong>删除容器及其容量</strong></h3><p>如果您创建了一个未命名的卷，则可以将其与具有该<code>-v</code>标志的容器同时删除。请注意，这仅适用于<em>未命名的</em>卷。成功删除容器后，将显示其ID。请注意，没有引用卷的删除。如果未命名，则会以静默方式从系统中删除。如果它被命名，它会默默地保持存在。</p>
+<p><strong>去掉：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -v container_name</span><br></pre></td></tr></table></figure>
+
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a><strong>结论</strong></h2><p>本教程介绍了一些用于使用Docker删除图像，容器和卷的常用命令。每个都可以使用许多其他组合和标志。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/sql%20and%20freemaker%20format/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/sql%20and%20freemaker%20format/" itemprop="url">sql and freemaker format</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/" itemprop="url" rel="index">
+                    <span itemprop="name">sql</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/sql/format/" itemprop="url" rel="index">
+                    <span itemprop="name">format</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="sql-and-freemaker-format"><a href="#sql-and-freemaker-format" class="headerlink" title="sql and freemaker format"></a>sql and freemaker format</h2><ol>
+<li>格式化换行<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;[\&#x2F;|#].*?&gt;  \n$0\n</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/04/05/sql%20and%20freemaker%20format/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" itemprop="url">Linux和Docker常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件</span><br><span class="line">类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息-----简化为 ll）</span><br><span class="line"></span><br><span class="line">mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录</span><br><span class="line">touch 　　创建文件 例：touch test&#x2F;readme.txt 在 test 目录下创建 readme.txt 文件</span><br><span class="line">cd 　　切换目录 cd &#x2F;. 到根目录 cd .. 上一级目录 cd &#x2F;hahaha&#x2F;hahaha 到指定目录</span><br><span class="line">pwd 　　显示当前目录</span><br><span class="line">mv 　　移动&#x2F;重命名（加上 -i 参数询问是否覆盖） 　 mv hello rock&#x2F; 移动到 rock 目录下</span><br><span class="line">mv hello rock 重命名为 rock</span><br><span class="line">cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用）</span><br><span class="line">cp -ir test&#x2F; workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）</span><br><span class="line">rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）</span><br><span class="line">rm -ir test&#x2F; 递归删除 test 目录及其子目录并询问</span><br><span class="line">wget url 　　下载文件到当前目录</span><br><span class="line">sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit 或 logout 退出</span><br><span class="line">su 账户名 　　切换到某某用户模式，没有时间限制</span><br></pre></td></tr></table></figure>
+<h3 id="ZIP-工具："><a href="#ZIP-工具：" class="headerlink" title="ZIP 工具："></a>ZIP 工具：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">压缩文件　　 zip target.zip filename</span><br><span class="line">压缩文件夹　　 zip -r target.zip dir 　　 -r 参数表示递归压缩子目录</span><br><span class="line">解压　　 unzip target.zip</span><br></pre></td></tr></table></figure>
+<h3 id="tar-工具："><a href="#tar-工具：" class="headerlink" title="tar 工具："></a>tar 工具：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">-c: 建立压缩档案</span><br><span class="line">-x：解压</span><br><span class="line">-t：查看内容</span><br><span class="line">-r：向压缩归档文件末尾追加文件</span><br><span class="line">-u：更新原压缩包中的文件</span><br><span class="line">这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需在压缩或解压档案时可选的。</span><br><span class="line">-z：有 gzip 属性的</span><br><span class="line">-j：有 bz2 属性的</span><br><span class="line">-Z：有 compress 属性的</span><br><span class="line">-v：显示所有过程</span><br><span class="line">-O：将文件解开到标准输出</span><br><span class="line">下面的参数-f 是必须的</span><br><span class="line">-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名</span><br><span class="line">例：tar -xvf file.tar &#x2F;&#x2F;解压 tar 包</span><br><span class="line">tar -xzvf jdk-8u131-linux-x64.tar.gz -C &#x2F;usr&#x2F;local&#x2F;java &#x2F;&#x2F;解压 jdk 到指定文件夹</span><br><span class="line">tar -cZf jpg.tar.Z \*.jpg &#x2F;&#x2F;将目录里所有 jpg 文件打包成 jpg.tar 后，并且将其用</span><br><span class="line">compress 压缩，生成一个 umcompress 压缩过的包，命名为 jpg.tar.Z</span><br></pre></td></tr></table></figure>
+<h3 id="vim-编辑器：-vim-test-cpp"><a href="#vim-编辑器：-vim-test-cpp" class="headerlink" title="vim 编辑器：　　 vim test.cpp"></a>vim 编辑器：　　 vim test.cpp</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim 有两种模式，一种是**普通模式**，另一种是**插入模式**。执行上述命令以后进入普通模式。</span><br><span class="line">按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入</span><br><span class="line">的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入</span><br><span class="line">w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要</span><br><span class="line">在 q 之前，先保存再退出）。</span><br><span class="line">**查找**：在普通模式下输入“&#x2F;查找内容”，回车，即可定位到第一个匹配项。接着按下字母</span><br><span class="line">键“n”可以查找下一个。</span><br><span class="line">**撤销**：普通模式下输入“:u”并回车，实现撤销。</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/" itemprop="url">eclipse/che</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
+                2020-04-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/docker/" itemprop="url" rel="index">
+                    <span itemprop="name">docker</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/docker/mysql/" itemprop="url" rel="index">
+                    <span itemprop="name">mysql</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Docker搭建MySQL服务"><a href="#Docker搭建MySQL服务" class="headerlink" title="Docker搭建MySQL服务"></a><a href="https://www.cnblogs.com/pwc1996/p/5425234.html" target="_blank" rel="noopener">Docker搭建MySQL服务</a></h1><h1 id="Docker开源镜像"><a href="#Docker开源镜像" class="headerlink" title="Docker开源镜像"></a>Docker开源镜像</h1><p>前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。</p>
+<p>要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）</p>
+<p><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker开源镜像传送门</a></p>
+<hr>
+<h1 id="大概步骤"><a href="#大概步骤" class="headerlink" title="大概步骤"></a>大概步骤</h1><p><strong>1. 下载MySQL镜像</strong><br><strong>2. 创建运行容器</strong></p>
+<blockquote>
+<p>好像很简单是吧？</p>
+</blockquote>
+<hr>
+<h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><h2 id="第零步，查看Docker-MySQL文档"><a href="#第零步，查看Docker-MySQL文档" class="headerlink" title="第零步，查看Docker MySQL文档"></a>第零步，查看Docker MySQL文档</h2><p>MySQL文档地址：<br><a href="https://hub.docker.com/_/mysql/" target="_blank" rel="noopener">https://hub.docker.com/_/mysql/</a></p>
+<hr>
+<h2 id="第一步，拉取MySQL镜像"><a href="#第一步，拉取MySQL镜像" class="headerlink" title="第一步，拉取MySQL镜像"></a>第一步，拉取MySQL镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull mysql</span><br></pre></td></tr></table></figure>
+
+<p>之后docker会自动拉取（下载）MySQL镜像。</p>
+<p>等待同样是漫长的。。。</p>
+<blockquote>
+<p>注意，若提示拉取失败就重复几次，总有一次会成功的。。。没办法，墙内的人民很辛苦</p>
+</blockquote>
+<p>拉取成功后我们查看一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker images</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317140105707" alt="01"></p>
+<hr>
+<h2 id="第二步，创建并启动一个MySQL容器"><a href="#第二步，创建并启动一个MySQL容器" class="headerlink" title="第二步，创建并启动一个MySQL容器"></a>第二步，创建并启动一个MySQL容器</h2><p>输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 3306:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142223778" alt="02"></p>
+<ul>
+<li>–name：给新创建的容器命名，此处命名为<code>pwc-mysql</code></li>
+<li>-e：配置信息，此处配置<code>mysql</code>的<code>root用户</code>的登陆密码</li>
+<li>-p：端口映射，此处映射<code>主机3306端口</code>到<code>容器pwc-mysql的3306端口</code></li>
+<li>-d：成功启动容器后输出容器的完整ID，例如上图 <code>73f8811f669ee...</code></li>
+<li>最后一个<code>mysql</code>指的是<code>mysql镜像名字</code></li>
+</ul>
+<p><strong>到这里我们查看容器运行状态：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://img.blog.csdn.net/20160317142325183" alt="03"></p>
+<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
+<hr>
+<h2 id="第三步，测试连接MySQL"><a href="#第三步，测试连接MySQL" class="headerlink" title="第三步，测试连接MySQL"></a>第三步，测试连接MySQL</h2><p>这里我使用navicat远程连接，连接MySQL前需要防火墙开放端口或者关闭防火墙。</p>
+<p>开放端口：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo firewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br></pre></td></tr></table></figure>
+
+<p>关闭防火墙：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop firewalld</span><br></pre></td></tr></table></figure>
+
+<p>接着使用navicat连接<br><img src="http://img.blog.csdn.net/20160317143333986" alt="04"></p>
+<p>连接成功，也可以进行相关数据库操作，因此MySQL服务搭建成功！</p>
+<hr>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>1.可以启动多个MySQL服务，因为我们启动的是容器，容器可以有多个，只要容器名字映射段端口不一样就可以了，例如：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name dbdb -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 6666:3306 -d mysql</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.查看所有容器（启动状态或者关闭状态）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.启动和关闭容器</strong></p>
+<p>启动命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker start pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker start 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p>关闭命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker stop pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker stop 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.修改MySQL配置文件有两种方法：</strong></p>
+<ul>
+<li><p>一是进入容器，修改容器里的MySQL的配置文件，然后重新启动容器，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it pwc-mysql &#x2F;usr&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
+
+<p>然后可以进入容器的命令行模式，接着修改 <code>/etc/mysql/my.cnf</code> 文件即可</p>
+</li>
+<li><p>二是挂载主机的mysql配置文件，官方文档如下：</p>
+<p>The MySQL startup configuration is specified in the file <code>/etc/mysql/my.cnf</code>, and that file in turn includes any files found in the <code>/etc/mysql/conf.d</code> directory that end with .cnf. Settings in files in this directory will augment and/or override settings in <code>/etc/mysql/my.cnf</code>. If you want to use a customized MySQL configuration, you can create your alternative configuration file in a directory on the host machine and then mount that directory location as <code>/etc/mysql/conf.d</code> inside the mysql container.</p>
+<p>If <code>/my/custom/config-file.cnf</code> is the path and name of your custom configuration file, you can start your mysql container like this (note that only the directory path of the custom config file is used in this command):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name some-mysql -v &#x2F;my&#x2F;custom:&#x2F;etc&#x2F;mysql&#x2F;conf.d -e MYSQL_ROOT_PASSWORD&#x3D;my-secret-pw -d mysql:tag</span><br></pre></td></tr></table></figure>
+
+<p>This will start a new container some-mysql where the MySQL instance uses the combined startup settings from <code>/etc/mysql/my.cnf</code> and <code>/etc/mysql/conf.d/config-file.cnf</code>, with settings from the latter taking precedence.</p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/01/01/hexo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zhanghuo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="yxzhizhi's workspace">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/01/hexo/" itemprop="url">hexo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-01T00:00:00+08:00">
+                2020-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###  hexo install</span></span><br><span class="line">npm install hexo /yarn add hexo</span><br><span class="line">//npx hexo &lt;<span class="built_in">command</span>&gt; to hexo </span><br><span class="line"><span class="built_in">echo</span> <span class="string">'PATH="$PATH:./node_modules/.bin"'</span> &gt;&gt; ~/.profile </span><br><span class="line"></span><br><span class="line">hexo init ./yxzhizhi     <span class="comment"># 初始化</span></span><br><span class="line">yarn install    <span class="comment"># 安装组件</span></span><br><span class="line">hexo g   <span class="comment"># 生成页面</span></span><br><span class="line">hexo s   <span class="comment"># 启动预览</span></span><br><span class="line">yarn add hexo-deployer-git</span><br><span class="line"></span><br><span class="line">然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:用户名/用户名.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line">完成后运行 hexo d 将网站上传部署到 GitHub Pages。</span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">"xx"</span></span><br><span class="line">git config --global user.name <span class="string">"xx"</span></span><br><span class="line"></span><br><span class="line">hexo new <span class="string">"name"</span>       <span class="comment"># 新建文章</span></span><br><span class="line">hexo new page <span class="string">"name"</span>  <span class="comment"># 新建页面</span></span><br><span class="line">hexo g                <span class="comment"># 生成页面</span></span><br><span class="line">hexo d                <span class="comment"># 部署</span></span><br><span class="line">hexo g -d             <span class="comment"># 生成页面并部署</span></span><br><span class="line">hexo s                <span class="comment"># 本地预览</span></span><br><span class="line">hexo clean            <span class="comment"># 清除缓存和已生成的静态文件</span></span><br><span class="line">hexo <span class="built_in">help</span>             <span class="comment"># 帮助</span></span><br><span class="line">https://yxzhizhi.github.io/</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+<div style="text-align:center;color: #ccc;font-size:14px;">---------------- The End ----------------</div>
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://pic1.zhimg.com/v2-3b4fc7e3a1195a081d0259246c38debc_1200x500.jpg"
+                alt="zhanghuo" />
+            
+              <p class="site-author-name" itemprop="name">zhanghuo</p>
+              <p class="site-description motion-element" itemprop="description">生命不是要超越别人，而是要超越自己。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yxzhizhi" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yxzhizhi@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yxzhizhi" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/yxzhizhi" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://douban.com/people/yxzhizhi" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-globe"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.zhihu.com/people/yxzhizhi" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/zh-cn/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zhanghuo</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
