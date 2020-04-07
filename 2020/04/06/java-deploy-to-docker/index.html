@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="mysql," />
+  <meta name="keywords" content="java,docker," />
 
 
 
@@ -88,22 +88,17 @@
 
 
 
-<meta name="description" content="Docker搭建MySQL服务Docker开源镜像前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。 要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）">
+<meta name="description" content="ubuntu普通用户登录操作docker提示无权限的解决办法1234567891011sudo groupadd dockersudo usermod -aG docker $&amp;#123;USER&amp;#125;newgrp docker     #更新用户组docker ps    #测试docker命令是否可以使用sudo正常使用#1 添加docker用户组(一般安装docker时会自动添加)s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="eclipse&#x2F;che">
-<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/index.html">
+<meta property="og:title" content="java deploy to docker">
+<meta property="og:url" content="http://yxzhizhi.gicp.com/2020/04/06/java-deploy-to-docker/index.html">
 <meta property="og:site_name" content="yxzhizhiの博客">
-<meta property="og:description" content="Docker搭建MySQL服务Docker开源镜像前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。 要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）">
-<meta property="og:image" content="http://img.blog.csdn.net/20160317140105707">
-<meta property="og:image" content="http://img.blog.csdn.net/20160317142223778">
-<meta property="og:image" content="http://img.blog.csdn.net/20160317142325183">
-<meta property="og:image" content="http://img.blog.csdn.net/20160317143333986">
-<meta property="article:published_time" content="2020-04-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-05T15:46:55.311Z">
+<meta property="og:description" content="ubuntu普通用户登录操作docker提示无权限的解决办法1234567891011sudo groupadd dockersudo usermod -aG docker $&amp;#123;USER&amp;#125;newgrp docker     #更新用户组docker ps    #测试docker命令是否可以使用sudo正常使用#1 添加docker用户组(一般安装docker时会自动添加)s">
+<meta property="article:published_time" content="2020-04-06T07:36:42.000Z">
+<meta property="article:modified_time" content="2020-04-07T05:16:50.581Z">
 <meta property="article:author" content="zhanghuo">
-<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="java,docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://img.blog.csdn.net/20160317140105707">
 
 
 
@@ -133,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/05/Docker搭建MySQL服务/"/>
+  <link rel="canonical" href="http://yxzhizhi.gicp.com/2020/04/06/java-deploy-to-docker/"/>
 
 
 
 
 
-  <title>eclipse/che | yxzhizhiの博客</title>
+  <title>java deploy to docker | yxzhizhiの博客</title>
   
 
 
@@ -311,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/">
+    <link itemprop="mainEntityOfPage" href="http://yxzhizhi.gicp.com/2020/04/06/java-deploy-to-docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhanghuo">
@@ -328,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">eclipse/che</h1>
+          <h1 class="post-title" itemprop="name headline">java deploy to docker</h1>
         
 
         <div class="post-meta">
@@ -340,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-05T00:00:00+08:00">
-                2020-04-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-06T15:36:42+08:00">
+                2020-04-06
               </time>
             
 
@@ -350,50 +345,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/docker/" itemprop="url" rel="index">
-                    <span itemprop="name">docker</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/docker/mysql/" itemprop="url" rel="index">
-                    <span itemprop="name">mysql</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -446,85 +397,57 @@
       
 
       
-        <h1 id="Docker搭建MySQL服务"><a href="#Docker搭建MySQL服务" class="headerlink" title="Docker搭建MySQL服务"></a><a href="https://www.cnblogs.com/pwc1996/p/5425234.html" target="_blank" rel="noopener">Docker搭建MySQL服务</a></h1><h1 id="Docker开源镜像"><a href="#Docker开源镜像" class="headerlink" title="Docker开源镜像"></a>Docker开源镜像</h1><p>前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。</p>
-<p>要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）</p>
-<a id="more"></a>
-<p><a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker开源镜像传送门</a></p>
+        <hr>
+<h1 id="ubuntu普通用户登录操作docker提示无权限的解决办法"><a href="#ubuntu普通用户登录操作docker提示无权限的解决办法" class="headerlink" title="ubuntu普通用户登录操作docker提示无权限的解决办法"></a>ubuntu普通用户登录操作docker提示无权限的解决办法</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">sudo usermod -aG docker $&#123;USER&#125;</span><br><span class="line">newgrp docker     #更新用户组</span><br><span class="line">docker ps    #测试docker命令是否可以使用sudo正常使用</span><br><span class="line"><span class="meta">#</span><span class="bash">1 添加docker用户组(一般安装docker时会自动添加)</span></span><br><span class="line">sudo groupadd docker </span><br><span class="line"><span class="meta">#</span><span class="bash">2 将指定用户添加到docker用户组中 注:将USER替换为自己的用户名</span></span><br><span class="line">sudo gpasswd -a USER docker</span><br><span class="line"><span class="meta">#</span><span class="bash">3 重启docker服务</span></span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"><span class="meta">#</span><span class="bash">4 退出SSH连接，重新登录</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="grep-正则"><a href="#grep-正则" class="headerlink" title="grep 正则"></a>grep 正则</h1><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1、或操作</span><br><span class="line">grep -E '123|abc' filename  // 找出文件（filename）中包含123或者包含abc的行</span><br><span class="line">egrep '123|abc' filename    // 用egrep同样可以实现</span><br><span class="line">awk '/123|abc/' filename   // awk 的实现方式</span><br><span class="line">2、与操作</span><br><span class="line">grep pattern1 files | grep pattern2 //显示既匹配 pattern1 又匹配 pattern2 的行。</span><br><span class="line">3、其他操作</span><br><span class="line">grep -i pattern files   //不区分大小写地搜索。默认情况区分大小写，</span><br><span class="line">grep -l pattern files   //只列出匹配的文件名，</span><br><span class="line">grep -L pattern files   //列出不匹配的文件名，</span><br><span class="line">grep -w pattern files  //只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’），</span><br><span class="line">grep -C number pattern files //匹配的上下文分别显示[number]行，</span><br></pre></td></tr></table></figure>
+<h1 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据镜像id删除</span></span><br><span class="line">docker rm $(docker ps -a|grep -E <span class="string">'1b9cf56dec97|4eb9989fc00f'</span>| awk <span class="string">'&#123;print $1&#125;'</span>)</span><br><span class="line">docker rm $(docker ps -a|grep 1b9cf56dec97| awk <span class="string">'&#123;print $1&#125;'</span>)</span><br><span class="line"><span class="comment"># 删除未命名的容器[通常由dockfile文件执行run命令自动产生的中间镜像]</span></span><br><span class="line">docker rmi $(docker images | grep <span class="string">"none"</span> | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br></pre></td></tr></table></figure>
+
 <hr>
-<h1 id="大概步骤"><a href="#大概步骤" class="headerlink" title="大概步骤"></a>大概步骤</h1><p><strong>1. 下载MySQL镜像</strong><br><strong>2. 创建运行容器</strong></p>
-<blockquote>
-<p>好像很简单是吧？</p>
-</blockquote>
-<hr>
-<h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><h2 id="第零步，查看Docker-MySQL文档"><a href="#第零步，查看Docker-MySQL文档" class="headerlink" title="第零步，查看Docker MySQL文档"></a>第零步，查看Docker MySQL文档</h2><p>MySQL文档地址：<br><a href="https://hub.docker.com/_/mysql/" target="_blank" rel="noopener">https://hub.docker.com/_/mysql/</a></p>
-<hr>
-<h2 id="第一步，拉取MySQL镜像"><a href="#第一步，拉取MySQL镜像" class="headerlink" title="第一步，拉取MySQL镜像"></a>第一步，拉取MySQL镜像</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker pull mysql</span><br></pre></td></tr></table></figure>
-
-<p>之后docker会自动拉取（下载）MySQL镜像。</p>
-<p>等待同样是漫长的。。。</p>
-<blockquote>
-<p>注意，若提示拉取失败就重复几次，总有一次会成功的。。。没办法，墙内的人民很辛苦</p>
-</blockquote>
-<p>拉取成功后我们查看一下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker images</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://img.blog.csdn.net/20160317140105707" alt="01"></p>
-<hr>
-<h2 id="第二步，创建并启动一个MySQL容器"><a href="#第二步，创建并启动一个MySQL容器" class="headerlink" title="第二步，创建并启动一个MySQL容器"></a>第二步，创建并启动一个MySQL容器</h2><p>输入以下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 3306:3306 -d mysql</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://img.blog.csdn.net/20160317142223778" alt="02"></p>
-<ul>
-<li>–name：给新创建的容器命名，此处命名为<code>pwc-mysql</code></li>
-<li>-e：配置信息，此处配置<code>mysql</code>的<code>root用户</code>的登陆密码</li>
-<li>-p：端口映射，此处映射<code>主机3306端口</code>到<code>容器pwc-mysql的3306端口</code></li>
-<li>-d：成功启动容器后输出容器的完整ID，例如上图 <code>73f8811f669ee...</code></li>
-<li>最后一个<code>mysql</code>指的是<code>mysql镜像名字</code></li>
-</ul>
-<p><strong>到这里我们查看容器运行状态：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps</span><br></pre></td></tr></table></figure>
-
-<p><img src="http://img.blog.csdn.net/20160317142325183" alt="03"></p>
-<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
-<hr>
-<h2 id="第三步，测试连接MySQL"><a href="#第三步，测试连接MySQL" class="headerlink" title="第三步，测试连接MySQL"></a>第三步，测试连接MySQL</h2><p>这里我使用navicat远程连接，连接MySQL前需要防火墙开放端口或者关闭防火墙。</p>
-<p>开放端口：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo firewall-cmd --add-port&#x3D;3306&#x2F;tcp</span><br></pre></td></tr></table></figure>
-
-<p>关闭防火墙：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo systemctl stop firewalld</span><br></pre></td></tr></table></figure>
-
-<p>接着使用navicat连接<br><img src="http://img.blog.csdn.net/20160317143333986" alt="04"></p>
-<p>连接成功，也可以进行相关数据库操作，因此MySQL服务搭建成功！</p>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>1.可以启动多个MySQL服务，因为我们启动的是容器，容器可以有多个，只要容器名字映射段端口不一样就可以了，例如：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker run --name dbdb -e MYSQL_ROOT_PASSWORD&#x3D;123456 -p 6666:3306 -d mysql</span><br></pre></td></tr></table></figure>
-
-<p><strong>2.查看所有容器（启动状态或者关闭状态）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p><strong>3.启动和关闭容器</strong></p>
-<p>启动命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker start pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker start 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
-
-<p>关闭命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker stop pwc-mysql   &#x2F;&#x2F;通过指定容器名字</span><br><span class="line">$ sudo docker stop 73f8811f669e  &#x2F;&#x2F;通过指定容器ID</span><br></pre></td></tr></table></figure>
-
-<p><strong>3.修改MySQL配置文件有两种方法：</strong></p>
-<ul>
-<li><p>一是进入容器，修改容器里的MySQL的配置文件，然后重新启动容器，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it pwc-mysql &#x2F;usr&#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
-
-<p>然后可以进入容器的命令行模式，接着修改 <code>/etc/mysql/my.cnf</code> 文件即可</p>
+<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><ol>
+<li><p>获取镜像 </p>
+<figure class="highlight plain"><figcaption><span>docker pull oraclelinux```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">2. 后台运行</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;sudo docker run -itd --name oraclelinux_dev oraclelinux &#x2F;bin&#x2F;bash</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>二是挂载主机的mysql配置文件，官方文档如下：</p>
-<p>The MySQL startup configuration is specified in the file <code>/etc/mysql/my.cnf</code>, and that file in turn includes any files found in the <code>/etc/mysql/conf.d</code> directory that end with .cnf. Settings in files in this directory will augment and/or override settings in <code>/etc/mysql/my.cnf</code>. If you want to use a customized MySQL configuration, you can create your alternative configuration file in a directory on the host machine and then mount that directory location as <code>/etc/mysql/conf.d</code> inside the mysql container.</p>
-<p>If <code>/my/custom/config-file.cnf</code> is the path and name of your custom configuration file, you can start your mysql container like this (note that only the directory path of the custom config file is used in this command):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run --name some-mysql -v &#x2F;my&#x2F;custom:&#x2F;etc&#x2F;mysql&#x2F;conf.d -e MYSQL_ROOT_PASSWORD&#x3D;my-secret-pw -d mysql:tag</span><br></pre></td></tr></table></figure>
-
-<p>This will start a new container some-mysql where the MySQL instance uses the combined startup settings from <code>/etc/mysql/my.cnf</code> and <code>/etc/mysql/conf.d/config-file.cnf</code>, with settings from the latter taking precedence.</p>
+<li><p>查询容器</p>
+<figure class="highlight plain"><figcaption><span>docker ps #47e0e5a52244 oraclelinux_dev```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">4. 进入容器</span><br><span class="line">在使用 -d 参数时，容器启动后会进入后台。此时想要进入容器，可以通过以下指令进入：</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;docker attach  $ sudo docker attach 47e0e5a52244</span><br></pre></td></tr></table></figure>
+<p>#注意： 如果从这个容器退出，会导致容器的停止。<br>docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止。</p>
 </li>
-</ul>
+</ol>
+<figure class="highlight plain"><figcaption><span>docker exec -it 47e0e5a52244</span><a href="/bin/bash```">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">5. 导出容器</span><br><span class="line">如果要导出本地某个容器，可以使用 docker export 命令。</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;docker export 47e0e5a52244 &gt; oraclelinux_dev.tar</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>导入容器快照<br>可以使用 docker import 从容器快照文件中再导入为镜像，以下实例将快照文件 oraclelinux_dev.tar 导入到镜像 test/oraclelinux_dev:v1:</li>
+</ol>
+<figure class="highlight plain"><figcaption><span>docker/oraclelinux_dev.tar | sudo docker import - dev/oraclelinux_dev:v1```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#96;&#96;&#96;sudo docker import oraclelinux_dev dev&#x2F;oraclelinux_dev</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>下面的命令可以清理掉所有处于终止状态的容器。<figure class="highlight docker"><figcaption><span>container prune```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">用Docker搭建Python的开发环境</span><br><span class="line">======</span><br><span class="line"></span><br><span class="line">```bash</span><br><span class="line">sudo docker pull python:<span class="number">3.7</span>.<span class="number">6</span></span><br><span class="line">cd /home/zhanghuo/PycharmProjects/db_manage_vue</span><br><span class="line">docker <span class="keyword">run</span><span class="bash">  -v /home/zhanghuo/PycharmProjects/db_manage_vue:/usr/src/db_manage_vue  -w /usr/src/db_manage_vue python:3.7.6 python ./manage.py runserver</span></span><br><span class="line">注意事项：</span><br><span class="line">-v 将主机的py文件目录挂载到容器中的/usr/src/db_manage_vue</span><br><span class="line">-w 指定容器的/usr/src/db_manage_vue目录为工作目录</span><br><span class="line">python ./manage.py runserver 用容器中的python命令来执行工作目录的pyth.py</span><br><span class="line">dockerfile</span><br><span class="line"><span class="keyword">FROM</span> python:<span class="number">3.7</span>.<span class="number">6</span></span><br><span class="line"><span class="keyword">COPY</span><span class="bash"> . /usr/src/db_manage_vue</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="bash"> /usr/src/db_manage_vue</span></span><br><span class="line"><span class="keyword">RUN</span><span class="bash"> pip install -r requirements.txt</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash"> [<span class="string">"python"</span>]</span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> [<span class="string">"./manage.py runserver"</span>]</span></span><br><span class="line"></span><br><span class="line">-- 生成依赖包文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line">创建镜像</span><br><span class="line">sudo docker build -t db_manage_vue/python .</span><br><span class="line">运行容器：</span><br><span class="line">docker <span class="keyword">run</span><span class="bash"> id/db_manage_vue/python</span></span><br><span class="line"><span class="comment">### docker-compose</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker compose安装"></a>docker compose安装</h1><h2 id="参考daocloud的https-get-daocloud-io-install-compose"><a href="#参考daocloud的https-get-daocloud-io-install-compose" class="headerlink" title="参考daocloud的https://get.daocloud.io/#install-compose"></a>参考daocloud的<a href="https://get.daocloud.io/#install-compose" target="_blank" rel="noopener">https://get.daocloud.io/#install-compose</a></h2><ol>
+<li>github</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/docker/compose/releases</span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>daocloud<br>Docker Compose 存放在Git Hub，不太稳定。<br>你可以也通过执行下面的命令，高速安装Docker Compose。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>你可以通过修改URL中的版本，可以自定义您的需要的版本。<br>3. 测试安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="重命名镜像"><a href="#重命名镜像" class="headerlink" title="重命名镜像"></a>重命名镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）</span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line">docker tag ca1b6b825289 registry.cn-hangzhou.aliyuncs.com/xxxxxxx:v1.0</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改镜像源"><a href="#修改镜像源" class="headerlink" title="修改镜像源"></a>修改镜像源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> vi /etc/docker/daemon.json</span><br><span class="line">&#123;<span class="string">"registry-mirrors"</span>: [<span class="string">"https://s75dbt4b.mirror.aliyuncs.com"</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后进入到 mysql 容器中将 django 数据库文件导入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker inspect --format "&#123;&#123;.State.Pid&#125;&#125;" mysql</span></span><br><span class="line">12674</span><br><span class="line"><span class="comment">#nsenter --target 12674 --mount --uts --ipc --net --pid</span></span><br><span class="line">root@91308514f209:/<span class="comment"># cd /etc/mysql/conf.d/</span></span><br><span class="line">root@91308514f209:/etc/mysql/conf.d<span class="comment"># mysql -uroot -p jianshu \&lt; jianshu.sql</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="docker-发布-django项目"><a href="#docker-发布-django项目" class="headerlink" title="docker 发布 django项目"></a>docker 发布 django项目</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">打包django项目</span><br><span class="line">先生成需要的python模块列表</span><br><span class="line">pip freeze &gt;req.txt</span><br><span class="line">然后打包程序</span><br><span class="line">tar cvf django1.tar ./django1</span><br><span class="line">scp到docker服务器的/python目录下解压</span><br><span class="line">确定基础镜像版本</span><br><span class="line">docker pull centos:7.3.1611</span><br><span class="line">运行此镜像</span><br><span class="line">docker run -d -i -v /python:/python -tcentos:7.3.1611</span><br><span class="line">-d为后台运行</span><br><span class="line">-v 为映射本地目录到docker中</span><br><span class="line">准备程序运行环境</span><br><span class="line">然后进入到运行的docker中，安装需要的软件包以及模块</span><br><span class="line">yum install xxxx</span><br><span class="line">pip install –r req.txt</span><br><span class="line">生成新镜像</span><br><span class="line">docker commit bd486b5df131 centos/django</span><br><span class="line">运行</span><br><span class="line">docker run -itd -p 8000:8000  -v /python:/python -w /python centos/django1python /python/django1/manage.py runserver 0.0.0.0:8000</span><br><span class="line">运行的时候使用</span><br><span class="line">docker <span class="built_in">export</span> db509b5a599f &gt;django.tar</span><br><span class="line">然后在目标服务器</span><br><span class="line">cat django.tar | docker import -centos/django</span><br><span class="line">然后新建/python/</span><br><span class="line">将django1.tar项目文件传送到目录上，解压</span><br><span class="line">运行</span><br><span class="line">docker run -itd -p 8000:8000  -v /python:/python -w /python centos/djangopython /python/django1/manage.py runserver 0.0.0.0:8000</span><br><span class="line">查看项目库运行日志：</span><br><span class="line">docker logs fba7f2b32fb0 -f</span><br><span class="line">---docker 发布 django项目 end---</span><br></pre></td></tr></table></figure>
+
+<hr>
 
       
     </div>
@@ -563,7 +486,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/" title="eclipse/che">http://yxzhizhi.gicp.com/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/</a>
+    <a href="http://yxzhizhi.gicp.com/2020/04/06/java-deploy-to-docker/" title="java deploy to docker">http://yxzhizhi.gicp.com/2020/04/06/java-deploy-to-docker/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -578,7 +501,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
+            <a href="/tags/java-docker/" rel="tag"><i class="fa fa-tag"></i> java,docker</a>
           
         </div>
       
@@ -591,8 +514,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/01/hexo/" rel="next" title="hexo">
-                <i class="fa fa-chevron-left"></i> hexo
+              <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/" rel="next" title="使用帮助文档">
+                <i class="fa fa-chevron-left"></i> 使用帮助文档
               </a>
             
           </div>
@@ -601,8 +524,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/" rel="prev" title="Linux和Docker常用命令">
-                Linux和Docker常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/" rel="prev" title="Markdown 语法手册 （完整整理版）">
+                Markdown 语法手册 （完整整理版） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -803,7 +726,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker搭建MySQL服务"><span class="nav-number">1.</span> <span class="nav-text">Docker搭建MySQL服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker开源镜像"><span class="nav-number">2.</span> <span class="nav-text">Docker开源镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#大概步骤"><span class="nav-number">3.</span> <span class="nav-text">大概步骤</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#详细步骤"><span class="nav-number">4.</span> <span class="nav-text">详细步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第零步，查看Docker-MySQL文档"><span class="nav-number">4.1.</span> <span class="nav-text">第零步，查看Docker MySQL文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步，拉取MySQL镜像"><span class="nav-number">4.2.</span> <span class="nav-text">第一步，拉取MySQL镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二步，创建并启动一个MySQL容器"><span class="nav-number">4.3.</span> <span class="nav-text">第二步，创建并启动一个MySQL容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三步，测试连接MySQL"><span class="nav-number">4.4.</span> <span class="nav-text">第三步，测试连接MySQL</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ubuntu普通用户登录操作docker提示无权限的解决办法"><span class="nav-number">1.</span> <span class="nav-text">ubuntu普通用户登录操作docker提示无权限的解决办法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#grep-正则"><span class="nav-number">2.</span> <span class="nav-text">grep 正则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#删除容器"><span class="nav-number">3.</span> <span class="nav-text">删除容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像"><span class="nav-number">3.0.1.</span> <span class="nav-text">镜像</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-compose安装"><span class="nav-number">4.</span> <span class="nav-text">docker compose安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考daocloud的https-get-daocloud-io-install-compose"><span class="nav-number">4.1.</span> <span class="nav-text">参考daocloud的https:&#x2F;&#x2F;get.daocloud.io&#x2F;#install-compose</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重命名镜像"><span class="nav-number">4.1.1.</span> <span class="nav-text">重命名镜像</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#修改镜像源"><span class="nav-number">5.</span> <span class="nav-text">修改镜像源</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-发布-django项目"><span class="nav-number">6.</span> <span class="nav-text">docker 发布 django项目</span></a></li></ol></div>
             
 
           </div>
