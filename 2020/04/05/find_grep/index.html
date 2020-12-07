@@ -1,37 +1,632 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>linux下的find文件查找命令与grep文件内容查找命令 | yxzhizhiの博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d5ebf515ab530cfbdda5f5c85093fb41";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+</head>
 
-{% block page_class %}page-post-detail{% endblock %}
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a target="_blank" rel="noopener" href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">yxzhizhiの博客</span>
+                    <span class="description">必须从过去的错误学习教训而非依赖过去的成功</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2020/04/05/find_grep/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2020/04/05/find_grep/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2020/04/05/find_grep/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2020/04/05/find_grep/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
 
 
-{% block content %}
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>linux下的find文件查找命令与grep文件内容查找命令</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2020-04-04T16:00:00.000Z">2020-04-05</time>
+    </p>
+    <div class="post-content">
+        <h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">(1)find命令是根据**文件的属性**进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。</span><br><span class="line">(2)grep是根据**文件的内容进行**查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="一-find命令"><a href="#一-find命令" class="headerlink" title="一.find命令"></a><strong>一.find命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**基本格式：**find path expression</span><br></pre></td></tr></table></figure>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<h3 id="1-按照文件名查找"><a href="#1-按照文件名查找" class="headerlink" title="1.按照文件名查找"></a><strong>1.按照文件名查找</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -name httpd.conf　　#在根目录下查找文件httpd.conf，表示在整个硬盘查找</span><br><span class="line">(2)find &#x2F;etc -name httpd.conf　　#在&#x2F;etc目录下文件httpd.conf</span><br><span class="line">(3)find &#x2F;etc -name &#39;*srm*&#39;　　#使用通配符*(0或者任意多个)。表示在&#x2F;etc目录下查找文件名中含有字符串‘srm’的文件</span><br><span class="line">(4)find . -name &#39;srm*&#39; 　　#表示当前目录下查找文件名开头是字符串‘srm’的文件</span><br></pre></td></tr></table></figure>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<h3 id="2-按照文件特征查找"><a href="#2-按照文件特征查找" class="headerlink" title="2.按照文件特征查找 　　　"></a><strong>2.按照文件特征查找</strong> 　　　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(1)find &#x2F; -amin -10 　　# 查找在系统中最后10分钟访问的文件(access time)</span><br><span class="line">(2)find &#x2F; -atime -2　　 # 查找在系统中最后48小时访问的文件</span><br><span class="line">(3)find &#x2F; -empty 　　# 查找在系统中为空的文件或者文件夹</span><br><span class="line">(4)find &#x2F; -group cat 　　# 查找在系统中属于 group为cat的文件</span><br><span class="line">(5)find &#x2F; -mmin -5 　　# 查找在系统中最后5分钟里修改过的文件(modify time)</span><br><span class="line">(6)find &#x2F; -mtime -1 　　#查找在系统中最后24小时里修改过的文件</span><br><span class="line">(7)find &#x2F; -user fred 　　#查找在系统中属于fred这个用户的文件</span><br><span class="line">(8)find &#x2F; -size +10000c　　#查找出大于10000000字节的文件(c:字节，w:双字，k:KB，M:MB，G:GB)</span><br><span class="line">(9)find &#x2F; -size -1000k 　　#查找出小于1000KB的文件</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用混合查找方式查找文件"><a href="#3-使用混合查找方式查找文件" class="headerlink" title="3.使用混合查找方式查找文件"></a><strong>3.使用混合查找方式查找文件</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**参数有： ！，-and(-a)，-or(-o)。**</span><br><span class="line">(1)find &#x2F;tmp -size +10000c -and -mtime +2 　　#在&#x2F;tmp目录下查找大于10000字节并在最后2分钟内修改的文件</span><br><span class="line">(2)find &#x2F; -user fred -or -user george 　　#在&#x2F;目录下查找用户是fred或者george的文件文件</span><br><span class="line">(3)find &#x2F;tmp ! -user panda　　#在&#x2F;tmp目录中查找所有不属于panda用户的文件</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、grep命令"><a href="#二、grep命令" class="headerlink" title="二、grep命令"></a><strong>二、grep命令</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">***\*基本格式：\**find  expression**</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-主要参数"><a href="#1-主要参数" class="headerlink" title="1.主要参数"></a><strong>1.主要参数</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[options]主要参数：**</span><br><span class="line">－c：只输出匹配行的计数。</span><br><span class="line">－i：不区分大小写</span><br><span class="line">－h：查询多文件时不显示文件名。</span><br><span class="line">－l：查询多文件时只输出包含匹配字符的文件名。</span><br><span class="line">－n：显示匹配行及行号。</span><br><span class="line">－s：不显示不存在或无匹配文本的错误信息。</span><br><span class="line">－v：显示不包含匹配文本的所有行。</span><br><span class="line"></span><br><span class="line">**pattern正则表达式主要参数：**</span><br><span class="line">\： 忽略正则表达式中特殊字符的原有含义。</span><br><span class="line">^：匹配正则表达式的开始行。</span><br><span class="line">$: 匹配正则表达式的结束行。</span><br><span class="line">\&lt;：从匹配正则表达 式的行开始。</span><br><span class="line">\&gt;：到匹配正则表达式的行结束。</span><br><span class="line">[ ]：单个字符，如[A]即A符合要求 。</span><br><span class="line">[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</span><br><span class="line">.：所有的单个字符。</span><br><span class="line">* ：有字符，长度可以为0。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-实例"><a href="#2-实例" class="headerlink" title="2.实例　"></a><strong>2.实例</strong>　</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">(1)grep &#39;test&#39; d*　　#显示所有以d开头的文件中包含 test的行</span><br><span class="line">(2)grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行</span><br><span class="line">(3)grep ‘[a-z]\&#123;5\&#125;’ aa 　　#显示所有包含每行字符串至少有5个连续小写字符的字符串的行</span><br><span class="line">(4)grep magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(不含子目录)**包含magic的行</span><br><span class="line">(5)grep -r magic &#x2F;usr&#x2F;src　　#显示&#x2F;usr&#x2F;src目录下的**文件(包含子目录)**包含magic的行</span><br><span class="line">(6)grep -w pattern files  #只匹配整个单词，而不是字符串的一部分(如匹配’magic’，而不是’magical’)，</span><br><span class="line">(7)grep -r &quot;查询内容&quot;  文件目录 #文件名+内容</span><br><span class="line">(8)grep &#39;2020-02-27 17:5[6,9]&#39; xinyar-erp-auto.log ##根据时间查找日志</span><br><span class="line">(9)grep -E &#39;2020-02-27 14:5[5-9]|2020-02-28 15:0[0-5]&#39; xinyar-erp-auto.log #查询指定时间段内的日志</span><br><span class="line">(10)grep -C 10 &#39;aaaa&#39; nohup.out #查找关键字</span><br><span class="line">(11)grep -r -l &quot;查询内容&quot;  文件目录 #只显示包含内容的文件名</span><br><span class="line">(12)find 文件目录  -type f |xargs grep &quot;查询内容&quot;;  文件名+内容</span><br><span class="line"></span><br><span class="line">(13)grep -l &quot;innercontent&quot; --include&#x3D;&quot;*filepattern*&quot; .&#x2F;* | xargs cp -t destdir # grep文件名，内容，然后复制到文件夹中</span><br><span class="line">搜索源代码中的内容时, 为避免搜索到不相关的文件, 如.o文件中的内容, 可能希望grep能只处理特定格式的文件.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.c&#39; --include&#x3D;&#39;*.h&#39; re .</span><br><span class="line">可以指定多次, 如果真是上面的这种情况,  其实可以用</span><br><span class="line">grep -rn --include&#x3D;&#39;*.[ch]&#39; re .</span><br><span class="line">但是, 如果源文件中含有C++源代码, 上面的方法就不凑效了, 因为[]中只能放一个字符.</span><br><span class="line">grep -rn --include&#x3D;&#39;*.&#123;cpp,h&#125;&#39; 也是不行的.</span><br><span class="line">此时需要不加引号的展开(由bash执行grep之前就已经完成, 可以通过set -x观察)</span><br><span class="line">grep -rn --include&#x3D;*.&#123;cpp,h&#125; re .</span><br><span class="line">bash中对&#123;A,B&#125;这种形式的展开, 会忽略是否在当前目录下存在相应的文件。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">grep -r &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">grep -r -l &quot;version.app.xinyartech.com&quot;  &#x2F;data&#x2F;nginx&#x2F;conf.d</span><br><span class="line">find &#x2F;data&#x2F;nginx&#x2F;conf.d  -type f |xargs grep &quot;version.app.xinyartech.com&quot;;</span><br><span class="line"></span><br><span class="line">真实示例：</span><br><span class="line">grep -r -l ea5dabc.*f76b .</span><br><span class="line">grep -r -l 3367.*762 .&#x2F; | xargs cp -t .&#x2F;rwglxt-&#96;date +%y%m%d&#96;</span><br><span class="line">grep -r -l 3367.*762 .&#x2F; | xargs zip -q -r .&#x2F;rwglxt-&#96;date +%Y%m%d%H%M%S&#96;.zip</span><br><span class="line">--</span><br><span class="line">cd ***&#x2F;weblogic&#x2F;*&#x2F;domain&#x2F;xxxdoamin</span><br><span class="line">cd .&#x2F;logs&#x2F;</span><br><span class="line">cd .&#x2F;servers&#x2F;</span><br><span class="line">grep -r -l ea5dabc.*f76b .&#x2F; | xargs zip -q -r .&#x2F;rwglxt-&#96;date +%Y%m%d%H%M%S&#96;.zip</span><br><span class="line"></span><br><span class="line">find .&#x2F; -type f -name &quot;*.log&quot; | xargs grep &quot;ERROR&quot;</span><br><span class="line"></span><br><span class="line">find .&#x2F; -type f -name &quot;*.log&quot; | grep -r -l ea5dabc.*f76b .&#x2F; | xargs zip -q -r .&#x2F;rwglxt-&#96;date +%Y%m%d%H%M%S&#96;.zip</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">find .&#x2F;Downloads&#x2F; -type f -name &quot;*.log&quot; | xargs grep -l 3367.*762</span><br><span class="line"></span><br><span class="line">find .&#x2F; -type f -name &quot;*.log&quot; | xargs grep -l 3367.*762 | xargs zip -q -r .&#x2F;rwglxt-&#96;date +%Y%m%d%H%M%S&#96;.zip</span><br><span class="line"></span><br><span class="line">find .&#x2F; -type f -name &quot;*.log&quot; | xargs grep -l ea5dabc.*f76b | xargs zip -q -r .&#x2F;rwglxt-&#96;date +%Y%m%d%H%M%S&#96;.zip</span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>grep 命令系列：grep 中的正则表达式<br>作者： Vivek Gite 译者： LCTT runningwater</p>
+<p>| 2016-01-27 11:30   评论: 4 收藏: 9    </p>
+<p>在 Linux 、类 Unix 系统中我该如何使用 Grep 命令的正则表达式呢？</p>
+<p>Linux 附带有 GNU grep 命令工具，它支持扩展正则表达式，而且 GNU grep 在所有的 Linux 系统中都是默认有的。Grep 命令被用于搜索定位存储在您服务器或工作站上的任何信息。</p>
+<p>正则表达式</p>
+<p>正则表达式就是用于匹配每行输入的一种模式，模式是指一串字符序列。下面是范例：</p>
+<pre><code>^w1
+w1|w2
+[^ ]</code></pre><p>grep 正则表达式示例</p>
+<p>在 /etc/passswd 目录中搜索 ‘vivek’</p>
+<pre><code>grep vivek /etc/passwd</code></pre><p>输出例子:</p>
+<pre><code>vivek:x:1000:1000:Vivek Gite,,,:/home/vivek:/bin/bash
+vivekgite:x:1001:1001::/home/vivekgite:/bin/sh
+gitevivek:x:1002:1002::/home/gitevivek:/bin/sh</code></pre><p>搜索大小写任意的 vivek(即不区分大小写的搜索)</p>
+<pre><code>grep -i -w vivek /etc/passwd</code></pre><p>搜索大小写任意的 vivek 或 raj</p>
+<pre><code>grep -E -i -w &apos;vivek|raj&apos; /etc/passwd</code></pre><p>上面最后的例子显示的，就是一个扩展的正则表达式的模式。<br>锚点</p>
+<p>你可以分别使用 ^ 和 $ 符号来正则匹配输入行的开始或结尾。下面的例子搜索显示仅仅以 vivek 开始的输入行：</p>
+<pre><code>grep ^vivek /etc/passwd</code></pre><p>输出例子:</p>
+<pre><code>vivek:x:1000:1000:Vivek Gite,,,:/home/vivek:/bin/bash
+vivekgite:x:1001:1001::/home/vivekgite:/bin/sh</code></pre><p>你可以仅仅只搜索出以单词 vivek 开始的行，即不显示 vivekgit、vivekg 等（LCTT 译注：即该单词后面是空格、符号等英文的单词分隔符。）</p>
+<pre><code>grep -w ^vivek /etc/passwd</code></pre><p>找出以单词 word 结尾的行：</p>
+<pre><code>grep &apos;foo$&apos; 文件名</code></pre><p>匹配仅仅只包含 foo 的行：</p>
+<pre><code>grep &apos;^foo$&apos; 文件名</code></pre><p>如下所示的例子可以搜索空行：</p>
+<pre><code>grep &apos;^$&apos; 文件名</code></pre><p>字符类</p>
+<p>匹配 Vivek 或 vivek：</p>
+<pre><code>grep &apos;[vV]ivek&apos; 文件名</code></pre><p>或者</p>
+<pre><code>grep &apos;[vV][iI][Vv][Ee][kK]&apos; 文件名</code></pre><p>也可以匹配数字 (即匹配 vivek1 或 Vivek2 等等):</p>
+<pre><code>grep -w &apos;[vV]ivek[0-9]&apos; 文件名</code></pre><p>可以匹配两个数字字符(即 foo11、foo12 等):</p>
+<pre><code>grep &apos;foo[0-9][0-9]&apos; 文件名</code></pre><p>不仅仅局限于数字，也能匹配至少一个字母的:</p>
+<pre><code>grep &apos;[A-Za-z]&apos; 文件名</code></pre><p>显示含有 “w” 或 “n” 字符的所有行：</p>
+<pre><code>grep [wn] 文件名</code></pre><p>放在括号内的表达式，即包在 “[:” 和 “:]” 之间的字符类的名字，它表示的是属于此类的所有字符列表。标准的字符类名称如下：</p>
+<pre><code>[:alnum:] - 字母数字字符
+[:alpha:] - 字母字符
+[:blank:] - 空字符: 空格键符 和 制表符
+[:digit:] - 数字: &apos;0 1 2 3 4 5 6 7 8 9&apos;
+[:lower:] - 小写字母: &apos;a b c d e f g h i j k l m n o p q r s t u v w x y z&apos;
+[:space:] - 空格字符: 制表符、换行符、垂直制表符、换页符、回车符和空格键符
+[:upper:] - 大写字母: &apos;A B C D E F G H I J K L M N O P Q R S T U V W X Y Z&apos;</code></pre><p>在这个例子所示的是匹配所有大写字母:</p>
+<pre><code>grep &apos;[:upper:]&apos; 文件名</code></pre><p>通配符</p>
+<p>你可以使用 “.” 来匹配单个字符。例子中匹配以 “b” 开头以 “t” 结尾的3个字符的单词：</p>
+<pre><code>grep &apos;\&lt;b.t\&gt;&apos; 文件名</code></pre><p>在这儿,</p>
+<pre><code>\&lt; 匹配单词前面的空字符串
+\&gt; 匹配单词后面的空字符串</code></pre><p>打印出只有两个字符的所有行:</p>
+<pre><code>grep &apos;^..$&apos; 文件名</code></pre><p>显示以一个点和一个数字开头的行：</p>
+<pre><code>grep &apos;^\.[0-9]&apos; 文件名</code></pre><p>点字符转义</p>
+<p>下面要匹配到 IP 地址为 192.168.1.254 的正则式是不正确的：（LCTT 译注：可以匹配到该 IP 地址，但是也有可能匹配到间隔符号不是点的类似格式）</p>
+<pre><code>grep &apos;192.168.1.254&apos; /etc/hosts</code></pre><p>三个点字符都需要转义：</p>
+<pre><code>grep &apos;192\.168\.1\.254&apos; /etc/hosts</code></pre><p>下面的例子只能匹配出 IP 地址：（LCTT 译注：实际上由于 IP 地址中数字的取值范围，该正则表达式并不精确）</p>
+<pre><code>egrep &apos;[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}&apos; 文件名</code></pre><p>怎么样搜索以“-” 符号开头的匹配模式？</p>
+<p>要使用 -e 选项来搜索匹配 ‘–test–’ 字符串，如果不使用 -e 选项，grep 命令会试图把 ‘–test–’ 当作自己的选项参数来解析：</p>
+<pre><code>grep -e &apos;--test--&apos; 文件名</code></pre><p>怎么使用 grep 的“或”匹配?</p>
+<p>使用如下的语法：</p>
+<pre><code>grep -E &apos;word1|word2&apos; 文件名
+或
+egrep &apos;word1|word2&apos; 文件名</code></pre><p>或者是</p>
+<pre><code>grep &apos;word1\|word2&apos; 文件名</code></pre><p>怎么使用 grep 的“和”匹配?</p>
+<p>使用下面的语法来显示既包含 ‘word1’ 又包含 ‘word2’ 的所有行</p>
+<pre><code>grep &apos;word1&apos; 文件名 | grep &apos;word2&apos;</code></pre><p>怎么样使用序列检测?</p>
+<p>使用如下的语法，您可以检测一个字符在序列中重复出现次数：</p>
+<pre><code>{N}
+{N,}
+{min,max}</code></pre><p>要匹配字符 “v” 出现两次：</p>
+<pre><code>egrep &quot;v{2}&quot; 文件名</code></pre><p>下面的命令能匹配到 “col” 和 “cool” ：</p>
+<pre><code>egrep &apos;co{1,2}l&apos; 文件名</code></pre><p>下面的命令将会匹配出至少有三个 ‘c’ 字符的所有行。</p>
+<pre><code>egrep &apos;c{3,}&apos; 文件名</code></pre><p>下面的例子会匹配 91-1234567890（即二个数字-十个数字） 这种格式的手机号。</p>
+<pre><code>grep &quot;[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}&quot; 文件名</code></pre><p>怎么样使 grep 命令高亮显示？</p>
+<p>使用如下的语法：</p>
+<pre><code>grep --color 正则表达式 文件名</code></pre><p>怎么样仅仅只显示匹配出的字符，而不是匹配出的行？</p>
+<p>使用如下语法：</p>
+<pre><code>grep -o 正则表达式 文件名</code></pre><p>正则表达式限定符<br>限定符    描述<br>.     匹配任意的一个字符。<br>?     匹配前面的子表达式，最多一次。</p>
+<ul>
+<li>匹配前面的子表达式零次或多次。</li>
+</ul>
+<ul>
+<li>匹配前面的子表达式一次或多次。<br>{N}     匹配前面的子表达式 N 次。<br>{N,}     匹配前面的子表达式 N 次到多次。<br>{N,M}     匹配前面的子表达式 N 到 M 次，至少 N 次至多 M 次。</li>
+</ul>
+<ul>
+<li>只要不是在序列开始、结尾或者序列的结束点上，表示序列范围。<br>^     匹配一行开始的空字符串；也表示字符不在要匹配的列表中。<br>$     匹配一行末尾的空字符串。<br>\b     匹配一个单词前后的空字符串。<br>\B     匹配一个单词中间的空字符串。<br>&lt;     匹配单词前面的空字符串。<br>&gt;     匹配单词后面的空字符串。<br>grep 和 egrep</li>
+</ul>
+<p>egrep 等同于 grep -E 。它会以扩展的正则表达式的模式来解释模式。下面来自 grep 的帮助页：</p>
+<pre><code>基本的正则表达式元字符 ?、+、 {、 |、 ( 和 ) 已经失去了它们原来的意义，要使用的话用反斜线的版本 \?、\+、\{、\|、\( 和 \) 来代替。 传统的 egrep 并不支持 { 元字符，一些 egrep 的实现是以 \{ 替代的，所以一个可移植的脚本应该避免在 grep -E 使用 { 符号，要匹配字面的 { 应该使用 [}]。
+
+GNU grep -E 试图支持传统的用法，如果 { 出在在无效的间隔规范字符串这前，它就会假定 { 不是特殊字符。
+
+例如，grep -E &apos;{1&apos; 命令搜索包含 {1 两个字符的串，而不会报出正则表达式语法错误。
+
+POSIX.2 标准允许这种操作的扩展，但在可移植脚本文件里应该避免这样使用。</code></pre><p>参考:</p>
+<pre><code>grep 和 regex 帮助手册页(7)
+grep 的</code></pre><p>grep 命令系列：grep 中的正则表达式<br>作者： Vivek Gite 译者： LCTT runningwater</p>
+<p>| 2016-01-27 11:30   评论: 4 收藏: 9    </p>
+<p>在 Linux 、类 Unix 系统中我该如何使用 Grep 命令的正则表达式呢？</p>
+<p>Linux 附带有 GNU grep 命令工具，它支持扩展正则表达式，而且 GNU grep 在所有的 Linux 系统中都是默认有的。Grep 命令被用于搜索定位存储在您服务器或工作站上的任何信息。</p>
+<p>正则表达式</p>
+<p>正则表达式就是用于匹配每行输入的一种模式，模式是指一串字符序列。下面是范例：</p>
+<pre><code>^w1
+w1|w2
+[^ ]</code></pre><p>grep 正则表达式示例</p>
+<p>在 /etc/passswd 目录中搜索 ‘vivek’</p>
+<pre><code>grep vivek /etc/passwd</code></pre><p>输出例子:</p>
+<pre><code>vivek:x:1000:1000:Vivek Gite,,,:/home/vivek:/bin/bash
+vivekgite:x:1001:1001::/home/vivekgite:/bin/sh
+gitevivek:x:1002:1002::/home/gitevivek:/bin/sh</code></pre><p>搜索大小写任意的 vivek(即不区分大小写的搜索)</p>
+<pre><code>grep -i -w vivek /etc/passwd</code></pre><p>搜索大小写任意的 vivek 或 raj</p>
+<pre><code>grep -E -i -w &apos;vivek|raj&apos; /etc/passwd</code></pre><p>上面最后的例子显示的，就是一个扩展的正则表达式的模式。<br>锚点</p>
+<p>你可以分别使用 ^ 和 $ 符号来正则匹配输入行的开始或结尾。下面的例子搜索显示仅仅以 vivek 开始的输入行：</p>
+<pre><code>grep ^vivek /etc/passwd</code></pre><p>输出例子:</p>
+<pre><code>vivek:x:1000:1000:Vivek Gite,,,:/home/vivek:/bin/bash
+vivekgite:x:1001:1001::/home/vivekgite:/bin/sh</code></pre><p>你可以仅仅只搜索出以单词 vivek 开始的行，即不显示 vivekgit、vivekg 等（LCTT 译注：即该单词后面是空格、符号等英文的单词分隔符。）</p>
+<pre><code>grep -w ^vivek /etc/passwd</code></pre><p>找出以单词 word 结尾的行：</p>
+<pre><code>grep &apos;foo$&apos; 文件名</code></pre><p>匹配仅仅只包含 foo 的行：</p>
+<pre><code>grep &apos;^foo$&apos; 文件名</code></pre><p>如下所示的例子可以搜索空行：</p>
+<pre><code>grep &apos;^$&apos; 文件名</code></pre><p>字符类</p>
+<p>匹配 Vivek 或 vivek：</p>
+<pre><code>grep &apos;[vV]ivek&apos; 文件名</code></pre><p>或者</p>
+<pre><code>grep &apos;[vV][iI][Vv][Ee][kK]&apos; 文件名</code></pre><p>也可以匹配数字 (即匹配 vivek1 或 Vivek2 等等):</p>
+<pre><code>grep -w &apos;[vV]ivek[0-9]&apos; 文件名</code></pre><p>可以匹配两个数字字符(即 foo11、foo12 等):</p>
+<pre><code>grep &apos;foo[0-9][0-9]&apos; 文件名</code></pre><p>不仅仅局限于数字，也能匹配至少一个字母的:</p>
+<pre><code>grep &apos;[A-Za-z]&apos; 文件名</code></pre><p>显示含有 “w” 或 “n” 字符的所有行：</p>
+<pre><code>grep [wn] 文件名</code></pre><p>放在括号内的表达式，即包在 “[:” 和 “:]” 之间的字符类的名字，它表示的是属于此类的所有字符列表。标准的字符类名称如下：</p>
+<pre><code>[:alnum:] - 字母数字字符
+[:alpha:] - 字母字符
+[:blank:] - 空字符: 空格键符 和 制表符
+[:digit:] - 数字: &apos;0 1 2 3 4 5 6 7 8 9&apos;
+[:lower:] - 小写字母: &apos;a b c d e f g h i j k l m n o p q r s t u v w x y z&apos;
+[:space:] - 空格字符: 制表符、换行符、垂直制表符、换页符、回车符和空格键符
+[:upper:] - 大写字母: &apos;A B C D E F G H I J K L M N O P Q R S T U V W X Y Z&apos;</code></pre><p>在这个例子所示的是匹配所有大写字母:</p>
+<pre><code>grep &apos;[:upper:]&apos; 文件名</code></pre><p>通配符</p>
+<p>你可以使用 “.” 来匹配单个字符。例子中匹配以 “b” 开头以 “t” 结尾的3个字符的单词：</p>
+<pre><code>grep &apos;\&lt;b.t\&gt;&apos; 文件名</code></pre><p>在这儿,</p>
+<pre><code>\&lt; 匹配单词前面的空字符串
+\&gt; 匹配单词后面的空字符串</code></pre><p>打印出只有两个字符的所有行:</p>
+<pre><code>grep &apos;^..$&apos; 文件名</code></pre><p>显示以一个点和一个数字开头的行：</p>
+<pre><code>grep &apos;^\.[0-9]&apos; 文件名</code></pre><p>点字符转义</p>
+<p>下面要匹配到 IP 地址为 192.168.1.254 的正则式是不正确的：（LCTT 译注：可以匹配到该 IP 地址，但是也有可能匹配到间隔符号不是点的类似格式）</p>
+<pre><code>grep &apos;192.168.1.254&apos; /etc/hosts</code></pre><p>三个点字符都需要转义：</p>
+<pre><code>grep &apos;192\.168\.1\.254&apos; /etc/hosts</code></pre><p>下面的例子只能匹配出 IP 地址：（LCTT 译注：实际上由于 IP 地址中数字的取值范围，该正则表达式并不精确）</p>
+<pre><code>egrep &apos;[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}&apos; 文件名</code></pre><p>怎么样搜索以“-” 符号开头的匹配模式？</p>
+<p>要使用 -e 选项来搜索匹配 ‘–test–’ 字符串，如果不使用 -e 选项，grep 命令会试图把 ‘–test–’ 当作自己的选项参数来解析：</p>
+<pre><code>grep -e &apos;--test--&apos; 文件名</code></pre><p>怎么使用 grep 的“或”匹配?</p>
+<p>使用如下的语法：</p>
+<pre><code>grep -E &apos;word1|word2&apos; 文件名
+或
+egrep &apos;word1|word2&apos; 文件名</code></pre><p>或者是</p>
+<pre><code>grep &apos;word1\|word2&apos; 文件名</code></pre><p>怎么使用 grep 的“和”匹配?</p>
+<p>使用下面的语法来显示既包含 ‘word1’ 又包含 ‘word2’ 的所有行</p>
+<pre><code>grep &apos;word1&apos; 文件名 | grep &apos;word2&apos;</code></pre><p>怎么样使用序列检测?</p>
+<p>使用如下的语法，您可以检测一个字符在序列中重复出现次数：</p>
+<pre><code>{N}
+{N,}
+{min,max}</code></pre><p>要匹配字符 “v” 出现两次：</p>
+<pre><code>egrep &quot;v{2}&quot; 文件名</code></pre><p>下面的命令能匹配到 “col” 和 “cool” ：</p>
+<pre><code>egrep &apos;co{1,2}l&apos; 文件名</code></pre><p>下面的命令将会匹配出至少有三个 ‘c’ 字符的所有行。</p>
+<pre><code>egrep &apos;c{3,}&apos; 文件名</code></pre><p>下面的例子会匹配 91-1234567890（即二个数字-十个数字） 这种格式的手机号。</p>
+<pre><code>grep &quot;[[:digit:]]\{2\}[ -]\?[[:digit:]]\{10\}&quot; 文件名</code></pre><p>怎么样使 grep 命令高亮显示？</p>
+<p>使用如下的语法：</p>
+<pre><code>grep --color 正则表达式 文件名</code></pre><p>怎么样仅仅只显示匹配出的字符，而不是匹配出的行？</p>
+<p>使用如下语法：</p>
+<pre><code>grep -o 正则表达式 文件名</code></pre><p>正则表达式限定符<br>限定符    描述<br>.     匹配任意的一个字符。<br>?     匹配前面的子表达式，最多一次。</p>
+<ul>
+<li>匹配前面的子表达式零次或多次。</li>
+</ul>
+<ul>
+<li>匹配前面的子表达式一次或多次。<br>{N}     匹配前面的子表达式 N 次。<br>{N,}     匹配前面的子表达式 N 次到多次。<br>{N,M}     匹配前面的子表达式 N 到 M 次，至少 N 次至多 M 次。</li>
+</ul>
+<ul>
+<li>只要不是在序列开始、结尾或者序列的结束点上，表示序列范围。<br>^     匹配一行开始的空字符串；也表示字符不在要匹配的列表中。<br>$     匹配一行末尾的空字符串。<br>\b     匹配一个单词前后的空字符串。<br>\B     匹配一个单词中间的空字符串。<br>&lt;     匹配单词前面的空字符串。<br>&gt;     匹配单词后面的空字符串。<br>grep 和 egrep</li>
+</ul>
+<p>egrep 等同于 grep -E 。它会以扩展的正则表达式的模式来解释模式。下面来自 grep 的帮助页：</p>
+<pre><code>基本的正则表达式元字符 ?、+、 {、 |、 ( 和 ) 已经失去了它们原来的意义，要使用的话用反斜线的版本 \?、\+、\{、\|、\( 和 \) 来代替。 传统的 egrep 并不支持 { 元字符，一些 egrep 的实现是以 \{ 替代的，所以一个可移植的脚本应该避免在 grep -E 使用 { 符号，要匹配字面的 { 应该使用 [}]。
+
+GNU grep -E 试图支持传统的用法，如果 { 出在在无效的间隔规范字符串这前，它就会假定 { 不是特殊字符。
+
+例如，grep -E &apos;{1&apos; 命令搜索包含 {1 两个字符的串，而不会报出正则表达式语法错误。
+
+POSIX.2 标准允许这种操作的扩展，但在可移植脚本文件里应该避免这样使用。</code></pre><p>参考:</p>
+<pre><code>grep 和 regex 帮助手册页(7)
+grep 的 info 页</code></pre><p>via: <a href="http://www.cyberciti.biz/faq/grep-regular-expressions/" target="_blank" rel="noopener">http://www.cyberciti.biz/faq/grep-regular-expressions/</a> info 页</p>
+<p>via: <a href="http://www.cyberciti.biz/faq/grep-regular-expressions/" target="_blank" rel="noopener">http://www.cyberciti.biz/faq/grep-regular-expressions/</a></p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            <a class="cat-link" href="/categories/linux/">linux</a>|<a class="cat-link" href="/categories/linux/grep/">grep</a>
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/linux/" title="linux">linux</a> / 
+    
+        <a href="/tags/grep/" title="grep">grep</a> / 
+    
+        <a href="/tags/find/" title="find">find</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+<!-- 上一篇/下一篇 -->
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">
+            
+                使用帮助文档
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2020/04/05/126%E9%82%AE%E7%AE%B1/">
+            
+                126mail
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  
+<script src="/js/comment.js"></script>
+
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'find_grep' || '2020/04/05/find_grep/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(6)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/">sql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/hexo/">hexo</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/format/">format</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/">mail</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/">docker</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/grep/">grep</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/">che</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/back/">back</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/eclipse/">eclipse</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/mysql/">mysql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (2)</a>
+  
+    <a class="tag-item" href="/tags/format/" title="format">format (1)</a>
+  
+    <a class="tag-item" href="/tags/back/" title="back">back (1)</a>
+  
+    <a class="tag-item" href="/tags/docker/" title="docker">docker (1)</a>
+  
+    <a class="tag-item" href="/tags/grep/" title="grep">grep (1)</a>
+  
+    <a class="tag-item" href="/tags/find/" title="find">find (1)</a>
+  
+    <a class="tag-item" href="/tags/che/" title="che">che (1)</a>
+  
+    <a class="tag-item" href="/tags/mysql/" title="mysql">mysql (1)</a>
+  
+    <a class="tag-item" href="/tags/java-docker/" title="java,docker">java,docker (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://github.com/front-end-pigs/blog" target="_blank" title="Github博客">Github博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2020
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1607343381564.js"></script>
+
+</body>
+</html>

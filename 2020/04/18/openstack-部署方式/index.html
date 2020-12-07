@@ -1,37 +1,577 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>openstack 部署方式 | yxzhizhiの博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d5ebf515ab530cfbdda5f5c85093fb41";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+</head>
 
-{% block page_class %}page-post-detail{% endblock %}
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a target="_blank" rel="noopener" href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">yxzhizhiの博客</span>
+                    <span class="description">必须从过去的错误学习教训而非依赖过去的成功</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2020/04/18/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2020/04/18/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2020/04/18/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2020/04/18/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
 
 
-{% block content %}
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>openstack 部署方式</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2020-04-18T09:33:23.000Z">2020-04-18</time>
+    </p>
+    <div class="post-content">
+        <p>对于每一个刚接触到OpenStack的新人而言，安装无疑是最困难的，同时这也客观上提高了大家学习OpenStack云计算的技术门槛。想一想，自己3年前网上偶然接触到OpenStack时，一头茫然，手动搭建一个多节点环境时居然用了3个星期。</p>
+<p>时至今日，真是感触颇多，从某种角度而言，也很庆幸当时自己并未因困难而放弃OpenStack，否则，应该是去做其他领域了吧！</p>
+<p>言归正传，咱们就来数落数落部署OpenStack都有哪些方式吧。这里，我们根据使用者群体的不同类型来进行分类和归纳：</p>
+<p>个人使用方面</p>
+<p>DevStack</p>
+<p>无疑，在可预见的未来时间内，DevStack仍将是众多开发者们的首选安装方式或工具。该方式主要是通过配置参数，执行shell脚本来安装一个OpenStack的开发环境。</p>
+<p>Github: <a href="https://github.com/openstack-dev/devstack" target="_blank" rel="noopener">https://github.com/openstack-dev/devstack</a></p>
+<p>Wiki: <a href="https://wiki.openstack.org/wiki/DevStack" target="_blank" rel="noopener">https://wiki.openstack.org/wiki/DevStack</a></p>
+<p>Rdo</p>
+<p>Rdo是由Red Hat开源的一款部署OpenStack的工具，同DevStack一样，支持单节点和多节点部署。但Rdo只支持CentOS系列的操作系统。需要注意的是，该项目并不属于OpenStack官方社区项目。</p>
+<p>Docs：<a href="https://www.rdoproject.org/install/quickstart" target="_blank" rel="noopener">https://www.rdoproject.org/install/quickstart</a></p>
+<p>手动部署</p>
+<p>手动部署all-in-one、multi-node、multi-HA-node环境。</p>
+<p>其他</p>
+<p>企业、团体方面</p>
+<p>1.Puppet</p>
+<p>Puppet由Ruby语言编写。应当说，Puppet是进入OpenStack自动化部署中的早期一批项目，历史还算悠久。目前，它的活跃开发群体们是Red hat、 Mirantis、UnitedStack等。</p>
+<p>2.Red</p>
+<p>hat自从收购Ansible之后，如今仍然保持强势劲头在Puppet</p>
+<p>OpenStack项目中的Commit数量和质量，其技术实力不容小觑；Mirantis出品的Fuel部署工具中，大量的模块代码便使用的是</p>
+<p>Puppet。就国内而言，UnitedStack是Puppet社区贡献和使用的最大用户。</p>
+<p>Github：</p>
+<p><a href="https://github.com/openstack/puppet-keystone" target="_blank" rel="noopener">https://github.com/openstack/puppet-keystone</a></p>
+<p>Governance：</p>
+<p>Wiki：</p>
+<p><a href="https://wiki.openstack.org/wiki/Puppet" target="_blank" rel="noopener">https://wiki.openstack.org/wiki/Puppet</a></p>
+<p>3.Ansible</p>
+<p>Ansible</p>
+<p>是新近出现的自动化运维工具，已被Red</p>
+<p>Hat收购。基于Python开发，集合了众多运维工具（puppet、cfengine、chef、saltstack等）的优点，实现了批量系统配</p>
+<p>置、批量程序部署、批量运行命令等功能，它一方面总结了Puppet的设计上的得失，另一方面也改进了很多设计。比如是基于SSH方式工作，故而不需要在被控端安装客户端。使得在和OpenStack结合上没有历史包袱，更加能够轻装上阵，未来发展潜力不容小觑号称是“你一直寻找的下一代Iaas”的</p>
+<p>Zstack，使用到的部署工具也是基于Ansible。</p>
+<p>Openstack-ansible项目，最早是由老牌Rackspace公司在Launchpad官网上注册。</p>
+<p>在最新的Ansible OpenStack项目社区Commit贡献中，Rackspace也可谓是遥遥领先，而紧随其后的是Red Hat、国内九州云等公司。</p>
+<p>Github：<a href="https://github.com/openstack/openstack-ansible" target="_blank" rel="noopener">https://github.com/openstack/openstack-ansible</a></p>
+<ol start="4">
+<li>SaltStack</li>
+</ol>
+<p>SaltStack</p>
+<p>也是一款开源的自动化部署工具，基于Python开发，实现了批量系统配置、批量程序部署、批量运行命令等功能，和Ansible也是挺相近的。不同之一</p>
+<p>是，由于SaltStack的master和minion认证机制和工作方式，需要在被控端安装minion客户端，在加之其他原因，自然和</p>
+<p>Ansible相比，其优缺点便很明显了。</p>
+<p>需要注意的是，使用Saltstack部署OpenStack，并不属于OpenStack社区项目。目前，主要还是处于用户自研自用的阶段。据笔者所知，目前国内的携程应该是使用Saltstack部署OpenStack规模最大的用户。</p>
+<p>Saltstack部署OpenStack示例：<a href="https://github.com/luckpenguin/saltstack_openstack" target="_blank" rel="noopener">https://github.com/luckpenguin/saltstack_openstack</a></p>
+<p>Saltstack部署OpenStack模块：</p>
+<p>5.TripleO</p>
+<p>Tripleo 项目最早由HP于2013.4在launchpad上注册BP。用于完成OpenStack的安装与部署。TripleO全称“OpenStack On OpenStack”，</p>
+<p>意思即为“云上云”，可以简单理解为利用OpenStack来部署OpenStack，即首先基于V2P(和P2V相反，也就是指</p>
+<p>把虚拟机的镜像迁移到物理机上)的理念事先准备好一些OpenStack节点（计算、存储、控制节点）的镜像，然后利用已有openstack环境的裸机</p>
+<p>服务Ironic项目去部署裸机，软件安装部分的diskimage-builder，最后通过Heat项目和镜像内的DevOps工具(Puppet Or Chef)再在裸机上配置运行openstack。</p>
+<p>和其他部署工具不同的是，TripleO利用OpenStack本来的基础设施来部署OpenStack，基于Nova、 Neutron、Ironic和Heat，来自动化部署和伸缩OpenStack集群。</p>
+<p>应</p>
+<p>当确切的说，TripleO项目属于当前OpenStack社区主推的“Big Tent”开发模式下的big tent project（OpenStack下的项目分为三种，core project: nova/neutron等核心项目，big tent project: 非核心项目，但也被OpenStack 基金会接受；第三种就是其它项目，只是放在OpenStack下，但是社区还没有接受）。</p>
+<p>在该项目的社区Commit贡献上，Red hat可谓是遥遥领先，而紧随其后的是IBM等公司。</p>
+<p>Wiki：<a href="https://wiki.openstack.org/wiki/TripleO" target="_blank" rel="noopener">https://wiki.openstack.org/wiki/TripleO</a></p>
+<p>6.Kolla</p>
+<p>在国内一些互联网资料上，常看到关于kolla是TripleO项目的一部分这样的描述，其实是不准确的。真实的是，Kolla项目起源于Tripleo项</p>
+<p>目，时至今日，与它没有任何关系（虽然它们的目标都是做自动化部署，但走的道路却不同）。比之于Tripleo和其他部署工具，Kolla走的是</p>
+<p>docker容器部署路线。</p>
+<p>kolla项目起源于TripleO项目，聚焦于使用docker容器部署OpenStack服务。该项目由</p>
+<p>Cisco于2014年9月提出，是OpenStack的孵化项目。当前Kolla项目在Kollaglue</p>
+<p>repo提供了以下服务的docker镜像。 # docker search kollaglue</p>
+<p>Kolla的优势和使用场景，体现在如下几个方面：</p>
+<p>原子性的升级或者回退OpenStack部署；</p>
+<p>基于组件升级OpenStack；</p>
+<p>基于组件回退OpenStack；</p>
+<p>这里，我们予以拆分来理解：</p>
+<p>Kolla的最终目标是为OpenStack的每一个服务都创建一个对应的Docker Image，通过Docker</p>
+<p>Image将升级的粒度减小到Service级别，从而使升级时，对OpenStack影响能达到最小，并且一旦升级失败，也很容易回滚。升级只需要三</p>
+<p>步：Pull新版本的容器镜像，停止老版本的容器服务，然后启动新版本容器。回滚也不需要重新安装包了，直接启动老版本容器服务就行，非常方便。</p>
+<p>Kolla是通过Docker Compose来部署OpenStack集群的，现在主要是针对裸机部署的，所以在部署Docker Container时，默认的网络配置都是Host模式。</p>
+<p>首先，只需要通过一个命令就可以把管理节点部署完成，这个命令是调用Docker Compose来部署OpenStack的所有服务，然后我们可以在每一个计算节点上通过Docker Compose安装计算节点需要的服务，就能部署一个OpenStack集群。因为Kolla的Docker</p>
+<p>Image粒度很小，它针对每个OpenStack服务都有特定的Image，所以我们也可以通过Docker</p>
+<p>Run来操作某个具体的OpenStack服务。</p>
+<p>7.Fuel</p>
+<p>Fuel 是针对OpenStack生产环境目标</p>
+<p>（非开源）设计的一个端到端”一键部署“的工具，大量采用了Python、Ruby和JavaScript等语言。其功能含盖自动的PXE方式的操作系统</p>
+<p>安装，DHCP服务，Orchestration服务 和puppet 配置管理相关服务等，此外还有OpenStack关键业务健康检查和log</p>
+<p>实时查看等非常好用的服务。</p>
+<p>Fuel，这款让很多人即爱且痛的工具，在国内外都很盛名。爱的原因是，它确实很棒；痛的原因是，要想彻底掌握</p>
+<p>它，可不是一件容易事（各个模块集成度高、使用技术复杂）。既然提到Fuel，自然不能不提它的父母——Mirantis。Mirantis是一家技术实</p>
+<p>力非常雄厚的OpenStack服务集成商，他是社区贡献排名前5名中唯一一个靠OpenStack软件和服务盈利的公司。同时，Fuel的版本节奏也很</p>
+<p>快，平均每半年就能提供一个相对稳定的社区版。</p>
+<p>从和笔者接触到的一些情况来看，国内研究、使用Fuel的个人、群体还是为数不少的。不少国内OpenStack初创公司的安装包就是基于Fuel去修改的。</p>
+<hr>
+<p>DevStack<br>手动部署all-in-one、multi-node、multi-HA-node环境。</p>
+<p>Ansible<br>TripleO<br>Kolla-docker<br>Fuel<br><a href="https://www.bookstack.cn/read/deployopenstackwithpuppet/deployment_tool-packstack.md" target="_blank" rel="noopener">https://www.bookstack.cn/read/deployopenstackwithpuppet/deployment_tool-packstack.md</a></p>
+<h2 id="Devstack-安装配置"><a href="#Devstack-安装配置" class="headerlink" title="Devstack 安装配置"></a>Devstack 安装配置</h2><p>创建stack用户<br>为了系统的安全，DevStack最好不要在root用户下直接运行，因此需要创建一个专门的用户stack，该用户需要有免密码sudo权限，配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">adduser stack</span><br><span class="line">echo &quot;stack ALL&#x3D;(ALL) NOPASSWD: ALL&quot; &gt;&gt; &#x2F;etc&#x2F;sudoers # 建议使用visudo</span><br><span class="line">su stack</span><br></pre></td></tr></table></figure>
+<p>如果已经下载了DevStack代码，DevStack也提供了一个专门的脚本创建stack用户，该脚本位于devstack/tools/create-stack-user.sh，直接运行该脚本即可。<br>最后请务必检查当前工作用户为stack，并且能够不输入密码执行sudo命令。</p>
+<ol>
+<li>使用国内的镜像源<br>对于Ubuntu系统就是修改APT源，比如阿里云镜像源，只需要修改/etc/apt/source.list配置文件即可，替换为需要使用的镜像源。如：</li>
+</ol>
+<p>deb <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial main restricted universe multiverse<br>deb <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-security main restricted universe multiverse<br>deb <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-updates main restricted universe multiverse<br>deb <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-proposed main restricted universe multiverse<br>deb <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-backports main restricted universe multiverse<br>deb-src <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial main restricted universe multiverse<br>deb-src <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-security main restricted universe multiverse<br>deb-src <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-updates main restricted universe multiverse<br>deb-src <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-proposed main restricted universe multiverse<br>deb-src <a href="http://mirrors.aliyun.com/ubuntu/" target="_blank" rel="noopener">http://mirrors.aliyun.com/ubuntu/</a> xenial-backports main restricted universe multiverse<br>2. 使用国内的pip源<br>只需要在当前家目录.pip目录创建pip.conf配置文件，以使用阿里云为例，配置文件内容如下：</p>
+<p>cat ~/.pip/pip.conf<br>[global]<br>index-url = <a href="http://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">http://mirrors.aliyun.com/pypi/simple/</a><br>[install]<br>trusted-host=mirrors.aliyun.com<br>3.修改OpenStack源码地址<br>DevStack默认会从git.openstack.org下拉取代码，国内访问速度很慢，建议替换为github地址或者国内的trystack仓库，在[[local|localrc]]配置下增加以下配置项：</p>
+<p>GIT_BASE=<a href="http://git.trystack.cn" target="_blank" rel="noopener">http://git.trystack.cn</a><br>如果你本地已经有最新的OpenStack源码了，也可以指定你本地的源码路径，比如使用本地的Nova源代码并且使用new_feature分支:</p>
+<p>[[local|localrc]]<br>NOVA_REPO=/home/int32bit/nova<br>NOVA_BRANCH=new_feature<br>需要注意的是，国内源存在同步滞后，可能包不兼容或者下载某些包失败问题，出现这种情况时只需要重新替换原来的镜像源，然后重新运行./stack.sh即可。</p>
+<p><a href="https://docs.openstack.org/devstack/latest/" target="_blank" rel="noopener">https://docs.openstack.org/devstack/latest/</a></p>
+<p>安装Linux ¶<br>从干净，最小程度地安装Linux系统开始。DevStack尝试支持Ubuntu的两个最新LTS版本，最新/当前的Fedora版本，CentOS / RHEL 7以及Debian和OpenSUSE。</p>
+<p>如果您没有偏好，Ubuntu 18.04（Bionic Beaver）将会是测试最多的，并且可能会做得最流畅。</p>
+<p>添加堆栈用户（可选）¶<br>DevStack应该以启用了sudo的非root用户身份运行（通常可以正常登录到云映像，例如“ ubuntu”或“ cloud-user”）。</p>
+<p>如果您不使用云映像，则可以创建一个单独的堆栈用户来运行DevStack</p>
+<p>$ sudo useradd -s /bin/bash -d /opt/stack -m stack<br>由于此用户将对您的系统进行许多更改，因此它应该具有sudo特权：</p>
+<p>$ echo “stack ALL=(ALL) NOPASSWD: ALL” | sudo tee /etc/sudoers.d/stack<br>$ sudo su - stack<br>下载DevStack ¶<br>$ git clone <a href="https://opendev.org/openstack/devstack" target="_blank" rel="noopener">https://opendev.org/openstack/devstack</a><br>$ cd devstack<br>存储devstack库包含一个脚本，该脚本安装OpenStack和用于配置文件的模板。</p>
+<p>创建local.conf中¶<br>local.conf在devstack git repo的根目录下创建一个具有四个密码的文件。</p>
+<p>[[local|localrc]]<br>ADMIN_PASSWORD=secret<br>DATABASE_PASSWORD=$ADMIN_PASSWORD<br>RABBIT_PASSWORD=$ADMIN_PASSWORD<br>SERVICE_PASSWORD=$ADMIN_PASSWORD<br>这是开始使用DevStack所需的最低配置。</p>
+<p> 注意</p>
+<p>devstack存储库中local.conf的samples目录下有一个示例文件。</p>
+<p>开始安装¶<br>$ ./stack.sh<br>这将需要15-20分钟，具体取决于您的互联网连接速度。在此过程中将安装许多git树和软件包。</p>
+<p>二、环境准备<br>2.1 安装虚拟机Ubuntu<br>本例选用ubuntu16.04-server版本。<br>虚拟机配置：内存4G，磁盘：50GB<br>网络：桥接<br>设置用户名：stack，用户名可自由设置。</p>
+<p>具体安装步骤后续再具体介绍。<br>安装好虚拟机后，启动虚拟机。</p>
+<p>2.2 环境配置<br>2.2.1 给用户stack添加sudo权限<br>echo “stack ALL=(ALL) NOPASSWD: ALL” | sudo tee /etc/sudoers.d/stack<br>2.2.2 配置网卡<br>sudo vi /etc/network/interfaces</p>
+<p>如上图示，设置静态IP。具体IP根据自己的主机环境来设置。<br>设置完后，记得重启网络：sudo /etc/init.d/networking restart。<br>如果更新失败，则重启虚拟机。</p>
+<p>2.2.3 更换Ubuntu源<br>sudo vi /etc/apt/source.list</p>
+<p>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a> xenial main restricted<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a> xenial-updates main restricted<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a>  xenial universe<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a>  xenial-updates universe<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a> xenial multiverse<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a> xenial-updates multiverse<br>deb <a href="http://hk.archive.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://hk.archive.ubuntu.com/ubuntu</a> xenial-backports main restricted universe multiverse<br>deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://security.ubuntu.com/ubuntu</a> xenial-security main restricted<br>deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://security.ubuntu.com/ubuntu</a> xenial-security universe<br>deb <a href="http://security.ubuntu.com/ubuntu" target="_blank" rel="noopener">http://security.ubuntu.com/ubuntu</a> xenial-security multiverse  </p>
+<p>2.2.4 更换pip源<br>创建文件：/home/stack/pip/pip.conf，其内容为：</p>
+<p>[global]<br>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>trusted-host = pypi.douban.com  </p>
+<p>2.2.5 安装ssh：sudo apt-get install ssh<br>2.2.6 安装git：<br>sudo apt-get install git</p>
+<p>2.2.7 安装python:<br>sudo apt-get install python</p>
+<p>2.3 准备安装工具devstack<br>2.3.1 下载<br>git clone <a href="https://git.openstack.org/openstack-dev/devstack" target="_blank" rel="noopener">https://git.openstack.org/openstack-dev/devstack</a><br>或者<br>git clone <a href="https://github.com/openstack-dev/devstack" target="_blank" rel="noopener">https://github.com/openstack-dev/devstack</a><br>2.3.2 切换分支<br>cd devstack<br>git checkout stable/queens</p>
+<p>2.3.4 配置devstack<br>在devstack目录下创建local.conf文件，内容如下：</p>
+<p>[[local|localrc]]<br>ADMIN_PASSWORD=admin<br>DATABASE_PASSWORD=$ADMIN_PASSWORD<br>RABBIT_PASSWORD=$ADMIN_PASSWORD<br>SERVICE_PASSWORD=$ADMIN_PASSWORD</p>
+<h1 id="Branches"><a href="#Branches" class="headerlink" title="Branches"></a>Branches</h1><p>KEYSTONE_BRANCH=stable/queens<br>NOVA_BRANCH=stable/queens<br>NEUTRON_BRANCH=stable/queens<br>SWIFT_BRANCH=stable/queens<br>GLANCE_BRANCH=stable/queens<br>CINDER_BRANCH=stable/queens</p>
+<h1 id="Use-mirror"><a href="#Use-mirror" class="headerlink" title="Use mirror"></a>Use mirror</h1><p>GIT_BASE=<a href="http://git.trystack.cn" target="_blank" rel="noopener">http://git.trystack.cn</a><br>NOVNC_REPO=<a href="http://git.trystack.cn/kanaka/noVNC.git" target="_blank" rel="noopener">http://git.trystack.cn/kanaka/noVNC.git</a><br>SPICE_REPO=<a href="http://git.trystack.cn/git/spice/spice-html5.git" target="_blank" rel="noopener">http://git.trystack.cn/git/spice/spice-html5.git</a></p>
+<h1 id="Enable-heat-services"><a href="#Enable-heat-services" class="headerlink" title="Enable heat services"></a>Enable heat services</h1><p>enable_service h-eng h-api h-api-cfn h-api-cw</p>
+<h1 id="Enable-heat-plugin"><a href="#Enable-heat-plugin" class="headerlink" title="Enable heat plugin"></a>Enable heat plugin</h1><p>enable_plugin heat <a href="http://git.trystack.cn/openstack/heat.git" target="_blank" rel="noopener">http://git.trystack.cn/openstack/heat.git</a> stable/queens</p>
+<p>IMAGE_URL_SITE=”<a href="http://download.fedoraproject.org&quot;" target="_blank" rel="noopener">http://download.fedoraproject.org&quot;</a><br>IMAGE_URL_PATH=”/pub/fedora/linux/releases/25/CloudImages/x86_64/images/“<br>IMAGE_URL_FILE=”Fedora-Cloud-Base-25-1.3.x86_64.qcow2”<br>IMAGE_URLS+=”,”$IMAGE_URL_SITE$IMAGE_URL_PATH$IMAGE_URL_FILE</p>
+<h1 id="Service-Dashboard-IP"><a href="#Service-Dashboard-IP" class="headerlink" title="Service/Dashboard IP"></a>Service/Dashboard IP</h1><p>FLOATING_RANGE=192.168.1.224/27<br>HOST_IP=172.20.10.6<br>FLAT_INTERFACE=enp0s3  </p>
+<p>说明：172.20.10.6是虚拟机的IP地址。</p>
+<p>三、安装OpenStack<br>切换到stack用户，在devstack目录下，执行脚本：./stack.sh，然后就是耐心等待。根据网络状况，等待从半小时到几个小时。<br>安装成功的提示：</p>
+<p><a href="https://www.cnblogs.com/rhjeans/p/11328346.html" target="_blank" rel="noopener">https://www.cnblogs.com/rhjeans/p/11328346.html</a></p>
+<p>k8s:</p>
+<p>docker login –username=17780517563 registry.cn-hangzhou.aliyuncs.com</p>
+<p>docker tag gcr.io/google_containers/etcd:2.0.12 registry.cn-hangzhou.aliyuncs.com/huo_public/etcd:2.0.12<br>docker push registry.cn-hangzhou.aliyuncs.com/huo_public/etcd:2.0.12<br>docker images –digests<br>docker pull registry.cn-hangzhou.aliyuncs.com/lixin0120/kubernetes_etcd:3.3.10</p>
+<p>docker run –net=host -d gcr.io/google_containers/etcd:2.0.12 /usr/local/bin/etcd –addr=127.0.0.1:4001 –bind-addr=0.0.0.0:4001 –data-dir=/var/etcd/data<br>CentOS 7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo cp -n &#x2F;lib&#x2F;systemd&#x2F;system&#x2F;docker.service &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service</span><br><span class="line">sudo sed -i &quot;s|ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;docker daemon|ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;docker daemon --registry-mirror&#x3D;https:&#x2F;&#x2F;s75dbt4b.mirror.aliyuncs.com|g&quot; &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service</span><br><span class="line">sudo sed -i &quot;s|ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;dockerd|ExecStart&#x3D;&#x2F;usr&#x2F;bin&#x2F;dockerd --registry-mirror&#x3D;https:&#x2F;&#x2F;s75dbt4b.mirror.aliyuncs.com|g&quot; &#x2F;etc&#x2F;systemd&#x2F;system&#x2F;docker.service</span><br><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo service docker restart</span><br></pre></td></tr></table></figure>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<p>docker run –net=host -d registry.cn-hangzhou.aliyuncs.com/lixin0120/kubernetes_etcd:3.3.10 /usr/local/bin/etcd –addr=127.0.0.1:4001 –bind-addr=0.0.0.0:4001 –data-dir=/var/etcd/data</p>
+<p>第一步：运行Etcd</p>
+<p>docker run –net=host -d gcr.io/google_containers/etcd:2.0.12 /usr/local/bin/etcd –addr=127.0.0.1:4001 –bind-addr=0.0.0.0:4001 –data-dir=/var/etcd/data</p>
+<p>docker run –net=host -d registry.cn-hangzhou.aliyuncs.com/lixin0120/kubernetes_etcd:3.3.10 /usr/local/bin/etcd –addr=127.0.0.1:4001 –bind-addr=0.0.0.0:4001 –data-dir=/var/etcd/data</p>
+<p>第二步：启动master</p>
+<h1 id="docker-pull-registry-cn-hangzhou-aliyuncs-com-google-kubernetes-container-kubernetes-v1-9-6"><a href="#docker-pull-registry-cn-hangzhou-aliyuncs-com-google-kubernetes-container-kubernetes-v1-9-6" class="headerlink" title="docker pull registry.cn-hangzhou.aliyuncs.com/google-kubernetes-container/kubernetes:v1.9.6"></a>docker pull registry.cn-hangzhou.aliyuncs.com/google-kubernetes-container/kubernetes:v1.9.6</h1><p>docker pull  registry.cn-hangzhou.aliyuncs.com/kubernetes-zy/hyperkube:v1.11.3<br>docker run <br>    –volume=/:/rootfs:ro <br>    –volume=/sys:/sys:ro <br>    –volume=/dev:/dev <br>    –volume=/var/lib/docker/:/var/lib/docker:ro <br>    –volume=/var/lib/kubelet/:/var/lib/kubelet:rw <br>    –volume=/var/run:/var/run:rw <br>    –net=host <br>    –pid=host <br>    –privileged=true <br>    -d <br>    registry.cn-hangzhou.aliyuncs.com/kubernetes-zy/hyperkube:v1.11.3 <br>    /hyperkube kubelet –containerized –hostname-override=”127.0.0.1” –address=”0.0.0.0” –api-servers=<a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> –config=/etc/kubernetes/manifests</p>
+<p>这一步实际上运行的是 kubelet ，并启动了一个包含其他master组件的[pod](../userguide/pods.md）。</p>
+<p>第三步：运行service proxy</p>
+<p>docker run -d –net=host –privileged registry.cn-hangzhou.aliyuncs.com/kubernetes-zy/hyperkube:v1.11.3 /hyperkube proxy –master=<a href="http://127.0.0.1:8080" target="_blank" rel="noopener">http://127.0.0.1:8080</a> –v=2<br>测试<br>此时你应该已经运行起了一个Kubernetes集群。你可以下载kubectl二进制程序进行测试：</p>
+<p>(OS X) (linux)<br>注意： 再OS/X上你需要通过ssh设置端口转发：</p>
+<p>boot2docker ssh -L8080:localhost:8080<br>列出集群中的节点：</p>
+<p>kubectl get nodes<br>应该输出以下内容：</p>
+<p>NAME LABELS STATUS<br>127.0.0.1 Ready<br>如果你运行了不同的Kubernetes集群，你可能需要指定 -s <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 选项来访问本地集群。</p>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            
+        </span>
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+<!-- 上一篇/下一篇 -->
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2020/04/18/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/">
+            
+                ubuntu 删除软件
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2020/04/12/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+            
+                学习计划
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  
+<script src="/js/comment.js"></script>
+
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'openstack-部署方式' || '2020/04/18/openstack-部署方式/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(6)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/">sql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/hexo/">hexo</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/format/">format</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/">mail</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/">docker</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/grep/">grep</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/">che</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/back/">back</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/eclipse/">eclipse</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/mysql/">mysql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (2)</a>
+  
+    <a class="tag-item" href="/tags/format/" title="format">format (1)</a>
+  
+    <a class="tag-item" href="/tags/back/" title="back">back (1)</a>
+  
+    <a class="tag-item" href="/tags/docker/" title="docker">docker (1)</a>
+  
+    <a class="tag-item" href="/tags/grep/" title="grep">grep (1)</a>
+  
+    <a class="tag-item" href="/tags/find/" title="find">find (1)</a>
+  
+    <a class="tag-item" href="/tags/che/" title="che">che (1)</a>
+  
+    <a class="tag-item" href="/tags/mysql/" title="mysql">mysql (1)</a>
+  
+    <a class="tag-item" href="/tags/java-docker/" title="java,docker">java,docker (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://github.com/front-end-pigs/blog" target="_blank" title="Github博客">Github博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2020
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1607343381557.js"></script>
+
+</body>
+</html>

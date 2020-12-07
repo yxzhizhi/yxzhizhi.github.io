@@ -1,37 +1,478 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>java deploy to docker | yxzhizhiの博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d5ebf515ab530cfbdda5f5c85093fb41";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+</head>
 
-{% block page_class %}page-post-detail{% endblock %}
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a target="_blank" rel="noopener" href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">yxzhizhiの博客</span>
+                    <span class="description">必须从过去的错误学习教训而非依赖过去的成功</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2020/04/06/java-deploy-to-docker/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2020/04/06/java-deploy-to-docker/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2020/04/06/java-deploy-to-docker/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2020/04/06/java-deploy-to-docker/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
 
 
-{% block content %}
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>java deploy to docker</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2020-04-06T07:36:42.000Z">2020-04-06</time>
+    </p>
+    <div class="post-content">
+        <hr>
+<h1 id="ubuntu普通用户登录操作docker提示无权限的解决办法"><a href="#ubuntu普通用户登录操作docker提示无权限的解决办法" class="headerlink" title="ubuntu普通用户登录操作docker提示无权限的解决办法"></a>ubuntu普通用户登录操作docker提示无权限的解决办法</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">sudo usermod -aG docker <span class="variable">$&#123;USER&#125;</span></span><br><span class="line">newgrp docker     <span class="comment">#更新用户组</span></span><br><span class="line">docker ps    <span class="comment">#测试docker命令是否可以使用sudo正常使用</span></span><br><span class="line"><span class="comment">#1 添加docker用户组(一般安装docker时会自动添加)</span></span><br><span class="line">sudo groupadd docker </span><br><span class="line"><span class="comment">#2 将指定用户添加到docker用户组中 注:将USER替换为自己的用户名</span></span><br><span class="line">sudo gpasswd -a USER docker</span><br><span class="line"><span class="comment">#3 重启docker服务</span></span><br><span class="line">sudo systemctl restart docker</span><br><span class="line"><span class="comment">#4 退出SSH连接，重新登录</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h1 id="grep-正则"><a href="#grep-正则" class="headerlink" title="grep 正则"></a>grep 正则</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1、或操作</span><br><span class="line">grep -E <span class="string">'123|abc'</span> filename  // 找出文件（filename）中包含123或者包含abc的行</span><br><span class="line">egrep <span class="string">'123|abc'</span> filename    // 用egrep同样可以实现</span><br><span class="line">awk <span class="string">'/123|abc/'</span> filename   // awk 的实现方式</span><br><span class="line">2、与操作</span><br><span class="line">grep pattern1 files | grep pattern2 //显示既匹配 pattern1 又匹配 pattern2 的行。</span><br><span class="line">3、其他操作</span><br><span class="line">grep -i pattern files   //不区分大小写地搜索。默认情况区分大小写，</span><br><span class="line">grep -l pattern files   //只列出匹配的文件名，</span><br><span class="line">grep -L pattern files   //列出不匹配的文件名，</span><br><span class="line">grep -w pattern files  //只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’），</span><br><span class="line">grep -C number pattern files //匹配的上下文分别显示[number]行，</span><br></pre></td></tr></table></figure>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<h1 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据镜像id删除</span></span><br><span class="line">docker rm $(docker ps -a|grep -E <span class="string">'1b9cf56dec97|4eb9989fc00f'</span>| awk <span class="string">'&#123;print $1&#125;'</span>)</span><br><span class="line">docker rm $(docker ps -a|grep 1b9cf56dec97| awk <span class="string">'&#123;print $1&#125;'</span>)</span><br><span class="line"><span class="comment"># 删除未命名的容器[通常由dockfile文件执行run命令自动产生的中间镜像]</span></span><br><span class="line">docker rmi $(docker images | grep <span class="string">"none"</span> | awk <span class="string">'&#123;print $3&#125;'</span>)</span><br></pre></td></tr></table></figure>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<p>———————-;</p>
+<h1 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 获取镜像</span><br><span class="line">    ```sudo docker pull oraclelinux</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>后台运行</p>
+ <figure class="highlight plain"><figcaption><span>docker run -itd --name oraclelinux_dev oraclelinux</span><a href="/bin/bash```">link</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3. 查询容器</span><br><span class="line">    &#96;&#96;&#96;sudo docker ps #47e0e5a52244 oraclelinux_dev</span><br></pre></td></tr></table></figure></li>
+<li><p>进入容器<br> 在使用 -d 参数时，容器启动后会进入后台。此时想要进入容器，可以通过以下指令进入：</p>
+ <figure class="highlight docker"><figcaption><span>attach  $ sudo docker attach 47e0e5a52244```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">注意： 如果从这个容器退出，会导致容器的停止。</span><br><span class="line">docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止。</span><br><span class="line">```sudo docker exec -it <span class="number">47</span>e0e5a52244 /bin/bash</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导出容器<br> 如果要导出本地某个容器，可以使用 docker export 命令。</p>
+ <figure class="highlight docker"><figcaption><span>export 47e0e5a52244 > oraclelinux_dev.tar```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="number">6</span>. 导入容器快照</span><br><span class="line">    可以使用 docker import 从容器快照文件中再导入为镜像，以下实例将快照文件 oraclelinux_dev.tar 导入到镜像 test/oraclelinux_dev:v1:</span><br><span class="line">    ```cat docker/oraclelinux_dev.tar | sudo docker import - dev/oraclelinux_dev:v1</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><figcaption><span>docker import oraclelinux_dev dev/oraclelinux_dev```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7. 下面的命令可以清理掉所有处于终止状态的容器。</span><br><span class="line">    &#96;&#96;&#96;docker container prune</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">用Docker搭建Python的开发环境</span><br><span class="line">&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line">sudo docker pull python:3.7.6</span><br><span class="line">cd &#x2F;home&#x2F;zhanghuo&#x2F;PycharmProjects&#x2F;db_manage_vue</span><br><span class="line">docker run  -v &#x2F;home&#x2F;zhanghuo&#x2F;PycharmProjects&#x2F;db_manage_vue:&#x2F;usr&#x2F;src&#x2F;db_manage_vue  -w &#x2F;usr&#x2F;src&#x2F;db_manage_vue python:3.7.6 python .&#x2F;manage.py runserver</span><br><span class="line">注意事项：</span><br><span class="line">-v 将主机的py文件目录挂载到容器中的&#x2F;usr&#x2F;src&#x2F;db_manage_vue</span><br><span class="line">-w 指定容器的&#x2F;usr&#x2F;src&#x2F;db_manage_vue目录为工作目录</span><br><span class="line">python .&#x2F;manage.py runserver 用容器中的python命令来执行工作目录的pyth.py</span><br><span class="line">dockerfile</span><br><span class="line">FROM python:3.7.6</span><br><span class="line">COPY . &#x2F;usr&#x2F;src&#x2F;db_manage_vue</span><br><span class="line">WORKDIR &#x2F;usr&#x2F;src&#x2F;db_manage_vue</span><br><span class="line">RUN pip install -r requirements.txt</span><br><span class="line">ENTRYPOINT [&quot;python&quot;]</span><br><span class="line">CMD [&quot;.&#x2F;manage.py runserver&quot;]</span><br><span class="line"></span><br><span class="line">-- 生成依赖包文件</span><br><span class="line">pip freeze &gt; requirements.txt</span><br><span class="line">创建镜像</span><br><span class="line">sudo docker build -t db_manage_vue&#x2F;python .</span><br><span class="line">运行容器：</span><br><span class="line">docker run id&#x2F;db_manage_vue&#x2F;python</span><br><span class="line">### docker-compose</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h1 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker compose安装"></a>docker compose安装</h1><h2 id="参考daocloud的https-get-daocloud-io-install-compose"><a href="#参考daocloud的https-get-daocloud-io-install-compose" class="headerlink" title="参考daocloud的https://get.daocloud.io/#install-compose"></a>参考daocloud的<a href="https://get.daocloud.io/#install-compose" target="_blank" rel="noopener">https://get.daocloud.io/#install-compose</a></h2><ol>
+<li>github</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/docker/compose/releases</span><br><span class="line">curl -L https://github.com/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>daocloud<br>Docker Compose 存放在Git Hub，不太稳定。<br>你可以也通过执行下面的命令，高速安装Docker Compose。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://get.daocloud.io/docker/compose/releases/download/1.25.4/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line">sudo chmod +x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p>你可以通过修改URL中的版本，可以自定义您的需要的版本。<br>3. 测试安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="重命名镜像"><a href="#重命名镜像" class="headerlink" title="重命名镜像"></a>重命名镜像</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker tag IMAGEID(镜像id) REPOSITORY:TAG（仓库：标签）</span><br><span class="line"><span class="comment">#例子</span></span><br><span class="line">docker tag ca1b6b825289 registry.cn-hangzhou.aliyuncs.com/xxxxxxx:v1.0</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改镜像源"><a href="#修改镜像源" class="headerlink" title="修改镜像源"></a>修改镜像源</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> vi /etc/docker/daemon.json</span><br><span class="line">&#123;<span class="string">"registry-mirrors"</span>: [<span class="string">"https://s75dbt4b.mirror.aliyuncs.com"</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后进入到 mysql 容器中将 django 数据库文件导入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker inspect --format "&#123;&#123;.State.Pid&#125;&#125;" mysql</span></span><br><span class="line">12674</span><br><span class="line"><span class="comment">#nsenter --target 12674 --mount --uts --ipc --net --pid</span></span><br><span class="line">root@91308514f209:/<span class="comment"># cd /etc/mysql/conf.d/</span></span><br><span class="line">root@91308514f209:/etc/mysql/conf.d<span class="comment"># mysql -uroot -p jianshu \&lt; jianshu.sql</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="docker-发布-django项目"><a href="#docker-发布-django项目" class="headerlink" title="docker 发布 django项目"></a>docker 发布 django项目</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">打包django项目</span><br><span class="line">先生成需要的python模块列表</span><br><span class="line">pip freeze &gt;req.txt</span><br><span class="line">然后打包程序</span><br><span class="line">tar cvf django1.tar ./django1</span><br><span class="line">scp到docker服务器的/python目录下解压</span><br><span class="line">确定基础镜像版本</span><br><span class="line">docker pull centos:7.3.1611</span><br><span class="line">运行此镜像</span><br><span class="line">docker run -d -i -v /python:/python -tcentos:7.3.1611</span><br><span class="line">-d为后台运行</span><br><span class="line">-v 为映射本地目录到docker中</span><br><span class="line">准备程序运行环境</span><br><span class="line">然后进入到运行的docker中，安装需要的软件包以及模块</span><br><span class="line">yum install xxxx</span><br><span class="line">pip install –r req.txt</span><br><span class="line">生成新镜像</span><br><span class="line">docker commit bd486b5df131 centos/django</span><br><span class="line">运行</span><br><span class="line">docker run -itd -p 8000:8000  -v /python:/python -w /python centos/django1python /python/django1/manage.py runserver 0.0.0.0:8000</span><br><span class="line">运行的时候使用</span><br><span class="line">docker <span class="built_in">export</span> db509b5a599f &gt;django.tar</span><br><span class="line">然后在目标服务器</span><br><span class="line">cat django.tar | docker import -centos/django</span><br><span class="line">然后新建/python/</span><br><span class="line">将django1.tar项目文件传送到目录上，解压</span><br><span class="line">运行</span><br><span class="line">docker run -itd -p 8000:8000  -v /python:/python -w /python centos/djangopython /python/django1/manage.py runserver 0.0.0.0:8000</span><br><span class="line">查看项目库运行日志：</span><br><span class="line">docker logs fba7f2b32fb0 -f</span><br><span class="line">-docker 发布 django项目 end-</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">base=https://github.com/docker/machine/releases/download/v0.16.0 &amp;&amp;</span><br><span class="line">curl -L <span class="variable">$base</span>/docker-machine-$(uname -s)-$(uname -m) &gt;/tmp/docker-machine &amp;&amp;</span><br><span class="line">sudo mv /tmp/docker-machine /usr/<span class="built_in">local</span>/bin/docker-machine &amp;&amp;</span><br><span class="line">chmod +x /usr/<span class="built_in">local</span>/bin/docker-machine</span><br></pre></td></tr></table></figure>
+<hr>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            
+        </span>
+        <span class="post-tags">
+            标签：
+            
+    
+        <a href="/tags/java-docker/" title="java,docker">java,docker</a>
+    
+
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+<!-- 上一篇/下一篇 -->
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/">
+            
+                Markdown 语法手册 （完整整理版）
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">
+            
+                使用帮助文档
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  
+<script src="/js/comment.js"></script>
+
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'java-deploy-to-docker' || '2020/04/06/java-deploy-to-docker/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(6)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/">sql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/hexo/">hexo</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/format/">format</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/">mail</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/">docker</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/grep/">grep</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/">che</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/back/">back</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/eclipse/">eclipse</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/mysql/">mysql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (2)</a>
+  
+    <a class="tag-item" href="/tags/format/" title="format">format (1)</a>
+  
+    <a class="tag-item" href="/tags/back/" title="back">back (1)</a>
+  
+    <a class="tag-item" href="/tags/docker/" title="docker">docker (1)</a>
+  
+    <a class="tag-item" href="/tags/grep/" title="grep">grep (1)</a>
+  
+    <a class="tag-item" href="/tags/find/" title="find">find (1)</a>
+  
+    <a class="tag-item" href="/tags/che/" title="che">che (1)</a>
+  
+    <a class="tag-item" href="/tags/mysql/" title="mysql">mysql (1)</a>
+  
+    <a class="tag-item" href="/tags/java-docker/" title="java,docker">java,docker (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://github.com/front-end-pigs/blog" target="_blank" title="Github博客">Github博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2020
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1607343381562.js"></script>
+
+</body>
+</html>

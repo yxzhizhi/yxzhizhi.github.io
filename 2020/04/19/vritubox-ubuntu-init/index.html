@@ -1,37 +1,463 @@
-{% extends '_layout.swig' %}
-{% import '_macro/post.swig' as post_template %}
-{% import '_macro/sidebar.swig' as sidebar_template %}
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=11,IE=10,IE=9,IE=8" >
+    <meta name="baidu-site-verification" content="dIcXMeY8Ya" />
+    
+    <title>vritubox-ubuntu-init | yxzhizhiの博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" >
+    <meta name="keywords" content="Jelon, 前端, Web, 张德龙, 前端开发" >
+    <meta name="description" content="Jelon个人前端小站" >
+
+    
+    <link rel="alternative" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml" >
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico" >
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!--[if lt IE 9]>
+    
+<script src="/js/html5.js"></script>
+
+    <![endif]-->
+    
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?d5ebf515ab530cfbdda5f5c85093fb41";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+</head>
 
-{% block page_class %}page-post-detail{% endblock %}
+<body class="home">
+    <!--[if lt IE 9]>
+    <div class="browsehappy">
+        当前网页 <strong>不支持</strong>
+        你正在使用的浏览器. 为了正常的访问, 请 <a target="_blank" rel="noopener" href="http://browsehappy.com/">升级你的浏览器</a>.
+    </div>
+    <![endif]-->
+
+    <!-- 博客头部 -->
+    <header class="header">
+    <section class="container header-main">
+        <div class="logo">
+            <a href="/">
+                <div class="cover">
+                    <span class="name">yxzhizhiの博客</span>
+                    <span class="description">必须从过去的错误学习教训而非依赖过去的成功</span>
+                </div>
+            </a>
+        </div>
+        <div class="dropnav icon-paragraph-justify" id="JELON__btnDropNav"></div>
+        <ul class="menu hidden" id="JELON__menu">
+            
+            <li rel="/2020/04/19/vritubox-ubuntu-init/index.html" class="item ">
+                <a href="/" title="首页" class="icon-home">&nbsp;首页</a>
+            </li>
+            
+            <li rel="/2020/04/19/vritubox-ubuntu-init/index.html" class="item ">
+                <a href="/lab/" title="实验室" class="icon-lab">&nbsp;实验室</a>
+            </li>
+            
+            <li rel="/2020/04/19/vritubox-ubuntu-init/index.html" class="item ">
+                <a href="/about/" title="关于" class="icon-about">&nbsp;关于</a>
+            </li>
+            
+            <li rel="/2020/04/19/vritubox-ubuntu-init/index.html" class="item ">
+                <a href="/comment/" title="留言" class="icon-comment">&nbsp;留言</a>
+            </li>
+            
+        </ul>
+        <div class="profile clearfix">
+            <div class="feeds fl">
+                
+                
+                <p class="links">
+                    
+                        <a href="https://github.com/jangdelong" target="_blank">Github</a>
+                        |
+                    
+                        <a href="https://pages.coding.me" target="_blank">Hosted by Coding Pages</a>
+                        
+                    
+                </p>
+                <p class="sns">
+                    
+                        <a href="http://weibo.com/jangdelong" class="sinaweibo" target="_blank"><b>■</b> 新浪微博</a>
+                    
+                        <a href="https://www.facebook.com/profile.php?id=100011855760219&amp;ref=bookmarks" class="qqweibo" target="_blank"><b>■</b> Facebook</a>
+                    
+                    <a href="javascript: void(0);" class="wechat">
+                        <b>■</b>
+                        公众号
+                        <span class="popover">
+                            <img src="/img/wechat_mp.jpg" width="120" height="120" alt="我的微信订阅号">
+                            <i class="arrow"></i>
+                        </span>
+                    </a>
+                </p>
+                
+            </div>
+            <div class="avatar fr">
+                <img src="/img/jelon.jpg" alt="avatar" title="Jelon" >
+            </div>
+        </div>
+    </section>
+</header>
 
 
-{% block content %}
+    <!-- 博客正文 -->
+    <div class="container body clearfix">
+        <section class="content">
+            <div class="content-main widget">
+                <!-- 文章页 -->
+<!-- 文章 -->
+<article class="post article">
+    <header class="text-center">
+        <h3 class="post-title"><span>vritubox-ubuntu-init</span></h3>
+    </header>
+    <p class="post-meta text-center">
+        Jelon 发表于
+        <time datetime="2020-04-19T01:40:58.000Z">2020-04-19</time>
+    </p>
+    <div class="post-content">
+        <p>init_net_10.0.2.15</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;network&#x2F;interfaces</span><br><span class="line">auto eth0</span><br><span class="line">iface eth0 inet static	</span><br><span class="line">address 10.0.2.15</span><br><span class="line">gateway 10.0.2.1</span><br><span class="line">netmask 255.255.255.0</span><br><span class="line">dns-nameservers 8.8.8.8</span><br><span class="line">--</span><br><span class="line">auto eth0#etho为通常的Ubuntu的网关名称，有时也会改变，可通过ifconfig命令查看，有时会出现如ens160,ens33等名称</span><br><span class="line">iface eth0 inet static#设置IP为静止IP,</span><br><span class="line">address 192.168.1.103#你想设置的静态IP地址</span><br><span class="line">netmask 255.255.255.0#子网掩码，通常为255.255.255.0</span><br><span class="line">#network 192.168.1.0</span><br><span class="line">broadcast 192.168.1.255 #广播地址，可以通过ifconfig查看现有的。，</span><br><span class="line">gateway 192.168.1.8#网关, #netstat -r 命令或者   nm-tool   查看现有的</span><br><span class="line"># dns-* options are implemented by the resolvconf package, if installed</span><br><span class="line">dns-nameservers 61.139.2.69#国内常见的dns解析，</span><br><span class="line">#dns-search localhost</span><br><span class="line">dns-nameservers 8.8.8.8#谷歌dns解析，但是速度较慢</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sudo service networking restart</span><br><span class="line">&#x2F;etc&#x2F;init.d&#x2F;networking restart</span><br><span class="line">sudo ifconfig eth0 down </span><br><span class="line">sudo ifconfig eth0 up</span><br><span class="line">eb</span><br><span class="line"></span><br><span class="line">vim &#x2F;etc&#x2F;resolvconf&#x2F;resolv.conf.d&#x2F;base</span><br><span class="line">nameserver 8.8.8.8</span><br><span class="line"></span><br><span class="line">VBox无界面启动</span><br><span class="line">VBoxManage startvm name  --type headless</span><br><span class="line">关机</span><br><span class="line">VBoxManage controlvm name poweroff</span><br></pre></td></tr></table></figure>
+<p>init&amp;ssh&amp;ssl&amp;ssh免密码快速登录配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">apt install openssh* openssl</span><br><span class="line">netstat -lnt | grep 22</span><br><span class="line">service sshd restart</span><br><span class="line"></span><br><span class="line">ssh zhanghuo@localhost -p 21522</span><br><span class="line"></span><br><span class="line">--ssh免密码快速登录配置</span><br><span class="line">ssh-keygen -t rsa</span><br><span class="line">scp -P21522 .&#x2F;id_rsa.pub zhanghuo@localhost:~</span><br><span class="line">ssh -p21522 zhanghuo@localhost</span><br><span class="line">remote:cat id_rsa.pub &gt; ~&#x2F;.ssh&#x2F;authorized_keys</span><br><span class="line">ssh -p21522 zhanghuo@localhost</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vi ～&#x2F;.ssh&#x2F;config</span><br><span class="line">Host v21522</span><br><span class="line">HostName localhost</span><br><span class="line">Port 21522</span><br><span class="line">User zhanghuo</span><br><span class="line">IdentityFile ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br><span class="line"></span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line"># ssh-copy-id -i ~&#x2F;.ssh&#x2F;id_rsa.pub v21522</span><br><span class="line">ssh v21522</span><br></pre></td></tr></table></figure>
 
-  <div id="posts" class="posts-expand">
-    {{ post_template.render(page) }}
+<p>oraclelinux7&amp;centos7</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cd &#x2F;etc&#x2F;sysconfig&#x2F;network-scripts</span><br><span class="line">ip addr &#x2F; ifconfig 没有此命令</span><br><span class="line">sudo vi ifcfg-enp0s3 &#x2F;ens33</span><br><span class="line"></span><br><span class="line">BOOTPROTO&#x3D;&quot;static&quot;         # 使用静态IP地址，默认为dhcp</span><br><span class="line">IPADDR&#x3D;&quot;10.0.3.15&quot;   # 设置的静态IP地址</span><br><span class="line">NETMASK&#x3D;&quot;255.255.255.0&quot;    # 子网掩码</span><br><span class="line">GATEWAY&#x3D;&quot;10.0.3.1&quot;    # 网关地址</span><br><span class="line">DNS1&#x3D;&quot;8.8.8.8&quot;       # DNS服务器</span><br><span class="line"></span><br><span class="line">ONBOOT&#x3D;&quot;yes&quot;             #是否开机启用</span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">hostnamectl set-hostname zhanghuo</span><br><span class="line">vim &#x2F;etc&#x2F;hosts</span><br><span class="line">10.0.3.15 zhanghuo</span><br><span class="line"></span><br><span class="line">ping www.baidu.com</span><br></pre></td></tr></table></figure>
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><h4 id="firewall命令"><a href="#firewall命令" class="headerlink" title="firewall命令"></a>firewall命令</h4><p>firewall-cmd –zone=public –add-port=3306/tcp –permanent<br>#对外开放3306端口，供外部的计算机访问<br>#该命令方式添加的端口，可在/etc/firewalld/zones中的对应配置文件中得到体现</p>
+<p>systemctl restart firewalld #重启防火漆<br>说明：<br>firewall-cmd：Linux中提供的操作firewall的工具。<br>–zone：指定作用域。<br>–add-port=80/tcp：添加的端口，格式为：端口/通讯协议。<br>–permanent：表示永久生效，没有此参数重启后会失效。</p>
+<h4 id="直接修改配置文件"><a href="#直接修改配置文件" class="headerlink" title="直接修改配置文件"></a>直接修改配置文件</h4><p>/etc/firewalld/zones/public.xml 文件的默认内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;zone&gt;</span><br><span class="line">  &lt;short&gt;Public&lt;&#x2F;short&gt;</span><br><span class="line">  &lt;description&gt;For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.&lt;&#x2F;description&gt;</span><br><span class="line">  &lt;service name&#x3D;&quot;dhcpv6-client&quot;&#x2F;&gt;</span><br><span class="line">  &lt;service name&#x3D;&quot;ssh&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;zone&gt;</span><br></pre></td></tr></table></figure>
+<p>修改该配置文件，来添加3306端口。修改后的内容为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;zone&gt;</span><br><span class="line">  &lt;short&gt;Public&lt;&#x2F;short&gt;</span><br><span class="line">  &lt;description&gt;For use in public areas. You do not trust the other computers on networks to not harm your computer. Only selected incoming connections are accepted.&lt;&#x2F;description&gt;</span><br><span class="line">  &lt;service name&#x3D;&quot;dhcpv6-client&quot;&#x2F;&gt;</span><br><span class="line">  &lt;service name&#x3D;&quot;ssh&quot;&#x2F;&gt;</span><br><span class="line">  &lt;port protocol&#x3D;&quot;tcp&quot; port&#x3D;&quot;3306&quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;zone&gt;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="firewall常用命令"><a href="#firewall常用命令" class="headerlink" title="firewall常用命令"></a>firewall常用命令</h4><h4 id="查看firewall的状态"><a href="#查看firewall的状态" class="headerlink" title="查看firewall的状态"></a>查看firewall的状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">service firewalld status</span><br><span class="line">或</span><br><span class="line">systemctl status firewalld</span><br><span class="line">或</span><br><span class="line">firewall-cmd --state</span><br></pre></td></tr></table></figure>
+<h4 id="启动、停止、重启"><a href="#启动、停止、重启" class="headerlink" title="启动、停止、重启"></a>启动、停止、重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">service firewalld start</span><br><span class="line">或</span><br><span class="line">systemctl start firewalld</span><br><span class="line"># 启动</span><br><span class="line"></span><br><span class="line">service firewalld stop</span><br><span class="line">或</span><br><span class="line">systemctl stop firewalld</span><br><span class="line"># 停止</span><br><span class="line"></span><br><span class="line">service firewalld restart</span><br><span class="line">或</span><br><span class="line">systemctl restart firewalld</span><br><span class="line"># 重启</span><br></pre></td></tr></table></figure>
+<h4 id="开机自启动的关闭与开启"><a href="#开机自启动的关闭与开启" class="headerlink" title="开机自启动的关闭与开启"></a>开机自启动的关闭与开启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable firewalld</span><br><span class="line"># 关闭开机自启动</span><br><span class="line">systemctl enable firewalld</span><br><span class="line"># 开启开机自启动</span><br><span class="line">2.4 查看防火墙的规则</span><br><span class="line">firewall-cmd --list-all</span><br></pre></td></tr></table></figure>
 
-    <div class="post-spread">
-      {% if theme.jiathis %}
-        {% include '_partials/share/jiathis.swig' %}
-      {% elseif theme.baidushare %}
-        {% include '_partials/share/baidushare.swig' %}
-      {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
-      {% endif %}
+<p>开放22端口，默认已经开放ssh服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo firewall-cmd --zone&#x3D;public --add-port&#x3D;22&#x2F;tcp --permanent</span><br><span class="line">sudo service firewalld restart</span><br></pre></td></tr></table></figure>
+<p>vritubox 全局设定，创建nat网络并配置端口映射<br>ssh zhanghuo@localhost -p 21522<br>ssh zhanghuo@localhost -p 31522<br>ssh zhanghuo@localhost -p 51522</p>
+<p>–ssh免密码快速登录配置</p>
+<p>vi ～/.ssh/config<br>Host v21522<br>HostName localhost<br>Port 21522<br>User zhanghuo<br>IdentityFile ~/.ssh/id_rsa.pub</p>
+<p>Host v31522<br>HostName localhost<br>Port 31522<br>User zhanghuo<br>IdentityFile ~/.ssh/id_rsa.pub</p>
+<p>Host v51522<br>HostName localhost<br>Port 51522<br>User zhanghuo<br>IdentityFile ~/.ssh/id_rsa.pub</p>
+<p>:wq</p>
+<p>ssh-keygen -t rsa #存在id_rsa.pub则可不再执行</p>
+<p>ssh-copy-id -i ~/.ssh/id_rsa.pub v31522<br>ssh-copy-id -i ~/.ssh/id_rsa.pub -p 31522 zhanghuo@localhost</p>
+<p>ssh v31522</p>
+<p>ssh-copy-id -i ~/.ssh/id_rsa.pub v51522</p>
+<p>ssh v31522</p>
+<hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config</span><br><span class="line">#PermitRootLogin yes</span><br><span class="line">#RSAAuthentication yes</span><br><span class="line">#PubkeyAuthentication yes</span><br><span class="line">将这三个配置打开 并进行对应的配置 全为yes</span><br></pre></td></tr></table></figure>
+
+<p>DevStack|DevStack|21622</p>
+<p>VBox无界面启动-DevStack<br>VBoxManage startvm DevStack  –type headless<br>ssh DevStack<br>关机<br>VBoxManage controlvm DevStack poweroff</p>
+
+    </div>
+    <p class="post-meta">
+        <span class="post-cat">分类：
+            
+        </span>
+        <span class="post-tags">
+            标签：
+            
+        </span>
+    </p>
+</article>
+<!-- 分享按钮 -->
+
+  <div class="article-share clearfix text-center">
+    <div class="share-area">
+      <span class="share-txt">分享到：</span>
+      <a href="javascript: window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(location.href) + '&title=' + document.title + '&language=zh_cn');" class="share-icon weibo"></a>
+      <a href="javascript: alert('请复制链接到微信并发送');" class="share-icon wechat"></a>
+      <a href="javascript: window.open('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=' + encodeURIComponent(location.href) + '&title=' + document.title);" class="share-icon qqzone"></a>
+      <a href="javascript: window.open('http://connect.qq.com/widget/shareqq/index.html?url=' + encodeURIComponent(location.href) + '&desc=Jelon个人博客&title=' + document.title + '&callback=' + encodeURIComponent(location.href));" class="share-icon qq"></a>
+      <a href="javascript: window.open('http://shuo.douban.com/!service/share?href=' + encodeURIComponent(location.href) + '&name=' + document.title + '&text=' + document.title);" class="share-icon douban"></a>
     </div>
   </div>
 
-{% endblock %}
 
-{% block sidebar %}
-  {{ sidebar_template.render(true) }}
-{% endblock %}
+<!-- 上一篇/下一篇 -->
 
-{% block script_extra %}
-  {% include '_scripts/pages/post-details.swig' %}
-{% endblock %}
+<div class="article-nav clearfix">
+    
+    <span class="prev fl">
+        上一篇<br >
+        <a href="/2020/04/19/docker-spark-hadoop/">
+            
+                docker spark+hadoop
+            
+        </a>
+    </span>
+    
+
+    
+    <span class="next fr">
+        下一篇<br >
+        <a href="/2020/04/18/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/">
+            
+                ubuntu 删除软件
+            
+        </a>
+    </span>
+    
+</div>
+
+<!-- 文章评论 -->
+
+  
+<script src="/js/comment.js"></script>
+
+  <div id="comments" class="comment">
+    <!--
+    <div class="sign-bar">
+      GitHub 已登录!
+      <span class="sign-link">登出</span>
+    </div>
+    <section class="box">
+      <div class="com-avatar"><img src="/img/jelon.jpg" alt="avatar"></div>
+      <div class="com-text">
+        <div class="main">
+          <textarea class="text-area-edited show" placeholder="欢迎评论！"></textarea>
+          <div class="text-area-preview"></div>
+        </div>
+        <div class="switch">
+          <div class="switch-item on">编辑</div>
+          <div class="switch-item">预览</div>
+        </div>
+        <div class="button">提交</div>
+      </div>
+    </section>
+    <section class="tips">注：评论支持 markdown 语法！</section>
+    <section class="list-wrap">
+      <ul class="list">
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">张德龙</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like liked">已赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">333333</div>
+          </div>
+        </li>
+        <li>
+          <div class="user-avatar">
+            <a href="/">
+              <img src="/img/jelon.jpg" alt="user-avatar">
+            </a>
+          </div>
+          <div class="user-comment">
+            <div class="user-comment-header">
+              <span class="post-name">刘德华</span>
+              <span class="post-time">2017年12月12日</span>
+              <span class="like">点赞</span>
+              <span class="like-num">2</span>
+            </div>
+            <div class="user-comment-body">vvvvv</div>
+          </div>
+        </li>
+      </ul>
+      <div class="page-nav">
+        <a href="javascript: void(0);" class="item">1</a>
+        <a href="javascript: void(0);" class="item">2</a>
+        <a href="javascript: void(0);" class="item current">3</a>
+      </div>
+    </section>
+    -->
+  </div>
+  <script>
+  JELON.Comment({
+    container: 'comments',
+    label: 'vritubox-ubuntu-init' || '2020/04/19/vritubox-ubuntu-init/',
+    owner: 'jangdelong',
+    repo: 'blog_comments',
+    clientId: 'b08ed25e52c57993e69c',
+    clientSecret: '1cb9545488f0380904b87350e7c5a270ae03bab7'
+  });
+  </script>
+
+
+            </div>
+
+        </section>
+        <!-- 侧栏部分 -->
+<aside class="sidebar">
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章搜索</strong></h3>
+        <div class="search-form">
+  <form
+    id="searchForm"
+    method="GET"
+    action="https://www.baidu.com/s"
+    ectype="application/x-www-form-urlencoded"
+    target="_blank"
+    autocomplete="false"
+    onsubmit="javascript: return false;">
+    <input
+      id="searchKeyword"
+      type="text"
+      class="form-control"
+      placeholder="输入关键字搜索"
+      autocomplete="false"
+    />
+    <input id="searchKeywordHidden" type="hidden" name="wd" />
+    <input id="searchButton" class="btn" type="submit" value="搜索" />
+  </form>
+</div>
+    </section>
+    
+
+    <section class="widget">
+        <h3 class="widget-hd"><strong>文章分类</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+    <li>
+        <a href="/categories/linux/">linux</a>
+        <span class="badge">(6)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/">sql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/hexo/">hexo</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/sql/format/">format</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/">mail</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/">docker</a>
+        <span class="badge">(2)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/grep/">grep</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/">che</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/mail/back/">back</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/che/eclipse/">eclipse</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+    <li>
+        <a href="/categories/linux/docker/mysql/">mysql</a>
+        <span class="badge">(1)</span>
+    </li>
+    
+</ul>
+    </section>
+
+    
+    <section class="widget">
+        <h3 class="widget-hd"><strong>热门标签</strong></h3>
+        <!-- 文章标签 -->
+<div class="widget-bd tag-wrap">
+  
+    <a class="tag-item" href="/tags/hexo/" title="hexo">hexo (1)</a>
+  
+    <a class="tag-item" href="/tags/linux/" title="linux">linux (2)</a>
+  
+    <a class="tag-item" href="/tags/format/" title="format">format (1)</a>
+  
+    <a class="tag-item" href="/tags/back/" title="back">back (1)</a>
+  
+    <a class="tag-item" href="/tags/docker/" title="docker">docker (1)</a>
+  
+    <a class="tag-item" href="/tags/grep/" title="grep">grep (1)</a>
+  
+    <a class="tag-item" href="/tags/find/" title="find">find (1)</a>
+  
+    <a class="tag-item" href="/tags/che/" title="che">che (1)</a>
+  
+    <a class="tag-item" href="/tags/mysql/" title="mysql">mysql (1)</a>
+  
+    <a class="tag-item" href="/tags/java-docker/" title="java,docker">java,docker (1)</a>
+  
+</div>
+    </section>
+    
+
+    
+
+    
+    <!-- 友情链接 -->
+    <section class="widget">
+        <h3 class="widget-hd"><strong>友情链接</strong></h3>
+        <!-- 文章分类 -->
+<ul class="widget-bd">
+    
+        <li>
+            <a href="https://github.com/front-end-pigs/blog" target="_blank" title="Github博客">Github博客</a>
+        </li>
+    
+</ul>
+    </section>
+    
+</aside>
+<!-- / 侧栏部分 -->
+    </div>
+
+    <!-- 博客底部 -->
+    <footer class="footer">
+    &copy;
+    
+        2016-2020
+    
+
+    <a href="/">Jelon Loves You</a>
+</footer>
+<div class="back-to-top" id="JELON__backToTop" title="返回顶部">返回顶部</div>
+
+    <!--博客js脚本 -->
+    <!-- 这里放网站js脚本 -->
+
+<script src="/js/main.js?v=1607343381556.js"></script>
+
+</body>
+</html>
