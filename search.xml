@@ -970,7 +970,10 @@ int main(void)
   <entry>
     <title>git常用</title>
     <url>/2020/04/09/git%E5%B8%B8%E7%94%A8/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：</span><br><span class="line">1. 找一个干净目录，假设是git_work</span><br><span class="line">2. cd git_work</span><br><span class="line">3. git clone http:&#x2F;&#x2F;myrepo.xxx.com&#x2F;project&#x2F;.git ,这样在git_work目录下得到一个project子目录</span><br><span class="line">4. cd project</span><br><span class="line">5. git branch -a，列出所有分支名称如下：</span><br><span class="line">remotes&#x2F;origin&#x2F;dev</span><br><span class="line">remotes&#x2F;origin&#x2F;release</span><br><span class="line">6. git checkout -b dev origin&#x2F;dev，作用是checkout远程的dev分支，在本地起名为dev分支，并切换到本地的dev分支</span><br><span class="line">7. git checkout -b release origin&#x2F;release，作用参见上一步解释</span><br><span class="line">8. git checkout dev，切换回dev分支，并开始开发。</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<hr>
+<p>title: git常用<br>date: 1586438634000<br>author:<br>tags:<br>categories:<br>    - Web技术<br>    - 生活琐事<br>thumbnail:<br>blogexcerpt:</p>
+<hr>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：</span><br><span class="line">1. 找一个干净目录，假设是git_work</span><br><span class="line">2. cd git_work</span><br><span class="line">3. git clone http://myrepo.xxx.com/project/.git ,这样在git_work目录下得到一个project子目录</span><br><span class="line">4. cd project</span><br><span class="line">5. git branch -a，列出所有分支名称如下：</span><br><span class="line">remotes/origin/dev</span><br><span class="line">remotes/origin/release</span><br><span class="line">6. git checkout -b dev origin/dev，作用是checkout远程的dev分支，在本地起名为dev分支，并切换到本地的dev分支</span><br><span class="line">7. git checkout -b release origin/release，作用参见上一步解释</span><br><span class="line">8. git checkout dev，切换回dev分支，并开始开发。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 ]]></content>
