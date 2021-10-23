@@ -8,8 +8,6 @@
 	<!-- title -->
 	
 	<title>
-	
-		Docker搭建MySQL服务 | 
 	 
 	yxzhizhiの博客
 	</title>
@@ -276,7 +274,7 @@ var _hmt = _hmt || [];
 									</a>
 									
 							<ul>
-								<li class="file active">
+								<li class="file">
 									<a href="/2020/04/05/%E7%8E%AF%E5%A2%83/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/">
 										Docker搭建MySQL服务
 									</a>
@@ -377,170 +375,34 @@ var _hmt = _hmt || [];
 
 	<!-- 引入正文 -->
 	<div id="content">
-		<h1 id="article-title">
-	Docker搭建MySQL服务
-</h1>
-<div class="article-meta">
+		<div id="index">
 	
-	<span>zhanghuo</span>
-	<span>2020-04-05 00:00:00</span>
-		<div id="article-categories">
-    
-		<span>Categories：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/linux/">linux</a>
-                        </i>
-                      
-                        >
-                      
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/linux/docker/">docker</a>
-                        </i>
-                      
-                        >
-                      
-                    </span>
-                
-            
-                
-                    <span>
-                        <i class="fa fa-folder" aria-hidden="true">
-                        <a href="/categories/linux/docker/mysql/">mysql</a>
-                        </i>
-                      
-                    </span>
-                
-            
-    
-
-    
-		<span>Tags：</span>
-            
-                
-                    <span>
-                        <i class="fa fa-tag" aria-hidden="true">
-                        <a href="/tags/mysql/">mysql</a>
-                        </i>
-                    </span>
-                
-            
-    
-		</div>
-
+		<div class="index-li">
+			<a href="/2021/10/23/%E5%B7%A5%E5%85%B7/hexo-image/">
+				<h2 class="index-title">
+					hexo-image
+				</h2>
+				<div class="index-brief">
+					第四步：现在就可以插入图片了，比如
+hexo new post photo之后就在source/_posts生成photo.md文件和photo文件夹，我们把要插入的图片复制到photo文件夹内，在photo.md文件里面按markdown的标准写,（我的文件名是head.jpeg）比如
+![这是代
+					...
+				</div>
+			</a>
+                <div class="article-meta">
+				    <span>2021-10-23</span>
+                    
+                            
+                    
+                </div>
+		</div>	
+	
+	
+	<div id="index-paginator">
+		
+	</div>
 </div>
 
-<div id="article-content">
-	<h1 id="Docker搭建MySQL服务"><a href="#Docker搭建MySQL服务" class="headerlink" title="Docker搭建MySQL服务"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/pwc1996/p/5425234.html">Docker搭建MySQL服务</a></h1><h1 id="Docker开源镜像"><a href="#Docker开源镜像" class="headerlink" title="Docker开源镜像"></a>Docker开源镜像</h1><p>前面我们已经安装好了Docker，也简单了解了Docker。那么我们可以尝试搭建一个MySQL服务。</p>
-<p>要搭建服务就要启动服务容器，要创建容易就要有镜像，Docker提供了一个类似Github的开源平台，提供开源镜像，放心可靠。（毕竟大家都看着源码呢）</p>
-<span id="more"></span>
-<p><a target="_blank" rel="noopener" href="https://hub.docker.com/">Docker开源镜像传送门</a></p>
-<hr>
-<h1 id="大概步骤"><a href="#大概步骤" class="headerlink" title="大概步骤"></a>大概步骤</h1><p><strong>1. 下载MySQL镜像</strong><br><strong>2. 创建运行容器</strong></p>
-<blockquote>
-<p>好像很简单是吧？</p>
-</blockquote>
-<hr>
-<h1 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h1><h2 id="第零步，查看Docker-MySQL文档"><a href="#第零步，查看Docker-MySQL文档" class="headerlink" title="第零步，查看Docker MySQL文档"></a>第零步，查看Docker MySQL文档</h2><p>MySQL文档地址：<br><a target="_blank" rel="noopener" href="https://hub.docker.com/_/mysql/">https://hub.docker.com/_/mysql/</a></p>
-<hr>
-<h2 id="第一步，拉取MySQL镜像"><a href="#第一步，拉取MySQL镜像" class="headerlink" title="第一步，拉取MySQL镜像"></a>第一步，拉取MySQL镜像</h2><pre><code>$ sudo docker pull mysql</code></pre><p>之后docker会自动拉取（下载）MySQL镜像。</p>
-<p>等待同样是漫长的。。。</p>
-<blockquote>
-<p>注意，若提示拉取失败就重复几次，总有一次会成功的。。。没办法，墙内的人民很辛苦</p>
-</blockquote>
-<p>拉取成功后我们查看一下：</p>
-<pre><code>$ sudo docker images</code></pre><p><img src="http://img.blog.csdn.net/20160317140105707" alt="01"></p>
-<hr>
-<h2 id="第二步，创建并启动一个MySQL容器"><a href="#第二步，创建并启动一个MySQL容器" class="headerlink" title="第二步，创建并启动一个MySQL容器"></a>第二步，创建并启动一个MySQL容器</h2><p>输入以下命令：</p>
-<pre><code>$ sudo docker run --name pwc-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql</code></pre><p><img src="http://img.blog.csdn.net/20160317142223778" alt="02"></p>
-<ul>
-<li>–name：给新创建的容器命名，此处命名为<code>pwc-mysql</code></li>
-<li>-e：配置信息，此处配置<code>mysql</code>的<code>root用户</code>的登陆密码</li>
-<li>-p：端口映射，此处映射<code>主机3306端口</code>到<code>容器pwc-mysql的3306端口</code></li>
-<li>-d：成功启动容器后输出容器的完整ID，例如上图 <code>73f8811f669ee...</code></li>
-<li>最后一个<code>mysql</code>指的是<code>mysql镜像名字</code></li>
-</ul>
-<p><strong>到这里我们查看容器运行状态：</strong></p>
-<pre><code>$ sudo docker ps</code></pre><p><img src="http://img.blog.csdn.net/20160317142325183" alt="03"></p>
-<p>上图可以看到容器的简写ID，容器的源镜像，创建时间，状态，端口映射信息，容器名字等。</p>
-<hr>
-<h2 id="第三步，测试连接MySQL"><a href="#第三步，测试连接MySQL" class="headerlink" title="第三步，测试连接MySQL"></a>第三步，测试连接MySQL</h2><p>这里我使用navicat远程连接，连接MySQL前需要防火墙开放端口或者关闭防火墙。</p>
-<p>开放端口：</p>
-<pre><code>$ sudo firewall-cmd --add-port=3306/tcp</code></pre><p>关闭防火墙：</p>
-<pre><code>$ sudo systemctl stop firewalld</code></pre><p>接着使用navicat连接<br><img src="http://img.blog.csdn.net/20160317143333986" alt="04"></p>
-<p>连接成功，也可以进行相关数据库操作，因此MySQL服务搭建成功！</p>
-<hr>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><strong>1.可以启动多个MySQL服务，因为我们启动的是容器，容器可以有多个，只要容器名字映射段端口不一样就可以了，例如：</strong></p>
-<pre><code>$ sudo docker run --name dbdb -e MYSQL_ROOT_PASSWORD=123456 -p 6666:3306 -d mysql</code></pre><p><strong>2.查看所有容器（启动状态或者关闭状态）</strong></p>
-<pre><code>$ sudo docker ps -a</code></pre><p><strong>3.启动和关闭容器</strong></p>
-<p>启动命令：</p>
-<pre><code>$ sudo docker start pwc-mysql   //通过指定容器名字
-$ sudo docker start 73f8811f669e  //通过指定容器ID</code></pre><p>关闭命令：</p>
-<pre><code>$ sudo docker stop pwc-mysql   //通过指定容器名字
-$ sudo docker stop 73f8811f669e  //通过指定容器ID</code></pre><p><strong>3.修改MySQL配置文件有两种方法：</strong></p>
-<ul>
-<li><p>一是进入容器，修改容器里的MySQL的配置文件，然后重新启动容器，例如：</p>
-<pre><code>$ sudo docker exec -it pwc-mysql /usr/bin/bash</code></pre><p>然后可以进入容器的命令行模式，接着修改 <code>/etc/mysql/my.cnf</code> 文件即可</p>
-</li>
-<li><p>二是挂载主机的mysql配置文件，官方文档如下：</p>
-<p>The MySQL startup configuration is specified in the file <code>/etc/mysql/my.cnf</code>, and that file in turn includes any files found in the <code>/etc/mysql/conf.d</code> directory that end with .cnf. Settings in files in this directory will augment and/or override settings in <code>/etc/mysql/my.cnf</code>. If you want to use a customized MySQL configuration, you can create your alternative configuration file in a directory on the host machine and then mount that directory location as <code>/etc/mysql/conf.d</code> inside the mysql container.</p>
-<p>If <code>/my/custom/config-file.cnf</code> is the path and name of your custom configuration file, you can start your mysql container like this (note that only the directory path of the custom config file is used in this command):</p>
-<pre><code>$ docker run --name some-mysql -v /my/custom:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag</code></pre><p>This will start a new container some-mysql where the MySQL instance uses the combined startup settings from <code>/etc/mysql/my.cnf</code> and <code>/etc/mysql/conf.d/config-file.cnf</code>, with settings from the latter taking precedence.</p>
-</li>
-</ul>
-
-</div>
-
-
-    <div class="post-guide">
-        <div class="item left">
-            
-              <a href="/2020/04/05/%E5%B7%A5%E5%85%B7/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">
-                  <i class="fa fa-angle-left" aria-hidden="true"></i>
-                  eclipse/che
-              </a>
-            
-        </div>
-        <div class="item right">
-            
-              <a href="/2020/04/05/%E5%BC%80%E5%8F%91/docker/">
-                docker
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </a>
-            
-        </div>
-    </div>
-
-
-
-	<div id="vcomments"></div>
-
-
-<script>
-	
-		// 评论
-		new Valine({
-			el: '#vcomments',
-			appId: '',
-			appKey: '',
-			placeholder: '请输入评论',
-			path: window.location.pathname,
-			avatar: 'retro',
-			highlight: false,
-      recordIP: true,
-      enableQQ: true,
-			requiredFields: ['nick','mail']
-		})
-	
-	
-</script>
 	</div>
 	<div id="footer">
 	<p>
