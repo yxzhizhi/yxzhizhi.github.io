@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		Markdown 语法手册 （完整整理版） | 
+	 
+	yxzhizhiの博客
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="linux,java,python,node,web" />
+	 
+		<meta name="description" content="生命不是要超越别人，而是要超越自己" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "wujun234.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
+</head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">yxzhizhiの博客</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+
+	
+
+		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>
+		<li class="menu-item">
+			<a href="https://github.com/wujun234" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										备忘
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%A4%87%E5%BF%98/126%E9%82%AE%E7%AE%B1/">
+										126邮箱
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2020/04/07/%E5%A4%87%E5%BF%98/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/">
+										Markdown-语法手册-（完整整理版）
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/01/01/%E5%A4%87%E5%BF%98/hexo/">
+										hexo
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										工具
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%B7%A5%E5%85%B7/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/">
+										使用帮助文档
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%B7%A5%E5%85%B7/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/">
+										安装使用Eclipse Che
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										开发
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/04/19/%E5%BC%80%E5%8F%91/Docker-Flink/">
+										Docker-Flink
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/07/%E5%BC%80%E5%8F%91/django%E7%AC%94%E8%AE%B0/">
+										django笔记
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/19/%E5%BC%80%E5%8F%91/docker-spark-hadoop/">
+										docker-spark-hadoop
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%BC%80%E5%8F%91/docker/">
+										docker
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%BC%80%E5%8F%91/find_grep/">
+										find_grep
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/05/01/%E5%BC%80%E5%8F%91/firefox-dev/">
+										firefox-dev
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/09/%E5%BC%80%E5%8F%91/git%E5%B8%B8%E7%94%A8/">
+										git常用
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/07/15/%E5%BC%80%E5%8F%91/python-gui/">
+										python-gui
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%BC%80%E5%8F%91/sql%20and%20freemaker%20format/">
+										sql and freemaker format
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E5%BC%80%E5%8F%91/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/">
+										常用Linux 命令
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										环境
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/04/05/%E7%8E%AF%E5%A2%83/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/">
+										Docker搭建MySQL服务
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/09/%E7%8E%AF%E5%A2%83/conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/">
+										conda-虚拟环境
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/06/%E7%8E%AF%E5%A2%83/java-deploy-to-docker/">
+										java-deploy-to-docker
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/18/%E7%8E%AF%E5%A2%83/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/">
+										openstack-部署方式
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/18/%E7%8E%AF%E5%A2%83/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/">
+										ubuntu-删除软件
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/19/%E7%8E%AF%E5%A2%83/vritubox-ubuntu-init/">
+										vritubox-ubuntu-init
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/19/%E7%8E%AF%E5%A2%83/windows10%20node%20%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/">
+										windows10 node 环境安装
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2020/04/12/%E7%8E%AF%E5%A2%83/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/">
+										学习计划
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										设计
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2020/01/01/%E8%AE%BE%E8%AE%A1/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E6%9E%B6%E6%9E%84/">
+										从0开始学架构
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	Markdown 语法手册 （完整整理版）
+</h1>
+<div class="article-meta">
+	
+	<span>zhanghuo</span>
+	<span>2020-04-07 09:42:33</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+    
+
+    
+		<span>Tags：</span>
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h1 id="Markdown基本语法"><a href="#Markdown基本语法" class="headerlink" title="Markdown基本语法"></a>Markdown基本语法</h1><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="最小只有六级标题"><a href="#最小只有六级标题" class="headerlink" title="最小只有六级标题"></a>最小只有六级标题</h6><p>加粗<strong>我被加粗了</strong><br>斜体<em>我倾斜了了</em><br>高亮==我高亮了==<br>上标#2^2^<br>下标H<del>2</del>o<br>代码引用（&gt;式）</p>
+<blockquote>
+<p>hello markdown!<br>hello markdown!</p>
+<blockquote>
+<p>hello markdown!<br>代码引用（```式）</p>
+</blockquote>
+</blockquote>
+<pre><code class="python">print(&#39;hello nick&#39;)</code></pre>
+<span id="more"></span>
+
+<p>代码引入（<code>式）</code>print(‘hello nick’)`<br>插入链接（链接显示）#<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nickchen121/p/10718112.html">https://www.cnblogs.com/nickchen121/p/10718112.html</a><br>插入链接（链接描述显示）#<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nickchen121/p/10718112.html" title="nickchen博客">nickchen博客</a><br>插入图片（链接）#<br><img src="http://www.chenyoude.com/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark" alt="数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark" title="描述信息"></p>
+<p>插入图片（图片路径）#<br>绝对路径：.md文本同目录下图片的名字，如数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark</p>
+<p>相对路径：图片在电脑中的路径地址，如\Users\nick\mac\desktop\数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark</p>
+<p><img src="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark" alt="数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark" title="描述信息"></p>
+<p><img src="%5CUsers%5Cnick%5Cmac%5Cdesktop%5C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark" alt="数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark" title="描述信息"></p>
+<p>有序列表</p>
+<ol>
+<li>one</li>
+<li>two </li>
+<li>three<br>无序列表</li>
+</ol>
+<ul>
+<li>one</li>
+<li>two</li>
+<li>three<br>分割线#</li>
+</ul>
+<hr>
+<p>表格而且第二行必须得有，并且第二行的冒号代表对齐格式，分别为居中；右对齐；左对齐）：#<br>name | age | sex<br>:-:|:-|-:<br>tony|20|男<br>lucy|18|女</p>
+<p>数学公式（行内嵌）#<br>内嵌数学公式<br>$sum_{i=1}^{10}f(i),,text{thanks}$<br>数学公式（块状）#<br>$$<br>sum_{i=1}^{10}f(i),,text{thanks}<br>$$</p>
+<h3 id="Markdown-编辑器语法指南"><a href="#Markdown-编辑器语法指南" class="headerlink" title="Markdown 编辑器语法指南"></a>Markdown 编辑器语法指南</h3><p>如果你只想高亮语句中的某个函数名或关键字，可以使用 <code>function_name()</code> 实现</p>
+<p>通常编辑器根据代码片段适配合适的高亮方法，但你也可以用 ``` 包裹一段代码，并指定一种语言</p>
+<pre><code class="javascript">$(document).ready(function () &#123;
+    alert(&#39;hello world&#39;);
+&#125;);</code></pre>
+<p>支持的语言：1c, abnf, accesslog, actionscript, ada, apache, applescript, arduino, armasm, asciidoc, aspectj, autohotkey, autoit, avrasm, awk, axapta, bash, basic, bnf, brainfuck, cal, capnproto, ceylon, clean, clojure, clojure-repl, cmake, coffeescript, coq, cos, cpp, crmsh, crystal, cs, csp, css, d, dart, delphi, diff, django, dns, dockerfile, dos, dsconfig, dts, dust, ebnf, elixir, elm, erb, erlang, erlang-repl, excel, fix, flix, fortran, fsharp, gams, gauss, gcode, gherkin, glsl, go, golo, gradle, groovy, haml, handlebars, haskell, haxe, hsp, htmlbars, http, hy, inform7, ini, irpf90, java, javascript, json, julia, kotlin, lasso, ldif, leaf, less, lisp, livecodeserver, livescript, llvm, lsl, lua, makefile, markdown, mathematica, matlab, maxima, mel, mercury, mipsasm, mizar, mojolicious, monkey, moonscript, n1ql, nginx, nimrod, nix, nsis, objectivec, ocaml, openscad, oxygene, parser3, perl, pf, php, pony, powershell, processing, profile, prolog, protobuf, puppet, purebasic, python, q, qml, r, rib, roboconf, rsl, ruby, ruleslanguage, rust, scala, scheme, scilab, scss, smali, smalltalk, sml, sqf, sql, stan, stata, step21, stylus, subunit, swift, taggerscript, tap, tcl, tex, thrift, tp, twig, typescript, vala, vbnet, vbscript, vbscript-html, verilog, vhdl, vim, x86asm, xl, xml, xquery, yaml, zephir</p>
+<p>也可以使用 4 空格缩进，再贴上代码，实现相同的的效果<br>    def g(x):<br>        yield from range(x, 0, -1)<br>    yield from range(x)<br>如你不需要代码高亮，可以用下面的方法禁用：</p>
+<pre><code class="nohighlight">nohighlight</code></pre>
+<p>标题<br>文章内容较多时，可以用标题分段：</p>
+<h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h2 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h2><h3 id="小标题"><a href="#小标题" class="headerlink" title="小标题"></a>小标题</h3><h2 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h2><p><em>斜体文本</em>    <em>斜体文本</em><br><strong>粗体文本</strong>    <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>    <strong><em>粗斜体文本</em></strong></p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>文字链接 <a target="_blank" rel="noopener" href="http://链接网址">链接名称</a><br>网址链接 <a target="_blank" rel="noopener" href="http://链接网址">http://链接网址</a><br>高级链接技巧<br>这个链接用 1 作为网址变量 [Google][1].<br>这个链接用 yahoo 作为网址变量 [Yahoo!][yahoo].<br>然后在文档的结尾为变量赋值（网址）<br>  [1]: <a target="_blank" rel="noopener" href="http://www.google.com/">http://www.google.com/</a><br>  [yahoo]: <a target="_blank" rel="noopener" href="http://www.yahoo.com/">http://www.yahoo.com/</a></p>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h4 id="普通无序列表"><a href="#普通无序列表" class="headerlink" title="普通无序列表"></a>普通无序列表</h4><ul>
+<li>列表文本前使用 [减号+空格]</li>
+</ul>
+<ul>
+<li>列表文本前使用 [加号+空格]</li>
+</ul>
+<ul>
+<li>列表文本前使用 [星号+空格]<h4 id="普通有序列表"><a href="#普通有序列表" class="headerlink" title="普通有序列表"></a>普通有序列表</h4></li>
+</ul>
+<ol>
+<li><p>列表前使用 [数字+空格]</p>
+</li>
+<li><p>我们会自动帮你添加数字</p>
+</li>
+<li><p>不用担心数字不对，显示的时候我们会自动把这行的 7 纠正为 3</p>
+<h4 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h4></li>
+<li><p>列出所有元素：</p>
+<ul>
+<li>无序列表元素 A<ol>
+<li>元素 A 的有序子列表</li>
+</ol>
+</li>
+<li>前面加四个空格</li>
+</ul>
+</li>
+<li><p>列表里的多段换行：<br> 前面必须加四个空格，<br> 这样换行，整体的格式不会乱</p>
+</li>
+<li><p>列表里引用：</p>
+<blockquote>
+<p>前面空一行<br>仍然需要在 &gt;  前面加四个空格</p>
+</blockquote>
+</li>
+<li><p>列表里代码段：</p>
+<pre><code> 前面四个空格，之后按代码语法 ``` 书写</code></pre><pre><code> 或者直接空八个，引入代码块</code></pre></li>
+</ol>
+<h2 id="普通引用"><a href="#普通引用" class="headerlink" title="普通引用"></a>普通引用</h2><blockquote>
+<p>引用文本前使用 [大于号+空格]<br>折行可以不加，新起一行都要加上哦</p>
+</blockquote>
+<h2 id="引用里嵌套引用"><a href="#引用里嵌套引用" class="headerlink" title="引用里嵌套引用"></a>引用里嵌套引用</h2><blockquote>
+<p>最外层引用</p>
+<blockquote>
+<p>多一个 &gt; 嵌套一层引用</p>
+<blockquote>
+<p>可以嵌套很多层</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="引用里嵌套列表"><a href="#引用里嵌套列表" class="headerlink" title="引用里嵌套列表"></a>引用里嵌套列表</h2><blockquote>
+<ul>
+<li>这是引用里嵌套的一个列表</li>
+<li>还可以有子列表<ul>
+<li>子列表需要从 - 之后延后四个空格开始</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="引用里嵌套代码块"><a href="#引用里嵌套代码块" class="headerlink" title="引用里嵌套代码块"></a>引用里嵌套代码块</h2><blockquote>
+<pre><code>同样的，在前面加四个空格形成代码块</code></pre><pre><code>或者使用 ``` 形成代码块</code></pre></blockquote>
+<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>跟链接的方法区别在于前面加了个感叹号 !，这样是不是觉得好记多了呢？<br><img src="http://%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80" alt="图片名称"><br>当然，你也可以像网址那样对图片网址使用变量<br>这个链接用 1 作为网址变量 [Google][1].<br>然后在文档的结尾位变量赋值（网址）<br> [1]: <a target="_blank" rel="noopener" href="http://www.google.com/logo.png">http://www.google.com/logo.png</a></p>
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>如果另起一行，只需在当前行结尾加 2 个空格<br>在当前行的结尾加 2 个空格<br>这行就会新起一行<br>如果是要起一个新段落，只需要空出一行即可。</p>
+<h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><p>如果你有写分割线的习惯，可以新起一行输入三个减号-。当前后都有段落时，请空出一行：</p>
+<p>前面的段落</p>
+<hr>
+<p>后面的段落</p>
+<h2 id="高级技巧"><a href="#高级技巧" class="headerlink" title="高级技巧"></a>高级技巧</h2><p>行内 HTML 元素<br>目前只支持部分段内 HTML 元素效果，包括 <kdb> <b> <i> <em> <sup> <sub> <br> ，如</p>
+<h2 id="键位显示"><a href="#键位显示" class="headerlink" title="键位显示"></a>键位显示</h2><p>使用 <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd> 重启电脑<br>代码块使用 <pre></pre> 元素同样可以形成代码块<br>粗斜体<b> Markdown 在此处同样适用，如 <em>加粗</em> </b><br>符号转义<br>如果你的描述中需要用到 markdown 的符号，比如 _ # * 等，但又不想它被转义，这时候可以在这些符号前加反斜杠，如 _ # * 进行避免。<br>_不想这里的文本变斜体_<br>**不想这里的文本被加粗**</p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p>支持 jsfiddle、gist、runjs、优酷视频，直接填写 url，在其之后会自动添加预览点击会展开相关内容。<br>http://{url_of_the_fiddle}/embedded/[{tabs}/[{style}]]/<br><a target="_blank" rel="noopener" href="https://gist.github.com/{gist_id}">https://gist.github.com/{gist_id}</a><br><a target="_blank" rel="noopener" href="http://runjs.cn/detail/{id}">http://runjs.cn/detail/{id}</a><br><a target="_blank" rel="noopener" href="http://v.youku.com/v_show/id_{video_id}.html">http://v.youku.com/v_show/id_{video_id}.html</a></p>
+<h2 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h2><p>当你需要在编辑器中插入数学公式时，可以使用两个美元符 $$ 包裹 TeX 或 LaTeX 格式的数学公式来实现。提交后，问答和文章页会根据需要加载 Mathjax 对数学公式进行渲染。如：<br>$$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$</p>
+<p>$$<br>x \href{why-equal.html}{=} y^2 + 1<br>$$</p>
+<p>同时也支持 HTML 属性，如：<br>$$ (x+1)^2 = \class{hidden}{(x+1)(x+1)} $$</p>
+<p>$$<br>(x+1)^2 = \cssId{step1}{\style{visibility:hidden}{(x+1)(x+1)}}<br>$$</p>
+<h2 id="斜体和粗体"><a href="#斜体和粗体" class="headerlink" title="斜体和粗体"></a>斜体和粗体</h2><p><em>斜体</em>或<em>斜体</em><br><strong>粗体</strong><br><strong><em>加粗斜体</em></strong><br><del>删除线</del></p>
+<h2 id="分级标题"><a href="#分级标题" class="headerlink" title="分级标题"></a>分级标题</h2><h1 id="这是一个一级标题"><a href="#这是一个一级标题" class="headerlink" title="这是一个一级标题"></a>这是一个一级标题</h1><h2 id="这是一个二级标题"><a href="#这是一个二级标题" class="headerlink" title="这是一个二级标题"></a>这是一个二级标题</h2><p>第二种写法：</p>
+<h1 id="一级标题-1"><a href="#一级标题-1" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题-1"><a href="#二级标题-1" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题-1"><a href="#三级标题-1" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题-1"><a href="#四级标题-1" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题-1"><a href="#五级标题-1" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><p>由于用了[TOC]标记编辑器会把所有标题写到目录大纲中，在这里写的演示标题也会列进去，所以就不演示了。同学们自己在编辑器中观察，很简单，一级标题字号最大，依级递减。</p>
+<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式，行内式一般使用较多。</p>
+<h2 id="行内式"><a href="#行内式" class="headerlink" title="行内式"></a>行内式</h2><p>语法说明：</p>
+<p>[]里写链接文字，()里写链接地址, ()中的”“中可以为链接指定title属性，title属性可加可不加。title属性的效果是鼠标悬停在链接上会出现指定的 title文字。[链接文字](链接地址 “链接标题”)’这样的形式。链接地址与链接标题前有一个空格。<br>代码：</p>
+<p>欢迎来到<a target="_blank" rel="noopener" href="http://blog.leanote.com/freewalk">梵居闹市</a><br>欢迎来到<a target="_blank" rel="noopener" href="http://blog.leanote.com/freewalk" title="梵居闹市">梵居闹市</a></p>
+<h2 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h2><p>参考式超链接一般用在学术论文上面，或者另一种情况，如果某一个链接在文章中多处使用，那么使用引用 的方式创建链接将非常好，它可以让你对链接进行统一的管理。<br>语法说明：<br>参考式链接分为两部分，文中的写法 [链接文字][链接标记]，在文本的任意位置添加[链接标记]:链接地址 “链接标题”，链接地址与链接标题前有一个空格。</p>
+<p>如果链接文字本身可以做为链接标记，你也可以写成[链接文字][]<br>[链接文字]：链接地址的形式，见代码的最后一行。<br>代码：<br>我经常去的几个网站[Google][1]、[Leanote][2]以及[自己的博客][3]<br>[Leanote 笔记][2]是一个不错的[网站][]。<br>[1]:<a target="_blank" rel="noopener" href="http://www.google.com">http://www.google.com</a> “Google”<br>[2]:<a target="_blank" rel="noopener" href="http://www.leanote.com">http://www.leanote.com</a> “Leanote”<br>[3]:<a target="_blank" rel="noopener" href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a> “梵居闹市”<br>[网站]:<a target="_blank" rel="noopener" href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a></p>
+<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：<br>代码：<br><a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a><br><a href="mailto:&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;">&#97;&#x64;&#x64;&#x72;&#x65;&#x73;&#x73;&#64;&#101;&#120;&#x61;&#x6d;&#x70;&#x6c;&#x65;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的。<br>注意： </p>
+<ol>
+<li>Markdown Extra 只支持在标题后插入锚点，其它地方无效。 </li>
+<li>Leanote 编辑器右侧显示效果区域暂时不支持锚点跳转，所以点来点去发现没有跳转不必惊慌，但是你发布成笔记或博文后是支持跳转的。</li>
+</ol>
+<p>语法描述：<br>在你准备跳转到的指定标题后插入锚点{ #标记}，然后在文档的其它地方写上连接到锚点的链接。<br>代码：</p>
+<h2 id="0-目录-index"><a href="#0-目录-index" class="headerlink" title="0. 目录{ #index}"></a>0. 目录{ #index}</h2><p>跳转到<a href="#index">目录</a></p>
+<h2 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h2><p>使用 *，+，- 表示无序列表。<br>代码：</p>
+<ul>
+<li>无序列表项 一</li>
+<li>无序列表项 二</li>
+<li>无序列表项 三<br>有序列表</li>
+</ul>
+<hr>
+<p>有序列表则使用数字接着一个英文句点。<br>代码：</p>
+<ol>
+<li>有序列表项 一</li>
+<li>有序列表项 二</li>
+<li>有序列表项 三<br>定义型列表</li>
+</ol>
+<hr>
+<dl><dt>语法说明：<br>定义型列表由名词和解释组成。一行写上定义，紧跟一行写上解释。解释的写法:紧跟一个缩进(Tab)<br>代码：<br>Markdown<br>:    轻量级文本标记语言，可以转换成html，pdf等格式（左侧有一个可见的冒号和四个不可见的空格）<br>代码块 2</dt><dd>这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）<br>        代码块（左侧有八个不可见的空格）<br>列表缩进</dd></dl><hr>
+<p>语法说明：<br>列表项目标记通常是放在最左边，但是其实也可以缩进，最多 3 个空格，项目标记后面则一定要接着至少一个空格或制表符。</p>
+<p>要让列表看起来更漂亮，你可以把内容用固定的缩进整理好（显示效果与代码一致）：</p>
+<p>轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。<br>那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。<br>软泥上的青荇， 油油的在水底招摇； 在康河的柔波里， 我甘心做一条水草！<br>那榆荫下的一潭， 不是清泉， 是天上虹； 揉碎在浮藻间， 沉淀着彩虹似的梦。<br>寻梦？撑一支长篙， 向青草更青处漫溯； 满载一船星辉， 在星辉斑斓里放歌。<br>但我不能放歌， 悄悄是别离的笙箫； 夏虫也为我沉默， 沉默是今晚的康桥！<br>悄悄的我走了， 正如我悄悄的来； 我挥一挥衣袖， 不带走一片云彩。<br>但是如果你懒，那也行：<br>代码：</p>
+<ul>
+<li>轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。<br>那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。<br>软泥上的青荇， 油油的在水底招摇； 在康河的柔波里， 我甘心做一条水草！ </li>
+<li>那榆荫下的一潭， 不是清泉， 是天上虹； 揉碎在浮藻间， 沉淀着彩虹似的梦。<br>寻梦？撑一支长篙， 向青草更青处漫溯； 满载一船星辉， 在星辉斑斓里放歌。<br>但我不能放歌， 悄悄是别离的笙箫； 夏虫也为我沉默， 沉默是今晚的康桥！<br>悄悄的我走了， 正如我悄悄的来； 我挥一挥衣袖， 不带走一片云彩。</li>
+</ul>
+<h2 id="包含段落的列表"><a href="#包含段落的列表" class="headerlink" title="包含段落的列表"></a>包含段落的列表</h2><p>语法说明：</p>
+<p>列表项目可以包含多个段落，每个项目下的段落都必须缩进 4 个空格或是 1 个制表符（显示效果与代码一致）：</p>
+<p>轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。<br>那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。<br>软泥上的青荇， 油油的在水底招摇； 在康河的柔波里， 我甘心做一条水草！</p>
+<p>那榆荫下的一潭， 不是清泉， 是天上虹； 揉碎在浮藻间， 沉淀着彩虹似的梦。<br>寻梦？撑一支长篙， 向青草更青处漫溯； 满载一船星辉， 在星辉斑斓里放歌。<br>但我不能放歌， 悄悄是别离的笙箫； 夏虫也为我沉默， 沉默是今晚的康桥！</p>
+<p>悄悄的我走了， 正如我悄悄的来； 我挥一挥衣袖， 不带走一片云彩。</p>
+<p>如果你每行都有缩进，看起来会看好很多，当然，再次地，如果你很懒惰，Markdown 也允许：<br>代码：</p>
+<ul>
+<li>轻轻的我走了， 正如我轻轻的来； 我轻轻的招手， 作别西天的云彩。<br>那河畔的金柳， 是夕阳中的新娘； 波光里的艳影， 在我的心头荡漾。<br>软泥上的青荇， 油油的在水底招摇； 在康河的柔波里， 我甘心做一条水草！<br> 那榆荫下的一潭， 不是清泉， 是天上虹； 揉碎在浮藻间， 沉淀着彩虹似的梦。<br>寻梦？撑一支长篙， 向青草更青处漫溯； 满载一船星辉， 在星辉斑斓里放歌。<br>但我不能放歌， 悄悄是别离的笙箫； 夏虫也为我沉默， 沉默是今晚的康桥！ </li>
+<li>悄悄的我走了， 正如我悄悄的来； 我挥一挥衣袖， 不带走一片云彩。</li>
+</ul>
+<h2 id="包含引用的列表"><a href="#包含引用的列表" class="headerlink" title="包含引用的列表"></a>包含引用的列表</h2><p>语法说明：<br>如果要在列表项目内放进引用，那 &gt; 就需要缩进：<br>代码：</p>
+<ul>
+<li>阅读的方法:<blockquote>
+<p>打开书本。<br>打开电灯。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="包含代码区块的引用"><a href="#包含代码区块的引用" class="headerlink" title="包含代码区块的引用"></a>包含代码区块的引用</h2><p>语法说明：<br>如果要放代码区块的话，该区块就需要缩进两次，也就是 8 个空格或是 2 个制表符：</p>
+<p>一列表项包含一个列表区块：</p>
+<p>&lt;代码写在这&gt;</p>
+<h2 id="一个特殊情况"><a href="#一个特殊情况" class="headerlink" title="一个特殊情况"></a>一个特殊情况</h2><p>在特殊情况下，项目列表很可能会不小心产生，像是下面这样的写法：</p>
+<ol start="1986">
+<li>What a great season.<br>会显示成：</li>
+</ol>
+<p>What a great season.<br>换句话说，也就是在行首出现数字-句点-空白，要避免这样的状况，你可以在句点前面加上反斜杠：</p>
+<p>1986. What a great season.<br>会显示成：</p>
+<ol start="1986">
+<li>What a great season.</li>
+</ol>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>语法说明：</p>
+<p>引用需要在被引用的文本前加上&gt;符号。</p>
+<p>代码：</p>
+<blockquote>
+<p>这是一个有两段文字的引用,<br>无意义的占行文字1.<br>无意义的占行文字2.</p>
+<p>无意义的占行文字3.<br>无意义的占行文字4.</p>
+</blockquote>
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 &gt; ：<br>代码：</p>
+<blockquote>
+<p>这是一个有两段文字的引用,<br>无意义的占行文字1.<br>无意义的占行文字2.<br>无意义的占行文字3.<br>无意义的占行文字4.<br>显示效果：</p>
+</blockquote>
+<p>这是一个有两段文字的引用,<br>无意义的占行文字1.<br>无意义的占行文字2.</p>
+<p>无意义的占行文字3.<br>无意义的占行文字4.</p>
+<h2 id="引用的多层嵌套"><a href="#引用的多层嵌套" class="headerlink" title="引用的多层嵌套"></a>引用的多层嵌套</h2><p>区块引用可以嵌套（例如：引用内的引用），只要根据层次加上不同数量的 &gt; ：<br>代码：</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>请问 Markdwon 怎么用？ - 小白<br>自己看教程！ - 愤青<br>教程在哪？ - 小白</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="引用其它要素"><a href="#引用其它要素" class="headerlink" title="引用其它要素"></a>引用其它要素</h2><p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等：<br>代码：</p>
+<blockquote>
+<ol>
+<li>这是第一行列表项。</li>
+<li>这是第二行列表项。</li>
+</ol>
+<p>给出一些例子代码：</p>
+<pre><code>return shell_exec(&quot;echo $input | $markdown_script&quot;);</code></pre></blockquote>
+<p>return shell_exec(“echo $input | $markdown_script”);<br>7. 插入图像<br>图片的创建方式与超链接相似，而且和超链接一样也有两种写法，行内式和参考式写法。</p>
+<p>语法中图片Alt的意思是如果图片因为某些原因不能显示，就用定义的图片Alt文字来代替图片。 图片Title则和链接中的Title一样，表示鼠标悬停与图片上时出现的文字。 Alt 和 Title 都不是必须的，可以省略，但建议写上。</p>
+<h2 id="行内式-1"><a href="#行内式-1" class="headerlink" title="行内式"></a>行内式</h2><p>语法说明：![图片Alt](图片地址 “图片Title”)<br>代码：<br>美丽花儿：<br><img src="http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg" alt="美丽花儿" title="美丽花儿"></p>
+<h2 id="参考式-1"><a href="#参考式-1" class="headerlink" title="参考式"></a>参考式</h2><p>语法说明：</p>
+<p>在文档要插入图片的地方写![图片Alt][标记]</p>
+<p>在文档的最后写上[标记]:图片地址 “Title”</p>
+<p>代码：<br>美丽花儿：<br>![美丽花儿][flower]<br>[flower]:<a target="_blank" rel="noopener" href="http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg">http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg</a>  “美丽花儿”</p>
+<h2 id="内容目录"><a href="#内容目录" class="headerlink" title="内容目录"></a>内容目录</h2><p>在段落中填写 [TOC] 以显示全文内容的目录结构。</p>
+<p>效果参见最上方的目录</p>
+<h2 id="注脚"><a href="#注脚" class="headerlink" title="注脚"></a>注脚</h2><p>语法说明：</p>
+<p>在需要添加注脚的文字后加上脚注名字[^注脚名字],称为加注。 然后在文本的任意位置(一般在最后)添加脚注，脚注前必须有对应的脚注名字。</p>
+<p>注意：经测试注脚与注脚之间必须空一行，不然会失效。成功后会发现，即使你没有把注脚写在文末，经Markdown转换后，也会自动归类到文章的最后。</p>
+<p>代码：</p>
+<p>使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2], 你可以使用 Leanote[^Le] 编辑器进行书写。<br>[^1]:Markdown是一种纯文本标记语言<br>[^2]:HyperText Markup Language 超文本标记语言<br>[^Le]:开源笔记平台，支持Markdown和笔记直接发为博文<br>显示效果：</p>
+<p>使用 Markdown1可以效率的书写文档, 直接转换成 HTML2, 你可以使用 Leanote3 编辑器进行书写。</p>
+<p>注：脚注自动被搬运到最后面，请到文章末尾查看，并且脚注后方的链接可以直接跳转回到加注的地方。</p>
+<h2 id="LaTeX-公式"><a href="#LaTeX-公式" class="headerlink" title="LaTeX 公式"></a>LaTeX 公式</h2><p>$ 表示行内公式：<br>代码：</p>
+<p>质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。<br>显示效果：</p>
+<p>质能守恒方程可以用一个很简洁的方程式  来表达。</p>
+<h2 id="表示整行公式："><a href="#表示整行公式：" class="headerlink" title="$$ 表示整行公式："></a>$$ 表示整行公式：</h2><p>代码：<br>$$\sum_{i=1}^n a_i=0$$<br>$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$<br>$$\sum^{j-1}<em>{k=0}{\widehat{\gamma}</em>{kj} z_k}$$</p>
+<h2 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h2><p>代码：<br>flow<br>st=&gt;start: Start:&gt;<a target="_blank" rel="noopener" href="https://www.zybuluo.com">https://www.zybuluo.com</a><br>io=&gt;inputoutput: verification<br>op=&gt;operation: Your Operation<br>cond=&gt;condition: Yes or No?<br>sub=&gt;subroutine: Your Subroutine<br>e=&gt;end<br>st-&gt;io-&gt;op-&gt;cond<br>cond(yes)-&gt;e<br>cond(no)-&gt;sub-&gt;io</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>语法说明：<br>不管是哪种方式，第一行为表头，第二行分隔表头和主体部分，第三行开始每一行为一个表格行。<br>列于列之间用管道符|隔开。原生方式的表格每一行的两边也要有管道符。<br>第二行还可以为不同的列指定对齐方向。默认为左对齐，在-右边加上:就右对齐。<br>代码：<br>简单方式写表格：<br>学号|姓名|分数<br>-|-|-<br>小明|男|75<br>小红|女|79<br>小陆|男|92<br>原生方式写表格：</p>
+<table>
+<thead>
+<tr>
+<th>学号</th>
+<th>姓名</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小明</td>
+<td>男</td>
+<td>75</td>
+</tr>
+<tr>
+<td>小红</td>
+<td>女</td>
+<td>79</td>
+</tr>
+<tr>
+<td>小陆</td>
+<td>男</td>
+<td>92</td>
+</tr>
+<tr>
+<td>为表格第二列指定方向：</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th align="right">价格</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Leanote 高级账号</td>
+<td align="right">60元/年</td>
+</tr>
+<tr>
+<td>Leanote 超级账号</td>
+<td align="right">120元/年</td>
+</tr>
+</tbody></table>
+<h2 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h2><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线</p>
+<p>代码：</p>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>对于程序员来说这个功能是必不可少的，插入程序代码的方式有两种，一种是利用缩进(Tab), 另一种是利用”`”符号（一般在ESC键下方）包裹代码。</p>
+<p>语法说明：</p>
+<p>插入行内代码，即插入一个单词或者一句代码的情况，使用<code>code</code>这样的形式插入。<br>插入多行代码，可以使用缩进或者“<code>code “</code>,具体看示例。<br>注意： 缩进式插入前方必须有空行</p>
+<h2 id="行内式-2"><a href="#行内式-2" class="headerlink" title="行内式"></a>行内式</h2><p>代码：</p>
+<p>C语言里的函数 <code>scanf()</code> 怎么使用？<br>缩进式多行代码</p>
+<hr>
+<p>缩进 4 个空格或是 1 个制表符<br>一个代码区块会一直持续到没有缩进的那一行（或是文件结尾）。<br>代码：</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+&#123;
+    printf(&quot;Hello world\n&quot;);
+&#125;</code></pre><h2 id="用六个-包裹多行代码"><a href="#用六个-包裹多行代码" class="headerlink" title="用六个`包裹多行代码"></a>用六个`包裹多行代码</h2><p>代码：</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+&#123;
+    printf(&quot;Hello world\n&quot;);
+&#125;</code></pre><h2 id="HTML-原始码"><a href="#HTML-原始码" class="headerlink" title="HTML 原始码"></a>HTML 原始码</h2><p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如：</p>
+<p>代码：</p>
+<p>第一个例子：</p>
+<div class="footer">
+   © 2004 Foo Corporation
+</div>
+第二个例子：
+
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2020/04/07/%E5%BC%80%E5%8F%91/django%E7%AC%94%E8%AE%B0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  django笔记
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2020/04/06/%E7%8E%AF%E5%A2%83/java-deploy-to-docker/">
+                java deploy to docker
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+	<div id="vcomments"></div>
+
+
+<script>
+	
+		// 评论
+		new Valine({
+			el: '#vcomments',
+			appId: '',
+			appKey: '',
+			placeholder: '请输入评论',
+			path: window.location.pathname,
+			avatar: 'retro',
+			highlight: false,
+      recordIP: true,
+      enableQQ: true,
+			requiredFields: ['nick','mail']
+		})
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">zhanghuo</a> 
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
