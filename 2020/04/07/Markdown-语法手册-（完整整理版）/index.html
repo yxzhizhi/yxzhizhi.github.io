@@ -2,652 +2,94 @@
 <html>
 <head>
   <meta charset="utf-8">
+  
+
+  
   <title>Markdown 语法手册 （完整整理版） | yxzhizhiの博客</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="Markdown 语法手册 （完整整理版） | yxzhizhiの博客">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta property="og:type" content="website">
-<meta property="og:title" content="yxzhizhiの博客">
-<meta property="og:url" content="http://yxzhizhi.gicp.com/404.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Markdown基本语法一级标题二级标题三级标题四级标题五级标题最小只有六级标题加粗我被加粗了斜体我倾斜了了高亮&#x3D;&#x3D;我高亮了&#x3D;&#x3D;上标#2^2^下标H2o代码引用（&gt;式）  hello markdown!hello markdown!  hello markdown!代码引用（&#96;&#96;&#96;式）   print(&#39;hello nick&#39;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown 语法手册 （完整整理版）">
+<meta property="og:url" content="https://yxzhizhi.github.io/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/index.html">
 <meta property="og:site_name" content="yxzhizhiの博客">
+<meta property="og:description" content="Markdown基本语法一级标题二级标题三级标题四级标题五级标题最小只有六级标题加粗我被加粗了斜体我倾斜了了高亮&#x3D;&#x3D;我高亮了&#x3D;&#x3D;上标#2^2^下标H2o代码引用（&gt;式）  hello markdown!hello markdown!  hello markdown!代码引用（&#96;&#96;&#96;式）   print(&#39;hello nick&#39;)">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-04-19T09:24:53.745Z">
-<meta property="article:modified_time" content="2020-04-05T10:56:50.040Z">
+<meta property="og:image" content="http://www.chenyoude.com/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark">
+<meta property="og:image" content="https://yxzhizhi.github.io/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark">
+<meta property="og:image" content="https://yxzhizhi.github.io/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/%5CUsers%5Cnick%5Cmac%5Cdesktop%5C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark">
+<meta property="og:image" content="http://%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80/">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/56d258bdjw1eugeubg8ujj21kw16odn6.jpg">
+<meta property="article:published_time" content="2020-04-07T01:42:33.000Z">
+<meta property="article:modified_time" content="2020-04-07T05:24:00.472Z">
 <meta property="article:author" content="zhanghuo">
 <meta property="article:tag" content="linux,java,python,node,web">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.chenyoude.com/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark">
+  
+    <link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
 
-
-<link rel="icon" href="/img/avatar.jpg">
-
-<link href="/css/style.css?v=1.0.1" rel="stylesheet">
-
-<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
-
-<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
-<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
-
-<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script>
-    hljs.initHighlightingOnLoad();
-</script>
-
-<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
-
-
-
-<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
-
-<script src="/js/iconfont.js?v=1.0.1" ></script>
-
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="yxzhizhiの博客" type="application/atom+xml">
-</head>
-<div style="display: none">
-  <input class="theme_disqus_on" value="false">
-  <input class="theme_preload_comment" value="false">
-  <input class="theme_blog_path" value="">
-</div>
+<meta name="generator" content="Hexo 5.4.0"></head>
 
 <body>
-<aside class="nav">
-    <div class="nav-left">
-        <a href="/" class="avatar_target">
-    <img class="avatar" src="/img/avatar.jpg" />
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">yxzhizhiの博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yxzhizhi.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Markdown-语法手册-（完整整理版）" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/" class="article-date">
+  <time datetime="2020-04-07T01:42:33.000Z" itemprop="datePublished">2020-04-07</time>
 </a>
-<div class="author">
-    <span>zhanghuo</span>
-</div>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Markdown 语法手册 （完整整理版）
+    </h1>
+  
 
-<div class="icon">
-    
-        
-        <a title="rss" href="/atom.xml" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-rss"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="github" href="https://github.com/yelog" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-github"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-facebook"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-    
-        
-    
-        
-        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-instagram"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-reddit"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-weibo"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-jianshu"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-zhihu"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-    
-        
-        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-oschina"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-    
-        
-        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-email"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-qq"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="kugou" href="https://www.kugou.com/" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-kugou"></use>
-                </svg>
-            
-        </a>
-        
-    
-        
-        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
-            
-                <svg class="iconfont-svg" aria-hidden="true">
-                    <use xlink:href="#icon-neteasemusic"></use>
-                </svg>
-            
-        </a>
-        
-    
-</div>
-
-
-
-
-<ul>
-    <li><div class="all active">全部文章<small>(23)</small></div></li>
-    
-        
-            
-            <li><div data-rel="mail"><i class="fold iconfont icon-right"></i>mail<small>(1)</small></div>
-                
-                    <ul class="sub hide">
-                        
-                        <li><div data-rel="back">back<small>(1)</small></div>
-                            
-                        </li>
-                            
-                    </ul>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="linux"><i class="fold iconfont icon-right"></i>linux<small>(6)</small></div>
-                
-                    <ul class="sub hide">
-                        
-                        <li><div data-rel="docker"><i class="fold iconfont icon-right"></i>docker<small>(2)</small></div>
-                            
-                                <ul class="sub hide">
-                                    
-                                    <li><div data-rel="mysql">mysql<small>(1)</small></div>
-                                    </li>
-                                    
-                                </ul>
-                            
-                        </li>
-                            
-                        <li><div data-rel="hexo">hexo<small>(1)</small></div>
-                            
-                        </li>
-                            
-                        <li><div data-rel="che"><i class="fold iconfont icon-right"></i>che<small>(1)</small></div>
-                            
-                                <ul class="sub hide">
-                                    
-                                    <li><div data-rel="eclipse">eclipse<small>(1)</small></div>
-                                    </li>
-                                    
-                                </ul>
-                            
-                        </li>
-                            
-                        <li><div data-rel="grep">grep<small>(1)</small></div>
-                            
-                        </li>
-                            
-                    </ul>
-                
-            </li>
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-            <li><div data-rel="sql"><i class="fold iconfont icon-right"></i>sql<small>(1)</small></div>
-                
-                    <ul class="sub hide">
-                        
-                        <li><div data-rel="format">format<small>(1)</small></div>
-                            
-                        </li>
-                            
-                    </ul>
-                
-            </li>
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-        
-            
-        
-    
-</ul>
-<div class="left-bottom">
-    <div class="menus">
-    
-    
-    
-    
-    </div>
-    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
-</div>
-<input type="hidden" id="yelog_site_posts_number" value="23">
-
-<div style="display: none">
-    <span id="busuanzi_value_site_uv"></span>
-    <span id="busuanzi_value_site_pv"></span>
-</div>
-
-    </div>
-    <div class="nav-right">
-        <div class="friends-area">
-    <div class="friends-title">
-        友情链接
-        <i class="back-title-list"></i>
-    </div>
-    <div class="friends-content">
-        <ul>
-            
-            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
-            
-        </ul>
-    </div>
-</div>
-        <div class="title-list">
-    <form onkeydown="if(event.keyCode === 13){return false;}">
-        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
-        <i class="cross"></i>
-        <span>
-            <label for="tagswitch">Tags:</label>
-            <input id="tagswitch" type="checkbox" style="display: none" />
-            <i id="tagsWitchIcon"></i>
-        </span>
-    </form>
-    <div class="tags-list">
-    
-    <li class="article-tag-list-item">
-        <a class="color5">back</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">mysql</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">hexo</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">java,docker</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">format</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color1">linux</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color4">che</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">grep</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color5">find</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color2">docker</a>
-    </li>
-    
-    <div class="clearfix"></div>
-</div>
-
-    
-    <nav id="title-list-nav">
-        
-        <a  class="mail back "
-           href="/2020/04/05/126%E9%82%AE%E7%AE%B1/"
-           data-tag="back"
-           data-author="" >
-            <span class="post-title" title="126mail">126mail</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class="linux docker mysql "
-           href="/2020/04/05/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/"
-           data-tag="mysql"
-           data-author="" >
-            <span class="post-title" title="eclipse/che">eclipse/che</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/19/Docker-Flink/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Docker Flink">Docker Flink</span>
-            <span class="post-date" title="2020-04-19 11:27:40">2020/04/19</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/09/conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="conda 虚拟环境">conda 虚拟环境</span>
-            <span class="post-date" title="2020-04-09 11:55:04">2020/04/09</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/07/django%E7%AC%94%E8%AE%B0/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="django笔记">django笔记</span>
-            <span class="post-date" title="2020-04-07 17:11:48">2020/04/07</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/19/docker-spark-hadoop/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="docker spark+hadoop">docker spark+hadoop</span>
-            <span class="post-date" title="2020-04-19 11:27:27">2020/04/19</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/09/git%E5%B8%B8%E7%94%A8/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="git常用">git常用</span>
-            <span class="post-date" title="2020-04-09 21:23:54">2020/04/09</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/05/01/firefox-dev/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="firefox dev">firefox dev</span>
-            <span class="post-date" title="2020-05-01 00:22:24">2020/05/01</span>
-        </a>
-        
-        <a  class="linux hexo "
-           href="/2020/01/01/hexo/"
-           data-tag="hexo"
-           data-author="" >
-            <span class="post-title" title="hexo">hexo</span>
-            <span class="post-date" title="2020-01-01 00:00:00">2020/01/01</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/06/java-deploy-to-docker/"
-           data-tag="java,docker"
-           data-author="" >
-            <span class="post-title" title="java deploy to docker">java deploy to docker</span>
-            <span class="post-date" title="2020-04-06 15:36:42">2020/04/06</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/07/15/python-gui/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="python-gui">python-gui</span>
-            <span class="post-date" title="2020-07-15 21:44:19">2020/07/15</span>
-        </a>
-        
-        <a  class="sql format "
-           href="/2020/04/05/sql%20and%20freemaker%20format/"
-           data-tag="format"
-           data-author="" >
-            <span class="post-title" title="sql and freemaker format">sql and freemaker format</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/18/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="ubuntu 删除软件">ubuntu 删除软件</span>
-            <span class="post-date" title="2020-04-18 19:51:25">2020/04/18</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/19/vritubox-ubuntu-init/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="vritubox-ubuntu-init">vritubox-ubuntu-init</span>
-            <span class="post-date" title="2020-04-19 09:40:58">2020/04/19</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/19/windows10%20node%20%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="windows node 环境安装">windows node 环境安装</span>
-            <span class="post-date" title="2020-04-19 11:27:40">2020/04/19</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="使用帮助文档">使用帮助文档</span>
-            <span class="post-date" title="2020-04-05 20:14:00">2020/04/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/12/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="学习计划">学习计划</span>
-            <span class="post-date" title="2020-04-12 15:10:04">2020/04/12</span>
-        </a>
-        
-        <a  class="linux "
-           href="/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/"
-           data-tag="linux"
-           data-author="" >
-            <span class="post-title" title="Linux和Docker常用命令">Linux和Docker常用命令</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a id="top" class="linux che eclipse "
-           href="/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/"
-           data-tag="che"
-           data-author="" >
-            <span class="post-title" title="eclipse/che">eclipse/che</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="Markdown 语法手册 （完整整理版）">Markdown 语法手册 （完整整理版）</span>
-            <span class="post-date" title="2020-04-07 09:42:33">2020/04/07</span>
-        </a>
-        
-        <a  class="linux grep "
-           href="/2020/04/05/find_grep/"
-           data-tag="linux,grep,find"
-           data-author="" >
-            <span class="post-title" title="linux下的find文件查找命令与grep文件内容查找命令">linux下的find文件查找命令与grep文件内容查找命令</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class="linux docker "
-           href="/2020/04/05/docker/"
-           data-tag="docker"
-           data-author="" >
-            <span class="post-title" title="docker">docker</span>
-            <span class="post-date" title="2020-04-05 00:00:00">2020/04/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/04/18/openstack-%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="openstack 部署方式">openstack 部署方式</span>
-            <span class="post-date" title="2020-04-18 17:33:23">2020/04/18</span>
-        </a>
-        
-    </nav>
-</div>
-    </div>
-    <div class="hide-list">
-        <div class="semicircle">
-            <div class="brackets first"><</div>
-            <div class="brackets">&gt;</div>
-        </div>
-    </div>
-</aside>
-<div class="post">
-    <div class="pjax">
-        <article id="post-Markdown-语法手册-（完整整理版）" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">Markdown 语法手册 （完整整理版）</h1>
-    
-    <div class="article-meta">
-        
-        
-        
-        
-    </div>
-    <div class="article-meta">
-        
-        创建时间:<time class="date" title='更新时间: 2020-04-07 13:24:00'>2020-04-07 09:42</time>
-        
-    </div>
-    <div class="article-meta">
-        
-        
-        <span id="busuanzi_container_page_pv">
-            阅读:<span id="busuanzi_value_page_pv">
-                <span class="count-comment">
-                    <span class="spinner">
-                      <div class="cube1"></div>
-                      <div class="cube2"></div>
-                    </span>
-                </span>
-            </span>
-        </span>
-        
-        
-    </div>
-    
-    <div class="toc-ref">
-    
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Markdown%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">Markdown基本语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8F%AA%E6%9C%89%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">最小只有六级标题</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Markdown-%E7%BC%96%E8%BE%91%E5%99%A8%E8%AF%AD%E6%B3%95%E6%8C%87%E5%8D%97"><span class="toc-text">Markdown 编辑器语法指南</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%87%E9%A2%981"><span class="toc-text">标题1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%A2%982"><span class="toc-text">标题2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E6%A0%87%E9%A2%98"><span class="toc-text">大标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%A0%87%E9%A2%98"><span class="toc-text">小标题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%97%E6%96%9C%E4%BD%93"><span class="toc-text">粗斜体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-text">链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-text">列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-text">普通无序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-text">普通有序列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E5%B5%8C%E5%A5%97"><span class="toc-text">列表嵌套</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%BC%95%E7%94%A8"><span class="toc-text">普通引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E9%87%8C%E5%B5%8C%E5%A5%97%E5%BC%95%E7%94%A8"><span class="toc-text">引用里嵌套引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E9%87%8C%E5%B5%8C%E5%A5%97%E5%88%97%E8%A1%A8"><span class="toc-text">引用里嵌套列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E9%87%8C%E5%B5%8C%E5%A5%97%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">引用里嵌套代码块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87"><span class="toc-text">图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8D%A2%E8%A1%8C"><span class="toc-text">换行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-text">分隔符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7"><span class="toc-text">高级技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%AE%E4%BD%8D%E6%98%BE%E7%A4%BA"><span class="toc-text">键位显示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%9C%E4%BD%93%E5%92%8C%E7%B2%97%E4%BD%93"><span class="toc-text">斜体和粗体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">分级标题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">这是一个一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E6%98%AF%E4%B8%80%E4%B8%AA%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">这是一个二级标题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="toc-text">一级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="toc-text">二级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="toc-text">三级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="toc-text">四级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%94%E7%BA%A7%E6%A0%87%E9%A2%98-1"><span class="toc-text">五级标题</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%85%AD%E7%BA%A7%E6%A0%87%E9%A2%98"><span class="toc-text">六级标题</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%BC%8F"><span class="toc-text">行内式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%BC%8F"><span class="toc-text">参考式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5"><span class="toc-text">自动链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%9A%E7%82%B9"><span class="toc-text">锚点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E7%9B%AE%E5%BD%95-index"><span class="toc-text">0. 目录{ #index}</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8"><span class="toc-text">无序列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E6%AE%B5%E8%90%BD%E7%9A%84%E5%88%97%E8%A1%A8"><span class="toc-text">包含段落的列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E5%BC%95%E7%94%A8%E7%9A%84%E5%88%97%E8%A1%A8"><span class="toc-text">包含引用的列表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E5%90%AB%E4%BB%A3%E7%A0%81%E5%8C%BA%E5%9D%97%E7%9A%84%E5%BC%95%E7%94%A8"><span class="toc-text">包含代码区块的引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="toc-text">一个特殊情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-text">引用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E7%9A%84%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97"><span class="toc-text">引用的多层嵌套</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E5%85%B6%E5%AE%83%E8%A6%81%E7%B4%A0"><span class="toc-text">引用其它要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%BC%8F-1"><span class="toc-text">行内式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E5%BC%8F-1"><span class="toc-text">参考式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%9B%AE%E5%BD%95"><span class="toc-text">内容目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%84%9A"><span class="toc-text">注脚</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LaTeX-%E5%85%AC%E5%BC%8F"><span class="toc-text">LaTeX 公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%A4%BA%E6%95%B4%E8%A1%8C%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-text">$$ 表示整行公式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B%E5%9B%BE"><span class="toc-text">流程图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E6%A0%BC"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%9A%94%E7%BA%BF"><span class="toc-text">分隔线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%BC%8F-2"><span class="toc-text">行内式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E5%85%AD%E4%B8%AA-%E5%8C%85%E8%A3%B9%E5%A4%9A%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-text">用六个&#96;包裹多行代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML-%E5%8E%9F%E5%A7%8B%E7%A0%81"><span class="toc-text">HTML 原始码</span></a></li></ol></li></ol>
-    
-<style>
-    .left-col .switch-btn,
-    .left-col .switch-area {
-        display: none;
-    }
-    .toc-level-3 i,
-    .toc-level-3 ol {
-        display: none !important;
-    }
-</style>
-</div>
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -658,8 +100,7 @@
 <p>hello markdown!<br>代码引用（```式）</p>
 </blockquote>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;hello nick&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
+<pre><code class="python">print(&#39;hello nick&#39;)</code></pre>
 <span id="more"></span>
 
 <p>代码引入（<code>式）</code>print(‘hello nick’)`<br>插入链接（链接显示）#<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nickchen121/p/10718112.html">https://www.cnblogs.com/nickchen121/p/10718112.html</a><br>插入链接（链接描述显示）#<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/nickchen121/p/10718112.html" title="nickchen博客">nickchen博客</a><br>插入图片（链接）#<br><img src="http://www.chenyoude.com/Python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E6%80%BB%E7%BB%93-%E6%90%9E%E7%AC%91%E7%BB%93%E6%9D%9F.jpg?x-oss-process=style/watermark" alt="数据类型总结-搞笑结束.jpg?x-oss-process=style/watermark" title="描述信息"></p>
@@ -683,12 +124,12 @@
 <p>数学公式（行内嵌）#<br>内嵌数学公式<br>$sum_{i=1}^{10}f(i),,text{thanks}$<br>数学公式（块状）#<br>$$<br>sum_{i=1}^{10}f(i),,text{thanks}<br>$$</p>
 <h3 id="Markdown-编辑器语法指南"><a href="#Markdown-编辑器语法指南" class="headerlink" title="Markdown 编辑器语法指南"></a>Markdown 编辑器语法指南</h3><p>如果你只想高亮语句中的某个函数名或关键字，可以使用 <code>function_name()</code> 实现</p>
 <p>通常编辑器根据代码片段适配合适的高亮方法，但你也可以用 ``` 包裹一段代码，并指定一种语言</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&#x27;hello world&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
+<pre><code class="javascript">$(document).ready(function () &#123;
+    alert(&#39;hello world&#39;);
+&#125;);</code></pre>
 <p>支持的语言：1c, abnf, accesslog, actionscript, ada, apache, applescript, arduino, armasm, asciidoc, aspectj, autohotkey, autoit, avrasm, awk, axapta, bash, basic, bnf, brainfuck, cal, capnproto, ceylon, clean, clojure, clojure-repl, cmake, coffeescript, coq, cos, cpp, crmsh, crystal, cs, csp, css, d, dart, delphi, diff, django, dns, dockerfile, dos, dsconfig, dts, dust, ebnf, elixir, elm, erb, erlang, erlang-repl, excel, fix, flix, fortran, fsharp, gams, gauss, gcode, gherkin, glsl, go, golo, gradle, groovy, haml, handlebars, haskell, haxe, hsp, htmlbars, http, hy, inform7, ini, irpf90, java, javascript, json, julia, kotlin, lasso, ldif, leaf, less, lisp, livecodeserver, livescript, llvm, lsl, lua, makefile, markdown, mathematica, matlab, maxima, mel, mercury, mipsasm, mizar, mojolicious, monkey, moonscript, n1ql, nginx, nimrod, nix, nsis, objectivec, ocaml, openscad, oxygene, parser3, perl, pf, php, pony, powershell, processing, profile, prolog, protobuf, puppet, purebasic, python, q, qml, r, rib, roboconf, rsl, ruby, ruleslanguage, rust, scala, scheme, scilab, scss, smali, smalltalk, sml, sqf, sql, stan, stata, step21, stylus, subunit, swift, taggerscript, tap, tcl, tex, thrift, tp, twig, typescript, vala, vbnet, vbscript, vbscript-html, verilog, vhdl, vim, x86asm, xl, xml, xquery, yaml, zephir</p>
 <p>也可以使用 4 空格缩进，再贴上代码，实现相同的的效果<br>    def g(x):<br>        yield from range(x, 0, -1)<br>    yield from range(x)<br>如你不需要代码高亮，可以用下面的方法禁用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohighlight</span><br></pre></td></tr></table></figure>
-
+<pre><code class="nohighlight">nohighlight</code></pre>
 <p>标题<br>文章内容较多时，可以用标题分段：</p>
 <h1 id="标题1"><a href="#标题1" class="headerlink" title="标题1"></a>标题1</h1><h2 id="标题2"><a href="#标题2" class="headerlink" title="标题2"></a>标题2</h2><h2 id="大标题"><a href="#大标题" class="headerlink" title="大标题"></a>大标题</h2><h3 id="小标题"><a href="#小标题" class="headerlink" title="小标题"></a>小标题</h3><h2 id="粗斜体"><a href="#粗斜体" class="headerlink" title="粗斜体"></a>粗斜体</h2><p><em>斜体文本</em>    <em>斜体文本</em><br><strong>粗体文本</strong>    <strong>粗体文本</strong><br><strong><em>粗斜体文本</em></strong>    <strong><em>粗斜体文本</em></strong></p>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>文字链接 <a target="_blank" rel="noopener" href="http://链接网址">链接名称</a><br>网址链接 <a target="_blank" rel="noopener" href="http://链接网址">http://链接网址</a><br>高级链接技巧<br>这个链接用 1 作为网址变量 [Google][1].<br>这个链接用 yahoo 作为网址变量 [Yahoo!][yahoo].<br>然后在文档的结尾为变量赋值（网址）<br>  [1]: <a target="_blank" rel="noopener" href="http://www.google.com/">http://www.google.com/</a><br>  [yahoo]: <a target="_blank" rel="noopener" href="http://www.yahoo.com/">http://www.yahoo.com/</a></p>
@@ -725,9 +166,7 @@
 </blockquote>
 </li>
 <li><p>列表里代码段：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">前面四个空格，之后按代码语法 ``` 书写</span><br></pre></td></tr></table></figure>
-
-<pre><code>或者直接空八个，引入代码块</code></pre></li>
+<pre><code> 前面四个空格，之后按代码语法 ``` 书写</code></pre><pre><code> 或者直接空八个，引入代码块</code></pre></li>
 </ol>
 <h2 id="普通引用"><a href="#普通引用" class="headerlink" title="普通引用"></a>普通引用</h2><blockquote>
 <p>引用文本前使用 [大于号+空格]<br>折行可以不加，新起一行都要加上哦</p>
@@ -751,8 +190,7 @@
 </ul>
 </blockquote>
 <h2 id="引用里嵌套代码块"><a href="#引用里嵌套代码块" class="headerlink" title="引用里嵌套代码块"></a>引用里嵌套代码块</h2><blockquote>
-<pre><code>同样的，在前面加四个空格形成代码块</code></pre><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或者使用 ``` 形成代码块</span><br></pre></td></tr></table></figure>
-</blockquote>
+<pre><code>同样的，在前面加四个空格形成代码块</code></pre><pre><code>或者使用 ``` 形成代码块</code></pre></blockquote>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>跟链接的方法区别在于前面加了个感叹号 !，这样是不是觉得好记多了呢？<br><img src="http://%E5%9B%BE%E7%89%87%E7%BD%91%E5%9D%80" alt="图片名称"><br>当然，你也可以像网址那样对图片网址使用变量<br>这个链接用 1 作为网址变量 [Google][1].<br>然后在文档的结尾位变量赋值（网址）<br> [1]: <a target="_blank" rel="noopener" href="http://www.google.com/logo.png">http://www.google.com/logo.png</a></p>
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>如果另起一行，只需在当前行结尾加 2 个空格<br>在当前行的结尾加 2 个空格<br>这行就会新起一行<br>如果是要起一个新段落，只需要空出一行即可。</p>
 <h2 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h2><p>如果你有写分割线的习惯，可以新起一行输入三个减号-。当前后都有段落时，请空出一行：</p>
@@ -775,7 +213,7 @@
 <p>欢迎来到<a target="_blank" rel="noopener" href="http://blog.leanote.com/freewalk">梵居闹市</a><br>欢迎来到<a target="_blank" rel="noopener" href="http://blog.leanote.com/freewalk" title="梵居闹市">梵居闹市</a></p>
 <h2 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h2><p>参考式超链接一般用在学术论文上面，或者另一种情况，如果某一个链接在文章中多处使用，那么使用引用 的方式创建链接将非常好，它可以让你对链接进行统一的管理。<br>语法说明：<br>参考式链接分为两部分，文中的写法 [链接文字][链接标记]，在文本的任意位置添加[链接标记]:链接地址 “链接标题”，链接地址与链接标题前有一个空格。</p>
 <p>如果链接文字本身可以做为链接标记，你也可以写成[链接文字][]<br>[链接文字]：链接地址的形式，见代码的最后一行。<br>代码：<br>我经常去的几个网站[Google][1]、[Leanote][2]以及[自己的博客][3]<br>[Leanote 笔记][2]是一个不错的[网站][]。<br>[1]:<a target="_blank" rel="noopener" href="http://www.google.com">http://www.google.com</a> “Google”<br>[2]:<a target="_blank" rel="noopener" href="http://www.leanote.com">http://www.leanote.com</a> “Leanote”<br>[3]:<a target="_blank" rel="noopener" href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a> “梵居闹市”<br>[网站]:<a target="_blank" rel="noopener" href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a></p>
-<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：<br>代码：<br><a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a><br><a href="mailto:&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#x73;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;">&#x61;&#x64;&#x64;&#x72;&#x65;&#115;&#x73;&#x40;&#101;&#x78;&#97;&#x6d;&#x70;&#108;&#x65;&#46;&#99;&#111;&#x6d;</a></p>
+<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：<br>代码：<br><a target="_blank" rel="noopener" href="http://example.com/">http://example.com/</a><br><a href="mailto:&#97;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;">&#97;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;</a></p>
 <h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的。<br>注意： </p>
 <ol>
 <li>Markdown Extra 只支持在标题后插入锚点，其它地方无效。 </li>
@@ -949,9 +387,11 @@ int main(void)
 &#123;
     printf(&quot;Hello world\n&quot;);
 &#125;</code></pre><h2 id="用六个-包裹多行代码"><a href="#用六个-包裹多行代码" class="headerlink" title="用六个`包裹多行代码"></a>用六个`包裹多行代码</h2><p>代码：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    printf(&quot;Hello world\n&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="HTML-原始码"><a href="#HTML-原始码" class="headerlink" title="HTML 原始码"></a>HTML 原始码</h2><p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如：</p>
+<pre><code>#include &lt;stdio.h&gt;
+int main(void)
+&#123;
+    printf(&quot;Hello world\n&quot;);
+&#125;</code></pre><h2 id="HTML-原始码"><a href="#HTML-原始码" class="headerlink" title="HTML 原始码"></a>HTML 原始码</h2><p>在代码区块里面， &amp; 、 &lt; 和 &gt; 会自动转成 HTML 实体，这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码，只需要复制贴上，剩下的 Markdown 都会帮你处理，例如：</p>
 <p>代码：</p>
 <p>第一个例子：</p>
 <div class="footer">
@@ -973,304 +413,150 @@ int main(void)
     </tr>
 </table>
       
-       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
     </div>
+    <footer class="article-footer">
+      <a data-url="https://yxzhizhi.github.io/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/" data-id="ckv3t12nq001m98pce4x8h5l2" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/04/07/django%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          django笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/04/06/java-deploy-to-docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">java deploy to docker</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-
-<p>
-    <a  class="dashang" onclick="dashangToggle()">赏</a>
-</p>
-
-
-<div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Markdown 语法手册 （完整整理版）</p>
+</section>
+        
+          <aside id="sidebar">
+  
     
-    <p><span class="copy-title">本文作者:</span><a  title="zhanghuo">zhanghuo</a></p>
-    <p><span class="copy-title">发布时间:</span>2020-04-07, 09:42:33</p>
-    <p><span class="copy-title">最后更新:</span>2020-04-07, 13:24:00</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/" title="Markdown 语法手册 （完整整理版）">http://yxzhizhi.gicp.com/2020/04/07/Markdown-%E8%AF%AD%E6%B3%95%E6%89%8B%E5%86%8C-%EF%BC%88%E5%AE%8C%E6%95%B4%E6%95%B4%E7%90%86%E7%89%88%EF%BC%89/</a>
-    <p>
-        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
-    </p>
-</div>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Docs/">Docs</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/">che</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/che/eclipse/">eclipse</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/">docker</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/docker/mysql/">mysql</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/grep/">grep</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/hexo/">hexo</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mail/">mail</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/mail/back/">back</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/sql/">sql</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/sql/format/">format</a></li></ul></li></ul>
+    </div>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/back/" rel="tag">back</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/che/" rel="tag">che</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/find/" rel="tag">find</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/format/" rel="tag">format</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grep/" rel="tag">grep</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java-docker/" rel="tag">java,docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugins/" rel="tag">plugins</a></li></ul>
+    </div>
+  </div>
 
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/back/" style="font-size: 10px;">back</a> <a href="/tags/che/" style="font-size: 10px;">che</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/find/" style="font-size: 10px;">find</a> <a href="/tags/format/" style="font-size: 10px;">format</a> <a href="/tags/grep/" style="font-size: 10px;">grep</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/java-docker/" style="font-size: 10px;">java,docker</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/plugins/" style="font-size: 10px;">plugins</a>
+    </div>
+  </div>
 
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/15/python-gui/">python-gui</a>
+          </li>
+        
+          <li>
+            <a href="/2020/05/01/firefox-dev/">firefox dev</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/Docker-Flink/">Docker Flink</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/windows10%20node%20%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/">windows node 环境安装</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/19/docker-spark-hadoop/">docker spark+hadoop</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 zhanghuo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
 
-    </div>
-    <div class="copyright">
-        <p class="footer-entry">©2016-2019 Yelog</p>
-<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
 
-    </div>
-    <div class="full-toc">
-        <button class="full"><span class="min "></span></button>
-<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
-<div class="post-toc"><span class="post-toc-title">目录</span>
-    <div class="post-toc-content">
-
-    </div>
-</div>
-<a class="" id="rocket" ></a>
-
-    </div>
-</div>
-<div class="acParent"></div>
-
-<div class="hide_box" onclick="dashangToggle()"></div>
-<div class="shang_box">
-    <a class="shang_close"  onclick="dashangToggle()">×</a>
-    <div class="shang_tit">
-        <p>喜欢就点赞,疼爱就打赏</p>
-    </div>
-    <div class="shang_payimg">
-        <div class="pay_img">
-            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
-            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
-        </div>
-    </div>
-    <div class="shang_payselect">
-        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
-    </div>
-</div>
+<script src="/js/script.js"></script>
 
 
+
+
+  </div>
 </body>
-<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
-
-<script src="/js/script.js?v=1.0.1" ></script>
-<script>
-    var img_resize = 'default';
-    /*作者、标签的自动补全*/
-    $(function () {
-        $('.search').AutoComplete({
-            'data': ['#back','#mysql','#hexo','#java,docker','#format','#linux','#che','#grep','#find','#docker',],
-            'itemHeight': 20,
-            'width': 418
-        }).AutoComplete('show');
-    })
-    function initArticle() {
-        /*渲染对应的表格样式*/
-        
-            $(".post .pjax table").addClass("green_title");
-        
-
-        /*渲染打赏样式*/
-        
-        $("input[name=pay]").on("click", function () {
-            if($("input[name=pay]:checked").val()=="weixin"){
-                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
-            } else {
-                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
-            }
-        })
-        
-
-        /*高亮代码块行号*/
-        
-        $('pre code').each(function(){
-            var lines = $(this).text().trim().split('\n').length, widther='';
-            if (lines>99) {
-                widther = 'widther'
-            }
-            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
-            $(this).addClass('has-numbering ' + widther)
-                    .parent()
-                    .append($numbering);
-            for(var i=1;i<=lines;i++){
-                $numbering.append($('<li/>').text(i));
-            }
-        });
-        
-
-        /*访问数量*/
-        
-        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
-        
-
-        /*代码高亮，行号对齐*/
-        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
-
-        
-        
-    }
-
-    /*打赏页面隐藏与展示*/
-    
-    function dashangToggle() {
-        $(".shang_box").fadeToggle();
-        $(".hide_box").fadeToggle();
-    }
-    
-
-</script>
-
-<!--加入行号的高亮代码块样式-->
-
-<style>
-    pre{
-        position: relative;
-        margin-bottom: 24px;
-        border-radius: 10px;
-        border: 1px solid #e2dede;
-        background: #FFF;
-        overflow: hidden;
-    }
-    code.has-numbering{
-        margin-left: 30px;
-    }
-    code.has-numbering.widther{
-        margin-left: 35px;
-    }
-    .pre-numbering{
-        margin: 0px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 20px;
-        padding: 0.5em 3px 0.7em 5px;
-        border-right: 1px solid #C3CCD0;
-        text-align: right;
-        color: #AAA;
-        background-color: #fafafa;
-    }
-    .pre-numbering.widther {
-        width: 35px;
-    }
-</style>
-
-<!--自定义样式设置-->
-<style>
-    
-    
-    .nav {
-        width: 542px;
-    }
-    .nav.fullscreen {
-        margin-left: -542px;
-    }
-    .nav-left {
-        width: 120px;
-    }
-    
-    
-    @media screen and (max-width: 1468px) {
-        .nav {
-            width: 492px;
-        }
-        .nav.fullscreen {
-            margin-left: -492px;
-        }
-        .nav-left {
-            width: 100px;
-        }
-    }
-    
-    
-    @media screen and (max-width: 1024px) {
-        .nav {
-            width: 492px;
-            margin-left: -492px
-        }
-        .nav.fullscreen {
-            margin-left: 0;
-        }
-        .nav .hide-list.fullscreen {
-            left: 492px
-        }
-    }
-    
-    @media screen and (max-width: 426px) {
-        .nav {
-            width: 100%;
-        }
-        .nav-left {
-            width: 100%;
-        }
-    }
-    
-    
-    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
-        color: #383636;
-    }
-    
-    
-    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
-        color: #5e5e5f;
-    }
-    
-    
-    .nav-right nav a.hover, #local-search-result a.hover{
-        background-color: #e2e0e0;
-    }
-    
-    
-
-    /*列表样式*/
-    
-    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
-        border: #e2dede solid 1px;
-        border-radius: 10px;
-        padding: 10px 32px 10px 56px;
-    }
-    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
-        margin-bottom: auto;
-        margin-left: auto;
-    }
-    
-
-    /* 背景图样式 */
-    
-    
-
-
-    /*引用块样式*/
-    
-
-    /*文章列表背景图*/
-    
-    .nav-right:before {
-        content: ' ';
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0.3;
-        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
-        background-repeat: no-repeat;
-        background-position: 50% 0;
-        -ms-background-size: cover;
-        -o-background-size: cover;
-        -moz-background-size: cover;
-        -webkit-background-size: cover;
-        background-size: cover;
-    }
-    
-
-    
-</style>
-
-
-
-
-
-
-
 </html>
