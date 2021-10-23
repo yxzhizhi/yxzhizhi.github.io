@@ -42,10 +42,12 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;about:config&lt;br&gt;跨域访问：设置signed.applets.codebase_principal_support=true&lt;br&gt;允许k加载本地文件：设置security.fileuri.strict_origin_policy=false&lt;br&gt;priva
-      
+      &lt;p&gt;about:config&lt;br&gt;跨域访问：设置signed.applets.codebase_principal_support=true&lt;br&gt;允许k加载本地文件：设置security.fileuri.strict_origin_policy=false&lt;br&gt;privacy.file_unique_origin=false&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;设置最小版本&quot;&gt;&lt;a href=&quot;#设置最小版本&quot; class=&quot;headerlink&quot; title=&quot;设置最小版本&quot;&gt;&lt;/a&gt;设置最小版本&lt;/h3&gt;&lt;p&gt;“browser_specific_settings”: {&lt;br&gt;    “gecko”: {&lt;br&gt;      “strict_min_version”: “54.0a1”&lt;br&gt;    }&lt;br&gt;  },&lt;/p&gt;
+&lt;h3 id=&quot;设置侧边栏-图标、标题、页面&quot;&gt;&lt;a href=&quot;#设置侧边栏-图标、标题、页面&quot; class=&quot;headerlink&quot; title=&quot;设置侧边栏　图标、标题、页面&quot;&gt;&lt;/a&gt;设置侧边栏　图标、标题、页面&lt;/h3&gt;&lt;p&gt;“sidebar_action”: {&lt;br&gt;    “default_icon”: “icons/star.png”,&lt;br&gt;    “default_title” : “Annotator”,&lt;br&gt;    “default_panel”: “sidebar/panel.html”&lt;br&gt;  },&lt;/p&gt;
+&lt;h3 id=&quot;设置权限-存储、tabs&quot;&gt;&lt;a href=&quot;#设置权限-存储、tabs&quot; class=&quot;headerlink&quot; title=&quot;设置权限　存储、tabs&quot;&gt;&lt;/a&gt;设置权限　存储、tabs&lt;/h3&gt;&lt;p&gt;“permissions”: [“storage”, “tabs”],  &lt;/p&gt;
+&lt;h3 id=&quot;按钮事件-按钮&quot;&gt;&lt;a href=&quot;#按钮事件-按钮&quot; class=&quot;headerlink&quot; title=&quot;按钮事件　按钮&quot;&gt;&lt;/a&gt;按钮事件　按钮&lt;/h3&gt;&lt;p&gt;“browser_action”: {&lt;br&gt;    “default_icon”: “icons/beasts-32.png”,&lt;br&gt;    “theme_icons”: [{&lt;br&gt;        “light”: “icons/beasts-32-light.png”,&lt;br&gt;        “dark”: “icons/beasts-32.png”,&lt;br&gt;        “size”: 32&lt;br&gt;    }],&lt;br&gt;    “default_title”: “Beastify”,&lt;br&gt;    “default_popup”: “popup/choose_beast.html”&lt;br&gt;  },&lt;/p&gt;
     
     </summary>
     
@@ -79,11 +81,13 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;使用 nvs 管理本地 Node.js 版本&lt;/p&gt;
-&lt;h3 id=&quot;Linux-macOS-环境&quot;&gt;&lt;a href=&quot;#Linux-macOS-环境&quot; class=&quot;headerlink&quot; title=&quot;Linux / macOS 环境&quot;&gt;&lt;/a&gt;Linux / macO
-      
+      &lt;p&gt;使用 nvs 管理本地 Node.js 版本&lt;/p&gt;
+&lt;h3 id=&quot;Linux-macOS-环境&quot;&gt;&lt;a href=&quot;#Linux-macOS-环境&quot; class=&quot;headerlink&quot; title=&quot;Linux / macOS 环境&quot;&gt;&lt;/a&gt;Linux / macOS 环境&lt;/h3&gt;&lt;p&gt;通过 Git Clone 对应的项目即可。&lt;/p&gt;
+&lt;p&gt;$ export NVS_HOME=”$HOME/.nvs”&lt;br&gt;$ git clone &lt;a href=&quot;https://github.com/jasongin/nvs&quot;&gt;https://github.com/jasongin/nvs&lt;/a&gt; –depth=1 “$NVS_HOME”&lt;br&gt;$ . “$NVS_HOME/nvs.sh” install&lt;/p&gt;
+&lt;h3 id=&quot;Windows-环境&quot;&gt;&lt;a href=&quot;#Windows-环境&quot; class=&quot;headerlink&quot; title=&quot;Windows 环境&quot;&gt;&lt;/a&gt;Windows 环境&lt;/h3&gt;&lt;p&gt;由于 Windows 环境配置比较复杂，所以还是推荐使用 msi 文件完成初始化工作。&lt;/p&gt;
+&lt;p&gt;访问 nvs/releases 下载最新版本的 nvs.msi，然后双击安装即可。&lt;/p&gt;
+&lt;h2 id=&quot;配置镜像地址&quot;&gt;&lt;a href=&quot;#配置镜像地址&quot; class=&quot;headerlink&quot; title=&quot;配置镜像地址&quot;&gt;&lt;/a&gt;配置镜像地址&lt;/h2&gt;&lt;p&gt;在国内由于大家都懂的原因，需要把对应的镜像地址修改下：&lt;/p&gt;
+&lt;p&gt;$ nvs remote node &lt;a href=&quot;https://npm.taobao.org/mirrors/node/&quot;&gt;https://npm.taobao.org/mirrors/node/&lt;/a&gt;&lt;br&gt;$ nvs remote&lt;br&gt;default             node&lt;br&gt;chakracore          &lt;a href=&quot;https://github.com/nodejs/node-chakracore/releases/&quot;&gt;https://github.com/nodejs/node-chakracore/releases/&lt;/a&gt;&lt;br&gt;chakracore-nightly  &lt;a href=&quot;https://nodejs.org/download/chakracore-nightly/&quot;&gt;https://nodejs.org/download/chakracore-nightly/&lt;/a&gt;&lt;br&gt;nightly             &lt;a href=&quot;https://nodejs.org/download/nightly/&quot;&gt;https://nodejs.org/download/nightly/&lt;/a&gt;&lt;br&gt;node                &lt;a href=&quot;https://nodejs.org/dist/&quot;&gt;https://nodejs.org/dist/&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -117,16 +121,89 @@
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;init_net_10.0.2.15&lt;/p&gt;
+      &lt;p&gt;init_net_10.0.2.15&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;vim /etc/network/interfaces
 auto eth0
 iface eth0 inet static    
 address 10.0.2.15
 gateway 10.0.2.1
-net
-      
+netmask 255.255.255.0
+dns-nameservers 8.8.8.8
+--
+auto eth0#etho为通常的Ubuntu的网关名称，有时也会改变，可通过ifconfig命令查看，有时会出现如ens160,ens33等名称
+iface eth0 inet static#设置IP为静止IP,
+address 192.168.1.103#你想设置的静态IP地址
+netmask 255.255.255.0#子网掩码，通常为255.255.255.0
+#network 192.168.1.0
+broadcast 192.168.1.255 #广播地址，可以通过ifconfig查看现有的。，
+gateway 192.168.1.8#网关, #netstat -r 命令或者   nm-tool   查看现有的
+# dns-* options are implemented by the resolvconf package, if installed
+dns-nameservers 61.139.2.69#国内常见的dns解析，
+#dns-search localhost
+dns-nameservers 8.8.8.8#谷歌dns解析，但是速度较慢
+
+
+sudo service networking restart
+/etc/init.d/networking restart
+sudo ifconfig eth0 down 
+sudo ifconfig eth0 up
+eb
+
+vim /etc/resolvconf/resolv.conf.d/base
+nameserver 8.8.8.8
+
+VBox无界面启动
+VBoxManage startvm name  --type headless
+关机
+VBoxManage controlvm name poweroff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;init&amp;amp;ssh&amp;amp;ssl&amp;amp;ssh免密码快速登录配置&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;apt install openssh* openssl
+netstat -lnt | grep 22
+service sshd restart
+
+ssh zhanghuo@localhost -p 21522
+
+--ssh免密码快速登录配置
+ssh-keygen -t rsa
+scp -P21522 ./id_rsa.pub zhanghuo@localhost:~
+ssh -p21522 zhanghuo@localhost
+remote:cat id_rsa.pub &amp;gt; ~/.ssh/authorized_keys
+ssh -p21522 zhanghuo@localhost
+
+
+vi ～/.ssh/config
+Host v21522
+HostName localhost
+Port 21522
+User zhanghuo
+IdentityFile ~/.ssh/id_rsa.pub
+
+:wq
+
+# ssh-copy-id -i ~/.ssh/id_rsa.pub v21522
+ssh v21522
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;oraclelinux7&amp;amp;centos7&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cd /etc/sysconfig/network-scripts
+ip addr / ifconfig 没有此命令
+sudo vi ifcfg-enp0s3 /ens33
+
+BOOTPROTO=&amp;quot;static&amp;quot;         # 使用静态IP地址，默认为dhcp
+IPADDR=&amp;quot;10.0.3.15&amp;quot;   # 设置的静态IP地址
+NETMASK=&amp;quot;255.255.255.0&amp;quot;    # 子网掩码
+GATEWAY=&amp;quot;10.0.3.1&amp;quot;    # 网关地址
+DNS1=&amp;quot;8.8.8.8&amp;quot;       # DNS服务器
+
+ONBOOT=&amp;quot;yes&amp;quot;             #是否开机启用
+:wq
+
+service network restart
+hostnamectl set-hostname zhanghuo
+vim /etc/hosts
+10.0.3.15 zhanghuo
+
+ping www.baidu.com
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;防火墙&quot;&gt;&lt;a href=&quot;#防火墙&quot; class=&quot;headerlink&quot; title=&quot;防火墙&quot;&gt;&lt;/a&gt;防火墙&lt;/h3&gt;&lt;h4 id=&quot;firewall命令&quot;&gt;&lt;a href=&quot;#firewall命令&quot; class=&quot;headerlink&quot; title=&quot;firewall命令&quot;&gt;&lt;/a&gt;firewall命令&lt;/h4&gt;&lt;p&gt;firewall-cmd –zone=public –add-port=3306/tcp –permanent&lt;br&gt;#对外开放3306端口，供外部的计算机访问&lt;br&gt;#该命令方式添加的端口，可在/etc/firewalld/zones中的对应配置文件中得到体现&lt;/p&gt;
+&lt;p&gt;systemctl restart firewalld #重启防火漆&lt;br&gt;说明：&lt;br&gt;firewall-cmd：Linux中提供的操作firewall的工具。&lt;br&gt;–zone：指定作用域。&lt;br&gt;–add-port=80/tcp：添加的端口，格式为：端口/通讯协议。&lt;br&gt;–permanent：表示永久生效，没有此参数重启后会失效。&lt;/p&gt;
     
     </summary>
     
@@ -145,11 +222,15 @@ net
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Ubuntu apt-get彻底卸载软件包&lt;br&gt;原创享学IT 最后发布于2016-04-28 18:09:48 阅读数 228448  收藏&lt;br&gt;展开&lt;br&gt;如果你关注搜索到这篇文章，那么我可以合理怀疑你被apt-get的几个卸载命令有点搞晕了。&lt;/p&gt;
-&lt;p&gt;apt-
-      
+      &lt;p&gt;Ubuntu apt-get彻底卸载软件包&lt;br&gt;原创享学IT 最后发布于2016-04-28 18:09:48 阅读数 228448  收藏&lt;br&gt;展开&lt;br&gt;如果你关注搜索到这篇文章，那么我可以合理怀疑你被apt-get的几个卸载命令有点搞晕了。&lt;/p&gt;
+&lt;p&gt;apt-get的卸载相关的命令有remove/purge/autoremove/clean/autoclean等。具体来说：&lt;/p&gt;
+&lt;p&gt;apt-get purge / apt-get –purge remove&lt;br&gt;删除已安装包（不保留配置文件)。&lt;br&gt;如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件&lt;/p&gt;
+&lt;p&gt;apt-get autoremove&lt;br&gt;删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。&lt;/p&gt;
+&lt;p&gt;apt-get remove&lt;br&gt;删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。&lt;/p&gt;
+&lt;p&gt;apt-get autoclean&lt;br&gt;APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。&lt;/p&gt;
+&lt;p&gt;apt-get clean&lt;br&gt;使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。&lt;/p&gt;
+&lt;p&gt;那么如何彻底卸载软件呢？&lt;br&gt;具体来说可以运行如下命令：&lt;/p&gt;
+&lt;h1 id=&quot;删除软件及其配置文件&quot;&gt;&lt;a href=&quot;#删除软件及其配置文件&quot; class=&quot;headerlink&quot; title=&quot;删除软件及其配置文件&quot;&gt;&lt;/a&gt;删除软件及其配置文件&lt;/h1&gt;&lt;p&gt;apt-get –purge remove &lt;package&gt;&lt;/package&gt;&lt;/p&gt;
     
     </summary>
     
@@ -168,11 +249,16 @@ net
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;对于每一个刚接触到OpenStack的新人而言，安装无疑是最困难的，同时这也客观上提高了大家学习OpenStack云计算的技术门槛。想一想，自己3年前网上偶然接触到OpenStack时，一头茫然，手动搭建一个多节点环境时居然用了3个星期。&lt;/p&gt;
-&lt;p&gt;时至今日，真是感触颇
-      
+      &lt;p&gt;对于每一个刚接触到OpenStack的新人而言，安装无疑是最困难的，同时这也客观上提高了大家学习OpenStack云计算的技术门槛。想一想，自己3年前网上偶然接触到OpenStack时，一头茫然，手动搭建一个多节点环境时居然用了3个星期。&lt;/p&gt;
+&lt;p&gt;时至今日，真是感触颇多，从某种角度而言，也很庆幸当时自己并未因困难而放弃OpenStack，否则，应该是去做其他领域了吧！&lt;/p&gt;
+&lt;p&gt;言归正传，咱们就来数落数落部署OpenStack都有哪些方式吧。这里，我们根据使用者群体的不同类型来进行分类和归纳：&lt;/p&gt;
+&lt;p&gt;个人使用方面&lt;/p&gt;
+&lt;p&gt;DevStack&lt;/p&gt;
+&lt;p&gt;无疑，在可预见的未来时间内，DevStack仍将是众多开发者们的首选安装方式或工具。该方式主要是通过配置参数，执行shell脚本来安装一个OpenStack的开发环境。&lt;/p&gt;
+&lt;p&gt;Github: &lt;a href=&quot;https://github.com/openstack-dev/devstack&quot;&gt;https://github.com/openstack-dev/devstack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Wiki: &lt;a href=&quot;https://wiki.openstack.org/wiki/DevStack&quot;&gt;https://wiki.openstack.org/wiki/DevStack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Rdo&lt;/p&gt;
+&lt;p&gt;Rdo是由Red Hat开源的一款部署OpenStack的工具，同DevStack一样，支持单节点和多节点部署。但Rdo只支持CentOS系列的操作系统。需要注意的是，该项目并不属于OpenStack官方社区项目。&lt;/p&gt;
     
     </summary>
     
@@ -191,10 +277,14 @@ net
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;私有云平台环境-OpenStack-CloudStack&quot;&gt;&lt;a href=&quot;#私有云平台环境-OpenStack-CloudStack&quot; class=&quot;headerlink&quot; title=&quot;私有云平台环境 OpenStack\CloudStack&quot;&gt;&lt;/a&gt;私有
-      
+      &lt;h3 id=&quot;私有云平台环境-OpenStack-CloudStack&quot;&gt;&lt;a href=&quot;#私有云平台环境-OpenStack-CloudStack&quot; class=&quot;headerlink&quot; title=&quot;私有云平台环境 OpenStack\CloudStack&quot;&gt;&lt;/a&gt;私有云平台环境 OpenStack\CloudStack&lt;/h3&gt;&lt;h3 id=&quot;Istio-是当前Service-Mesh领域最完善的解决方案&quot;&gt;&lt;a href=&quot;#Istio-是当前Service-Mesh领域最完善的解决方案&quot; class=&quot;headerlink&quot; title=&quot;Istio 是当前Service Mesh领域最完善的解决方案&quot;&gt;&lt;/a&gt;Istio 是当前Service Mesh领域最完善的解决方案&lt;/h3&gt;&lt;p&gt;![&lt;a href=&quot;https://www.servicemesher.com/blog/supergloo-a-service-mesh-orchestrator/]&quot;&gt;https://www.servicemesher.com/blog/supergloo-a-service-mesh-orchestrator/]&lt;/a&gt;&lt;br&gt;[&lt;a href=&quot;https://blog.csdn.net/weixin_38669561/article/details/88944460]&quot;&gt;https://blog.csdn.net/weixin_38669561/article/details/88944460]&lt;/a&gt;&lt;br&gt;[&lt;a href=&quot;https://blog.csdn.net/lQ1NS259ej3OKYvK4Jf/article/details/82880131]&quot;&gt;https://blog.csdn.net/lQ1NS259ej3OKYvK4Jf/article/details/82880131]&lt;/a&gt;&lt;br&gt;[&lt;a href=&quot;https://cloud.tencent.com/developer/article/1356425]&quot;&gt;https://cloud.tencent.com/developer/article/1356425]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;第一种方法可以是一种基本的方法，其中Kubernetes与OpenStack共存来管理容器。它提供了良好的性能，但你不能通过单个pane来管理统一的基础设施资源。这会导致与跨工作负载规划和设计策略的相关问题。此外，很难诊断任何影响运行资源性能的问题。&lt;/p&gt;
+&lt;p&gt;第二种方法是在OpenStack管理的VM中运行Kubernetes集群。这使得基于OpenStack的基础设施能够在集中管理的OpenStack控制系统中利用kubernetes的优点。此外，它还允许OpenStack环境中的容器具有全功能的多租户和安全性优势。然而，这会导致性能滞后，需要额外的工作流程来管理托管Kubernetes的VM。&lt;/p&gt;
+&lt;p&gt;第三种方法是一种创新的方法，倾向于完全云原生环境。在这种方法中，OpenStack可以替换Kubernetes来管理容器和VM。工作负载完全利用了硬件加速器、智能网卡等。通过这种方法，可以为任何数据中心提供带有容器工作负载的集成VNS解决方案，但这需要改进OpenStack中的网络功能（SFC、Provider Networks、Segmentation）。&lt;/p&gt;
+&lt;p&gt;LinkedIn上Michiel Manten写了一篇非常不错的帖子。他说，容器和VM各有缺点。两者都有自己的用例和编排工具。如果将OpenStack和Kubernetes恰当地结合起来，在VM中运行一些工作负载，从而在服务器和容器中获得隔离的好处，那么OpenStack和Kubernetes将相得益彰。实现这种组合的一种方法是在OpenStack中的VM中运行Kubernetes集群，这样可以消除容器的安全隐患，同时利用VM的可靠性和弹性。&lt;/p&gt;
+&lt;p&gt;OpenStack支持目前使用的大多数企业存储和网络系统。在OpenStack上运行Kubernetes可以实现容器与IT基础设施的无缝集成。无论你是想用裸机或VM运行容器化应用程序，OpenStack都允许你以最适合业务的方式运行容器。&lt;/p&gt;
+&lt;p&gt;ESContainer\Mirantis &lt;/p&gt;
+&lt;h3 id=&quot;k8s-docker-大数据环境&quot;&gt;&lt;a href=&quot;#k8s-docker-大数据环境&quot; class=&quot;headerlink&quot; title=&quot;k8s docker 大数据环境&quot;&gt;&lt;/a&gt;k8s docker 大数据环境&lt;/h3&gt;
     
     </summary>
     
@@ -213,13 +303,19 @@ net
     
     <summary type="html">
     
-      
-      
-        &lt;pre&gt;&lt;code class=&quot;text&quot;&gt;git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：
+      &lt;pre&gt;&lt;code class=&quot;text&quot;&gt;git clone只能clone远程库的master分支，无法clone所有分支，解决办法如下：
 1. 找一个干净目录，假设是git_work
 2. cd git_work
-3. git clone http://myrepo.xx
-      
+3. git clone http://myrepo.xxx.com/project/.git ,这样在git_work目录下得到一个project子目录
+4. cd project
+5. git branch -a，列出所有分支名称如下：
+remotes/origin/dev
+remotes/origin/release
+6. git checkout -b dev origin/dev，作用是checkout远程的dev分支，在本地起名为dev分支，并切换到本地的dev分支
+7. git checkout -b release origin/release，作用参见上一步解释
+8. git checkout dev，切换回dev分支，并开始开发。
+&lt;/code&gt;&lt;/pre&gt;
+
     
     </summary>
     
@@ -238,12 +334,16 @@ net
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;无法加载文件 &lt;strong&gt;**&lt;/strong&gt;.ps1，因为在此系统中禁止执行脚本。有关详细信息&lt;br&gt;在powershell中执行 set-ExecutionPolicy RemoteSigned&lt;/p&gt;
+      &lt;p&gt;无法加载文件 &lt;strong&gt;**&lt;/strong&gt;.ps1，因为在此系统中禁止执行脚本。有关详细信息&lt;br&gt;在powershell中执行 set-ExecutionPolicy RemoteSigned&lt;/p&gt;
 &lt;p&gt;conda&lt;/p&gt;
-&lt;p&gt;Conda 是一个开源的软件
-      
+&lt;p&gt;Conda 是一个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。&lt;/p&gt;
+&lt;p&gt;安装可以下载一个科学计算包anaconda，怕麻烦的人可以直接安装，自带很多必须包&lt;/p&gt;
+&lt;p&gt;清华镜像下载地址，&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;创建&lt;/p&gt;
+&lt;p&gt;conda create –name py3 python=3.7&lt;/p&gt;
+&lt;p&gt;使用&lt;br&gt;conda env list #查看当前存在的虚拟环境&lt;/p&gt;
+&lt;p&gt;source activate py3 #激活虚拟环境 activate py3 windows下&lt;/p&gt;
+&lt;p&gt;conda install numpy #安装包&lt;/p&gt;
     
     </summary>
     
