@@ -90,6 +90,17 @@ $ sudo docker stop 73f8811f669e  //通过指定容器ID</code></pre><p><strong>3
       </tags>
   </entry>
   <entry>
+    <title>Tag Plugins</title>
+    <url>/2014/03/16/demo/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Docs</category>
+      </categories>
+      <tags>
+        <tag>plugins</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>conda 虚拟环境</title>
     <url>/2020/04/09/conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<p>无法加载文件 <strong>**</strong>.ps1，因为在此系统中禁止执行脚本。有关详细信息<br>在powershell中执行 set-ExecutionPolicy RemoteSigned</p>
@@ -202,6 +213,66 @@ remotes/origin/release
 8. git checkout dev，切换回dev分支，并开始开发。
 </code></pre>
 ]]></content>
+  </entry>
+  <entry>
+    <title>hexo</title>
+    <url>/2020/01/01/hexo/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<span id="more"></span>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<pre><code class="bash">###  hexo install
+npm install hexo /yarn add hexo
+//npx hexo &lt;command&gt; to hexo 
+echo &#39;PATH=&quot;$PATH:./node_modules/.bin&quot;&#39; &gt;&gt; ~/.profile 
+
+hexo init ./yxzhizhi     # 初始化
+yarn install    # 安装组件
+hexo g   # 生成页面
+hexo s   # 启动预览
+hexo s --watch
+yarn add hexo-deployer-git
+
+然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：
+deploy:
+  type: git
+  repository: git@github.com:用户名/用户名.github.io.git
+  branch: master
+完成后运行 hexo d 将网站上传部署到 GitHub Pages。
+
+git config --global user.email &quot;yxzhizhi@126.com&quot;
+git config --global user.name &quot;yxzhizhi@126.com&quot;
+
+ssh-keygen -t rsa -b 4096 -C &quot;yxzhizhi@126.com&quot;
+
+
+hexo new &quot;name&quot;       # 新建文章
+hexo new page &quot;name&quot;  # 新建页面
+hexo g                # 生成页面
+hexo d                # 部署
+hexo g -d             # 生成页面并部署
+hexo s                # 本地预览
+hexo clean            # 清除缓存和已生成的静态文件
+hexo help             # 帮助
+https://yxzhizhi.github.io/</code></pre>
+<pre><code>hexo new &quot;name&quot;       # 新建文章
+hexo new page &quot;name&quot;  # 新建页面
+hexo g
+hexo d
+</code></pre>]]></content>
+      <categories>
+        <category>linux</category>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
   </entry>
   <entry>
     <title>java deploy to docker</title>
@@ -352,64 +423,25 @@ chmod +x /usr/local/bin/docker-machine
       </tags>
   </entry>
   <entry>
-    <title>hexo</title>
-    <url>/2020/01/01/hexo/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<span id="more"></span>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-<pre><code class="bash">###  hexo install
-npm install hexo /yarn add hexo
-//npx hexo &lt;command&gt; to hexo 
-echo &#39;PATH=&quot;$PATH:./node_modules/.bin&quot;&#39; &gt;&gt; ~/.profile 
-
-hexo init ./yxzhizhi     # 初始化
-yarn install    # 安装组件
-hexo g   # 生成页面
-hexo s   # 启动预览
-hexo s --watch
-yarn add hexo-deployer-git
-
-然后修改 _config.yml 文件末尾的 Deployment 部分，修改成如下：
-deploy:
-  type: git
-  repository: git@github.com:用户名/用户名.github.io.git
-  branch: master
-完成后运行 hexo d 将网站上传部署到 GitHub Pages。
-
-git config --global user.email &quot;yxzhizhi@126.com&quot;
-git config --global user.name &quot;yxzhizhi@126.com&quot;
-
-ssh-keygen -t rsa -b 4096 -C &quot;yxzhizhi@126.com&quot;
-
-
-hexo new &quot;name&quot;       # 新建文章
-hexo new page &quot;name&quot;  # 新建页面
-hexo g                # 生成页面
-hexo d                # 部署
-hexo g -d             # 生成页面并部署
-hexo s                # 本地预览
-hexo clean            # 清除缓存和已生成的静态文件
-hexo help             # 帮助
-https://yxzhizhi.github.io/</code></pre>
-<pre><code>hexo new &quot;name&quot;       # 新建文章
-hexo new page &quot;name&quot;  # 新建页面
-hexo g
-hexo d
-</code></pre>]]></content>
-      <categories>
-        <category>linux</category>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
+    <title>python-gui</title>
+    <url>/2020/07/15/python-gui/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>ubuntu 删除软件</title>
+    <url>/2020/04/18/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<p>Ubuntu apt-get彻底卸载软件包<br>原创享学IT 最后发布于2016-04-28 18:09:48 阅读数 228448  收藏<br>展开<br>如果你关注搜索到这篇文章，那么我可以合理怀疑你被apt-get的几个卸载命令有点搞晕了。</p>
+<p>apt-get的卸载相关的命令有remove/purge/autoremove/clean/autoclean等。具体来说：</p>
+<p>apt-get purge / apt-get –purge remove<br>删除已安装包（不保留配置文件)。<br>如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件</p>
+<p>apt-get autoremove<br>删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。</p>
+<p>apt-get remove<br>删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。</p>
+<p>apt-get autoclean<br>APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。</p>
+<p>apt-get clean<br>使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。</p>
+<p>那么如何彻底卸载软件呢？<br>具体来说可以运行如下命令：</p>
+<h1 id="删除软件及其配置文件"><a href="#删除软件及其配置文件" class="headerlink" title="删除软件及其配置文件"></a>删除软件及其配置文件</h1><p>apt-get –purge remove <package></p>
+<h1 id="删除没用的依赖包"><a href="#删除没用的依赖包" class="headerlink" title="删除没用的依赖包"></a>删除没用的依赖包</h1><p>apt-get autoremove <package></p>
+<h1 id="此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理："><a href="#此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：" class="headerlink" title="此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理："></a>此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：</h1><p>dpkg -l |grep ^rc|awk ‘{print $2}’ |sudo xargs dpkg -P<br>当然如果要删除暂存的软件安装包，也可以再使用clean命令。<br>————————————————</p>
+]]></content>
   </entry>
   <entry>
     <title>sql and freemaker format</title>
@@ -435,24 +467,20 @@ hexo d
       </tags>
   </entry>
   <entry>
-    <title>python-gui</title>
-    <url>/2020/07/15/python-gui/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>ubuntu 删除软件</title>
-    <url>/2020/04/18/ubuntu-%E5%88%A0%E9%99%A4%E8%BD%AF%E4%BB%B6/</url>
-    <content><![CDATA[<p>Ubuntu apt-get彻底卸载软件包<br>原创享学IT 最后发布于2016-04-28 18:09:48 阅读数 228448  收藏<br>展开<br>如果你关注搜索到这篇文章，那么我可以合理怀疑你被apt-get的几个卸载命令有点搞晕了。</p>
-<p>apt-get的卸载相关的命令有remove/purge/autoremove/clean/autoclean等。具体来说：</p>
-<p>apt-get purge / apt-get –purge remove<br>删除已安装包（不保留配置文件)。<br>如软件包a，依赖软件包b，则执行该命令会删除a，而且不保留配置文件</p>
-<p>apt-get autoremove<br>删除为了满足依赖而安装的，但现在不再需要的软件包（包括已安装包），保留配置文件。</p>
-<p>apt-get remove<br>删除已安装的软件包（保留配置文件），不会删除依赖软件包，且保留配置文件。</p>
-<p>apt-get autoclean<br>APT的底层包是dpkg, 而dpkg 安装Package时, 会将 *.deb 放在 /var/cache/apt/archives/中，apt-get autoclean 只会删除 /var/cache/apt/archives/ 已经过期的deb。</p>
-<p>apt-get clean<br>使用 apt-get clean 会将 /var/cache/apt/archives/ 的 所有 deb 删掉，可以理解为 rm /var/cache/apt/archives/*.deb。</p>
-<p>那么如何彻底卸载软件呢？<br>具体来说可以运行如下命令：</p>
-<h1 id="删除软件及其配置文件"><a href="#删除软件及其配置文件" class="headerlink" title="删除软件及其配置文件"></a>删除软件及其配置文件</h1><p>apt-get –purge remove <package></p>
-<h1 id="删除没用的依赖包"><a href="#删除没用的依赖包" class="headerlink" title="删除没用的依赖包"></a>删除没用的依赖包</h1><p>apt-get autoremove <package></p>
-<h1 id="此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理："><a href="#此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：" class="headerlink" title="此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理："></a>此时dpkg的列表中有“rc”状态的软件包，可以执行如下命令做最后清理：</h1><p>dpkg -l |grep ^rc|awk ‘{print $2}’ |sudo xargs dpkg -P<br>当然如果要删除暂存的软件安装包，也可以再使用clean命令。<br>————————————————</p>
+    <title>使用帮助文档</title>
+    <url>/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</url>
+    <content><![CDATA[<p>hexo</p>
+<pre><code class="javascript">https://hexo.io/zh-cn/docs/
+</code></pre>
+<span id="more"></span>
+
+<p>Hexo-Next-主题优化</p>
+<pre><code class="bash">https://www.jianshu.com/p/428244cd2caa</code></pre>
+<p>Hexo+NexT（零）：最全Hexo+Next搭建博客教程</p>
+<pre><code class="bash">https://blog.csdn.net/loze/article/details/94206726
+</code></pre>
+<p>Hexo | NexT打造一个炫酷博客</p>
+<pre><code class="bash">https://blog.csdn.net/u012294515/article/details/83094693?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</code></pre>
 ]]></content>
   </entry>
   <entry>
@@ -623,154 +651,6 @@ sudo service firewalld restart</code></pre><p>vritubox 全局设定，创建nat�
 <p>$ mkdir -p ~/.npm-global<br>$ npm config set prefix ~/.npm-global<br>还需配置环境变量到 ~/.bashrc 或 ~/.zshrc 文件里面：</p>
 <p>$ echo “export PATH=~/.npm-global/bin:$PATH” &gt;&gt; ~/.zshrc<br>$ source ~/.zshrc</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>使用帮助文档</title>
-    <url>/2020/04/05/%E4%BD%BF%E7%94%A8%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<p>hexo</p>
-<pre><code class="javascript">https://hexo.io/zh-cn/docs/
-</code></pre>
-<span id="more"></span>
-
-<p>Hexo-Next-主题优化</p>
-<pre><code class="bash">https://www.jianshu.com/p/428244cd2caa</code></pre>
-<p>Hexo+NexT（零）：最全Hexo+Next搭建博客教程</p>
-<pre><code class="bash">https://blog.csdn.net/loze/article/details/94206726
-</code></pre>
-<p>Hexo | NexT打造一个炫酷博客</p>
-<pre><code class="bash">https://blog.csdn.net/u012294515/article/details/83094693?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1&amp;utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-1</code></pre>
-]]></content>
-  </entry>
-  <entry>
-    <title>eclipse/che</title>
-    <url>/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/</url>
-    <content><![CDATA[<h3 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h3><pre><code>下载镜像
-docker pull portainer/portainer
-基于镜像运行容器
-
-docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer  portainer/portainer
-http://172.17.0.1:8080/dashboard/#/ide/che/wksp-tvqq
-http://127.0.0.1:9000/#/networks
-up: admin/y3
-</code></pre><span id="more"></span>
-
-<h3 id="eclipse-che"><a href="#eclipse-che" class="headerlink" title="eclipse/che"></a>eclipse/che</h3><pre><code>启动服务
--v /var/…是选择docker文件
--v /opt/…是选择容器存放位置
--e CHE_HOST 设置主机的IP地址
-
-单用户：
-docker run -ti --rm --name che6 -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.10.225 eclipse/che:6.19.0 start
-
-多用户：
-docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.6.203 eclipse/che:6.19.0 start
-实际创建:
-docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080  eclipse/che:6.19.0 start</code></pre><h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><pre><code>~/docker-tags eclipse/che
-sudo docker pull eclipse/che:6.19.0</code></pre><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre><code>sudo docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data eclipse/che:6.19.0 start
-启动完毕后，访问 “http://:8080/” 来验证安装。
-</code></pre><pre><code>创建 workspace 和 project
-访问 “Workspaces -&gt; Add Workspace”；
-在 “New Workspace” 页面选择 “java Default Java Stack with JDK 8, Maven and Tomcat.” 然后 “CREATE &amp; OPEN”；
-在 “Workspace” 页面，选择 “Create Project…”；
-在 “Create New Project” 窗口，选择 Java -&gt; Maven 项目，然后输入一个Name，比如: “test”，并进入下一步；
-勾选 “From Archetype:” 并选择 “org.apache.maven.archetypes:maven-archetype-quickstart:RELEASE”，同时输入 “Artifact ID” 和 “Group ID”，然后 “Create” 来创建工程；
-运行工程
-选中并打开工程，然后在 “Manage commands” 依次创建三个 Maven 命令，并运行。
-
-build
-mvn clean install -f $&#123;current.project.path&#125;
-1
-test
-mvn clean test -f $&#123;current.project.path&#125;
-1
-run
-mvn exec:java -Dexec.mainClass=&quot;test.App&quot; -f $&#123;current.project.path&#125;</code></pre><h3 id="eclipse-che-命令-ubuntu"><a href="#eclipse-che-命令-ubuntu" class="headerlink" title="eclipse/che 命令 -ubuntu"></a>eclipse/che 命令 -ubuntu</h3><h5 id="1-apt-get-update"><a href="#1-apt-get-update" class="headerlink" title="1. apt-get update"></a>1. apt-get update</h5><h5 id="2-安装docker-国内源安装"><a href="#2-安装docker-国内源安装" class="headerlink" title="2. 安装docker,国内源安装"></a>2. <a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/ubuntu.html">安装docker,国内源安装</a></h5><h5 id="3-配置镜像仓库"><a href="#3-配置镜像仓库" class="headerlink" title="3.配置镜像仓库"></a>3.<a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html#ubuntu-1604、debian-8-jessie、centos-7">配置镜像仓库</a></h5><h5 id="4-解决内存溢出的问题"><a href="#4-解决内存溢出的问题" class="headerlink" title="4.解决内存溢出的问题"></a>4.解决内存溢出的问题</h5><pre><code class="javascript">Adjust memory and swap accounting
-When users run Docker, they may see these messages when working with an image:
-
-WARNING: Your kernel does not support cgroup swap limit. WARNING: Your
-kernel does not support swap limit capabilities. Limitation discarded.
-To prevent these messages, enable memory and swap accounting on your system. To enable these on system using GNU GRUB (GNU GRand Unified Bootloader), do the following.
-
-Log into Ubuntu as a user with sudo privileges.
-
-Edit the /etc/default/grub file.
-
-Set the GRUB_CMDLINE_LINUX value as follows:
-
-GRUB_CMDLINE_LINUX=&quot;cgroup_enable=memory swapaccount=1&quot;
-Save and close the file.
-
-Update GRUB.
-
-$ sudo update-grub
-Reboot your system.</code></pre>
-<h5 id="5关闭防火墙"><a href="#5关闭防火墙" class="headerlink" title="5关闭防火墙"></a>5关闭防火墙</h5><p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/wclwcw/p/6140263.html">网络相关配置</a></p>
-<pre><code class="javascript">ufw disable</code></pre>
-<ul>
-<li>安装</li>
-</ul>
-<pre><code class="javascript">docker pull eclipse/che:5.17.0</code></pre>
-<ul>
-<li>启动(第一次启动需要下载其他镜像)</li>
-</ul>
-<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 start</code></pre>
-<ul>
-<li>修改che的样式文件，去掉左边导航栏</li>
-</ul>
-<pre><code class="javascript">docker cp /che/index.html che-8120:/home/user/eclipse-che-5.17.0/tomcat/webapps/dashboard</code></pre>
-<ul>
-<li>停止</li>
-</ul>
-<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 stop</code></pre>
-<ul>
-<li>重启</li>
-</ul>
-<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 restart</code></pre>
-<ul>
-<li>che API</li>
-</ul>
-<p>启动che的时候的终端返回信息最后一行是che的api地址</p>
-<ul>
-<li>创建che工作空间</li>
-</ul>
-<pre><code class="javascript">curl -X POST -H &#39;Content-Type: application/json&#39; -d &#39;&#123;&quot;name&quot;:&quot;myworkspace&quot;,&quot;projects&quot;:[],&quot;commands&quot;:[&#123;&quot;name&quot;:&quot;build&quot;,&quot;type&quot;:&quot;mvn&quot;,&quot;attributes&quot;:&#123;&quot;goal&quot;:&quot;Build&quot;,&quot;previewUrl&quot;:&quot;&quot;&#125;,&quot;commandLine&quot;:&quot;mvn clean install&quot;],&quot;environments&quot;:&#123;&quot;myworkspace&quot;:&#123;&quot;recipe&quot;:&#123;&quot;location&quot;:&quot;eclipse/ubuntu_jdk8&quot;,&quot;type&quot;:&quot;dockerimage&quot;&#125;,&quot;machines&quot;:&#123;&quot;dev-machine&quot;:&#123;&quot;attributes&quot;:&#123;&quot;memoryLimitBytes&quot;:&quot;2147483648&quot;&#125;,&quot;agents&quot;:[&quot;org.eclipse.che.exec&quot;,&quot;org.eclipse.che.terminal&quot;,&quot;org.eclipse.che.ws-agent&quot;,&quot;org.eclipse.che.ssh&quot;],&quot;servers&quot;:&#123;&#125;&#125;&#125;&#125;&#125;,&quot;defaultEnv&quot;:&quot;myworkspace&quot;,&quot;links&quot;:[]&#125;&#39; http://localhost:8080/api/workspace
-//其中-d为创建工作空间所需json参数，具体请看下一小节</code></pre>
-<ul>
-<li>修改che的运行时环境</li>
-</ul>
-<p>访问che的webide，点击左侧stacks，在右侧的列表中选择自己需要的运行时环境点进进入详情界面</p>
-<p>下拉找到row configuration，复制其中json数据里的workspaceconfig部分代码（注意只取 “workspaceConfig”:后面的{}已经其中的信息），作为访问创建che工作空间api的参数</p>
-<ul>
-<li>在项目中使用che api需要执行以下命令</li>
-</ul>
-<pre><code class="javascript">git clone http://github.com/eclipse/che
-cd cde
-git checkout 5.17.x
-cd core
-mvn install</code></pre>
-<ul>
-<li>chedir 初始化工作空间和项目</li>
-</ul>
-<pre><code class="javascript">cd /ChedirDocker/project
-mkdir che8081project
-cd che8081project
-//创建Chedir文件
-docker run -it --rm -e CHE_PORT=8081 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir init
-//进行相应修改
-vim Chedir
-//启动容器
-/var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir up
-//销毁容器
-/var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir down</code></pre>
-]]></content>
-      <categories>
-        <category>linux</category>
-        <category>che</category>
-        <category>eclipse</category>
-      </categories>
-      <tags>
-        <tag>che</tag>
-      </tags>
   </entry>
   <entry>
     <title>学习计划</title>
@@ -976,7 +856,7 @@ scripts/bootstrap-aio.sh
 <p>欢迎来到<a href="http://blog.leanote.com/freewalk">梵居闹市</a><br>欢迎来到<a href="http://blog.leanote.com/freewalk" title="梵居闹市">梵居闹市</a></p>
 <h2 id="参考式"><a href="#参考式" class="headerlink" title="参考式"></a>参考式</h2><p>参考式超链接一般用在学术论文上面，或者另一种情况，如果某一个链接在文章中多处使用，那么使用引用 的方式创建链接将非常好，它可以让你对链接进行统一的管理。<br>语法说明：<br>参考式链接分为两部分，文中的写法 [链接文字][链接标记]，在文本的任意位置添加[链接标记]:链接地址 “链接标题”，链接地址与链接标题前有一个空格。</p>
 <p>如果链接文字本身可以做为链接标记，你也可以写成[链接文字][]<br>[链接文字]：链接地址的形式，见代码的最后一行。<br>代码：<br>我经常去的几个网站[Google][1]、[Leanote][2]以及[自己的博客][3]<br>[Leanote 笔记][2]是一个不错的[网站][]。<br>[1]:<a href="http://www.google.com">http://www.google.com</a> “Google”<br>[2]:<a href="http://www.leanote.com">http://www.leanote.com</a> “Leanote”<br>[3]:<a href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a> “梵居闹市”<br>[网站]:<a href="http://http://blog.leanote.com/freewalk">http://http://blog.leanote.com/freewalk</a></p>
-<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：<br>代码：<br><a href="http://example.com/">http://example.com/</a><br><a href="mailto:&#97;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;">&#97;&#100;&#x64;&#x72;&#x65;&#115;&#115;&#64;&#x65;&#x78;&#97;&#109;&#112;&#108;&#x65;&#46;&#x63;&#111;&#109;</a></p>
+<h2 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h2><p>语法说明：<br>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱，只要是用&lt;&gt;包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样，例如：<br>代码：<br><a href="http://example.com/">http://example.com/</a><br><a href="mailto:&#97;&#x64;&#100;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;">&#97;&#x64;&#100;&#x72;&#x65;&#x73;&#x73;&#x40;&#x65;&#120;&#x61;&#x6d;&#112;&#108;&#x65;&#x2e;&#99;&#111;&#x6d;</a></p>
 <h2 id="锚点"><a href="#锚点" class="headerlink" title="锚点"></a>锚点</h2><p>网页中，锚点其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的。<br>注意： </p>
 <ol>
 <li>Markdown Extra 只支持在标题后插入锚点，其它地方无效。 </li>
@@ -1413,6 +1293,189 @@ docker rm $(docker ps -a -q)</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>Linux和Docker常用命令</title>
+    <url>/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><span id="more"></span>
+<pre><code>ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件
+类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息-----简化为 ll）
+
+mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录
+touch 　　创建文件 例：touch test/readme.txt 在 test 目录下创建 readme.txt 文件
+cd 　　切换目录 cd /. 到根目录 cd .. 上一级目录 cd /hahaha/hahaha 到指定目录
+pwd 　　显示当前目录
+mv 　　移动/重命名（加上 -i 参数询问是否覆盖） 　 mv hello rock/ 移动到 rock 目录下
+mv hello rock 重命名为 rock
+cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用）
+cp -ir test/ workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）
+rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）
+rm -ir test/ 递归删除 test 目录及其子目录并询问
+wget url 　　下载文件到当前目录
+sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit 或 logout 退出
+su 账户名 　　切换到某某用户模式，没有时间限制</code></pre><h3 id="ZIP-工具："><a href="#ZIP-工具：" class="headerlink" title="ZIP 工具："></a>ZIP 工具：</h3><pre><code>压缩文件　　 zip target.zip filename
+压缩文件夹　　 zip -r target.zip dir 　　 -r 参数表示递归压缩子目录
+解压　　 unzip target.zip</code></pre><h3 id="tar-工具："><a href="#tar-工具：" class="headerlink" title="tar 工具："></a>tar 工具：</h3><pre><code>-c: 建立压缩档案
+-x：解压
+-t：查看内容
+-r：向压缩归档文件末尾追加文件
+-u：更新原压缩包中的文件
+这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需在压缩或解压档案时可选的。
+-z：有 gzip 属性的
+-j：有 bz2 属性的
+-Z：有 compress 属性的
+-v：显示所有过程
+-O：将文件解开到标准输出
+下面的参数-f 是必须的
+-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名
+例：tar -xvf file.tar //解压 tar 包
+tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/local/java //解压 jdk 到指定文件夹
+tar -cZf jpg.tar.Z \*.jpg //将目录里所有 jpg 文件打包成 jpg.tar 后，并且将其用
+compress 压缩，生成一个 umcompress 压缩过的包，命名为 jpg.tar.Z</code></pre><h3 id="vim-编辑器：-vim-test-cpp"><a href="#vim-编辑器：-vim-test-cpp" class="headerlink" title="vim 编辑器：　　 vim test.cpp"></a>vim 编辑器：　　 vim test.cpp</h3><pre><code>vim 有两种模式，一种是**普通模式**，另一种是**插入模式**。执行上述命令以后进入普通模式。
+按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入
+的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入
+w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要
+在 q 之前，先保存再退出）。
+**查找**：在普通模式下输入“/查找内容”，回车，即可定位到第一个匹配项。接着按下字母
+键“n”可以查找下一个。
+**撤销**：普通模式下输入“:u”并回车，实现撤销。</code></pre>]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>eclipse/che</title>
+    <url>/2020/04/05/%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8Eclipse%20Che/</url>
+    <content><![CDATA[<h3 id="portainer"><a href="#portainer" class="headerlink" title="portainer"></a>portainer</h3><pre><code>下载镜像
+docker pull portainer/portainer
+基于镜像运行容器
+
+docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer  portainer/portainer
+http://172.17.0.1:8080/dashboard/#/ide/che/wksp-tvqq
+http://127.0.0.1:9000/#/networks
+up: admin/y3
+</code></pre><span id="more"></span>
+
+<h3 id="eclipse-che"><a href="#eclipse-che" class="headerlink" title="eclipse/che"></a>eclipse/che</h3><pre><code>启动服务
+-v /var/…是选择docker文件
+-v /opt/…是选择容器存放位置
+-e CHE_HOST 设置主机的IP地址
+
+单用户：
+docker run -ti --rm --name che6 -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.10.225 eclipse/che:6.19.0 start
+
+多用户：
+docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080 -e CHE_HOST=192.168.6.203 eclipse/che:6.19.0 start
+实际创建:
+docker run -ti -e CHE_MULTIUSER=true -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data  -e CHE_PORT=8080  eclipse/che:6.19.0 start</code></pre><h3 id="获取镜像"><a href="#获取镜像" class="headerlink" title="获取镜像"></a>获取镜像</h3><pre><code>~/docker-tags eclipse/che
+sudo docker pull eclipse/che:6.19.0</code></pre><h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><pre><code>sudo docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /home/zhanghuo/LinuxHome/docker/eclipseche:/data eclipse/che:6.19.0 start
+启动完毕后，访问 “http://:8080/” 来验证安装。
+</code></pre><pre><code>创建 workspace 和 project
+访问 “Workspaces -&gt; Add Workspace”；
+在 “New Workspace” 页面选择 “java Default Java Stack with JDK 8, Maven and Tomcat.” 然后 “CREATE &amp; OPEN”；
+在 “Workspace” 页面，选择 “Create Project…”；
+在 “Create New Project” 窗口，选择 Java -&gt; Maven 项目，然后输入一个Name，比如: “test”，并进入下一步；
+勾选 “From Archetype:” 并选择 “org.apache.maven.archetypes:maven-archetype-quickstart:RELEASE”，同时输入 “Artifact ID” 和 “Group ID”，然后 “Create” 来创建工程；
+运行工程
+选中并打开工程，然后在 “Manage commands” 依次创建三个 Maven 命令，并运行。
+
+build
+mvn clean install -f $&#123;current.project.path&#125;
+1
+test
+mvn clean test -f $&#123;current.project.path&#125;
+1
+run
+mvn exec:java -Dexec.mainClass=&quot;test.App&quot; -f $&#123;current.project.path&#125;</code></pre><h3 id="eclipse-che-命令-ubuntu"><a href="#eclipse-che-命令-ubuntu" class="headerlink" title="eclipse/che 命令 -ubuntu"></a>eclipse/che 命令 -ubuntu</h3><h5 id="1-apt-get-update"><a href="#1-apt-get-update" class="headerlink" title="1. apt-get update"></a>1. apt-get update</h5><h5 id="2-安装docker-国内源安装"><a href="#2-安装docker-国内源安装" class="headerlink" title="2. 安装docker,国内源安装"></a>2. <a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/ubuntu.html">安装docker,国内源安装</a></h5><h5 id="3-配置镜像仓库"><a href="#3-配置镜像仓库" class="headerlink" title="3.配置镜像仓库"></a>3.<a href="https://link.jianshu.com/?t=https://yeasy.gitbooks.io/docker_practice/content/install/mirror.html#ubuntu-1604、debian-8-jessie、centos-7">配置镜像仓库</a></h5><h5 id="4-解决内存溢出的问题"><a href="#4-解决内存溢出的问题" class="headerlink" title="4.解决内存溢出的问题"></a>4.解决内存溢出的问题</h5><pre><code class="javascript">Adjust memory and swap accounting
+When users run Docker, they may see these messages when working with an image:
+
+WARNING: Your kernel does not support cgroup swap limit. WARNING: Your
+kernel does not support swap limit capabilities. Limitation discarded.
+To prevent these messages, enable memory and swap accounting on your system. To enable these on system using GNU GRUB (GNU GRand Unified Bootloader), do the following.
+
+Log into Ubuntu as a user with sudo privileges.
+
+Edit the /etc/default/grub file.
+
+Set the GRUB_CMDLINE_LINUX value as follows:
+
+GRUB_CMDLINE_LINUX=&quot;cgroup_enable=memory swapaccount=1&quot;
+Save and close the file.
+
+Update GRUB.
+
+$ sudo update-grub
+Reboot your system.</code></pre>
+<h5 id="5关闭防火墙"><a href="#5关闭防火墙" class="headerlink" title="5关闭防火墙"></a>5关闭防火墙</h5><p><a href="https://link.jianshu.com/?t=http://www.cnblogs.com/wclwcw/p/6140263.html">网络相关配置</a></p>
+<pre><code class="javascript">ufw disable</code></pre>
+<ul>
+<li>安装</li>
+</ul>
+<pre><code class="javascript">docker pull eclipse/che:5.17.0</code></pre>
+<ul>
+<li>启动(第一次启动需要下载其他镜像)</li>
+</ul>
+<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 start</code></pre>
+<ul>
+<li>修改che的样式文件，去掉左边导航栏</li>
+</ul>
+<pre><code class="javascript">docker cp /che/index.html che-8120:/home/user/eclipse-che-5.17.0/tomcat/webapps/dashboard</code></pre>
+<ul>
+<li>停止</li>
+</ul>
+<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 stop</code></pre>
+<ul>
+<li>重启</li>
+</ul>
+<pre><code class="javascript">docker run -it --rm -e CHE_PORT=8120 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8120/tmp:/data eclipse/che:5.17.0 restart</code></pre>
+<ul>
+<li>che API</li>
+</ul>
+<p>启动che的时候的终端返回信息最后一行是che的api地址</p>
+<ul>
+<li>创建che工作空间</li>
+</ul>
+<pre><code class="javascript">curl -X POST -H &#39;Content-Type: application/json&#39; -d &#39;&#123;&quot;name&quot;:&quot;myworkspace&quot;,&quot;projects&quot;:[],&quot;commands&quot;:[&#123;&quot;name&quot;:&quot;build&quot;,&quot;type&quot;:&quot;mvn&quot;,&quot;attributes&quot;:&#123;&quot;goal&quot;:&quot;Build&quot;,&quot;previewUrl&quot;:&quot;&quot;&#125;,&quot;commandLine&quot;:&quot;mvn clean install&quot;],&quot;environments&quot;:&#123;&quot;myworkspace&quot;:&#123;&quot;recipe&quot;:&#123;&quot;location&quot;:&quot;eclipse/ubuntu_jdk8&quot;,&quot;type&quot;:&quot;dockerimage&quot;&#125;,&quot;machines&quot;:&#123;&quot;dev-machine&quot;:&#123;&quot;attributes&quot;:&#123;&quot;memoryLimitBytes&quot;:&quot;2147483648&quot;&#125;,&quot;agents&quot;:[&quot;org.eclipse.che.exec&quot;,&quot;org.eclipse.che.terminal&quot;,&quot;org.eclipse.che.ws-agent&quot;,&quot;org.eclipse.che.ssh&quot;],&quot;servers&quot;:&#123;&#125;&#125;&#125;&#125;&#125;,&quot;defaultEnv&quot;:&quot;myworkspace&quot;,&quot;links&quot;:[]&#125;&#39; http://localhost:8080/api/workspace
+//其中-d为创建工作空间所需json参数，具体请看下一小节</code></pre>
+<ul>
+<li>修改che的运行时环境</li>
+</ul>
+<p>访问che的webide，点击左侧stacks，在右侧的列表中选择自己需要的运行时环境点进进入详情界面</p>
+<p>下拉找到row configuration，复制其中json数据里的workspaceconfig部分代码（注意只取 “workspaceConfig”:后面的{}已经其中的信息），作为访问创建che工作空间api的参数</p>
+<ul>
+<li>在项目中使用che api需要执行以下命令</li>
+</ul>
+<pre><code class="javascript">git clone http://github.com/eclipse/che
+cd cde
+git checkout 5.17.x
+cd core
+mvn install</code></pre>
+<ul>
+<li>chedir 初始化工作空间和项目</li>
+</ul>
+<pre><code class="javascript">cd /ChedirDocker/project
+mkdir che8081project
+cd che8081project
+//创建Chedir文件
+docker run -it --rm -e CHE_PORT=8081 -v /var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir init
+//进行相应修改
+vim Chedir
+//启动容器
+/var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir up
+//销毁容器
+/var/run/docker.sock:/var/run/docker.sock -v /c/8081/tmp:/data  -v  /ChedirDocker/project/che8081project:/chedir eclipse/che:5.17.0 dir down</code></pre>
+]]></content>
+      <categories>
+        <category>linux</category>
+        <category>che</category>
+        <category>eclipse</category>
+      </categories>
+      <tags>
+        <tag>che</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>linux下的find文件查找命令与grep文件内容查找命令</title>
     <url>/2020/04/05/find_grep/</url>
     <content><![CDATA[<h1 id="linux下的find文件查找命令与grep文件内容查找命令"><a href="#linux下的find文件查找命令与grep文件内容查找命令" class="headerlink" title="linux下的find文件查找命令与grep文件内容查找命令"></a>linux下的find文件查找命令与grep文件内容查找命令</h1><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a><strong>区别</strong></h2><pre><code>
@@ -1846,68 +1909,5 @@ sudo service docker restart      </code></pre><p>docker run –net=host -d regis
 <p>kubectl get nodes<br>应该输出以下内容：</p>
 <p>NAME LABELS STATUS<br>127.0.0.1 Ready<br>如果你运行了不同的Kubernetes集群，你可能需要指定 -s <a href="http://localhost:8080">http://localhost:8080</a> 选项来访问本地集群。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Linux和Docker常用命令</title>
-    <url>/2020/04/05/%E5%B8%B8%E7%94%A8Linux%20%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<h2 id="Linux常用命令"><a href="#Linux常用命令" class="headerlink" title="Linux常用命令"></a>Linux常用命令</h2><span id="more"></span>
-<pre><code>ls 　 -a(同时列出隐含文件),　　-l（输出一个比较完整的格式，除每个文件名外，增加显示文件
-类型、权限、硬链接数、所有者名、组名、大小（byte）、及时间信息-----简化为 ll）
-
-mkdir 　 新建目录　例：mkdir test 命令会在当前目录下建立一个名为“test”的新目录
-touch 　　创建文件 例：touch test/readme.txt 在 test 目录下创建 readme.txt 文件
-cd 　　切换目录 cd /. 到根目录 cd .. 上一级目录 cd /hahaha/hahaha 到指定目录
-pwd 　　显示当前目录
-mv 　　移动/重命名（加上 -i 参数询问是否覆盖） 　 mv hello rock/ 移动到 rock 目录下
-mv hello rock 重命名为 rock
-cp 　　拷贝 （加上 -i 参数询问是否覆盖，-r 参数递归调用）
-cp -ir test/ workspace＂（递归复制 test 目录到 workpace 目录下并在覆盖时提示）
-rm 　　删除 （加上 -i 参数确认提示，-r 参数递归调用）
-rm -ir test/ 递归删除 test 目录及其子目录并询问
-wget url 　　下载文件到当前目录
-sudo 暂时获取超级用户权限（有默认时长）加上 -i 参数 没有时间限制,输入 exit 或 logout 退出
-su 账户名 　　切换到某某用户模式，没有时间限制</code></pre><h3 id="ZIP-工具："><a href="#ZIP-工具：" class="headerlink" title="ZIP 工具："></a>ZIP 工具：</h3><pre><code>压缩文件　　 zip target.zip filename
-压缩文件夹　　 zip -r target.zip dir 　　 -r 参数表示递归压缩子目录
-解压　　 unzip target.zip</code></pre><h3 id="tar-工具："><a href="#tar-工具：" class="headerlink" title="tar 工具："></a>tar 工具：</h3><pre><code>-c: 建立压缩档案
--x：解压
--t：查看内容
--r：向压缩归档文件末尾追加文件
--u：更新原压缩包中的文件
-这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需在压缩或解压档案时可选的。
--z：有 gzip 属性的
--j：有 bz2 属性的
--Z：有 compress 属性的
--v：显示所有过程
--O：将文件解开到标准输出
-下面的参数-f 是必须的
--f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名
-例：tar -xvf file.tar //解压 tar 包
-tar -xzvf jdk-8u131-linux-x64.tar.gz -C /usr/local/java //解压 jdk 到指定文件夹
-tar -cZf jpg.tar.Z \*.jpg //将目录里所有 jpg 文件打包成 jpg.tar 后，并且将其用
-compress 压缩，生成一个 umcompress 压缩过的包，命名为 jpg.tar.Z</code></pre><h3 id="vim-编辑器：-vim-test-cpp"><a href="#vim-编辑器：-vim-test-cpp" class="headerlink" title="vim 编辑器：　　 vim test.cpp"></a>vim 编辑器：　　 vim test.cpp</h3><pre><code>vim 有两种模式，一种是**普通模式**，另一种是**插入模式**。执行上述命令以后进入普通模式。
-按下字母键“i”进入插入模式，使用方向键移动光标到需要插入的位置，然后输入想要插入
-的内容。编辑完成后按键“Esc”退出回到普通模式,在普通模式下输入冒号“:”，然后输入
-w 回车，保存更改。接着输入“:q”退出。也可以直接输入“:wq”保存并退出（注意 w 一定要
-在 q 之前，先保存再退出）。
-**查找**：在普通模式下输入“/查找内容”，回车，即可定位到第一个匹配项。接着按下字母
-键“n”可以查找下一个。
-**撤销**：普通模式下输入“:u”并回车，实现撤销。</code></pre>]]></content>
-      <categories>
-        <category>linux</category>
-      </categories>
-      <tags>
-        <tag>linux</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Tag Plugins</title>
-    <url>/2014/03/16/demo/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Docs</category>
-      </categories>
-      <tags>
-        <tag>plugins</tag>
-      </tags>
   </entry>
 </search>
