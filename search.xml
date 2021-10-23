@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>python-gui</title>
-      <link href="/2020/07/15/%E5%BC%80%E5%8F%91/python-gui/"/>
-      <url>/2020/07/15/%E5%BC%80%E5%8F%91/python-gui/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>firefox dev</title>
       <link href="/2020/05/01/%E5%BC%80%E5%8F%91/firefox-dev/"/>
       <url>/2020/05/01/%E5%BC%80%E5%8F%91/firefox-dev/</url>
@@ -30,37 +17,11 @@
     
     
     <entry>
-      <title>Docker Flink</title>
-      <link href="/2020/04/19/%E5%BC%80%E5%8F%91/Docker-Flink/"/>
-      <url>/2020/04/19/%E5%BC%80%E5%8F%91/Docker-Flink/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>windows node 环境安装</title>
       <link href="/2020/04/19/%E7%8E%AF%E5%A2%83/windows10%20node%20%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/"/>
       <url>/2020/04/19/%E7%8E%AF%E5%A2%83/windows10%20node%20%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</url>
       
         <content type="html"><![CDATA[<p>使用 nvs 管理本地 Node.js 版本</p><h3 id="Linux-macOS-环境"><a href="#Linux-macOS-环境" class="headerlink" title="Linux / macOS 环境"></a>Linux / macOS 环境</h3><p>通过 Git Clone 对应的项目即可。</p><p>$ export NVS_HOME=”$HOME/.nvs”<br>$ git clone <a href="https://github.com/jasongin/nvs">https://github.com/jasongin/nvs</a> –depth=1 “$NVS_HOME”<br>$ . “$NVS_HOME/nvs.sh” install</p><h3 id="Windows-环境"><a href="#Windows-环境" class="headerlink" title="Windows 环境"></a>Windows 环境</h3><p>由于 Windows 环境配置比较复杂，所以还是推荐使用 msi 文件完成初始化工作。</p><p>访问 nvs/releases 下载最新版本的 nvs.msi，然后双击安装即可。</p><h2 id="配置镜像地址"><a href="#配置镜像地址" class="headerlink" title="配置镜像地址"></a>配置镜像地址</h2><p>在国内由于大家都懂的原因，需要把对应的镜像地址修改下：</p><p>$ nvs remote node <a href="https://npm.taobao.org/mirrors/node/">https://npm.taobao.org/mirrors/node/</a><br>$ nvs remote<br>default             node<br>chakracore          <a href="https://github.com/nodejs/node-chakracore/releases/">https://github.com/nodejs/node-chakracore/releases/</a><br>chakracore-nightly  <a href="https://nodejs.org/download/chakracore-nightly/">https://nodejs.org/download/chakracore-nightly/</a><br>nightly             <a href="https://nodejs.org/download/nightly/">https://nodejs.org/download/nightly/</a><br>node                <a href="https://nodejs.org/dist/">https://nodejs.org/dist/</a></p><h2 id="使用指南"><a href="#使用指南" class="headerlink" title="使用指南"></a>使用指南</h2><p>通过以下命令，即可非常简单的安装 Node.js 最新的 LTS 版本。</p><h1 id="安装最新的-LTS-版本"><a href="#安装最新的-LTS-版本" class="headerlink" title="安装最新的 LTS 版本"></a>安装最新的 LTS 版本</h1><p>$ nvs add lts</p><h1 id="配置为默认版本"><a href="#配置为默认版本" class="headerlink" title="配置为默认版本"></a>配置为默认版本</h1><p>$ nvs link lts<br>安装其他版本：</p><h1 id="安装其他版本尝尝鲜"><a href="#安装其他版本尝尝鲜" class="headerlink" title="安装其他版本尝尝鲜"></a>安装其他版本尝尝鲜</h1><p>$ nvs add 12</p><h1 id="查看已安装的版本"><a href="#查看已安装的版本" class="headerlink" title="查看已安装的版本"></a>查看已安装的版本</h1><p>$ nvs ls</p><h1 id="在当前-Shell-切换版本"><a href="#在当前-Shell-切换版本" class="headerlink" title="在当前 Shell 切换版本"></a>在当前 Shell 切换版本</h1><p>$ nvs use 12<br>更多指令参见 nvs –help 。</p><h2 id="共用-npm-全局模块"><a href="#共用-npm-全局模块" class="headerlink" title="共用 npm 全局模块"></a>共用 npm 全局模块</h2><p>使用 nvs 时，默认的 prefix 是当前激活的 Node.js 版本的安装路径。</p><p>带来一个问题是：切换版本之后，之前安装全局命令模块需要重新安装，非常不方便。</p><p>解决方案是配置统一的全局模块安装路径到 ~/.npm-global，如下：</p><p>$ mkdir -p ~/.npm-global<br>$ npm config set prefix ~/.npm-global<br>还需配置环境变量到 ~/.bashrc 或 ~/.zshrc 文件里面：</p><p>$ echo “export PATH=~/.npm-global/bin:$PATH” &gt;&gt; ~/.zshrc<br>$ source ~/.zshrc</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>docker spark+hadoop</title>
-      <link href="/2020/04/19/%E5%BC%80%E5%8F%91/docker-spark-hadoop/"/>
-      <url>/2020/04/19/%E5%BC%80%E5%8F%91/docker-spark-hadoop/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -139,19 +100,6 @@
       <url>/2020/04/09/%E7%8E%AF%E5%A2%83/conda-%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</url>
       
         <content type="html"><![CDATA[<p>无法加载文件 <strong>**</strong>.ps1，因为在此系统中禁止执行脚本。有关详细信息<br>在powershell中执行 set-ExecutionPolicy RemoteSigned</p><p>conda</p><p>Conda 是一个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，并在它们之间轻松切换。</p><p>安装可以下载一个科学计算包anaconda，怕麻烦的人可以直接安装，自带很多必须包</p><p>清华镜像下载地址，<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/</a></p><p>创建</p><p>conda create –name py3 python=3.7</p><p>使用<br>conda env list #查看当前存在的虚拟环境</p><p>source activate py3 #激活虚拟环境 activate py3 windows下</p><p>conda install numpy #安装包</p><p>source deactivate #退出虚拟环境</p><p>conda remove -n py3 –all #删除虚拟环境</p><p>1、首先在所在系统中安装Anaconda。可以打开命令行输入conda -V检验是否安装以及当前conda的版本。</p><p>2、conda常用的命令。</p><pre><code>1）conda list 查看安装了哪些包。2）conda env list 或 conda info -e 查看当前存在哪些虚拟环境3）conda update conda 检查更新当前conda4）conda --version 查询conda版本5）conda -h 查询conda的命令使用</code></pre><p>3、创建python虚拟环境。</p><pre><code> 使用 conda create -n your_env_name python=X.X（2.7、3.6等)命令创建python版本为X.X、名字为your_env_name的虚拟环境。your_env_name文件可以在Anaconda安装目录envs文件下找到。 注意：默认的情况下只安装了一些必须的包，并不会像我们安装anaconda时自动安装很多常用的包。要实现上面的功能，则须在末尾加上‘anaconda’，完整命令是：conda create -n your_env_name python=X.X anaconda</code></pre><p>4、使用激活(或切换不同python版本)的虚拟环境。</p><pre><code>打开命令行输入python --version可以检查当前python的版本。使用如下命令即可 激活你的虚拟环境(即将python的版本改变)。Linux:  source activate your_env_name(虚拟环境名称)Windows: activate your_env_name(虚拟环境名称)</code></pre><p>   这是再使用python –version可以检查当前python版本是否为想要的。</p><p>5、对虚拟环境中安装额外的包。</p><pre><code>使用命令conda install -n your_env_name [package]即可安装package到your_env_name中</code></pre><p>6、关闭虚拟环境(即从当前环境退出返回使用PATH环境中的默认python版本)。</p><p>   使用如下命令即可。</p><p>   Linux: source deactivate</p><p>   Windows: deactivate</p><p>7、删除虚拟环境。</p><p>   使用命令conda remove -n your_env_name(虚拟环境名称) –all， 即可删除。</p><p>8、删除环境中的某个包。</p><p>   使用命令conda remove –name your_env_name  package_name 即可。</p><pre><code class="bash">conda create -n rest_xops python=3.7.6source activate rest_xops # conda activate rest_xopsconda install -n rest_xops [package]source deactivate # conda deactivate# removeconda remove --name rest_xops package_nameconda remove -n rest_xops --all</code></pre><p>设置国内镜像<br>如果需要安装很多packages，你会发现conda下载的速度经常很慢，因为Anaconda.org的服务器在国外。所幸的是，清华TUNA镜像源有Anaconda仓库的镜像，我们将其加入conda的配置即可：</p><p>1 # 添加Anaconda的TUNA镜像<br>2 conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>3 # TUNA的help中镜像地址加有引号，需要去掉<br>4<br>5 # 设置搜索时显示通道地址<br>6 conda config –set show_channel_urls yes<br> 执行完上述命令后，会生成~/.condarc(Linux/Mac)或C:UsersUSER_NAME.condarc文件，记录着我们对conda的配置，直接手动创建、编辑该文件是相同的效果。</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>django笔记</title>
-      <link href="/2020/04/07/%E5%BC%80%E5%8F%91/django%E7%AC%94%E8%AE%B0/"/>
-      <url>/2020/04/07/%E5%BC%80%E5%8F%91/django%E7%AC%94%E8%AE%B0/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       
@@ -313,7 +261,7 @@
     
     
     <entry>
-      <title>eclipse/che</title>
+      <title>Docker搭建MySQL服务</title>
       <link href="/2020/04/05/%E7%8E%AF%E5%A2%83/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/"/>
       <url>/2020/04/05/%E7%8E%AF%E5%A2%83/Docker%E6%90%AD%E5%BB%BAMySQL%E6%9C%8D%E5%8A%A1/</url>
       
